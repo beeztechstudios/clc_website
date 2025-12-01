@@ -66,6 +66,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/app/career/page.jsx"  ],
   "exclude": ["node_modules"]
 }

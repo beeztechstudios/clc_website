@@ -1,36 +1,48 @@
-"use client"
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Calendar, Download, Eye, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useNewsUpdates } from "@/hooks/useSanityData";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { useState } from "react";
 
-const NewsUpdates = () => {
-  const { data: newsUpdates = [], isLoading } = useNewsUpdates();
+// Define interface for type safety
+interface NewsItem {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  type: string;
+  publishedAt: string;
+  featuredImage?: any;
+  readTime?: string;
+  downloadUrl?: string;
+  isNew?: boolean;
+}
+
+interface NewsUpdatesProps {
+  initialNews: NewsItem[];
+}
+
+const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
+  // Use the data passed from the server
   const [selectedType, setSelectedType] = useState("All");
 
   const filteredNews =
     selectedType === "All"
-      ? newsUpdates
-      : newsUpdates.filter((news) => news.type === selectedType);
+      ? initialNews
+      : initialNews.filter((news) => news.type === selectedType);
 
   const typeList = ["All", "case-update", "news", "publication", "deal-corner"];
 
   const getTypeDisplayName = (type: string) => {
     switch (type) {
-      case "case-update":
-        return "Case Update";
-      case "news":
-        return "News";
-      case "publication":
-        return "Publication";
-      case "deal-corner":
-        return "Deal Corner";
-      default:
-        return type;
+      case "case-update": return "Case Update";
+      case "news": return "News";
+      case "publication": return "Publication";
+      case "deal-corner": return "Deal Corner";
+      default: return type;
     }
   };
 
@@ -71,28 +83,9 @@ const NewsUpdates = () => {
       {/* News Cards */}
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
-          {/* Loading skeleton */}
-          {isLoading && (
-            <div className="grid lg:grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="bg-gray-50 border border-gray-200 rounded-lg p-6 animate-pulse"
-                >
-                  <div className="h-4 bg-gray-300 rounded w-1/4 mb-4"></div>
-                  <div className="h-6 bg-gray-300 rounded mb-4"></div>
-                  <div className="h-48 bg-gray-300 rounded-lg mb-4"></div>
-                  <div className="space-y-3">
-                    <div className="h-4 bg-gray-300 rounded w-1/3"></div>
-                    <div className="h-4 bg-gray-300 rounded w-1/4"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
+          
           {/* News Data */}
-          {!isLoading && (
+          {filteredNews.length > 0 ? (
             <div className="grid lg:grid-cols-2 gap-6">
               {filteredNews.map((news) => (
                 <div
@@ -149,10 +142,12 @@ const NewsUpdates = () => {
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-2">
-                        <Eye className="h-4 w-4" />
-                        <span>{news.readTime}</span>
-                      </div>
+                      {news.readTime && (
+                        <div className="flex items-center gap-2">
+                          <Eye className="h-4 w-4" />
+                          <span>{news.readTime}</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Buttons */}
@@ -183,9 +178,7 @@ const NewsUpdates = () => {
                 </div>
               ))}
             </div>
-          )}
-
-          {!isLoading && filteredNews.length === 0 && (
+          ) : (
             <div className="text-center py-12">
               <p className="text-gray-600">
                 No news updates found in this category.
@@ -195,7 +188,7 @@ const NewsUpdates = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Newsletter Section */}
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border border-[#163C0F] rounded-lg p-6 sm:p-8 text-center">

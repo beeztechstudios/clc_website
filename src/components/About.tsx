@@ -188,59 +188,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Office Location & Infrastructure Section */}
-      {/* <section className="p-8  border-t border-gray-200">
-        <div className="bg-gray-100 rounded-lg p-6">
-          <div className="text-center mb-6">
-            <div className="bg-primary/10 rounded-full p-3 inline-block mb-4">
-              <Building2 className="h-8 w-8 text-primary" />
-            </div>
-            <h2 className="text-2xl font-light text-gray-800 mb-4">Office Location & Infrastructure</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg p-4 border border-gray-200">
-              <h3 className="font-semibold text-gray-800 mb-3">New Delhi Headquarters</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-primary" />
-                  <p className="text-sm text-gray-600">Commercial Law Chamber, New Delhi, India</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Building2 className="h-4 w-4 text-primary" />
-                  <p className="text-sm text-gray-600">Modern legal infrastructure with state-of-the-art facilities</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Globe className="h-4 w-4 text-primary" />
-                  <p className="text-sm text-gray-600">Strategic location for Supreme Court and High Court representations</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg p-4 border border-gray-200">
-              <h3 className="font-semibold text-gray-800 mb-3">Professional Infrastructure</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                  Comprehensive legal research library
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                  Advanced case management systems
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                  Secure client consultation facilities
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                  Digital documentation and filing systems
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section> */}
+
     </div>
   );
 };

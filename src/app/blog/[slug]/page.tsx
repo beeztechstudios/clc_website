@@ -1,4 +1,3 @@
-"use client"
 import { notFound } from "next/navigation";
 import { client } from "@/lib/sanity";
 import { urlFor } from "@/lib/sanity";
@@ -10,8 +9,10 @@ import Link from "next/link";
 import { ArrowLeft, Eye } from "lucide-react";
 import { format } from "date-fns";
 import { SanityContentRenderer } from "@/lib/sanityContent";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-const queryClient = new QueryClient();
+import { Metadata } from "next";
+
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// const queryClient = new QueryClient();
 
 type Params = { slug: string | string[] | undefined };
 
@@ -61,18 +62,53 @@ async function getBlogPostDebug(slug?: string | string[]) {
 }
 
 // ----------------------
-// Metadata (kept minimal for debug)
+// Dynamic Metadata Generator
 // ----------------------
-// export async function generateMetadata({ params }: { params: Params }){
-//   // keep metadata light while debugging
-//   const blogPost = await getBlogPostDebug(params?.slug);
-//   if (!blogPost || (blogPost as any).__debugError) return {};
-//   const title = blogPost.seo?.metaTitle || blogPost.title;
-//   return { title: `${title} | Commercial Law Chamber` };
-// }
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = Array.isArray(resolvedParams.slug)
+    ? resolvedParams.slug[0]
+    : resolvedParams.slug;
+
+  const blogPost = await getBlogPostDebug(slug);
+
+  // Fallback if post not found or error
+  if (!blogPost || (blogPost as any).__debugError) {
+    return {
+      title: "Blog Post Not Found",
+    };
+  }
+
+  // Use Sanity SEO field if available, otherwise fallback to title/excerpt
+  const title = blogPost.seo?.metaTitle || blogPost.title;
+  const description = blogPost.seo?.metaDescription || blogPost.excerpt;
+  
+  // Construct Image URL if exists
+  const ogImage = blogPost.featuredImage 
+    ? urlFor(blogPost.featuredImage).width(1200).height(630).url()
+    : null;
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      type: "article",
+      publishedTime: blogPost.publishedAt,
+      images: ogImage ? [{ url: ogImage }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ogImage ? [ogImage] : [],
+    },
+  };
+}
 
 // ----------------------
-// Page with debug UI
+// Page with debug UI (Server Component)
 // ----------------------
 export default async function BlogPage({ params }: { params: Params }) {
   
@@ -225,9 +261,9 @@ export default async function BlogPage({ params }: { params: Params }) {
           </div>
 
           <div className="hidden lg:block lg:w-60 xl:w-64">
-            <QueryClientProvider client={queryClient}>
+            {/* <QueryClientProvider client={queryClient}> */}
             <RightSidebar />
-            </QueryClientProvider>
+            {/* </QueryClientProvider> */}
           </div>
         </div>
 

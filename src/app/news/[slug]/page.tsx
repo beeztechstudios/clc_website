@@ -1,26 +1,20 @@
-"use client";
-
 import { notFound } from "next/navigation";
 import { client } from "@/lib/sanity";
 import { urlFor } from "@/lib/sanity";
-
 import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 import Footer from "@/components/Footer";
-
 import Link from "next/link";
 import { ArrowLeft, Eye } from "lucide-react";
 import { format } from "date-fns";
 import { SanityContentRenderer } from "@/lib/sanityContent";
+import { Metadata } from "next";
 
-
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-const queryClient = new QueryClient();
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// const queryClient = new QueryClient();
 
 type Params = { slug: string | string[] | undefined };
-
-
 
 // ----------------------
 // Fetch Function
@@ -58,7 +52,49 @@ async function getNewsDebug(slug?: string | string[]) {
 }
 
 // ----------------------
-// PAGE
+// Dynamic Metadata Generator
+// ----------------------
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = Array.isArray(resolvedParams.slug)
+    ? resolvedParams.slug[0]
+    : resolvedParams.slug;
+
+  const news = await getNewsDebug(slug);
+
+  if (!news || (news as any).__debugError) {
+    return {
+      title: "News Not Found",
+    };
+  }
+
+  const title = news.seo?.metaTitle || news.title;
+  const description = news.seo?.metaDescription || news.excerpt;
+  const ogImage = news.featuredImage 
+    ? urlFor(news.featuredImage).width(1200).height(630).url()
+    : null;
+
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      type: "article",
+      publishedTime: news.publishedAt,
+      images: ogImage ? [{ url: ogImage }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ogImage ? [ogImage] : [],
+    },
+  };
+}
+
+// ----------------------
+// PAGE (Server Component)
 // ----------------------
 export default async function NewsPage({ params }: { params: Params }) {
   // ⭐ FIX → unwrap the Promise
@@ -116,12 +152,14 @@ export default async function NewsPage({ params }: { params: Params }) {
               <div className="max-w-4xl mx-auto">
 
                 {/* Back Button */}
-                <Link
-                  href="/news"
-                  className="flex items-center gap-2 text-gray-600 hover:text-gray-800"
-                >
-                  <ArrowLeft className="h-4 w-4" /> Back to News
-                </Link>
+                <div className="mb-6">
+                  <Link
+                    href="/news"
+                    className="flex items-center gap-2 text-gray-600 hover:text-gray-800"
+                  >
+                    <ArrowLeft className="h-4 w-4" /> Back to News
+                  </Link>
+                </div>
 
                 {/* Title */}
                 <h1 className="text-3xl lg:text-4xl font-bold poppins text-[#163C0F] my-6">
@@ -179,9 +217,9 @@ export default async function NewsPage({ params }: { params: Params }) {
 
           {/* Sidebar */}
           <div className="hidden lg:block lg:w-60 xl:w-64">
-            <QueryClientProvider client={queryClient}>
+            {/* <QueryClientProvider client={queryClient}> */}
               <RightSidebar />
-            </QueryClientProvider>
+            {/* </QueryClientProvider> */}
           </div>
         </div>
 
