@@ -19,8 +19,8 @@ const Hero = () => {
   ];
 
   const teamMembers = [
-    { name: "Vivek Sarin", designation: "Partner", image: "/images/vivek.jpg" },
-    { name: "Shreyas Srivastava", designation: "Partner", image: "/images/shreya.jpg" },
+    { name: "Vivek Sarin", designation: "Partner", image: "/vivek.webp" },
+    { name: "Shreyas Srivastava", designation: "Partner", image: "/shreya.webp" },
   ];
 
   return (
@@ -29,7 +29,7 @@ const Hero = () => {
       <section className="relative p-4 sm:p-6 md:p-8 overflow-hidden">
         <div className="relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden"
           style={{
-            backgroundImage: 'url(/bgpattern.png)',
+            backgroundImage: 'url(/bgpattern.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'

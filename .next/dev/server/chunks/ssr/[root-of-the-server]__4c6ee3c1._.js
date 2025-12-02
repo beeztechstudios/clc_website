@@ -1269,7 +1269,7 @@ const Footer = ()=>{
         },
         {
             label: "Legal Updates",
-            to: "/news-updates"
+            to: "/news"
         },
         {
             label: "Contact",

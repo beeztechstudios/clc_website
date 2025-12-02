@@ -6,14 +6,17 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-        port: "",
         pathname: "/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
       },
     ],
   },
-  productionBrowserSourceMaps: false,
 
-  // Add empty turbopack config to silence error
+  productionBrowserSourceMaps: false,
   turbopack: {},
 };
 
