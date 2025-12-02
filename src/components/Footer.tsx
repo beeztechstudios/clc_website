@@ -17,7 +17,7 @@ const Footer = () => {
     { label: "About Us", to: "/about" },
     { label: "Our Team", to: "/team" },
     { label: "Case Studies", to: "/insights" },
-    { label: "Legal Updates", to: "/news-updates" },
+    { label: "Legal Updates", to: "/news" },
     { label: "Contact", to: "/contact" },
     { label: "Careers", to: "/career" },
   ];
