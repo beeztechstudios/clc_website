@@ -251,11 +251,120 @@
 
 // export default memo(RightSidebar);
 
+// import { client } from "@/lib/sanity";
+// import { queries } from "@/lib/sanity";
+// import Link from "next/link";
+// import { format } from "date-fns";
+// import SearchClient from "@/components/SearchClient";
+
+// // Fetch data on the server (SSR)
+// async function fetchSidebarData() {
+//   const [featuredBlogs, featuredNews] = await Promise.all([
+//     client.fetch(queries.getFeaturedBlogPosts),
+//     client.fetch(queries.getFeaturedNewsUpdates),
+//   ]);
+
+//   return { featuredBlogs, featuredNews };
+// }
+
+// function getTypeDisplayName(type: string) {
+//   switch (type) {
+//     case "case-update":
+//       return "Case Update";
+//     case "news":
+//       return "News";
+//     case "publication":
+//       return "Publication";
+//     case "deal-corner":
+//       return "Deal Corner";
+//     default:
+//       return type;
+//   }
+// }
+
+// export default async function RightSidebar() {
+//   const { featuredBlogs, featuredNews } = await fetchSidebarData();
+
+//   return (
+//     <aside className="right-sidebar w-full lg:w-auto bg-white border-l border-gray-200 sticky top-0 self-start lg:max-h-screen overflow-y-auto flex flex-col">
+
+//       {/* STATIC TITLE */}
+//       <div className="border-b border-gray-200 flex-shrink-0">
+//         <div className="bg-[#163C0F] text-white px-4 py-2.5">
+//           <h3 className="text-sm font-semibold">INSIGHTS AND PUBLICATIONS</h3>
+//         </div>
+//       </div>
+//         <SearchClient/>
+//       {/* RECENT BLOGS */}
+//       <div className="border-b border-gray-200 flex-shrink-0">
+//         <div className="bg-white px-4 py-2.5 border-b border-gray-200">
+//           <h3 className="text-sm font-semibold text-[#163C0F]">RECENT BLOGS</h3>
+//         </div>
+
+//         <div className="p-4 space-y-4">
+//           {featuredBlogs?.length > 0 ? (
+//             featuredBlogs.slice(0, 3).map((blog: any) => (
+//               <div key={blog._id} className="border-b border-gray-200 pb-2">
+//                 <Link
+//                   href={`/blog/${blog.slug.current}`}
+//                   className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 hover:text-[#163C0F] transition-all group"
+//                 >
+//                   <h4 className="text-sm font-semibold text-gray-800 mb-1 leading-tight group-hover:text-[#163C0F]">
+//                     {blog.title}
+//                   </h4>
+//                   <p className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600">
+//                     Blog · {blog.category?.name || "Uncategorized"} ·{" "}
+//                     {format(new Date(blog.publishedAt), "MMM dd yyyy")}
+//                   </p>
+//                 </Link>
+//               </div>
+//             ))
+//           ) : (
+//             <p className="text-sm text-gray-500 text-center">No blogs available</p>
+//           )}
+//         </div>
+//       </div>
+
+//       {/* RECENT NEWS */}
+//       <div className="border-b border-gray-200 flex-shrink-0">
+//         <div className="bg-white px-4 py-2.5 border-b border-gray-200">
+//           <h3 className="text-sm font-semibold text-[#163C0F]">RECENT NEWS</h3>
+//         </div>
+
+//         <div className="p-4 space-y-4">
+//           {featuredNews?.length > 0 ? (
+//             featuredNews.map((news: any) => (
+//               <div key={news._id} className="border-b border-gray-200 pb-2">
+//                 <Link
+//                   href={`/news/${news.slug.current}`}
+//                   className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 hover:text-[#163C0F] transition-all group"
+//                 >
+//                   <h4 className="text-sm font-semibold text-gray-800 mb-1 leading-tight group-hover:text-[#163C0F]">
+//                     {news.title}
+//                   </h4>
+//                   <p className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600">
+//                     {getTypeDisplayName(news.type)} ·{" "}
+//                     {format(new Date(news.publishedAt), "MMM dd yyyy")}
+//                   </p>
+//                 </Link>
+//               </div>
+//             ))
+//           ) : (
+//             <p className="text-sm text-gray-500 text-center">No news available</p>
+//           )}
+//         </div>
+//       </div>
+//     </aside>
+//   );
+// }
+// this is last changed code 
 import { client } from "@/lib/sanity";
 import { queries } from "@/lib/sanity";
 import Link from "next/link";
 import { format } from "date-fns";
-import SearchClient from "@/components/SearchClient";
+import SearchArea from "@/components/SearchArea";
+
+export const revalidate = 600;
 
 // Fetch data on the server (SSR)
 async function fetchSidebarData() {
@@ -287,14 +396,15 @@ export default async function RightSidebar() {
 
   return (
     <aside className="right-sidebar w-full lg:w-auto bg-white border-l border-gray-200 sticky top-0 self-start lg:max-h-screen overflow-y-auto flex flex-col">
-
-      {/* STATIC TITLE */}
+      
       <div className="border-b border-gray-200 flex-shrink-0">
         <div className="bg-[#163C0F] text-white px-4 py-2.5">
           <h3 className="text-sm font-semibold">INSIGHTS AND PUBLICATIONS</h3>
         </div>
       </div>
-        <SearchClient/>
+
+      <SearchArea />
+
       {/* RECENT BLOGS */}
       <div className="border-b border-gray-200 flex-shrink-0">
         <div className="bg-white px-4 py-2.5 border-b border-gray-200">
@@ -307,12 +417,12 @@ export default async function RightSidebar() {
               <div key={blog._id} className="border-b border-gray-200 pb-2">
                 <Link
                   href={`/blog/${blog.slug.current}`}
-                  className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 hover:text-[#163C0F] transition-all group"
+                  className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 group"
                 >
-                  <h4 className="text-sm font-semibold text-gray-800 mb-1 leading-tight group-hover:text-[#163C0F]">
+                  <h4 className="text-sm font-semibold text-gray-800 group-hover:text-[#163C0F]">
                     {blog.title}
                   </h4>
-                  <p className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600">
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600">
                     Blog · {blog.category?.name || "Uncategorized"} ·{" "}
                     {format(new Date(blog.publishedAt), "MMM dd yyyy")}
                   </p>
@@ -337,12 +447,12 @@ export default async function RightSidebar() {
               <div key={news._id} className="border-b border-gray-200 pb-2">
                 <Link
                   href={`/news/${news.slug.current}`}
-                  className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 hover:text-[#163C0F] transition-all group"
+                  className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 group"
                 >
-                  <h4 className="text-sm font-semibold text-gray-800 mb-1 leading-tight group-hover:text-[#163C0F]">
+                  <h4 className="text-sm font-semibold text-gray-800 group-hover:text-[#163C0F]">
                     {news.title}
                   </h4>
-                  <p className="text-xs text-gray-500 leading-relaxed group-hover:text-gray-600">
+                  <p className="text-xs text-gray-500 group-hover:text-gray-600">
                     {getTypeDisplayName(news.type)} ·{" "}
                     {format(new Date(news.publishedAt), "MMM dd yyyy")}
                   </p>

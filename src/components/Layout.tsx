@@ -85,7 +85,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
           {/* RIGHT SIDEBAR */}
           <div className="hidden lg:block lg:w-60 xl:w-64">
-            <RightSidebar />
+            {/* <RightSidebar /> */}
           </div>
         </div>
 
