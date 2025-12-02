@@ -189,7 +189,7 @@ export default function RootLayout({
         </Script>
 
         {/* Facebook Pixel (replace ID) */}
-        <Script id="fb-pixel" strategy="afterInteractive">
+        {/* <Script id="fb-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s){
               if(f.fbq) return; n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -199,10 +199,10 @@ export default function RootLayout({
             fbq('init', 'XXXXXXXXXXXXXXX');
             fbq('track', 'PageView');
           `}
-        </Script>
+        </Script> */}
 
         {/* Twitter / X pixel */}
-        <Script id="twitter-pixel" strategy="afterInteractive">
+        {/* <Script id="twitter-pixel" strategy="afterInteractive">
           {`
             !function(e,t,n,s,u,a){
               e.twq || (s=e.twq=function(){ s.exe? s.exe.apply(s,arguments):s.queue.push(arguments) }, s.version='1.1', s.queue=[],
@@ -210,17 +210,17 @@ export default function RootLayout({
             }(window, document, 'script');
             twq('config', 'oXXXXXXXXXXXXXXX');
           `}
-        </Script>
+        </Script> */}
 
         {/* LinkedIn Insight */}
-        <Script id="linkedin-insight" strategy="afterInteractive">
+        {/* <Script id="linkedin-insight" strategy="afterInteractive">
           {`
             _linkedin_partner_id = "XXXXXXXX";
             window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
             window._linkedin_data_partner_ids.push(_linkedin_partner_id);
           `}
-        </Script>
-        <Script id="linkedin-script" strategy="afterInteractive">
+        </Script> */}
+        {/* <Script id="linkedin-script" strategy="afterInteractive">
           {`
             (function(l){
               if(!l){
@@ -234,10 +234,10 @@ export default function RootLayout({
               s.parentNode.insertBefore(b, s);
             })(window.lintrk);
           `}
-        </Script>
+        </Script> */}
 
         {/* Pinterest */}
-        <Script id="pinterest-pixel" strategy="afterInteractive">
+        {/* <Script id="pinterest-pixel" strategy="afterInteractive">
           {`
             !function(e){
               if(!window.pintrk){
@@ -250,7 +250,7 @@ export default function RootLayout({
             pintrk('load', 'XXXXXXXXXXXXXXX', { em: '' });
             pintrk('page');
           `}
-        </Script>
+        </Script> */}
 
         {/* Microsoft Clarity */}
         <Script id="clarity" strategy="afterInteractive">
