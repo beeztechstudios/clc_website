@@ -27,25 +27,43 @@ const Hero = () => {
     <div className="flex-1 bg-white">
       {/* Hero Section */}
       <section className="relative p-4 sm:p-6 md:p-8 overflow-hidden">
-        <div className="relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden"
-          style={{
-            backgroundImage: 'url(/bgpattern.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
+        <div
+          className="relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden"
         >
+          {/* 🔥 Optimized LCP Image */}
+          <Image
+            src="/bgpattern.webp"
+            alt="background pattern"
+            fill
+            priority
+            fetchPriority="high"
+            quality={55}
+            sizes="(max-width: 480px) 480px,
+             (max-width: 768px) 768px,
+             (max-width: 1200px) 1200px,
+             100vw"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Content on Top of Image */}
           <div className="text-center space-y-6 relative z-10">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg">
               Specialized in Tax & Commercial Disputes
             </h1>
 
             <div className="flex flex-wrap gap-4 justify-center pt-2">
-              <Link href="/contact" className="bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+              <Link
+                href="/contact"
+                className="bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              >
                 Discuss your Issue
                 <ArrowRight className="h-5 w-5 text-[#163C0F]" />
               </Link>
-              <Link href="/practice-area" className="bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+
+              <Link
+                href="/practice-area"
+                className="bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              >
                 Our Expertise
               </Link>
             </div>
