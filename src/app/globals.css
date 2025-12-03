@@ -54,14 +54,19 @@
    Base styles
 -------------------------------- */
 @layer base {
+ body {
+  @apply font-sans bg-white text-black;
+  background-image: url('/bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
   body {
-    @apply font-sans bg-white text-black;
-    background-image: url('/bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
   }
+}
 
   /* Custom border utility replacement for border-border */
   .border-border {

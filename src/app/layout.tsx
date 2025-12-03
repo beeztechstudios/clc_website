@@ -141,12 +141,13 @@ export default function RootLayout({
 
         {/* Preload LCP images (as per SEO doc) */}
         <link rel="preload" as="image" href="/clc-logo.png" fetchPriority="high" />
-        <link rel="preload" as="image" href="/bgpattern.png" fetchPriority="high" />
+        {/* <link rel="preload" as="image" href="/bgpattern.png" fetchPriority="high" /> */}
+        <link rel="preload" as="image" href="/bgpattern.webp" fetchPriority="high" />
 
         {/* Preconnect + Preload Google Fonts (League Spartan as in SEO doc) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
+        {/* <link
           rel="preload"
           as="style"
           href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
@@ -154,6 +155,11 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+        /> */}
+       
+        <link
+          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
         />
         <noscript>
           <link
@@ -264,7 +270,8 @@ export default function RootLayout({
         </Script>
 
         {/* JSON-LD Structured Data (LocalBusiness + LegalService) */}
-        <Script id="local-business-ld" type="application/ld+json" strategy="beforeInteractive">
+       <Script id="local-schema" type="application/ld+json" strategy="afterInteractive">
+
           {JSON.stringify(localBusinessLD)}
         </Script>
 
