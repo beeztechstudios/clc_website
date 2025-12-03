@@ -52,6 +52,139 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$c
 "[project]/src/components/Hero.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// import { Button } from "@/components/ui/button";
+// import { ArrowRight, Scale, Shield, Award, Users, BookOpen, Gavel, Building, Calculator, Globe } from "lucide-react";
+// import Link from "next/link";
+// import Image from "next/image";
+// const Hero = () => {
+//   const practiceAreas = [
+//     { icon: Calculator, title: "Direct & Indirect Tax", description: "Comprehensive direct tax advisory and litigation services" },
+//     { icon: Gavel, title: "Commercial Disputes", description: "Strategic litigation and dispute resolution" },
+//     { icon: Building, title: "Regulatory Disputes", description: "Corporate compliance and regulatory advisory" },
+//     { icon: Globe, title: "International Tax", description: "Cross-border tax structuring and planning" },
+//   ];
+//   const whyChooseUs = [
+//     { icon: Scale, title: "Supreme Court Representation", description: "Extensive experience before the highest court of India" },
+//     { icon: Award, title: "20+ Years Experience", description: "Combined expertise in tax and commercial law" },
+//     { icon: Users, title: "Pan-India Network", description: "Legal professionals across all state capitals" },
+//     { icon: BookOpen, title: "Research-Driven Approach", description: "Solution-oriented legal strategies" },
+//   ];
+//   const teamMembers = [
+//     { name: "Vivek Sarin", designation: "Partner", image: "/vivek.webp" },
+//     { name: "Shreyas Srivastava", designation: "Partner", image: "/shreya.webp" },
+//   ];
+//   return (
+//     <div className="flex-1 bg-white">
+//       {/* Hero Section */}
+//       <section className="relative p-4 sm:p-6 md:p-8 overflow-hidden">
+//         <div className="relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden"
+//           style={{
+//             backgroundImage: 'url(/bgpattern.webp)',
+//             backgroundSize: 'cover',
+//             backgroundPosition: 'center',
+//             backgroundRepeat: 'no-repeat'
+//           }}
+//         >
+//           <div className="text-center space-y-6 relative z-10">
+//             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg">
+//               Specialized in Tax & Commercial Disputes
+//             </h1>
+//             <div className="flex flex-wrap gap-4 justify-center pt-2">
+//               <Link href="/contact" className="bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+//                 Discuss your Issue
+//                 <ArrowRight className="h-5 w-5 text-[#163C0F]" />
+//               </Link>
+//               <Link href="/practice-area" className="bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+//                 Our Expertise
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//       {/* Welcome Section */}
+//       <section className="p-2 sm:p-3 md:p-4 border-t border-gray-200 bg-gray-50">
+//         <div className="max-w-6xl mx-auto">
+//           <h2 className="text-xl sm:text-2xl font-bold poppins text-center text-[#163C0F] mb-4">Welcome to Commercial Law Chamber</h2>
+//           <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4">
+//             Founded in 2008, Commercial Law Chamber is a boutique law practice distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned Partners and a team of 15 adept associates, we operate through a robust national network of legal professionals.
+//           </p>
+//           <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed">
+//             Our philosophy is rooted in strategic thinking and rigorous legal research—crafting bespoke solutions that align with both legal precedents and commercial imperatives.
+//           </p>
+//         </div>
+//       </section>
+//       {/* Core Practice Areas */}
+//       <section className="p-4 sm:p-3 md:p-4 border-t border-gray-200 bg-gray-50">
+//         <div className="max-w-6xl mx-auto">
+//           <h2 className="text-2xl sm:text-3xl poppins font-bold text-[#163C0F] mb-3 text-center">Core Practice Areas</h2>
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+//             {practiceAreas.map((area, index) => (
+//               <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
+//                 <div className="flex items-start gap-4">
+//                   <div className="bg-[#B3C7AB] rounded-lg p-2 flex-shrink-0">
+//                     <area.icon className="h-8 w-8 text-[#163C0F]" />
+//                   </div>
+//                   <div>
+//                     <h3 className="font-bold text-[#163C0F] text-lg mb-1">{area.title}</h3>
+//                     <p className="text-sm text-gray-700 leading-relaxed">{area.description}</p>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//       {/* Team Section */}
+//       <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200">
+//         <div className="max-w-4xl mx-auto">
+//           <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3 text-center">Our Team</h2>
+//           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+//             {teamMembers.map((member, index) => (
+//               <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl overflow-hidden hover:shadow-xl transition-all hover:scale-[1.02]">
+//                 <div className="aspect-square bg-gray-200 relative">
+//                   <Image
+//                     src={member.image}
+//                     alt={`${member.name} - ${member.designation}`}
+//                     fill
+//                     className="object-cover"
+//                     placeholder="blur"
+//                     blurDataURL="/placeholder.png"
+//                   />
+//                 </div>
+//                 <div className="p-5 text-center bg-[#B3C7AB]">
+//                   <h3 className="font-bold text-[#163C0F] text-lg mb-1">{member.name}</h3>
+//                   <p className="text-sm font-medium text-[#163C0F]">{member.designation}</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//       {/* Why Choose Us */}
+//       <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200 bg-white">
+//         <div className="max-w-6xl mx-auto">
+//           <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3 text-center">Why Choose Commercial Law Chamber</h2>
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+//             {whyChooseUs.map((item, index) => (
+//               <div key={index} className="bg-[#E5E7EB] rounded-xl p-3 hover:shadow-lg transition-all">
+//                 <div className="flex items-start gap-4">
+//                   <div className="bg-[#B3C7AB] rounded-lg p-4 flex-shrink-0">
+//                     <item.icon className="h-7 w-7 text-[#163C0F]" />
+//                   </div>
+//                   <div>
+//                     <h3 className="font-semibold text-[#163C0F] text-[16px] mb-1">{item.title}</h3>
+//                     <p className="text-gray-700 text-[14px] leading-relaxed">{item.description}</p>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+// export default Hero;
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
@@ -136,73 +269,83 @@ const Hero = ()=>{
                 className: "relative p-4 sm:p-6 md:p-8 overflow-hidden",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden",
-                    style: {
-                        backgroundImage: 'url(/bgpattern.webp)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat'
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-center space-y-6 relative z-10",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg",
-                                children: "Specialized in Tax & Commercial Disputes"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/Hero.tsx",
-                                lineNumber: 39,
-                                columnNumber: 13
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-wrap gap-4 justify-center pt-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/contact",
-                                        className: "bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl",
-                                        children: [
-                                            "Discuss your Issue",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                className: "h-5 w-5 text-[#163C0F]"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 46,
-                                                columnNumber: 17
-                                            }, ("TURBOPACK compile-time value", void 0))
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/Hero.tsx",
-                                        lineNumber: 44,
-                                        columnNumber: 15
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/practice-area",
-                                        className: "bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl",
-                                        children: "Our Expertise"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Hero.tsx",
-                                        lineNumber: 48,
-                                        columnNumber: 15
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/Hero.tsx",
-                                lineNumber: 43,
-                                columnNumber: 13
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/Hero.tsx",
-                        lineNumber: 38,
-                        columnNumber: 11
-                    }, ("TURBOPACK compile-time value", void 0))
-                }, void 0, false, {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                            src: "/bgpattern.webp",
+                            alt: "Background pattern",
+                            fill: true,
+                            priority: true,
+                            fetchPriority: "high",
+                            quality: 55,
+                            sizes: "(max-width: 480px) 480px,   (max-width: 768px) 768px,   (max-width: 1200px) 1200px,   100vw",
+                            className: "absolute inset-0 w-full h-full object-cover"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Hero.tsx",
+                            lineNumber: 176,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-center space-y-6 relative z-10",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg",
+                                    children: "Specialized in Tax & Commercial Disputes"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Hero.tsx",
+                                    lineNumber: 192,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-wrap gap-4 justify-center pt-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/contact",
+                                            className: "bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl",
+                                            children: [
+                                                "Discuss your Issue",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                    className: "h-5 w-5 text-[#163C0F]"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Hero.tsx",
+                                                    lineNumber: 199,
+                                                    columnNumber: 17
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/Hero.tsx",
+                                            lineNumber: 197,
+                                            columnNumber: 15
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/practice-area",
+                                            className: "bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl",
+                                            children: "Our Expertise"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Hero.tsx",
+                                            lineNumber: 202,
+                                            columnNumber: 15
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Hero.tsx",
+                                    lineNumber: 196,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Hero.tsx",
+                            lineNumber: 191,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
-                    lineNumber: 30,
+                    lineNumber: 173,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 29,
+                lineNumber: 172,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -215,34 +358,34 @@ const Hero = ()=>{
                             children: "Welcome to Commercial Law Chamber"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 59,
+                            lineNumber: 213,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4",
-                            children: "Founded in 2008, Commercial Law Chamber is a boutique law practice distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned Partners and a team of 15 adept associates, we operate through a robust national network of legal professionals."
+                            children: "Founded in 2008, Commercial Law Chamber is a boutique law practice..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 60,
+                            lineNumber: 216,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-sm sm:text-base text-justify text-gray-600 leading-relaxed",
-                            children: "Our philosophy is rooted in strategic thinking and rigorous legal research—crafting bespoke solutions that align with both legal precedents and commercial imperatives."
+                            children: "Our philosophy is rooted in strategic thinking and rigorous legal research..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 63,
+                            lineNumber: 219,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
-                    lineNumber: 58,
+                    lineNumber: 212,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 57,
+                lineNumber: 211,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -255,7 +398,7 @@ const Hero = ()=>{
                             children: "Core Practice Areas"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 72,
+                            lineNumber: 228,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -271,12 +414,12 @@ const Hero = ()=>{
                                                     className: "h-8 w-8 text-[#163C0F]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Hero.tsx",
-                                                    lineNumber: 78,
+                                                    lineNumber: 235,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 234,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -286,7 +429,7 @@ const Hero = ()=>{
                                                         children: area.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Hero.tsx",
-                                                        lineNumber: 81,
+                                                        lineNumber: 238,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -294,40 +437,40 @@ const Hero = ()=>{
                                                         children: area.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Hero.tsx",
-                                                        lineNumber: 82,
+                                                        lineNumber: 239,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 237,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Hero.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 233,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, index, false, {
                                     fileName: "[project]/src/components/Hero.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 232,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 73,
+                            lineNumber: 230,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
-                    lineNumber: 71,
+                    lineNumber: 227,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 70,
+                lineNumber: 226,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -340,7 +483,7 @@ const Hero = ()=>{
                             children: "Our Team"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 94,
+                            lineNumber: 252,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -354,17 +497,18 @@ const Hero = ()=>{
                                                 src: member.image,
                                                 alt: `${member.name} - ${member.designation}`,
                                                 fill: true,
-                                                className: "object-cover",
-                                                placeholder: "blur",
-                                                blurDataURL: "/placeholder.png"
+                                                quality: 55,
+                                                loading: "lazy",
+                                                sizes: "(max-width: 480px) 300px,   (max-width: 768px) 350px,   500px",
+                                                className: "object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 260,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Hero.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 258,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -375,7 +519,7 @@ const Hero = ()=>{
                                                     children: member.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Hero.tsx",
-                                                    lineNumber: 109,
+                                                    lineNumber: 274,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -383,35 +527,35 @@ const Hero = ()=>{
                                                     children: member.designation
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Hero.tsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 275,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/Hero.tsx",
-                                            lineNumber: 108,
+                                            lineNumber: 273,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/src/components/Hero.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 256,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 95,
+                            lineNumber: 254,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
-                    lineNumber: 93,
+                    lineNumber: 251,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 92,
+                lineNumber: 250,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -424,7 +568,7 @@ const Hero = ()=>{
                             children: "Why Choose Commercial Law Chamber"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 121,
+                            lineNumber: 288,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -440,12 +584,12 @@ const Hero = ()=>{
                                                     className: "h-7 w-7 text-[#163C0F]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Hero.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 295,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 294,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -455,7 +599,7 @@ const Hero = ()=>{
                                                         children: item.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Hero.tsx",
-                                                        lineNumber: 130,
+                                                        lineNumber: 298,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -463,46 +607,46 @@ const Hero = ()=>{
                                                         children: item.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Hero.tsx",
-                                                        lineNumber: 131,
+                                                        lineNumber: 299,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Hero.tsx",
-                                                lineNumber: 129,
+                                                lineNumber: 297,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Hero.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 293,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, index, false, {
                                     fileName: "[project]/src/components/Hero.tsx",
-                                    lineNumber: 124,
+                                    lineNumber: 292,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 122,
+                            lineNumber: 290,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
-                    lineNumber: 120,
+                    lineNumber: 287,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 119,
+                lineNumber: 286,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Hero.tsx",
-        lineNumber: 27,
+        lineNumber: 169,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

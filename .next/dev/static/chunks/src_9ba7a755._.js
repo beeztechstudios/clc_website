@@ -1671,6 +1671,89 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "[project]/src/components/Layout.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// "use client";
+// import { ReactNode, useState, useEffect } from "react";
+// import { usePathname } from "next/navigation";
+// import Header from "@/components/Header";
+// import LeftSidebar from "@/components/LeftSidebar";
+// import RightSidebar from "@/components/RightSidebar";
+// import Footer from "@/components/Footer";
+// import { Button } from "@/components/ui/button";
+// import { Menu, X } from "lucide-react";
+// export default function Layout({ children }: { children: ReactNode }) {
+//   const pathname = usePathname();
+//   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+//   // Map path → section
+//   const routeToSection: Record<string, string> = {
+//     "": "home",
+//     "about": "about",
+//     "career": "career",
+//     "expertise": "expertise",
+//     "practice-area": "expertise",
+//     "team": "team",
+//     "insights": "insights",
+//     "contact": "contact",
+//     "news-updates": "content",
+//     "news": "content",
+//   };
+//   // Get active section
+//   const cleanPath = pathname.replace("/", "").trim();
+//   const activeSection = routeToSection[cleanPath] || "home";
+//   // Auto-close sidebar when route changes
+//   useEffect(() => {
+//     setIsMobileSidebarOpen(false);
+//   }, [pathname]);
+//   return (
+//     <div className="min-h-screen">
+//       <div className="max-w-7xl bg-[#B3C7AB] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+//         <Header />
+//         {/* MOBILE MENU BUTTON */}
+//         <div className="lg:hidden mb-4">
+//           <Button
+//             variant="outline"
+//             size="sm"
+//             onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
+//             className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+//           >
+//             {isMobileSidebarOpen ? <X className="h-4 w-4 mr-2" /> : <Menu className="h-4 w-4 mr-2" />}
+//             {isMobileSidebarOpen ? "Close Menu" : "Open Menu"}
+//           </Button>
+//         </div>
+//         <div className="flex flex-col lg:flex-row gap-4">
+//           {/* BACKDROP for mobile */}
+//           {isMobileSidebarOpen && (
+//             <div
+//               className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+//               onClick={() => setIsMobileSidebarOpen(false)}
+//             />
+//           )}
+//           {/* MOBILE SIDEBAR */}
+//           <div
+//             className={`lg:hidden transition-all duration-300 z-50 relative ${
+//               isMobileSidebarOpen ? "block" : "hidden"
+//             }`}
+//           >
+//             <LeftSidebar
+//               activeSection={activeSection}
+//               setActiveSection={() => setIsMobileSidebarOpen(false)}
+//             />
+//           </div>
+//           {/* DESKTOP SIDEBAR */}
+//           <div className="hidden lg:block lg:w-48 xl:w-52">
+//             <LeftSidebar activeSection={activeSection} />
+//           </div>
+//           {/* MAIN CONTENT */}
+//           <div className="flex-1 min-w-0">{children}</div>
+//           {/* RIGHT SIDEBAR */}
+//           <div className="hidden lg:block lg:w-60 xl:w-64">
+//             <RightSidebar />
+//           </div>
+//         </div>
+//         <Footer />
+//       </div>
+//     </div>
+//   );
+// }
 __turbopack_context__.s([
     "default",
     ()=>Layout
@@ -1700,6 +1783,17 @@ function Layout({ children }) {
     _s();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const [isMobileSidebarOpen, setIsMobileSidebarOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Pages that benefit from sidebars
+    const sidebarPages = [
+        "/",
+        "/insights",
+        "/practice-area",
+        "/expertise",
+        "/team",
+        "/news",
+        "/news-updates"
+    ];
+    const showSidebars = sidebarPages.some((path)=>pathname.startsWith(path));
     // Map path → section
     const routeToSection = {
         "": "home",
@@ -1713,10 +1807,8 @@ function Layout({ children }) {
         "news-updates": "content",
         "news": "content"
     };
-    // Get active section
     const cleanPath = pathname.replace("/", "").trim();
     const activeSection = routeToSection[cleanPath] || "home";
-    // Auto-close sidebar when route changes
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Layout.useEffect": ()=>{
             setIsMobileSidebarOpen(false);
@@ -1731,10 +1823,10 @@ function Layout({ children }) {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/components/Layout.tsx",
-                    lineNumber: 42,
+                    lineNumber: 149,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                showSidebars && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "lg:hidden mb-4",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                         variant: "outline",
@@ -1746,107 +1838,107 @@ function Layout({ children }) {
                                 className: "h-4 w-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Layout.tsx",
-                                lineNumber: 52,
-                                columnNumber: 36
+                                lineNumber: 160,
+                                columnNumber: 38
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                 className: "h-4 w-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Layout.tsx",
-                                lineNumber: 52,
-                                columnNumber: 69
+                                lineNumber: 160,
+                                columnNumber: 71
                             }, this),
                             isMobileSidebarOpen ? "Close Menu" : "Open Menu"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Layout.tsx",
-                        lineNumber: 46,
-                        columnNumber: 11
+                        lineNumber: 154,
+                        columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/Layout.tsx",
-                    lineNumber: 45,
-                    columnNumber: 9
+                    lineNumber: 153,
+                    columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col lg:flex-row gap-4",
                     children: [
-                        isMobileSidebarOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        isMobileSidebarOpen && showSidebars && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "fixed inset-0 bg-black/50 z-40 lg:hidden",
                             onClick: ()=>setIsMobileSidebarOpen(false)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Layout.tsx",
-                            lineNumber: 60,
+                            lineNumber: 170,
                             columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        showSidebars && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: `lg:hidden transition-all duration-300 z-50 relative ${isMobileSidebarOpen ? "block" : "hidden"}`,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LeftSidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 activeSection: activeSection,
                                 setActiveSection: ()=>setIsMobileSidebarOpen(false)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Layout.tsx",
-                                lineNumber: 72,
-                                columnNumber: 13
+                                lineNumber: 183,
+                                columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Layout.tsx",
-                            lineNumber: 67,
-                            columnNumber: 11
+                            lineNumber: 178,
+                            columnNumber: 13
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        showSidebars && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "hidden lg:block lg:w-48 xl:w-52",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LeftSidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 activeSection: activeSection
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Layout.tsx",
-                                lineNumber: 80,
-                                columnNumber: 13
+                                lineNumber: 193,
+                                columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Layout.tsx",
-                            lineNumber: 79,
-                            columnNumber: 11
+                            lineNumber: 192,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex-1 min-w-0",
                             children: children
                         }, void 0, false, {
                             fileName: "[project]/src/components/Layout.tsx",
-                            lineNumber: 84,
+                            lineNumber: 198,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        showSidebars && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "hidden lg:block lg:w-60 xl:w-64",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$RightSidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/src/components/Layout.tsx",
-                                lineNumber: 88,
-                                columnNumber: 13
+                                lineNumber: 203,
+                                columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Layout.tsx",
-                            lineNumber: 87,
-                            columnNumber: 11
+                            lineNumber: 202,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Layout.tsx",
-                    lineNumber: 57,
+                    lineNumber: 166,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/components/Layout.tsx",
-                    lineNumber: 92,
+                    lineNumber: 208,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Layout.tsx",
-            lineNumber: 41,
+            lineNumber: 148,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Layout.tsx",
-        lineNumber: 40,
+        lineNumber: 147,
         columnNumber: 5
     }, this);
 }
