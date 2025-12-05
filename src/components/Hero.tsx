@@ -141,7 +141,7 @@
 // };
 
 // export default Hero;
-import { ArrowRight, Scale, Award, Users, BookOpen, Gavel, Building, Calculator, Globe } from "lucide-react";
+import {ArrowRight, Scale, Shield, Award, Users, BookOpen, Briefcase, Gavel, Building, Calculator, Globe  } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -159,6 +159,9 @@ const Hero = () => {
     { icon: Users, title: "Pan-India Network", description: "Legal professionals across all state capitals" },
     { icon: BookOpen, title: "Research-Driven Approach", description: "Solution-oriented legal strategies" },
   ];
+  
+
+  
 
   const teamMembers = [
     { name: "Vivek Sarin", designation: "Partner", image: "/vivek.webp" },
@@ -208,17 +211,43 @@ const Hero = () => {
       </section>
 
       {/* WELCOME SECTION */}
-      <section className="p-2 sm:p-3 md:p-4 border-t border-gray-200 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl sm:text-2xl font-bold poppins text-center text-[#163C0F] mb-4">
-            Welcome to Commercial Law Chamber
-          </h2>
-          <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4">
-            Founded in 2008, Commercial Law Chamber is a boutique law practice...
-          </p>
-          <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed">
-            Our philosophy is rooted in strategic thinking and rigorous legal research...
-          </p>
+      <section className="p-2 sm:p-3 md:p-4 border-t border-gray-200">
+          <div className="bg-gray-50 rounded-lg p-2 sm:p-3 ">
+          <h2 className="text-xl sm:text-2xl font-bold poppins text-center text-[#163C0F] mb-4">Welcome to Commercial Law Chamber</h2>
+          <div className="grid lg:grid-cols-1 gap-4 sm:gap-6">
+            <div>
+              <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4">
+                Founded in 2008, Commercial Law Chamber is a boutique law practice distinguished by its deep
+                specialization in tax advisory and dispute resolution. With three seasoned Partners and a team
+                of 15 adept associates, we operate through a robust national network of legal professionals.
+              </p>
+              <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed">
+                Our philosophy is rooted in strategic thinking and rigorous legal research—crafting bespoke
+                solutions that align with both legal precedents and commercial imperatives.
+              </p>
+            </div>
+            <div className="bg-[#B3C7AB] rounded-lg p-5 sm:p-6 border-2 border-[#163C0F]">
+              <h3 className="font-bold poppins text-[#163C0F] mb-4 text-center text-lg sm:text-xl">Our Distinction</h3>
+              <ul className="space-y-3 text-sm sm:text-base text-justify text-black">
+                <li className="flex items-start gap-3">
+                  <Shield className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Specialized in tax and commercial disputes</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Users className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Pan-India legal network coverage</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <BookOpen className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Research-intensive approach</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Award className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
+                  <span className="font-medium">Supreme Court representation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -302,7 +331,32 @@ const Hero = () => {
               </div>
             ))}
           </div>
-
+            <div className="bg-white border-2 border-[#163C0F] rounded-xl p-6 sm:p-8">
+            <div className="text-center">
+              <h3 className="font-bold text-[#163C0F] mb-3 text-lg sm:text-xl">Legal Excellence</h3>
+              <p className="text-gray-700 text-sm sm:text-base mb-6">
+                Trusted by corporations and individuals across India for strategic legal solutions
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">2</div>
+                  <div className="text-sm font-medium text-gray-700">Partners</div>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">15+</div>
+                  <div className="text-sm font-medium text-gray-700">Associates</div>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">All</div>
+                  <div className="text-sm font-medium text-gray-700">State Capitals</div>
+                </div>
+                <div>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">2008</div>
+                  <div className="text-sm font-medium text-gray-700">Founded</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

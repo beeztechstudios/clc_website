@@ -77,6 +77,8 @@
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
     --color-red-600: #e40014;
+    --color-yellow-600: #cd8900;
+    --color-pink-400: #fb64b6;
     --color-pink-600: #e30076;
     --color-slate-900: #0f172b;
     --color-gray-50: #f9fafb;
@@ -149,6 +151,8 @@
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
       --color-red-600: lab(48.4493% 77.4328 61.5452);
+      --color-yellow-600: lab(62.7799% 22.4198 86.1544);
+      --color-pink-400: lab(64.5597% 64.3615 -12.7988);
       --color-pink-600: lab(49.5493% 79.8381 2.31769);
       --color-slate-900: lab(7.78673% 1.82346 -15.0537);
       --color-gray-50: lab(98.2596% -.247031 -.706708);
@@ -1593,6 +1597,10 @@
     background-color: var(--color-gray-300);
   }
 
+  .bg-pink-400 {
+    background-color: var(--color-pink-400);
+  }
+
   .bg-slate-900\/40 {
     background-color: #0f172b66;
   }
@@ -1629,6 +1637,10 @@
     .bg-white\/95 {
       background-color: color-mix(in oklab, var(--color-white) 95%, transparent);
     }
+  }
+
+  .bg-yellow-600 {
+    background-color: var(--color-yellow-600);
   }
 
   .fill-current {
@@ -3371,6 +3383,12 @@
   @media (min-width: 64rem) {
     .lg\:w-auto {
       width: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .lg\:grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
 

@@ -49,6 +49,53 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Layout$
 ;
 __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Layout$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__);
 }),
+"[project]/src/components/Team.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+// import TeamMember, { teamMembers } from "./TeamMember";
+// import Link from "next/link"
+// const Team = () => {
+//   return (
+//     <div className="flex-1 bg-white">
+//       {/* Team Header Section */}
+//       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+//         <div className="max-w-6xl mx-auto">
+//           <div className="text-center mb-8">
+//             <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
+//               Our Team
+//             </h1>
+//             <p className="text-base sm:text-lg text-gray-600">
+//               Meet Our Legal Experts
+//             </p>
+//           </div>
+//           {/* Team Grid */}
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+//             {Object.values(teamMembers).map((member) => (
+//               <TeamMember key={member.id} member={member} />
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+//       {/* Additional Info Section */}
+//       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
+//         <div className="max-w-3xl mx-auto text-center">
+//           <h2 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4">Join Our Team</h2>
+//           <p className="text-sm sm:text-base text-gray-600 mb-4">
+//             We're always looking for talented professionals to join our team. If you're passionate about 
+//             tax law and commercial litigation, we'd love to hear from you.
+//           </p>
+//           <Link 
+//             href="/career"
+//             className="text-[#163C0F] hover:text-[#1a4a1a] font-semibold transition-colors"
+//           >
+//             View Career Opportunities →
+//           </Link>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+// export default Team;
+}),
 "[project]/src/lib/utils.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -266,235 +313,6 @@ DialogDescription.displayName = __TURBOPACK__imported__module__$5b$project$5d2f$
 "[project]/src/components/TeamMember.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// import { Button } from "@/components/ui/button";
-// import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-// import { Award, Briefcase, GraduationCap, MapPin, User } from "lucide-react";
-// interface TeamMemberProps {
-//   member: {
-//     id: string;
-//     name: string;
-//     title: string;
-//     image: string;
-//     experience: string;
-//     shortDescription: string;
-//     fullDescription: string[];
-//     expertise: string[];
-//     location: string;
-//     education: string[];
-//   };
-//   variant?: "card" | "detailed";
-// }
-// const teamMembers = {
-//   vivek: {
-//     id: "vivek",
-//     name: "Vivek Sarin",
-//     title: "Founding Partner",
-//     image: "/images/vivek.jpg",
-//     experience: "20+ Years",
-//     location: "New Delhi",
-//     shortDescription: "Founding Partner with 20+ years of experience in tax litigation, regulatory compliance, and commercial disputes across Supreme Court and High Courts.",
-//     fullDescription: [
-//       "Vivek Sarin is the Founding Partner of Commercial Law Chambers, a New Delhi-based boutique firm specializing in Tax, Regulatory, and Commercial Disputes. With over 20 years of experience, he represents clients in high-stakes litigation before the Supreme Court, multiple High Courts, tribunals including ITAT, CESTAT, VAT Appellate Tribunals, and forums such as NCLT.",
-//       "His expertise spans constitutional tax challenges, shareholder disputes, and CIRP matters, as well as regulatory pricing issues involving NPPA, TRAI, AERA, and Electricity Commissions. He advises leading companies across sectors—FMCG, Healthcare, Technology, and more—on CGST, VAT, Customs, Income Tax, and compliance strategy.",
-//       "His blend of deep domestic insight and global perspective makes him a trusted advisor in complex legal landscapes."
-//     ],
-//     expertise: [
-//       "Constitutional Tax Challenges",
-//       "High Court & Supreme Court Litigation",
-//       "Regulatory & Compliance Strategy",
-//       "CIRP Matters",
-//       "Shareholder Disputes"
-//     ],
-//     education: [
-//       "Bachelor of Laws (LLB)",
-//       "Member, Bar Council of India"
-//     ]
-//   },
-//   shreyas: {
-//     id: "shreyas",
-//     name: "Shreyas Srivastava",
-//     title: "Partner",
-//     image: "/images/shreya.jpg",
-//     experience: "12+ Years",
-//     location: "New Delhi",
-//     shortDescription: "Partner with 12+ years of experience in direct and indirect taxation, international trade remedies, and cross-border tax advisory matters.",
-//     fullDescription: [
-//       "Shreyas is a seasoned counsel with over 12 years of experience in direct and indirect taxation. At Commercial Law Chambers, he leads complex litigation and advisory mandates with a strategic focus on Income Tax, GST, and Customs matters, including international trade remedies such as anti-dumping and safeguard duties.",
-//       "Shreyas has represented clients across a wide range of industries including FMCG, Consumer Durables, Aviation, Real Estate, Banking & Finance, Insurance, and Food & Beverage. His practice spans high-stakes tax disputes, regulatory representation, and advisory on cross-border trade issues.",
-//       "Known for his research-driven and solution-oriented approach, Shreyas combines legal depth with industry insight to deliver pragmatic and effective outcomes for clients across forums including tribunals, High Courts, and the Supreme Court."
-//     ],
-//     expertise: [
-//       "Income Tax & GST",
-//       "International Trade Remedies",
-//       "Cross-border Tax Advisory",
-//       "High-stakes Tax Disputes",
-//       "Regulatory Representation"
-//     ],
-//     education: [
-//       "Bachelor of Laws (LLB)",
-//       "Member, Bar Council of India"
-//     ]
-//   }
-// };
-// export { teamMembers };
-// const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
-//   if (variant === "detailed") {
-//     return (
-//       <div className="bg-white p-6">
-//         <div className="max-w-4xl mx-auto">
-//           {/* Header */}
-//           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
-//             <div className="w-48 h-48 relative">
-//               {member.image ? (
-//                 <img
-//                   src={member.image}
-//                   alt={`${member.name} - ${member.title} at Commercial Law Chamber`}
-//                   className="w-full h-full object-cover rounded-lg border-2 border-[#B3C7AB]"
-//                   loading="lazy"
-//                   decoding="async"
-//                 />
-//               ) : (
-//                 <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center border-2 border-[#B3C7AB]">
-//                   <User className="w-24 h-24 text-gray-400" />
-//                 </div>
-//               )}
-//             </div>
-//             <div className="flex-1 text-center md:text-left">
-//               <h1 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-2">{member.name}</h1>
-//               <p className="text-[#163C0F] font-semibold mb-4">{member.title}</p>
-//               <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-6">
-//                 <span className="flex items-center">
-//                   <Briefcase className="w-4 h-4 mr-2" />
-//                   {member.experience}
-//                 </span>
-//                 <span className="flex items-center">
-//                   <MapPin className="w-4 h-4 mr-2" />
-//                   {member.location}
-//                 </span>
-//               </div>
-//               <div className="flex flex-wrap gap-2">
-//                 {member.expertise.slice(0, 3).map((skill, index) => (
-//                   <span
-//                     key={index}
-//                     className="bg-[#B3C7AB] text-[#163C0F] text-sm px-3 py-1 rounded-full font-medium"
-//                   >
-//                     {skill}
-//                   </span>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-//           {/* Main Content */}
-//           <div className="space-y-6">
-//             {/* About */}
-//             <section>
-//               <h2 className="text-xl font-bold poppins text-[#163C0F] mb-4">About</h2>
-//               <div className="space-y-4">
-//                 {member.fullDescription.map((paragraph, index) => (
-//                   <p key={index} className="text-sm sm:text-base text-gray-600 leading-relaxed">
-//                     {paragraph}
-//                   </p>
-//                 ))}
-//               </div>
-//             </section>
-//             {/* Expertise */}
-//             <section>
-//               <h2 className="text-xl font-bold poppins text-[#163C0F] mb-4">Areas of Expertise</h2>
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-//                 {member.expertise.map((skill, index) => (
-//                   <div
-//                     key={index}
-//                     className="flex items-center bg-gray-50 rounded-lg p-3 border border-gray-200"
-//                   >
-//                     <Award className="w-5 h-5 text-[#163C0F] mr-3 flex-shrink-0" />
-//                     <span className="text-sm text-gray-700">{skill}</span>
-//                   </div>
-//                 ))}
-//               </div>
-//             </section>
-//             {/* Education */}
-//             <section>
-//               <h2 className="text-xl font-bold poppins text-[#163C0F] mb-4">Education & Qualifications</h2>
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-//                 {member.education.map((edu, index) => (
-//                   <div
-//                     key={index}
-//                     className="flex items-center bg-gray-50 rounded-lg p-3 border border-gray-200"
-//                   >
-//                     <GraduationCap className="w-5 h-5 text-[#163C0F] mr-3 flex-shrink-0" />
-//                     <span className="text-sm text-gray-700">{edu}</span>
-//                   </div>
-//                 ))}
-//               </div>
-//             </section>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-//   return (
-//     <div className="bg-white border border-gray-200 rounded-lg p-5 hover:border-[#163C0F] transition-all flex flex-col h-full">
-//       <div className="text-center mb-4">
-//         {member.image ? (
-//           <img
-//             src={member.image}
-//             alt={`${member.name} - ${member.title} at Commercial Law Chamber`}
-//             className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-[#B3C7AB]"
-//             loading="lazy"
-//             decoding="async"
-//           />
-//         ) : (
-//           <div className="w-32 h-32 mx-auto bg-gray-200 rounded-full flex items-center justify-center mb-4 border-2 border-[#B3C7AB]">
-//             <User className="w-16 h-16 text-gray-400" />
-//           </div>
-//         )}
-//         <h3 className="text-lg font-bold text-[#163C0F] mb-1">{member.name}</h3>
-//         <p className="text-[#163C0F] font-medium mb-3">{member.title}</p>
-//         <div className="flex justify-center gap-4 text-xs sm:text-sm text-gray-600 mb-4">
-//           <span className="flex items-center">
-//             <Briefcase className="w-4 h-4 mr-1" />
-//             {member.experience}
-//           </span>
-//           <span className="flex items-center">
-//             <MapPin className="w-4 h-4 mr-1" />
-//             {member.location}
-//           </span>
-//         </div>
-//       </div>
-//       <div className="flex-grow flex flex-col">
-//         <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-//           {member.shortDescription}
-//         </p>
-//         <div className="flex flex-wrap gap-2 mb-4">
-//           {member.expertise.slice(0, 3).map((skill, index) => (
-//             <span
-//               key={index}
-//               className="bg-[#B3C7AB] text-[#163C0F] text-xs px-3 py-1 rounded-full font-medium"
-//             >
-//               {skill}
-//             </span>
-//           ))}
-//         </div>
-//         <Dialog>
-//           <DialogTrigger asChild>
-//             <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] text-white mt-auto">
-//               View Profile
-//             </Button>
-//           </DialogTrigger>
-//           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-//             <DialogHeader>
-//               <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Team Member Profile</DialogTitle>
-//               <DialogDescription>
-//                 <TeamMember member={member} variant="detailed" />
-//               </DialogDescription>
-//             </DialogHeader>
-//           </DialogContent>
-//         </Dialog>
-//       </div>
-//     </div>
-//   );
-// };
-// export default TeamMember;
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__,
@@ -518,7 +336,7 @@ const teamMembers = {
         id: "vivek",
         name: "Vivek Sarin",
         title: "Founding Partner",
-        image: "/vivek.webp",
+        image: "/images/vivek.jpg",
         experience: "20+ Years",
         location: "New Delhi",
         shortDescription: "Founding Partner with 20+ years of experience in tax litigation, regulatory compliance, and commercial disputes across Supreme Court and High Courts.",
@@ -543,7 +361,7 @@ const teamMembers = {
         id: "shreyas",
         name: "Shreyas Srivastava",
         title: "Partner",
-        image: "/shreya.webp",
+        image: "/images/shreya.jpg",
         experience: "12+ Years",
         location: "New Delhi",
         shortDescription: "Partner with 12+ years of experience in direct and indirect taxation, international trade remedies, and cross-border tax advisory matters.",
@@ -586,7 +404,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                     decoding: "async"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeamMember.tsx",
-                                    lineNumber: 326,
+                                    lineNumber: 85,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "w-full h-full bg-gray-200 rounded-lg flex items-center justify-center border-2 border-[#B3C7AB]",
@@ -594,17 +412,17 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         className: "w-24 h-24 text-gray-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 335,
+                                        lineNumber: 94,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeamMember.tsx",
-                                    lineNumber: 334,
+                                    lineNumber: 93,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 324,
+                                lineNumber: 83,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -615,7 +433,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         children: member.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 340,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -623,7 +441,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         children: member.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 341,
+                                        lineNumber: 100,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,14 +454,14 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                         className: "w-4 h-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                                        lineNumber: 344,
+                                                        lineNumber: 103,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     member.experience
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 343,
+                                                lineNumber: 102,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -653,20 +471,20 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                         className: "w-4 h-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                                        lineNumber: 348,
+                                                        lineNumber: 107,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     member.location
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 347,
+                                                lineNumber: 106,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 342,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -676,24 +494,24 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                 children: skill
                                             }, index, false, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 354,
+                                                lineNumber: 113,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 352,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 339,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 323,
+                        lineNumber: 82,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -706,7 +524,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         children: "About"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 369,
+                                        lineNumber: 128,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -716,18 +534,18 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                 children: paragraph
                                             }, index, false, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 372,
+                                                lineNumber: 131,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 370,
+                                        lineNumber: 129,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 368,
+                                lineNumber: 127,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -737,7 +555,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         children: "Areas of Expertise"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 381,
+                                        lineNumber: 140,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -749,7 +567,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                         className: "w-5 h-5 text-[#163C0F] mr-3 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                                        lineNumber: 388,
+                                                        lineNumber: 147,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -757,24 +575,24 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                         children: skill
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                                        lineNumber: 389,
+                                                        lineNumber: 148,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 384,
+                                                lineNumber: 143,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 382,
+                                        lineNumber: 141,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 380,
+                                lineNumber: 139,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -784,7 +602,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         children: "Education & Qualifications"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 397,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -796,7 +614,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                         className: "w-5 h-5 text-[#163C0F] mr-3 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                                        lineNumber: 404,
+                                                        lineNumber: 163,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -804,41 +622,41 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                         children: edu
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                                        lineNumber: 405,
+                                                        lineNumber: 164,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 400,
+                                                lineNumber: 159,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 398,
+                                        lineNumber: 157,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 396,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 366,
+                        lineNumber: 125,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/TeamMember.tsx",
-                lineNumber: 321,
+                lineNumber: 80,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/src/components/TeamMember.tsx",
-            lineNumber: 320,
+            lineNumber: 79,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0));
     }
@@ -856,7 +674,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                         decoding: "async"
                     }, void 0, false, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 420,
+                        lineNumber: 179,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-32 h-32 mx-auto bg-gray-200 rounded-full flex items-center justify-center mb-4 border-2 border-[#B3C7AB]",
@@ -864,12 +682,12 @@ const TeamMember = ({ member, variant = "card" })=>{
                             className: "w-16 h-16 text-gray-400"
                         }, void 0, false, {
                             fileName: "[project]/src/components/TeamMember.tsx",
-                            lineNumber: 429,
+                            lineNumber: 188,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 428,
+                        lineNumber: 187,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -877,7 +695,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                         children: member.name
                     }, void 0, false, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 432,
+                        lineNumber: 191,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -885,7 +703,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                         children: member.title
                     }, void 0, false, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 433,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -898,14 +716,14 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         className: "w-4 h-4 mr-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 436,
+                                        lineNumber: 195,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     member.experience
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 435,
+                                lineNumber: 194,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -915,26 +733,26 @@ const TeamMember = ({ member, variant = "card" })=>{
                                         className: "w-4 h-4 mr-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/TeamMember.tsx",
-                                        lineNumber: 440,
+                                        lineNumber: 199,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     member.location
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 439,
+                                lineNumber: 198,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 434,
+                        lineNumber: 193,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/TeamMember.tsx",
-                lineNumber: 418,
+                lineNumber: 177,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -945,7 +763,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                         children: member.shortDescription
                     }, void 0, false, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 447,
+                        lineNumber: 206,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -955,12 +773,12 @@ const TeamMember = ({ member, variant = "card" })=>{
                                 children: skill
                             }, index, false, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 453,
+                                lineNumber: 212,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 451,
+                        lineNumber: 210,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -972,16 +790,16 @@ const TeamMember = ({ member, variant = "card" })=>{
                                     children: "View Profile"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/TeamMember.tsx",
-                                    lineNumber: 464,
+                                    lineNumber: 223,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 463,
+                                lineNumber: 222,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DialogContent"], {
-                                className: "max-w-4xl max-h-[90vh] bg-white overflow-y-auto",
+                                className: "max-w-4xl max-h-[90vh] overflow-y-auto",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DialogHeader"], {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DialogTitle"], {
@@ -989,7 +807,7 @@ const TeamMember = ({ member, variant = "card" })=>{
                                             children: "Team Member Profile"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeamMember.tsx",
-                                            lineNumber: 470,
+                                            lineNumber: 229,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -998,211 +816,45 @@ const TeamMember = ({ member, variant = "card" })=>{
                                                 variant: "detailed"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                                lineNumber: 472,
+                                                lineNumber: 231,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/TeamMember.tsx",
-                                            lineNumber: 471,
+                                            lineNumber: 230,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/TeamMember.tsx",
-                                    lineNumber: 469,
+                                    lineNumber: 228,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/TeamMember.tsx",
-                                lineNumber: 468,
+                                lineNumber: 227,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/TeamMember.tsx",
-                        lineNumber: 462,
+                        lineNumber: 221,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/TeamMember.tsx",
-                lineNumber: 446,
+                lineNumber: 205,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/TeamMember.tsx",
-        lineNumber: 417,
+        lineNumber: 176,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
 const __TURBOPACK__default__export__ = TeamMember;
-}),
-"[project]/src/components/Team.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
-
-// import TeamMember, { teamMembers } from "./TeamMember";
-// import Link from "next/link"
-// const Team = () => {
-//   return (
-//     <div className="flex-1 bg-white">
-//       {/* Team Header Section */}
-//       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
-//         <div className="max-w-6xl mx-auto">
-//           <div className="text-center mb-8">
-//             <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-//               Our Team
-//             </h1>
-//             <p className="text-base sm:text-lg text-gray-600">
-//               Meet Our Legal Experts
-//             </p>
-//           </div>
-//           {/* Team Grid */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//             {Object.values(teamMembers).map((member) => (
-//               <TeamMember key={member.id} member={member} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//       {/* Additional Info Section */}
-//       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
-//         <div className="max-w-3xl mx-auto text-center">
-//           <h2 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4">Join Our Team</h2>
-//           <p className="text-sm sm:text-base text-gray-600 mb-4">
-//             We're always looking for talented professionals to join our team. If you're passionate about 
-//             tax law and commercial litigation, we'd love to hear from you.
-//           </p>
-//           <Link 
-//             href="/career"
-//             className="text-[#163C0F] hover:text-[#1a4a1a] font-semibold transition-colors"
-//           >
-//             View Career Opportunities →
-//           </Link>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-// export default Team;
-__turbopack_context__.s([
-    "default",
-    ()=>__TURBOPACK__default__export__
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TeamMember$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/TeamMember.tsx [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
-;
-;
-;
-const Team = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex-1 bg-white",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "p-6 sm:p-8 md:p-12 border-b border-gray-200",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-6xl mx-auto",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "text-center mb-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    className: "text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3",
-                                    children: "Our Team"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/Team.tsx",
-                                    lineNumber: 60,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base sm:text-lg text-gray-600",
-                                    children: "Meet Our Legal Experts"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/Team.tsx",
-                                    lineNumber: 63,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/Team.tsx",
-                            lineNumber: 59,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "grid grid-cols-1 md:grid-cols-2 gap-6",
-                            children: Object.values(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TeamMember$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["teamMembers"]).map((member)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TeamMember$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    member: member
-                                }, member.id, false, {
-                                    fileName: "[project]/src/components/Team.tsx",
-                                    lineNumber: 71,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)))
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Team.tsx",
-                            lineNumber: 69,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/Team.tsx",
-                    lineNumber: 58,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
-                fileName: "[project]/src/components/Team.tsx",
-                lineNumber: 57,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-3xl mx-auto text-center",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4",
-                            children: "Join Our Team"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Team.tsx",
-                            lineNumber: 80,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm sm:text-base text-gray-600 mb-4",
-                            children: "We're always looking for talented professionals to join our team. If you're passionate about tax law and commercial litigation, we'd love to hear from you."
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Team.tsx",
-                            lineNumber: 81,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/career",
-                            className: "text-[#163C0F] hover:text-[#1a4a1a] font-semibold transition-colors",
-                            children: "View Career Opportunities →"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Team.tsx",
-                            lineNumber: 85,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/Team.tsx",
-                    lineNumber: 79,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
-                fileName: "[project]/src/components/Team.tsx",
-                lineNumber: 78,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/Team.tsx",
-        lineNumber: 55,
-        columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
-};
-const __TURBOPACK__default__export__ = Team;
 }),
 "[project]/src/app/team/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -1307,4 +959,4 @@ __turbopack_context__.n(__turbopack_context__.i("[project]/src/app/team/page.tsx
 }),
 ];
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__d01bf94f._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__7a17730c._.js.map
