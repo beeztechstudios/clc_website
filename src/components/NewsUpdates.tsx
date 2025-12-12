@@ -114,17 +114,17 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
 
                   <div className="flex flex-col flex-grow">
                     {/* Image */}
-                    {news.featuredImage && (
+                    {news.featuredImage?.asset?._ref && (
                       <Link
                         href={`/news/${news.slug.current}`}
                         className="mb-4 block"
                       >
                         <Image
-                          src={urlFor(news.featuredImage)
-                            .width(600)
-                            .height(300)
-                            .fit("crop")
-                            .url()}
+                          src={
+  news.featuredImage?.asset?._ref
+    ? urlFor(news.featuredImage).width(600).height(300).fit("crop").url()
+    : "/placeholder.png"
+}
                           alt={news.featuredImage.alt || news.title}
                           width={600}
                           height={300}

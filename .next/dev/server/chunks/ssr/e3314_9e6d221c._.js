@@ -1,0 +1,12913 @@
+module.exports = [
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/formatDistance.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatDistance",
+    ()=>formatDistance
+]);
+const formatDistanceLocale = {
+    lessThanXSeconds: {
+        one: "less than a second",
+        other: "less than {{count}} seconds"
+    },
+    xSeconds: {
+        one: "1 second",
+        other: "{{count}} seconds"
+    },
+    halfAMinute: "half a minute",
+    lessThanXMinutes: {
+        one: "less than a minute",
+        other: "less than {{count}} minutes"
+    },
+    xMinutes: {
+        one: "1 minute",
+        other: "{{count}} minutes"
+    },
+    aboutXHours: {
+        one: "about 1 hour",
+        other: "about {{count}} hours"
+    },
+    xHours: {
+        one: "1 hour",
+        other: "{{count}} hours"
+    },
+    xDays: {
+        one: "1 day",
+        other: "{{count}} days"
+    },
+    aboutXWeeks: {
+        one: "about 1 week",
+        other: "about {{count}} weeks"
+    },
+    xWeeks: {
+        one: "1 week",
+        other: "{{count}} weeks"
+    },
+    aboutXMonths: {
+        one: "about 1 month",
+        other: "about {{count}} months"
+    },
+    xMonths: {
+        one: "1 month",
+        other: "{{count}} months"
+    },
+    aboutXYears: {
+        one: "about 1 year",
+        other: "about {{count}} years"
+    },
+    xYears: {
+        one: "1 year",
+        other: "{{count}} years"
+    },
+    overXYears: {
+        one: "over 1 year",
+        other: "over {{count}} years"
+    },
+    almostXYears: {
+        one: "almost 1 year",
+        other: "almost {{count}} years"
+    }
+};
+const formatDistance = (token, count, options)=>{
+    let result;
+    const tokenValue = formatDistanceLocale[token];
+    if (typeof tokenValue === "string") {
+        result = tokenValue;
+    } else if (count === 1) {
+        result = tokenValue.one;
+    } else {
+        result = tokenValue.other.replace("{{count}}", count.toString());
+    }
+    if (options?.addSuffix) {
+        if (options.comparison && options.comparison > 0) {
+            return "in " + result;
+        } else {
+            return result + " ago";
+        }
+    }
+    return result;
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildFormatLongFn.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "buildFormatLongFn",
+    ()=>buildFormatLongFn
+]);
+function buildFormatLongFn(args) {
+    return (options = {})=>{
+        // TODO: Remove String()
+        const width = options.width ? String(options.width) : args.defaultWidth;
+        const format = args.formats[width] || args.formats[args.defaultWidth];
+        return format;
+    };
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/formatLong.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatLong",
+    ()=>formatLong
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildFormatLongFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildFormatLongFn.js [app-ssr] (ecmascript)");
+;
+const dateFormats = {
+    full: "EEEE, MMMM do, y",
+    long: "MMMM do, y",
+    medium: "MMM d, y",
+    short: "MM/dd/yyyy"
+};
+const timeFormats = {
+    full: "h:mm:ss a zzzz",
+    long: "h:mm:ss a z",
+    medium: "h:mm:ss a",
+    short: "h:mm a"
+};
+const dateTimeFormats = {
+    full: "{{date}} 'at' {{time}}",
+    long: "{{date}} 'at' {{time}}",
+    medium: "{{date}}, {{time}}",
+    short: "{{date}}, {{time}}"
+};
+const formatLong = {
+    date: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildFormatLongFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildFormatLongFn"])({
+        formats: dateFormats,
+        defaultWidth: "full"
+    }),
+    time: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildFormatLongFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildFormatLongFn"])({
+        formats: timeFormats,
+        defaultWidth: "full"
+    }),
+    dateTime: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildFormatLongFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildFormatLongFn"])({
+        formats: dateTimeFormats,
+        defaultWidth: "full"
+    })
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/formatRelative.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatRelative",
+    ()=>formatRelative
+]);
+const formatRelativeLocale = {
+    lastWeek: "'last' eeee 'at' p",
+    yesterday: "'yesterday at' p",
+    today: "'today at' p",
+    tomorrow: "'tomorrow at' p",
+    nextWeek: "eeee 'at' p",
+    other: "P"
+};
+const formatRelative = (token, _date, _baseDate, _options)=>formatRelativeLocale[token];
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildLocalizeFn.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * The localize function argument callback which allows to convert raw value to
+ * the actual type.
+ *
+ * @param value - The value to convert
+ *
+ * @returns The converted value
+ */ /**
+ * The map of localized values for each width.
+ */ /**
+ * The index type of the locale unit value. It types conversion of units of
+ * values that don't start at 0 (i.e. quarters).
+ */ /**
+ * Converts the unit value to the tuple of values.
+ */ /**
+ * The tuple of localized era values. The first element represents BC,
+ * the second element represents AD.
+ */ /**
+ * The tuple of localized quarter values. The first element represents Q1.
+ */ /**
+ * The tuple of localized day values. The first element represents Sunday.
+ */ /**
+ * The tuple of localized month values. The first element represents January.
+ */ __turbopack_context__.s([
+    "buildLocalizeFn",
+    ()=>buildLocalizeFn
+]);
+function buildLocalizeFn(args) {
+    return (value, options)=>{
+        const context = options?.context ? String(options.context) : "standalone";
+        let valuesArray;
+        if (context === "formatting" && args.formattingValues) {
+            const defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
+            const width = options?.width ? String(options.width) : defaultWidth;
+            valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
+        } else {
+            const defaultWidth = args.defaultWidth;
+            const width = options?.width ? String(options.width) : args.defaultWidth;
+            valuesArray = args.values[width] || args.values[defaultWidth];
+        }
+        const index = args.argumentCallback ? args.argumentCallback(value) : value;
+        // @ts-expect-error - For some reason TypeScript just don't want to match it, no matter how hard we try. I challenge you to try to remove it!
+        return valuesArray[index];
+    };
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/localize.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "localize",
+    ()=>localize
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildLocalizeFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildLocalizeFn.js [app-ssr] (ecmascript)");
+;
+const eraValues = {
+    narrow: [
+        "B",
+        "A"
+    ],
+    abbreviated: [
+        "BC",
+        "AD"
+    ],
+    wide: [
+        "Before Christ",
+        "Anno Domini"
+    ]
+};
+const quarterValues = {
+    narrow: [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    abbreviated: [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+    ],
+    wide: [
+        "1st quarter",
+        "2nd quarter",
+        "3rd quarter",
+        "4th quarter"
+    ]
+};
+// Note: in English, the names of days of the week and months are capitalized.
+// If you are making a new locale based on this one, check if the same is true for the language you're working on.
+// Generally, formatted dates should look like they are in the middle of a sentence,
+// e.g. in Spanish language the weekdays and months should be in the lowercase.
+const monthValues = {
+    narrow: [
+        "J",
+        "F",
+        "M",
+        "A",
+        "M",
+        "J",
+        "J",
+        "A",
+        "S",
+        "O",
+        "N",
+        "D"
+    ],
+    abbreviated: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ],
+    wide: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ]
+};
+const dayValues = {
+    narrow: [
+        "S",
+        "M",
+        "T",
+        "W",
+        "T",
+        "F",
+        "S"
+    ],
+    short: [
+        "Su",
+        "Mo",
+        "Tu",
+        "We",
+        "Th",
+        "Fr",
+        "Sa"
+    ],
+    abbreviated: [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+    ],
+    wide: [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ]
+};
+const dayPeriodValues = {
+    narrow: {
+        am: "a",
+        pm: "p",
+        midnight: "mi",
+        noon: "n",
+        morning: "morning",
+        afternoon: "afternoon",
+        evening: "evening",
+        night: "night"
+    },
+    abbreviated: {
+        am: "AM",
+        pm: "PM",
+        midnight: "midnight",
+        noon: "noon",
+        morning: "morning",
+        afternoon: "afternoon",
+        evening: "evening",
+        night: "night"
+    },
+    wide: {
+        am: "a.m.",
+        pm: "p.m.",
+        midnight: "midnight",
+        noon: "noon",
+        morning: "morning",
+        afternoon: "afternoon",
+        evening: "evening",
+        night: "night"
+    }
+};
+const formattingDayPeriodValues = {
+    narrow: {
+        am: "a",
+        pm: "p",
+        midnight: "mi",
+        noon: "n",
+        morning: "in the morning",
+        afternoon: "in the afternoon",
+        evening: "in the evening",
+        night: "at night"
+    },
+    abbreviated: {
+        am: "AM",
+        pm: "PM",
+        midnight: "midnight",
+        noon: "noon",
+        morning: "in the morning",
+        afternoon: "in the afternoon",
+        evening: "in the evening",
+        night: "at night"
+    },
+    wide: {
+        am: "a.m.",
+        pm: "p.m.",
+        midnight: "midnight",
+        noon: "noon",
+        morning: "in the morning",
+        afternoon: "in the afternoon",
+        evening: "in the evening",
+        night: "at night"
+    }
+};
+const ordinalNumber = (dirtyNumber, _options)=>{
+    const number = Number(dirtyNumber);
+    // If ordinal numbers depend on context, for example,
+    // if they are different for different grammatical genders,
+    // use `options.unit`.
+    //
+    // `unit` can be 'year', 'quarter', 'month', 'week', 'date', 'dayOfYear',
+    // 'day', 'hour', 'minute', 'second'.
+    const rem100 = number % 100;
+    if (rem100 > 20 || rem100 < 10) {
+        switch(rem100 % 10){
+            case 1:
+                return number + "st";
+            case 2:
+                return number + "nd";
+            case 3:
+                return number + "rd";
+        }
+    }
+    return number + "th";
+};
+const localize = {
+    ordinalNumber,
+    era: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildLocalizeFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildLocalizeFn"])({
+        values: eraValues,
+        defaultWidth: "wide"
+    }),
+    quarter: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildLocalizeFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildLocalizeFn"])({
+        values: quarterValues,
+        defaultWidth: "wide",
+        argumentCallback: (quarter)=>quarter - 1
+    }),
+    month: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildLocalizeFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildLocalizeFn"])({
+        values: monthValues,
+        defaultWidth: "wide"
+    }),
+    day: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildLocalizeFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildLocalizeFn"])({
+        values: dayValues,
+        defaultWidth: "wide"
+    }),
+    dayPeriod: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildLocalizeFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildLocalizeFn"])({
+        values: dayPeriodValues,
+        defaultWidth: "wide",
+        formattingValues: formattingDayPeriodValues,
+        defaultFormattingWidth: "wide"
+    })
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildMatchFn.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "buildMatchFn",
+    ()=>buildMatchFn
+]);
+function buildMatchFn(args) {
+    return (string, options = {})=>{
+        const width = options.width;
+        const matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
+        const matchResult = string.match(matchPattern);
+        if (!matchResult) {
+            return null;
+        }
+        const matchedString = matchResult[0];
+        const parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
+        const key = Array.isArray(parsePatterns) ? findIndex(parsePatterns, (pattern)=>pattern.test(matchedString)) : findKey(parsePatterns, (pattern)=>pattern.test(matchedString));
+        let value;
+        value = args.valueCallback ? args.valueCallback(key) : key;
+        value = options.valueCallback ? options.valueCallback(value) : value;
+        const rest = string.slice(matchedString.length);
+        return {
+            value,
+            rest
+        };
+    };
+}
+function findKey(object, predicate) {
+    for(const key in object){
+        if (Object.prototype.hasOwnProperty.call(object, key) && predicate(object[key])) {
+            return key;
+        }
+    }
+    return undefined;
+}
+function findIndex(array, predicate) {
+    for(let key = 0; key < array.length; key++){
+        if (predicate(array[key])) {
+            return key;
+        }
+    }
+    return undefined;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildMatchPatternFn.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "buildMatchPatternFn",
+    ()=>buildMatchPatternFn
+]);
+function buildMatchPatternFn(args) {
+    return (string, options = {})=>{
+        const matchResult = string.match(args.matchPattern);
+        if (!matchResult) return null;
+        const matchedString = matchResult[0];
+        const parseResult = string.match(args.parsePattern);
+        if (!parseResult) return null;
+        let value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
+        // [TODO] I challenge you to fix the type
+        value = options.valueCallback ? options.valueCallback(value) : value;
+        const rest = string.slice(matchedString.length);
+        return {
+            value,
+            rest
+        };
+    };
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/match.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "match",
+    ()=>match
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildMatchFn.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchPatternFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/_lib/buildMatchPatternFn.js [app-ssr] (ecmascript)");
+;
+;
+const matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
+const parseOrdinalNumberPattern = /\d+/i;
+const matchEraPatterns = {
+    narrow: /^(b|a)/i,
+    abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
+    wide: /^(before christ|before common era|anno domini|common era)/i
+};
+const parseEraPatterns = {
+    any: [
+        /^b/i,
+        /^(a|c)/i
+    ]
+};
+const matchQuarterPatterns = {
+    narrow: /^[1234]/i,
+    abbreviated: /^q[1234]/i,
+    wide: /^[1234](th|st|nd|rd)? quarter/i
+};
+const parseQuarterPatterns = {
+    any: [
+        /1/i,
+        /2/i,
+        /3/i,
+        /4/i
+    ]
+};
+const matchMonthPatterns = {
+    narrow: /^[jfmasond]/i,
+    abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
+    wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
+};
+const parseMonthPatterns = {
+    narrow: [
+        /^j/i,
+        /^f/i,
+        /^m/i,
+        /^a/i,
+        /^m/i,
+        /^j/i,
+        /^j/i,
+        /^a/i,
+        /^s/i,
+        /^o/i,
+        /^n/i,
+        /^d/i
+    ],
+    any: [
+        /^ja/i,
+        /^f/i,
+        /^mar/i,
+        /^ap/i,
+        /^may/i,
+        /^jun/i,
+        /^jul/i,
+        /^au/i,
+        /^s/i,
+        /^o/i,
+        /^n/i,
+        /^d/i
+    ]
+};
+const matchDayPatterns = {
+    narrow: /^[smtwf]/i,
+    short: /^(su|mo|tu|we|th|fr|sa)/i,
+    abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
+    wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
+};
+const parseDayPatterns = {
+    narrow: [
+        /^s/i,
+        /^m/i,
+        /^t/i,
+        /^w/i,
+        /^t/i,
+        /^f/i,
+        /^s/i
+    ],
+    any: [
+        /^su/i,
+        /^m/i,
+        /^tu/i,
+        /^w/i,
+        /^th/i,
+        /^f/i,
+        /^sa/i
+    ]
+};
+const matchDayPeriodPatterns = {
+    narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
+    any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
+};
+const parseDayPeriodPatterns = {
+    any: {
+        am: /^a/i,
+        pm: /^p/i,
+        midnight: /^mi/i,
+        noon: /^no/i,
+        morning: /morning/i,
+        afternoon: /afternoon/i,
+        evening: /evening/i,
+        night: /night/i
+    }
+};
+const match = {
+    ordinalNumber: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchPatternFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildMatchPatternFn"])({
+        matchPattern: matchOrdinalNumberPattern,
+        parsePattern: parseOrdinalNumberPattern,
+        valueCallback: (value)=>parseInt(value, 10)
+    }),
+    era: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildMatchFn"])({
+        matchPatterns: matchEraPatterns,
+        defaultMatchWidth: "wide",
+        parsePatterns: parseEraPatterns,
+        defaultParseWidth: "any"
+    }),
+    quarter: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildMatchFn"])({
+        matchPatterns: matchQuarterPatterns,
+        defaultMatchWidth: "wide",
+        parsePatterns: parseQuarterPatterns,
+        defaultParseWidth: "any",
+        valueCallback: (index)=>index + 1
+    }),
+    month: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildMatchFn"])({
+        matchPatterns: matchMonthPatterns,
+        defaultMatchWidth: "wide",
+        parsePatterns: parseMonthPatterns,
+        defaultParseWidth: "any"
+    }),
+    day: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildMatchFn"])({
+        matchPatterns: matchDayPatterns,
+        defaultMatchWidth: "wide",
+        parsePatterns: parseDayPatterns,
+        defaultParseWidth: "any"
+    }),
+    dayPeriod: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$_lib$2f$buildMatchFn$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["buildMatchFn"])({
+        matchPatterns: matchDayPeriodPatterns,
+        defaultMatchWidth: "any",
+        parsePatterns: parseDayPeriodPatterns,
+        defaultParseWidth: "any"
+    })
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "enUS",
+    ()=>enUS
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$formatDistance$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/formatDistance.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$formatLong$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/formatLong.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$formatRelative$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/formatRelative.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$localize$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/localize.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$match$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US/_lib/match.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+const enUS = {
+    code: "en-US",
+    formatDistance: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$formatDistance$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatDistance"],
+    formatLong: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$formatLong$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatLong"],
+    formatRelative: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$formatRelative$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatRelative"],
+    localize: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$localize$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["localize"],
+    match: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2f$_lib$2f$match$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["match"],
+    options: {
+        weekStartsOn: 0 /* Sunday */ ,
+        firstWeekContainsDate: 1
+    }
+};
+const __TURBOPACK__default__export__ = enUS;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US.js [app-ssr] (ecmascript) <export enUS as defaultLocale>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "defaultLocale",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["enUS"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/defaultOptions.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getDefaultOptions",
+    ()=>getDefaultOptions,
+    "setDefaultOptions",
+    ()=>setDefaultOptions
+]);
+let defaultOptions = {};
+function getDefaultOptions() {
+    return defaultOptions;
+}
+function setDefaultOptions(newOptions) {
+    defaultOptions = newOptions;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/constants.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @module constants
+ * @summary Useful constants
+ * @description
+ * Collection of useful date constants.
+ *
+ * The constants could be imported from `date-fns/constants`:
+ *
+ * ```ts
+ * import { maxTime, minTime } from "./constants/date-fns/constants";
+ *
+ * function isAllowedTime(time) {
+ *   return time <= maxTime && time >= minTime;
+ * }
+ * ```
+ */ /**
+ * @constant
+ * @name daysInWeek
+ * @summary Days in 1 week.
+ */ __turbopack_context__.s([
+    "constructFromSymbol",
+    ()=>constructFromSymbol,
+    "daysInWeek",
+    ()=>daysInWeek,
+    "daysInYear",
+    ()=>daysInYear,
+    "maxTime",
+    ()=>maxTime,
+    "millisecondsInDay",
+    ()=>millisecondsInDay,
+    "millisecondsInHour",
+    ()=>millisecondsInHour,
+    "millisecondsInMinute",
+    ()=>millisecondsInMinute,
+    "millisecondsInSecond",
+    ()=>millisecondsInSecond,
+    "millisecondsInWeek",
+    ()=>millisecondsInWeek,
+    "minTime",
+    ()=>minTime,
+    "minutesInDay",
+    ()=>minutesInDay,
+    "minutesInHour",
+    ()=>minutesInHour,
+    "minutesInMonth",
+    ()=>minutesInMonth,
+    "minutesInYear",
+    ()=>minutesInYear,
+    "monthsInQuarter",
+    ()=>monthsInQuarter,
+    "monthsInYear",
+    ()=>monthsInYear,
+    "quartersInYear",
+    ()=>quartersInYear,
+    "secondsInDay",
+    ()=>secondsInDay,
+    "secondsInHour",
+    ()=>secondsInHour,
+    "secondsInMinute",
+    ()=>secondsInMinute,
+    "secondsInMonth",
+    ()=>secondsInMonth,
+    "secondsInQuarter",
+    ()=>secondsInQuarter,
+    "secondsInWeek",
+    ()=>secondsInWeek,
+    "secondsInYear",
+    ()=>secondsInYear
+]);
+const daysInWeek = 7;
+const daysInYear = 365.2425;
+const maxTime = Math.pow(10, 8) * 24 * 60 * 60 * 1000;
+const minTime = -maxTime;
+const millisecondsInWeek = 604800000;
+const millisecondsInDay = 86400000;
+const millisecondsInMinute = 60000;
+const millisecondsInHour = 3600000;
+const millisecondsInSecond = 1000;
+const minutesInYear = 525600;
+const minutesInMonth = 43200;
+const minutesInDay = 1440;
+const minutesInHour = 60;
+const monthsInQuarter = 3;
+const monthsInYear = 12;
+const quartersInYear = 4;
+const secondsInHour = 3600;
+const secondsInMinute = 60;
+const secondsInDay = secondsInHour * 24;
+const secondsInWeek = secondsInDay * 7;
+const secondsInYear = secondsInDay * daysInYear;
+const secondsInMonth = secondsInYear / 12;
+const secondsInQuarter = secondsInMonth * 3;
+const constructFromSymbol = Symbol.for("constructDateFrom");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "constructFrom",
+    ()=>constructFrom,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constants.js [app-ssr] (ecmascript)");
+;
+function constructFrom(date, value) {
+    if (typeof date === "function") return date(value);
+    if (date && typeof date === "object" && __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFromSymbol"] in date) return date[__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFromSymbol"]](value);
+    if (date instanceof Date) return new date.constructor(value);
+    return new Date(value);
+}
+const __TURBOPACK__default__export__ = constructFrom;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "toDate",
+    ()=>toDate
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)");
+;
+function toDate(argument, context) {
+    // [TODO] Get rid of `toDate` or `constructFrom`?
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(context || argument, argument);
+}
+const __TURBOPACK__default__export__ = toDate;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getTimezoneOffsetInMilliseconds",
+    ()=>getTimezoneOffsetInMilliseconds
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+function getTimezoneOffsetInMilliseconds(date) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date);
+    const utcDate = new Date(Date.UTC(_date.getFullYear(), _date.getMonth(), _date.getDate(), _date.getHours(), _date.getMinutes(), _date.getSeconds(), _date.getMilliseconds()));
+    utcDate.setUTCFullYear(_date.getFullYear());
+    return +date - +utcDate;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/normalizeDates.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "normalizeDates",
+    ()=>normalizeDates
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)");
+;
+function normalizeDates(context, ...dates) {
+    const normalize = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"].bind(null, context || dates.find((date)=>typeof date === "object"));
+    return dates.map(normalize);
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfDay.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "startOfDay",
+    ()=>startOfDay
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+function startOfDay(date, options) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    _date.setHours(0, 0, 0, 0);
+    return _date;
+}
+const __TURBOPACK__default__export__ = startOfDay;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/differenceInCalendarDays.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "differenceInCalendarDays",
+    ()=>differenceInCalendarDays
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$getTimezoneOffsetInMilliseconds$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$normalizeDates$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/normalizeDates.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constants.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfDay$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfDay.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+function differenceInCalendarDays(laterDate, earlierDate, options) {
+    const [laterDate_, earlierDate_] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$normalizeDates$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["normalizeDates"])(options?.in, laterDate, earlierDate);
+    const laterStartOfDay = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfDay$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfDay"])(laterDate_);
+    const earlierStartOfDay = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfDay$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfDay"])(earlierDate_);
+    const laterTimestamp = +laterStartOfDay - (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$getTimezoneOffsetInMilliseconds$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getTimezoneOffsetInMilliseconds"])(laterStartOfDay);
+    const earlierTimestamp = +earlierStartOfDay - (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$getTimezoneOffsetInMilliseconds$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getTimezoneOffsetInMilliseconds"])(earlierStartOfDay);
+    // Round the number of days to the nearest integer because the number of
+    // milliseconds in a day is not constant (e.g. it's different in the week of
+    // the daylight saving time clock shift).
+    return Math.round((laterTimestamp - earlierTimestamp) / __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["millisecondsInDay"]);
+}
+const __TURBOPACK__default__export__ = differenceInCalendarDays;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfYear.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "startOfYear",
+    ()=>startOfYear
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+function startOfYear(date, options) {
+    const date_ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    date_.setFullYear(date_.getFullYear(), 0, 1);
+    date_.setHours(0, 0, 0, 0);
+    return date_;
+}
+const __TURBOPACK__default__export__ = startOfYear;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/getDayOfYear.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "getDayOfYear",
+    ()=>getDayOfYear
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$differenceInCalendarDays$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/differenceInCalendarDays.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+;
+function getDayOfYear(date, options) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    const diff = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$differenceInCalendarDays$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["differenceInCalendarDays"])(_date, (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfYear"])(_date));
+    const dayOfYear = diff + 1;
+    return dayOfYear;
+}
+const __TURBOPACK__default__export__ = getDayOfYear;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeek.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "startOfWeek",
+    ()=>startOfWeek
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/defaultOptions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+function startOfWeek(date, options) {
+    const defaultOptions = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDefaultOptions"])();
+    const weekStartsOn = options?.weekStartsOn ?? options?.locale?.options?.weekStartsOn ?? defaultOptions.weekStartsOn ?? defaultOptions.locale?.options?.weekStartsOn ?? 0;
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    const day = _date.getDay();
+    const diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+    _date.setDate(_date.getDate() - diff);
+    _date.setHours(0, 0, 0, 0);
+    return _date;
+}
+const __TURBOPACK__default__export__ = startOfWeek;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfISOWeek.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "startOfISOWeek",
+    ()=>startOfISOWeek
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeek.js [app-ssr] (ecmascript)");
+;
+function startOfISOWeek(date, options) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfWeek"])(date, {
+        ...options,
+        weekStartsOn: 1
+    });
+}
+const __TURBOPACK__default__export__ = startOfISOWeek;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/getISOWeekYear.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "getISOWeekYear",
+    ()=>getISOWeekYear
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfISOWeek.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+;
+function getISOWeekYear(date, options) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    const year = _date.getFullYear();
+    const fourthOfJanuaryOfNextYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(_date, 0);
+    fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4);
+    fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0);
+    const startOfNextYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfISOWeek"])(fourthOfJanuaryOfNextYear);
+    const fourthOfJanuaryOfThisYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(_date, 0);
+    fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4);
+    fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0);
+    const startOfThisYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfISOWeek"])(fourthOfJanuaryOfThisYear);
+    if (_date.getTime() >= startOfNextYear.getTime()) {
+        return year + 1;
+    } else if (_date.getTime() >= startOfThisYear.getTime()) {
+        return year;
+    } else {
+        return year - 1;
+    }
+}
+const __TURBOPACK__default__export__ = getISOWeekYear;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfISOWeekYear.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "startOfISOWeekYear",
+    ()=>startOfISOWeekYear
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getISOWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getISOWeekYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfISOWeek.js [app-ssr] (ecmascript)");
+;
+;
+;
+function startOfISOWeekYear(date, options) {
+    const year = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getISOWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getISOWeekYear"])(date, options);
+    const fourthOfJanuary = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(options?.in || date, 0);
+    fourthOfJanuary.setFullYear(year, 0, 4);
+    fourthOfJanuary.setHours(0, 0, 0, 0);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfISOWeek"])(fourthOfJanuary);
+}
+const __TURBOPACK__default__export__ = startOfISOWeekYear;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/getISOWeek.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "getISOWeek",
+    ()=>getISOWeek
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constants.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfISOWeek.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfISOWeekYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+function getISOWeek(date, options) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    const diff = +(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfISOWeek"])(_date) - +(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfISOWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfISOWeekYear"])(_date);
+    // Round the number of weeks to the nearest integer because the number of
+    // milliseconds in a week is not constant (e.g. it's different in the week of
+    // the daylight saving time clock shift).
+    return Math.round(diff / __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["millisecondsInWeek"]) + 1;
+}
+const __TURBOPACK__default__export__ = getISOWeek;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/getWeekYear.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "getWeekYear",
+    ()=>getWeekYear
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/defaultOptions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeek.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+function getWeekYear(date, options) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    const year = _date.getFullYear();
+    const defaultOptions = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDefaultOptions"])();
+    const firstWeekContainsDate = options?.firstWeekContainsDate ?? options?.locale?.options?.firstWeekContainsDate ?? defaultOptions.firstWeekContainsDate ?? defaultOptions.locale?.options?.firstWeekContainsDate ?? 1;
+    const firstWeekOfNextYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(options?.in || date, 0);
+    firstWeekOfNextYear.setFullYear(year + 1, 0, firstWeekContainsDate);
+    firstWeekOfNextYear.setHours(0, 0, 0, 0);
+    const startOfNextYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfWeek"])(firstWeekOfNextYear, options);
+    const firstWeekOfThisYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(options?.in || date, 0);
+    firstWeekOfThisYear.setFullYear(year, 0, firstWeekContainsDate);
+    firstWeekOfThisYear.setHours(0, 0, 0, 0);
+    const startOfThisYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfWeek"])(firstWeekOfThisYear, options);
+    if (+_date >= +startOfNextYear) {
+        return year + 1;
+    } else if (+_date >= +startOfThisYear) {
+        return year;
+    } else {
+        return year - 1;
+    }
+}
+const __TURBOPACK__default__export__ = getWeekYear;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeekYear.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "startOfWeekYear",
+    ()=>startOfWeekYear
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/defaultOptions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constructFrom.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getWeekYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeek.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+function startOfWeekYear(date, options) {
+    const defaultOptions = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDefaultOptions"])();
+    const firstWeekContainsDate = options?.firstWeekContainsDate ?? options?.locale?.options?.firstWeekContainsDate ?? defaultOptions.firstWeekContainsDate ?? defaultOptions.locale?.options?.firstWeekContainsDate ?? 1;
+    const year = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getWeekYear"])(date, options);
+    const firstWeek = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constructFrom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["constructFrom"])(options?.in || date, 0);
+    firstWeek.setFullYear(year, 0, firstWeekContainsDate);
+    firstWeek.setHours(0, 0, 0, 0);
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfWeek"])(firstWeek, options);
+    return _date;
+}
+const __TURBOPACK__default__export__ = startOfWeekYear;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/getWeek.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "getWeek",
+    ()=>getWeek
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/constants.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeek.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/startOfWeekYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+function getWeek(date, options) {
+    const _date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    const diff = +(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfWeek"])(_date, options) - +(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$startOfWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["startOfWeekYear"])(_date, options);
+    // Round the number of weeks to the nearest integer because the number of
+    // milliseconds in a week is not constant (e.g. it's different in the week of
+    // the daylight saving time clock shift).
+    return Math.round(diff / __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$constants$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["millisecondsInWeek"]) + 1;
+}
+const __TURBOPACK__default__export__ = getWeek;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/addLeadingZeros.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "addLeadingZeros",
+    ()=>addLeadingZeros
+]);
+function addLeadingZeros(number, targetLength) {
+    const sign = number < 0 ? "-" : "";
+    const output = Math.abs(number).toString().padStart(targetLength, "0");
+    return sign + output;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/format/lightFormatters.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "lightFormatters",
+    ()=>lightFormatters
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/addLeadingZeros.js [app-ssr] (ecmascript)");
+;
+const lightFormatters = {
+    // Year
+    y (date, token) {
+        // From http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_tokens
+        // | Year     |     y | yy |   yyy |  yyyy | yyyyy |
+        // |----------|-------|----|-------|-------|-------|
+        // | AD 1     |     1 | 01 |   001 |  0001 | 00001 |
+        // | AD 12    |    12 | 12 |   012 |  0012 | 00012 |
+        // | AD 123   |   123 | 23 |   123 |  0123 | 00123 |
+        // | AD 1234  |  1234 | 34 |  1234 |  1234 | 01234 |
+        // | AD 12345 | 12345 | 45 | 12345 | 12345 | 12345 |
+        const signedYear = date.getFullYear();
+        // Returns 1 for 1 BC (which is year 0 in JavaScript)
+        const year = signedYear > 0 ? signedYear : 1 - signedYear;
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(token === "yy" ? year % 100 : year, token.length);
+    },
+    // Month
+    M (date, token) {
+        const month = date.getMonth();
+        return token === "M" ? String(month + 1) : (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(month + 1, 2);
+    },
+    // Day of the month
+    d (date, token) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(date.getDate(), token.length);
+    },
+    // AM or PM
+    a (date, token) {
+        const dayPeriodEnumValue = date.getHours() / 12 >= 1 ? "pm" : "am";
+        switch(token){
+            case "a":
+            case "aa":
+                return dayPeriodEnumValue.toUpperCase();
+            case "aaa":
+                return dayPeriodEnumValue;
+            case "aaaaa":
+                return dayPeriodEnumValue[0];
+            case "aaaa":
+            default:
+                return dayPeriodEnumValue === "am" ? "a.m." : "p.m.";
+        }
+    },
+    // Hour [1-12]
+    h (date, token) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(date.getHours() % 12 || 12, token.length);
+    },
+    // Hour [0-23]
+    H (date, token) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(date.getHours(), token.length);
+    },
+    // Minute
+    m (date, token) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(date.getMinutes(), token.length);
+    },
+    // Second
+    s (date, token) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(date.getSeconds(), token.length);
+    },
+    // Fraction of second
+    S (date, token) {
+        const numberOfDigits = token.length;
+        const milliseconds = date.getMilliseconds();
+        const fractionalSeconds = Math.trunc(milliseconds * Math.pow(10, numberOfDigits - 3));
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(fractionalSeconds, token.length);
+    }
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/format/formatters.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatters",
+    ()=>formatters
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getDayOfYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getDayOfYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getISOWeek.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getISOWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getISOWeekYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getWeek.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/getWeekYear.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/addLeadingZeros.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/format/lightFormatters.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+const dayPeriodEnum = {
+    am: "am",
+    pm: "pm",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+};
+const formatters = {
+    // Era
+    G: function(date, token, localize) {
+        const era = date.getFullYear() > 0 ? 1 : 0;
+        switch(token){
+            // AD, BC
+            case "G":
+            case "GG":
+            case "GGG":
+                return localize.era(era, {
+                    width: "abbreviated"
+                });
+            // A, B
+            case "GGGGG":
+                return localize.era(era, {
+                    width: "narrow"
+                });
+            // Anno Domini, Before Christ
+            case "GGGG":
+            default:
+                return localize.era(era, {
+                    width: "wide"
+                });
+        }
+    },
+    // Year
+    y: function(date, token, localize) {
+        // Ordinal number
+        if (token === "yo") {
+            const signedYear = date.getFullYear();
+            // Returns 1 for 1 BC (which is year 0 in JavaScript)
+            const year = signedYear > 0 ? signedYear : 1 - signedYear;
+            return localize.ordinalNumber(year, {
+                unit: "year"
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].y(date, token);
+    },
+    // Local week-numbering year
+    Y: function(date, token, localize, options) {
+        const signedWeekYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getWeekYear"])(date, options);
+        // Returns 1 for 1 BC (which is year 0 in JavaScript)
+        const weekYear = signedWeekYear > 0 ? signedWeekYear : 1 - signedWeekYear;
+        // Two digit year
+        if (token === "YY") {
+            const twoDigitYear = weekYear % 100;
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(twoDigitYear, 2);
+        }
+        // Ordinal number
+        if (token === "Yo") {
+            return localize.ordinalNumber(weekYear, {
+                unit: "year"
+            });
+        }
+        // Padding
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(weekYear, token.length);
+    },
+    // ISO week-numbering year
+    R: function(date, token) {
+        const isoWeekYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getISOWeekYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getISOWeekYear"])(date);
+        // Padding
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(isoWeekYear, token.length);
+    },
+    // Extended year. This is a single number designating the year of this calendar system.
+    // The main difference between `y` and `u` localizers are B.C. years:
+    // | Year | `y` | `u` |
+    // |------|-----|-----|
+    // | AC 1 |   1 |   1 |
+    // | BC 1 |   1 |   0 |
+    // | BC 2 |   2 |  -1 |
+    // Also `yy` always returns the last two digits of a year,
+    // while `uu` pads single digit years to 2 characters and returns other years unchanged.
+    u: function(date, token) {
+        const year = date.getFullYear();
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(year, token.length);
+    },
+    // Quarter
+    Q: function(date, token, localize) {
+        const quarter = Math.ceil((date.getMonth() + 1) / 3);
+        switch(token){
+            // 1, 2, 3, 4
+            case "Q":
+                return String(quarter);
+            // 01, 02, 03, 04
+            case "QQ":
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(quarter, 2);
+            // 1st, 2nd, 3rd, 4th
+            case "Qo":
+                return localize.ordinalNumber(quarter, {
+                    unit: "quarter"
+                });
+            // Q1, Q2, Q3, Q4
+            case "QQQ":
+                return localize.quarter(quarter, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            // 1, 2, 3, 4 (narrow quarter; could be not numerical)
+            case "QQQQQ":
+                return localize.quarter(quarter, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            // 1st quarter, 2nd quarter, ...
+            case "QQQQ":
+            default:
+                return localize.quarter(quarter, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // Stand-alone quarter
+    q: function(date, token, localize) {
+        const quarter = Math.ceil((date.getMonth() + 1) / 3);
+        switch(token){
+            // 1, 2, 3, 4
+            case "q":
+                return String(quarter);
+            // 01, 02, 03, 04
+            case "qq":
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(quarter, 2);
+            // 1st, 2nd, 3rd, 4th
+            case "qo":
+                return localize.ordinalNumber(quarter, {
+                    unit: "quarter"
+                });
+            // Q1, Q2, Q3, Q4
+            case "qqq":
+                return localize.quarter(quarter, {
+                    width: "abbreviated",
+                    context: "standalone"
+                });
+            // 1, 2, 3, 4 (narrow quarter; could be not numerical)
+            case "qqqqq":
+                return localize.quarter(quarter, {
+                    width: "narrow",
+                    context: "standalone"
+                });
+            // 1st quarter, 2nd quarter, ...
+            case "qqqq":
+            default:
+                return localize.quarter(quarter, {
+                    width: "wide",
+                    context: "standalone"
+                });
+        }
+    },
+    // Month
+    M: function(date, token, localize) {
+        const month = date.getMonth();
+        switch(token){
+            case "M":
+            case "MM":
+                return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].M(date, token);
+            // 1st, 2nd, ..., 12th
+            case "Mo":
+                return localize.ordinalNumber(month + 1, {
+                    unit: "month"
+                });
+            // Jan, Feb, ..., Dec
+            case "MMM":
+                return localize.month(month, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            // J, F, ..., D
+            case "MMMMM":
+                return localize.month(month, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            // January, February, ..., December
+            case "MMMM":
+            default:
+                return localize.month(month, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // Stand-alone month
+    L: function(date, token, localize) {
+        const month = date.getMonth();
+        switch(token){
+            // 1, 2, ..., 12
+            case "L":
+                return String(month + 1);
+            // 01, 02, ..., 12
+            case "LL":
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(month + 1, 2);
+            // 1st, 2nd, ..., 12th
+            case "Lo":
+                return localize.ordinalNumber(month + 1, {
+                    unit: "month"
+                });
+            // Jan, Feb, ..., Dec
+            case "LLL":
+                return localize.month(month, {
+                    width: "abbreviated",
+                    context: "standalone"
+                });
+            // J, F, ..., D
+            case "LLLLL":
+                return localize.month(month, {
+                    width: "narrow",
+                    context: "standalone"
+                });
+            // January, February, ..., December
+            case "LLLL":
+            default:
+                return localize.month(month, {
+                    width: "wide",
+                    context: "standalone"
+                });
+        }
+    },
+    // Local week of year
+    w: function(date, token, localize, options) {
+        const week = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getWeek"])(date, options);
+        if (token === "wo") {
+            return localize.ordinalNumber(week, {
+                unit: "week"
+            });
+        }
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(week, token.length);
+    },
+    // ISO week of year
+    I: function(date, token, localize) {
+        const isoWeek = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getISOWeek$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getISOWeek"])(date);
+        if (token === "Io") {
+            return localize.ordinalNumber(isoWeek, {
+                unit: "week"
+            });
+        }
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(isoWeek, token.length);
+    },
+    // Day of the month
+    d: function(date, token, localize) {
+        if (token === "do") {
+            return localize.ordinalNumber(date.getDate(), {
+                unit: "date"
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].d(date, token);
+    },
+    // Day of year
+    D: function(date, token, localize) {
+        const dayOfYear = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$getDayOfYear$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDayOfYear"])(date);
+        if (token === "Do") {
+            return localize.ordinalNumber(dayOfYear, {
+                unit: "dayOfYear"
+            });
+        }
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(dayOfYear, token.length);
+    },
+    // Day of week
+    E: function(date, token, localize) {
+        const dayOfWeek = date.getDay();
+        switch(token){
+            // Tue
+            case "E":
+            case "EE":
+            case "EEE":
+                return localize.day(dayOfWeek, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            // T
+            case "EEEEE":
+                return localize.day(dayOfWeek, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            // Tu
+            case "EEEEEE":
+                return localize.day(dayOfWeek, {
+                    width: "short",
+                    context: "formatting"
+                });
+            // Tuesday
+            case "EEEE":
+            default:
+                return localize.day(dayOfWeek, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // Local day of week
+    e: function(date, token, localize, options) {
+        const dayOfWeek = date.getDay();
+        const localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
+        switch(token){
+            // Numerical value (Nth day of week with current locale or weekStartsOn)
+            case "e":
+                return String(localDayOfWeek);
+            // Padded numerical value
+            case "ee":
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(localDayOfWeek, 2);
+            // 1st, 2nd, ..., 7th
+            case "eo":
+                return localize.ordinalNumber(localDayOfWeek, {
+                    unit: "day"
+                });
+            case "eee":
+                return localize.day(dayOfWeek, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            // T
+            case "eeeee":
+                return localize.day(dayOfWeek, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            // Tu
+            case "eeeeee":
+                return localize.day(dayOfWeek, {
+                    width: "short",
+                    context: "formatting"
+                });
+            // Tuesday
+            case "eeee":
+            default:
+                return localize.day(dayOfWeek, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // Stand-alone local day of week
+    c: function(date, token, localize, options) {
+        const dayOfWeek = date.getDay();
+        const localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
+        switch(token){
+            // Numerical value (same as in `e`)
+            case "c":
+                return String(localDayOfWeek);
+            // Padded numerical value
+            case "cc":
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(localDayOfWeek, token.length);
+            // 1st, 2nd, ..., 7th
+            case "co":
+                return localize.ordinalNumber(localDayOfWeek, {
+                    unit: "day"
+                });
+            case "ccc":
+                return localize.day(dayOfWeek, {
+                    width: "abbreviated",
+                    context: "standalone"
+                });
+            // T
+            case "ccccc":
+                return localize.day(dayOfWeek, {
+                    width: "narrow",
+                    context: "standalone"
+                });
+            // Tu
+            case "cccccc":
+                return localize.day(dayOfWeek, {
+                    width: "short",
+                    context: "standalone"
+                });
+            // Tuesday
+            case "cccc":
+            default:
+                return localize.day(dayOfWeek, {
+                    width: "wide",
+                    context: "standalone"
+                });
+        }
+    },
+    // ISO day of week
+    i: function(date, token, localize) {
+        const dayOfWeek = date.getDay();
+        const isoDayOfWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
+        switch(token){
+            // 2
+            case "i":
+                return String(isoDayOfWeek);
+            // 02
+            case "ii":
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(isoDayOfWeek, token.length);
+            // 2nd
+            case "io":
+                return localize.ordinalNumber(isoDayOfWeek, {
+                    unit: "day"
+                });
+            // Tue
+            case "iii":
+                return localize.day(dayOfWeek, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            // T
+            case "iiiii":
+                return localize.day(dayOfWeek, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            // Tu
+            case "iiiiii":
+                return localize.day(dayOfWeek, {
+                    width: "short",
+                    context: "formatting"
+                });
+            // Tuesday
+            case "iiii":
+            default:
+                return localize.day(dayOfWeek, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // AM or PM
+    a: function(date, token, localize) {
+        const hours = date.getHours();
+        const dayPeriodEnumValue = hours / 12 >= 1 ? "pm" : "am";
+        switch(token){
+            case "a":
+            case "aa":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            case "aaa":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "abbreviated",
+                    context: "formatting"
+                }).toLowerCase();
+            case "aaaaa":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            case "aaaa":
+            default:
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // AM, PM, midnight, noon
+    b: function(date, token, localize) {
+        const hours = date.getHours();
+        let dayPeriodEnumValue;
+        if (hours === 12) {
+            dayPeriodEnumValue = dayPeriodEnum.noon;
+        } else if (hours === 0) {
+            dayPeriodEnumValue = dayPeriodEnum.midnight;
+        } else {
+            dayPeriodEnumValue = hours / 12 >= 1 ? "pm" : "am";
+        }
+        switch(token){
+            case "b":
+            case "bb":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            case "bbb":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "abbreviated",
+                    context: "formatting"
+                }).toLowerCase();
+            case "bbbbb":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            case "bbbb":
+            default:
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // in the morning, in the afternoon, in the evening, at night
+    B: function(date, token, localize) {
+        const hours = date.getHours();
+        let dayPeriodEnumValue;
+        if (hours >= 17) {
+            dayPeriodEnumValue = dayPeriodEnum.evening;
+        } else if (hours >= 12) {
+            dayPeriodEnumValue = dayPeriodEnum.afternoon;
+        } else if (hours >= 4) {
+            dayPeriodEnumValue = dayPeriodEnum.morning;
+        } else {
+            dayPeriodEnumValue = dayPeriodEnum.night;
+        }
+        switch(token){
+            case "B":
+            case "BB":
+            case "BBB":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "abbreviated",
+                    context: "formatting"
+                });
+            case "BBBBB":
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "narrow",
+                    context: "formatting"
+                });
+            case "BBBB":
+            default:
+                return localize.dayPeriod(dayPeriodEnumValue, {
+                    width: "wide",
+                    context: "formatting"
+                });
+        }
+    },
+    // Hour [1-12]
+    h: function(date, token, localize) {
+        if (token === "ho") {
+            let hours = date.getHours() % 12;
+            if (hours === 0) hours = 12;
+            return localize.ordinalNumber(hours, {
+                unit: "hour"
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].h(date, token);
+    },
+    // Hour [0-23]
+    H: function(date, token, localize) {
+        if (token === "Ho") {
+            return localize.ordinalNumber(date.getHours(), {
+                unit: "hour"
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].H(date, token);
+    },
+    // Hour [0-11]
+    K: function(date, token, localize) {
+        const hours = date.getHours() % 12;
+        if (token === "Ko") {
+            return localize.ordinalNumber(hours, {
+                unit: "hour"
+            });
+        }
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(hours, token.length);
+    },
+    // Hour [1-24]
+    k: function(date, token, localize) {
+        let hours = date.getHours();
+        if (hours === 0) hours = 24;
+        if (token === "ko") {
+            return localize.ordinalNumber(hours, {
+                unit: "hour"
+            });
+        }
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(hours, token.length);
+    },
+    // Minute
+    m: function(date, token, localize) {
+        if (token === "mo") {
+            return localize.ordinalNumber(date.getMinutes(), {
+                unit: "minute"
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].m(date, token);
+    },
+    // Second
+    s: function(date, token, localize) {
+        if (token === "so") {
+            return localize.ordinalNumber(date.getSeconds(), {
+                unit: "second"
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].s(date, token);
+    },
+    // Fraction of second
+    S: function(date, token) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$lightFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["lightFormatters"].S(date, token);
+    },
+    // Timezone (ISO-8601. If offset is 0, output is always `'Z'`)
+    X: function(date, token, _localize) {
+        const timezoneOffset = date.getTimezoneOffset();
+        if (timezoneOffset === 0) {
+            return "Z";
+        }
+        switch(token){
+            // Hours and optional minutes
+            case "X":
+                return formatTimezoneWithOptionalMinutes(timezoneOffset);
+            // Hours, minutes and optional seconds without `:` delimiter
+            // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+            // so this token always has the same output as `XX`
+            case "XXXX":
+            case "XX":
+                return formatTimezone(timezoneOffset);
+            // Hours, minutes and optional seconds with `:` delimiter
+            // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+            // so this token always has the same output as `XXX`
+            case "XXXXX":
+            case "XXX":
+            default:
+                return formatTimezone(timezoneOffset, ":");
+        }
+    },
+    // Timezone (ISO-8601. If offset is 0, output is `'+00:00'` or equivalent)
+    x: function(date, token, _localize) {
+        const timezoneOffset = date.getTimezoneOffset();
+        switch(token){
+            // Hours and optional minutes
+            case "x":
+                return formatTimezoneWithOptionalMinutes(timezoneOffset);
+            // Hours, minutes and optional seconds without `:` delimiter
+            // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+            // so this token always has the same output as `xx`
+            case "xxxx":
+            case "xx":
+                return formatTimezone(timezoneOffset);
+            // Hours, minutes and optional seconds with `:` delimiter
+            // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
+            // so this token always has the same output as `xxx`
+            case "xxxxx":
+            case "xxx":
+            default:
+                return formatTimezone(timezoneOffset, ":");
+        }
+    },
+    // Timezone (GMT)
+    O: function(date, token, _localize) {
+        const timezoneOffset = date.getTimezoneOffset();
+        switch(token){
+            // Short
+            case "O":
+            case "OO":
+            case "OOO":
+                return "GMT" + formatTimezoneShort(timezoneOffset, ":");
+            // Long
+            case "OOOO":
+            default:
+                return "GMT" + formatTimezone(timezoneOffset, ":");
+        }
+    },
+    // Timezone (specific non-location)
+    z: function(date, token, _localize) {
+        const timezoneOffset = date.getTimezoneOffset();
+        switch(token){
+            // Short
+            case "z":
+            case "zz":
+            case "zzz":
+                return "GMT" + formatTimezoneShort(timezoneOffset, ":");
+            // Long
+            case "zzzz":
+            default:
+                return "GMT" + formatTimezone(timezoneOffset, ":");
+        }
+    },
+    // Seconds timestamp
+    t: function(date, token, _localize) {
+        const timestamp = Math.trunc(+date / 1000);
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(timestamp, token.length);
+    },
+    // Milliseconds timestamp
+    T: function(date, token, _localize) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(+date, token.length);
+    }
+};
+function formatTimezoneShort(offset, delimiter = "") {
+    const sign = offset > 0 ? "-" : "+";
+    const absOffset = Math.abs(offset);
+    const hours = Math.trunc(absOffset / 60);
+    const minutes = absOffset % 60;
+    if (minutes === 0) {
+        return sign + String(hours);
+    }
+    return sign + String(hours) + delimiter + (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(minutes, 2);
+}
+function formatTimezoneWithOptionalMinutes(offset, delimiter) {
+    if (offset % 60 === 0) {
+        const sign = offset > 0 ? "-" : "+";
+        return sign + (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(Math.abs(offset) / 60, 2);
+    }
+    return formatTimezone(offset, delimiter);
+}
+function formatTimezone(offset, delimiter = "") {
+    const sign = offset > 0 ? "-" : "+";
+    const absOffset = Math.abs(offset);
+    const hours = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(Math.trunc(absOffset / 60), 2);
+    const minutes = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$addLeadingZeros$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addLeadingZeros"])(absOffset % 60, 2);
+    return sign + hours + delimiter + minutes;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/format/longFormatters.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "longFormatters",
+    ()=>longFormatters
+]);
+const dateLongFormatter = (pattern, formatLong)=>{
+    switch(pattern){
+        case "P":
+            return formatLong.date({
+                width: "short"
+            });
+        case "PP":
+            return formatLong.date({
+                width: "medium"
+            });
+        case "PPP":
+            return formatLong.date({
+                width: "long"
+            });
+        case "PPPP":
+        default:
+            return formatLong.date({
+                width: "full"
+            });
+    }
+};
+const timeLongFormatter = (pattern, formatLong)=>{
+    switch(pattern){
+        case "p":
+            return formatLong.time({
+                width: "short"
+            });
+        case "pp":
+            return formatLong.time({
+                width: "medium"
+            });
+        case "ppp":
+            return formatLong.time({
+                width: "long"
+            });
+        case "pppp":
+        default:
+            return formatLong.time({
+                width: "full"
+            });
+    }
+};
+const dateTimeLongFormatter = (pattern, formatLong)=>{
+    const matchResult = pattern.match(/(P+)(p+)?/) || [];
+    const datePattern = matchResult[1];
+    const timePattern = matchResult[2];
+    if (!timePattern) {
+        return dateLongFormatter(pattern, formatLong);
+    }
+    let dateTimeFormat;
+    switch(datePattern){
+        case "P":
+            dateTimeFormat = formatLong.dateTime({
+                width: "short"
+            });
+            break;
+        case "PP":
+            dateTimeFormat = formatLong.dateTime({
+                width: "medium"
+            });
+            break;
+        case "PPP":
+            dateTimeFormat = formatLong.dateTime({
+                width: "long"
+            });
+            break;
+        case "PPPP":
+        default:
+            dateTimeFormat = formatLong.dateTime({
+                width: "full"
+            });
+            break;
+    }
+    return dateTimeFormat.replace("{{date}}", dateLongFormatter(datePattern, formatLong)).replace("{{time}}", timeLongFormatter(timePattern, formatLong));
+};
+const longFormatters = {
+    p: timeLongFormatter,
+    P: dateTimeLongFormatter
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/protectedTokens.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isProtectedDayOfYearToken",
+    ()=>isProtectedDayOfYearToken,
+    "isProtectedWeekYearToken",
+    ()=>isProtectedWeekYearToken,
+    "warnOrThrowProtectedError",
+    ()=>warnOrThrowProtectedError
+]);
+const dayOfYearTokenRE = /^D+$/;
+const weekYearTokenRE = /^Y+$/;
+const throwTokens = [
+    "D",
+    "DD",
+    "YY",
+    "YYYY"
+];
+function isProtectedDayOfYearToken(token) {
+    return dayOfYearTokenRE.test(token);
+}
+function isProtectedWeekYearToken(token) {
+    return weekYearTokenRE.test(token);
+}
+function warnOrThrowProtectedError(token, format, input) {
+    const _message = message(token, format, input);
+    console.warn(_message);
+    if (throwTokens.includes(token)) throw new RangeError(_message);
+}
+function message(token, format, input) {
+    const subject = token[0] === "Y" ? "years" : "days of the month";
+    return `Use \`${token.toLowerCase()}\` instead of \`${token}\` (in \`${format}\`) for formatting ${subject} to the input \`${input}\`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md`;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/isDate.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @name isDate
+ * @category Common Helpers
+ * @summary Is the given value a date?
+ *
+ * @description
+ * Returns true if the given value is an instance of Date. The function works for dates transferred across iframes.
+ *
+ * @param value - The value to check
+ *
+ * @returns True if the given value is a date
+ *
+ * @example
+ * // For a valid date:
+ * const result = isDate(new Date())
+ * //=> true
+ *
+ * @example
+ * // For an invalid date:
+ * const result = isDate(new Date(NaN))
+ * //=> true
+ *
+ * @example
+ * // For some value:
+ * const result = isDate('2014-02-31')
+ * //=> false
+ *
+ * @example
+ * // For an object:
+ * const result = isDate({})
+ * //=> false
+ */ __turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "isDate",
+    ()=>isDate
+]);
+function isDate(value) {
+    return value instanceof Date || typeof value === "object" && Object.prototype.toString.call(value) === "[object Date]";
+}
+const __TURBOPACK__default__export__ = isDate;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/isValid.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "isValid",
+    ()=>isValid
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$isDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/isDate.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+function isValid(date) {
+    return !(!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$isDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isDate"])(date) && typeof date !== "number" || isNaN(+(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date)));
+}
+const __TURBOPACK__default__export__ = isValid;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/date-fns/format.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "format",
+    ()=>format,
+    "formatDate",
+    ()=>format
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__enUS__as__defaultLocale$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/locale/en-US.js [app-ssr] (ecmascript) <export enUS as defaultLocale>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/defaultOptions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$formatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/format/formatters.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$longFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/format/longFormatters.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$protectedTokens$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/_lib/protectedTokens.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$isValid$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/isValid.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/date-fns/toDate.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+// This RegExp consists of three parts separated by `|`:
+// - [yYQqMLwIdDecihHKkms]o matches any available ordinal number token
+//   (one of the certain letters followed by `o`)
+// - (\w)\1* matches any sequences of the same letter
+// - '' matches two quote characters in a row
+// - '(''|[^'])+('|$) matches anything surrounded by two quote characters ('),
+//   except a single quote symbol, which ends the sequence.
+//   Two quote characters do not end the sequence.
+//   If there is no matching single quote
+//   then the sequence will continue until the end of the string.
+// - . matches any single character unmatched by previous parts of the RegExps
+const formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g;
+// This RegExp catches symbols escaped by quotes, and also
+// sequences of symbols P, p, and the combinations like `PPPPPPPppppp`
+const longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
+const escapedStringRegExp = /^'([^]*?)'?$/;
+const doubleQuoteRegExp = /''/g;
+const unescapedLatinCharacterRegExp = /[a-zA-Z]/;
+;
+function format(date, formatStr, options) {
+    const defaultOptions = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$defaultOptions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDefaultOptions"])();
+    const locale = options?.locale ?? defaultOptions.locale ?? __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$locale$2f$en$2d$US$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__enUS__as__defaultLocale$3e$__["defaultLocale"];
+    const firstWeekContainsDate = options?.firstWeekContainsDate ?? options?.locale?.options?.firstWeekContainsDate ?? defaultOptions.firstWeekContainsDate ?? defaultOptions.locale?.options?.firstWeekContainsDate ?? 1;
+    const weekStartsOn = options?.weekStartsOn ?? options?.locale?.options?.weekStartsOn ?? defaultOptions.weekStartsOn ?? defaultOptions.locale?.options?.weekStartsOn ?? 0;
+    const originalDate = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$toDate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toDate"])(date, options?.in);
+    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$isValid$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isValid"])(originalDate)) {
+        throw new RangeError("Invalid time value");
+    }
+    let parts = formatStr.match(longFormattingTokensRegExp).map((substring)=>{
+        const firstCharacter = substring[0];
+        if (firstCharacter === "p" || firstCharacter === "P") {
+            const longFormatter = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$longFormatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["longFormatters"][firstCharacter];
+            return longFormatter(substring, locale.formatLong);
+        }
+        return substring;
+    }).join("").match(formattingTokensRegExp).map((substring)=>{
+        // Replace two single quote characters with one single quote character
+        if (substring === "''") {
+            return {
+                isToken: false,
+                value: "'"
+            };
+        }
+        const firstCharacter = substring[0];
+        if (firstCharacter === "'") {
+            return {
+                isToken: false,
+                value: cleanEscapedString(substring)
+            };
+        }
+        if (__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$formatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatters"][firstCharacter]) {
+            return {
+                isToken: true,
+                value: substring
+            };
+        }
+        if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
+            throw new RangeError("Format string contains an unescaped latin alphabet character `" + firstCharacter + "`");
+        }
+        return {
+            isToken: false,
+            value: substring
+        };
+    });
+    // invoke localize preprocessor (only for french locales at the moment)
+    if (locale.localize.preprocessor) {
+        parts = locale.localize.preprocessor(originalDate, parts);
+    }
+    const formatterOptions = {
+        firstWeekContainsDate,
+        weekStartsOn,
+        locale
+    };
+    return parts.map((part)=>{
+        if (!part.isToken) return part.value;
+        const token = part.value;
+        if (!options?.useAdditionalWeekYearTokens && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$protectedTokens$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isProtectedWeekYearToken"])(token) || !options?.useAdditionalDayOfYearTokens && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$protectedTokens$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isProtectedDayOfYearToken"])(token)) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$protectedTokens$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["warnOrThrowProtectedError"])(token, formatStr, String(date));
+        }
+        const formatter = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$date$2d$fns$2f$_lib$2f$format$2f$formatters$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatters"][token[0]];
+        return formatter(originalDate, token, locale.localize, formatterOptions);
+    }).join("");
+}
+function cleanEscapedString(input) {
+    const matched = input.match(escapedStringRegExp);
+    if (!matched) {
+        return input;
+    }
+    return matched[1].replace(doubleQuoteRegExp, "'");
+}
+const __TURBOPACK__default__export__ = format;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * @license React
+ * use-sync-external-store-shim.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "production" !== ("TURBOPACK compile-time value", "development") && function() {
+    function is(x, y) {
+        return x === y && (0 !== x || 1 / x === 1 / y) || x !== x && y !== y;
+    }
+    function useSyncExternalStore$2(subscribe, getSnapshot) {
+        didWarnOld18Alpha || void 0 === React.startTransition || (didWarnOld18Alpha = !0, console.error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."));
+        var value = getSnapshot();
+        if (!didWarnUncachedGetSnapshot) {
+            var cachedValue = getSnapshot();
+            objectIs(value, cachedValue) || (console.error("The result of getSnapshot should be cached to avoid an infinite loop"), didWarnUncachedGetSnapshot = !0);
+        }
+        cachedValue = useState({
+            inst: {
+                value: value,
+                getSnapshot: getSnapshot
+            }
+        });
+        var inst = cachedValue[0].inst, forceUpdate = cachedValue[1];
+        useLayoutEffect(function() {
+            inst.value = value;
+            inst.getSnapshot = getSnapshot;
+            checkIfSnapshotChanged(inst) && forceUpdate({
+                inst: inst
+            });
+        }, [
+            subscribe,
+            value,
+            getSnapshot
+        ]);
+        useEffect(function() {
+            checkIfSnapshotChanged(inst) && forceUpdate({
+                inst: inst
+            });
+            return subscribe(function() {
+                checkIfSnapshotChanged(inst) && forceUpdate({
+                    inst: inst
+                });
+            });
+        }, [
+            subscribe
+        ]);
+        useDebugValue(value);
+        return value;
+    }
+    function checkIfSnapshotChanged(inst) {
+        var latestGetSnapshot = inst.getSnapshot;
+        inst = inst.value;
+        try {
+            var nextValue = latestGetSnapshot();
+            return !objectIs(inst, nextValue);
+        } catch (error) {
+            return !0;
+        }
+    }
+    function useSyncExternalStore$1(subscribe, getSnapshot) {
+        return getSnapshot();
+    }
+    "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
+    var React = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)"), objectIs = "function" === typeof Object.is ? Object.is : is, useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue, didWarnOld18Alpha = !1, didWarnUncachedGetSnapshot = !1, shim = ("TURBOPACK compile-time truthy", 1) ? useSyncExternalStore$1 : "TURBOPACK unreachable";
+    exports.useSyncExternalStore = void 0 !== React.useSyncExternalStore ? React.useSyncExternalStore : shim;
+    "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
+}();
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/use-sync-external-store/shim/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/events.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ERROR_REVALIDATE_EVENT",
+    ()=>ERROR_REVALIDATE_EVENT,
+    "FOCUS_EVENT",
+    ()=>FOCUS_EVENT,
+    "MUTATE_EVENT",
+    ()=>MUTATE_EVENT,
+    "RECONNECT_EVENT",
+    ()=>RECONNECT_EVENT
+]);
+const FOCUS_EVENT = 0;
+const RECONNECT_EVENT = 1;
+const MUTATE_EVENT = 2;
+const ERROR_REVALIDATE_EVENT = 3;
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "A",
+    ()=>noop,
+    "B",
+    ()=>isPromiseLike,
+    "I",
+    ()=>IS_REACT_LEGACY,
+    "O",
+    ()=>OBJECT,
+    "S",
+    ()=>SWRConfigContext,
+    "U",
+    ()=>UNDEFINED,
+    "a",
+    ()=>isFunction,
+    "b",
+    ()=>SWRGlobalState,
+    "c",
+    ()=>cache,
+    "d",
+    ()=>defaultConfig,
+    "e",
+    ()=>isUndefined,
+    "f",
+    ()=>mergeConfigs,
+    "g",
+    ()=>SWRConfig,
+    "h",
+    ()=>initCache,
+    "i",
+    ()=>isWindowDefined,
+    "j",
+    ()=>mutate,
+    "k",
+    ()=>compare,
+    "l",
+    ()=>stableHash,
+    "m",
+    ()=>mergeObjects,
+    "n",
+    ()=>internalMutate,
+    "o",
+    ()=>getTimestamp,
+    "p",
+    ()=>preset,
+    "q",
+    ()=>defaultConfigOptions,
+    "r",
+    ()=>IS_SERVER,
+    "s",
+    ()=>serialize,
+    "t",
+    ()=>rAF,
+    "u",
+    ()=>useIsomorphicLayoutEffect,
+    "v",
+    ()=>slowConnection,
+    "w",
+    ()=>isDocumentDefined,
+    "x",
+    ()=>isLegacyDeno,
+    "y",
+    ()=>hasRequestAnimationFrame,
+    "z",
+    ()=>createCacheHelper
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/events.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$dequal$2f$lite$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/dequal/lite/index.mjs [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+// Global state used to deduplicate requests and store listeners
+const SWRGlobalState = new WeakMap();
+// Shared state between server components and client components
+const noop = ()=>{};
+// Using noop() as the undefined value as undefined can be replaced
+// by something else. Prettier ignore and extra parentheses are necessary here
+// to ensure that tsc doesn't remove the __NOINLINE__ comment.
+// prettier-ignore
+const UNDEFINED = /*#__NOINLINE__*/ noop();
+const OBJECT = Object;
+const isUndefined = (v)=>v === UNDEFINED;
+const isFunction = (v)=>typeof v == 'function';
+const mergeObjects = (a, b)=>({
+        ...a,
+        ...b
+    });
+const isPromiseLike = (x)=>isFunction(x.then);
+const EMPTY_CACHE = {};
+const INITIAL_CACHE = {};
+const STR_UNDEFINED = 'undefined';
+// NOTE: Use the function to guarantee it's re-evaluated between jsdom and node runtime for tests.
+const isWindowDefined = ("TURBOPACK compile-time value", "undefined") != STR_UNDEFINED;
+const isDocumentDefined = typeof document != STR_UNDEFINED;
+const isLegacyDeno = isWindowDefined && 'Deno' in window;
+const hasRequestAnimationFrame = ()=>isWindowDefined && typeof window['requestAnimationFrame'] != STR_UNDEFINED;
+const createCacheHelper = (cache, key)=>{
+    const state = SWRGlobalState.get(cache);
+    return [
+        // Getter
+        ()=>!isUndefined(key) && cache.get(key) || EMPTY_CACHE,
+        // Setter
+        (info)=>{
+            if (!isUndefined(key)) {
+                const prev = cache.get(key);
+                // Before writing to the store, we keep the value in the initial cache
+                // if it's not there yet.
+                if (!(key in INITIAL_CACHE)) {
+                    INITIAL_CACHE[key] = prev;
+                }
+                state[5](key, mergeObjects(prev, info), prev || EMPTY_CACHE);
+            }
+        },
+        // Subscriber
+        state[6],
+        // Get server cache snapshot
+        ()=>{
+            if (!isUndefined(key)) {
+                // If the cache was updated on the client, we return the stored initial value.
+                if (key in INITIAL_CACHE) return INITIAL_CACHE[key];
+            }
+            // If we haven't done any client-side updates, we return the current value.
+            return !isUndefined(key) && cache.get(key) || EMPTY_CACHE;
+        }
+    ];
+} // export { UNDEFINED, OBJECT, isUndefined, isFunction, mergeObjects, isPromiseLike }
+;
+/**
+ * Due to the bug https://bugs.chromium.org/p/chromium/issues/detail?id=678075,
+ * it's not reliable to detect if the browser is currently online or offline
+ * based on `navigator.onLine`.
+ * As a workaround, we always assume it's online on the first load, and change
+ * the status upon `online` or `offline` events.
+ */ let online = true;
+const isOnline = ()=>online;
+// For node and React Native, `add/removeEventListener` doesn't exist on window.
+const [onWindowEvent, offWindowEvent] = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : [
+    noop,
+    noop
+];
+const isVisible = ()=>{
+    const visibilityState = isDocumentDefined && document.visibilityState;
+    return isUndefined(visibilityState) || visibilityState !== 'hidden';
+};
+const initFocus = (callback)=>{
+    // focus revalidate
+    if (isDocumentDefined) {
+        document.addEventListener('visibilitychange', callback);
+    }
+    onWindowEvent('focus', callback);
+    return ()=>{
+        if (isDocumentDefined) {
+            document.removeEventListener('visibilitychange', callback);
+        }
+        offWindowEvent('focus', callback);
+    };
+};
+const initReconnect = (callback)=>{
+    // revalidate on reconnected
+    const onOnline = ()=>{
+        online = true;
+        callback();
+    };
+    // nothing to revalidate, just update the status
+    const onOffline = ()=>{
+        online = false;
+    };
+    onWindowEvent('online', onOnline);
+    onWindowEvent('offline', onOffline);
+    return ()=>{
+        offWindowEvent('online', onOnline);
+        offWindowEvent('offline', onOffline);
+    };
+};
+const preset = {
+    isOnline,
+    isVisible
+};
+const defaultConfigOptions = {
+    initFocus,
+    initReconnect
+};
+const IS_REACT_LEGACY = !__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useId;
+const IS_SERVER = !isWindowDefined || isLegacyDeno;
+// Polyfill requestAnimationFrame
+const rAF = (f)=>hasRequestAnimationFrame() ? "TURBOPACK unreachable" : setTimeout(f, 1);
+// React currently throws a warning when using useLayoutEffect on the server.
+// To get around it, we can conditionally useEffect on the server (no-op) and
+// useLayoutEffect in the browser.
+const useIsomorphicLayoutEffect = ("TURBOPACK compile-time truthy", 1) ? __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"] : "TURBOPACK unreachable";
+// This assignment is to extend the Navigator type to use effectiveType.
+const navigatorConnection = typeof navigator !== 'undefined' && navigator.connection;
+// Adjust the config based on slow connection status (<= 70Kbps).
+const slowConnection = !IS_SERVER && navigatorConnection && ([
+    'slow-2g',
+    '2g'
+].includes(navigatorConnection.effectiveType) || navigatorConnection.saveData);
+// use WeakMap to store the object->key mapping
+// so the objects can be garbage collected.
+// WeakMap uses a hashtable under the hood, so the lookup
+// complexity is almost O(1).
+const table = new WeakMap();
+const getTypeName = (value)=>OBJECT.prototype.toString.call(value);
+const isObjectTypeName = (typeName, type)=>typeName === `[object ${type}]`;
+// counter of the key
+let counter = 0;
+// A stable hash implementation that supports:
+// - Fast and ensures unique hash properties
+// - Handles unserializable values
+// - Handles object key ordering
+// - Generates short results
+//
+// This is not a serialization function, and the result is not guaranteed to be
+// parsable.
+const stableHash = (arg)=>{
+    const type = typeof arg;
+    const typeName = getTypeName(arg);
+    const isDate = isObjectTypeName(typeName, 'Date');
+    const isRegex = isObjectTypeName(typeName, 'RegExp');
+    const isPlainObject = isObjectTypeName(typeName, 'Object');
+    let result;
+    let index;
+    if (OBJECT(arg) === arg && !isDate && !isRegex) {
+        // Object/function, not null/date/regexp. Use WeakMap to store the id first.
+        // If it's already hashed, directly return the result.
+        result = table.get(arg);
+        if (result) return result;
+        // Store the hash first for circular reference detection before entering the
+        // recursive `stableHash` calls.
+        // For other objects like set and map, we use this id directly as the hash.
+        result = ++counter + '~';
+        table.set(arg, result);
+        if (Array.isArray(arg)) {
+            // Array.
+            result = '@';
+            for(index = 0; index < arg.length; index++){
+                result += stableHash(arg[index]) + ',';
+            }
+            table.set(arg, result);
+        }
+        if (isPlainObject) {
+            // Object, sort keys.
+            result = '#';
+            const keys = OBJECT.keys(arg).sort();
+            while(!isUndefined(index = keys.pop())){
+                if (!isUndefined(arg[index])) {
+                    result += index + ':' + stableHash(arg[index]) + ',';
+                }
+            }
+            table.set(arg, result);
+        }
+    } else {
+        result = isDate ? arg.toJSON() : type == 'symbol' ? arg.toString() : type == 'string' ? JSON.stringify(arg) : '' + arg;
+    }
+    return result;
+};
+const serialize = (key)=>{
+    if (isFunction(key)) {
+        try {
+            key = key();
+        } catch (err) {
+            // dependencies not ready
+            key = '';
+        }
+    }
+    // Use the original key as the argument of fetcher. This can be a string or an
+    // array of values.
+    const args = key;
+    // If key is not falsy, or not an empty array, hash it.
+    key = typeof key == 'string' ? key : (Array.isArray(key) ? key.length : key) ? stableHash(key) : '';
+    return [
+        key,
+        args
+    ];
+};
+// Global timestamp.
+let __timestamp = 0;
+const getTimestamp = ()=>++__timestamp;
+async function internalMutate(...args) {
+    const [cache, _key, _data, _opts] = args;
+    // When passing as a boolean, it's explicitly used to disable/enable
+    // revalidation.
+    const options = mergeObjects({
+        populateCache: true,
+        throwOnError: true
+    }, typeof _opts === 'boolean' ? {
+        revalidate: _opts
+    } : _opts || {});
+    let populateCache = options.populateCache;
+    const rollbackOnErrorOption = options.rollbackOnError;
+    let optimisticData = options.optimisticData;
+    const rollbackOnError = (error)=>{
+        return typeof rollbackOnErrorOption === 'function' ? rollbackOnErrorOption(error) : rollbackOnErrorOption !== false;
+    };
+    const throwOnError = options.throwOnError;
+    // If the second argument is a key filter, return the mutation results for all
+    // filtered keys.
+    if (isFunction(_key)) {
+        const keyFilter = _key;
+        const matchedKeys = [];
+        const it = cache.keys();
+        for (const key of it){
+            if (!/^\$(inf|sub)\$/.test(key) && keyFilter(cache.get(key)._k)) {
+                matchedKeys.push(key);
+            }
+        }
+        return Promise.all(matchedKeys.map(mutateByKey));
+    }
+    return mutateByKey(_key);
+    //TURBOPACK unreachable
+    ;
+    async function mutateByKey(_k) {
+        // Serialize key
+        const [key] = serialize(_k);
+        if (!key) return;
+        const [get, set] = createCacheHelper(cache, key);
+        const [EVENT_REVALIDATORS, MUTATION, FETCH, PRELOAD] = SWRGlobalState.get(cache);
+        const startRevalidate = ()=>{
+            const revalidators = EVENT_REVALIDATORS[key];
+            const revalidate = isFunction(options.revalidate) ? options.revalidate(get().data, _k) : options.revalidate !== false;
+            if (revalidate) {
+                // Invalidate the key by deleting the concurrent request markers so new
+                // requests will not be deduped.
+                delete FETCH[key];
+                delete PRELOAD[key];
+                if (revalidators && revalidators[0]) {
+                    return revalidators[0](__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MUTATE_EVENT"]).then(()=>get().data);
+                }
+            }
+            return get().data;
+        };
+        // If there is no new data provided, revalidate the key with current state.
+        if (args.length < 3) {
+            // Revalidate and broadcast state.
+            return startRevalidate();
+        }
+        let data = _data;
+        let error;
+        let isError = false;
+        // Update global timestamps.
+        const beforeMutationTs = getTimestamp();
+        MUTATION[key] = [
+            beforeMutationTs,
+            0
+        ];
+        const hasOptimisticData = !isUndefined(optimisticData);
+        const state = get();
+        // `displayedData` is the current value on screen. It could be the optimistic value
+        // that is going to be overridden by a `committedData`, or get reverted back.
+        // `committedData` is the validated value that comes from a fetch or mutation.
+        const displayedData = state.data;
+        const currentData = state._c;
+        const committedData = isUndefined(currentData) ? displayedData : currentData;
+        // Do optimistic data update.
+        if (hasOptimisticData) {
+            optimisticData = isFunction(optimisticData) ? optimisticData(committedData, displayedData) : optimisticData;
+            // When we set optimistic data, backup the current committedData data in `_c`.
+            set({
+                data: optimisticData,
+                _c: committedData
+            });
+        }
+        if (isFunction(data)) {
+            // `data` is a function, call it passing current cache value.
+            try {
+                data = data(committedData);
+            } catch (err) {
+                // If it throws an error synchronously, we shouldn't update the cache.
+                error = err;
+                isError = true;
+            }
+        }
+        // `data` is a promise/thenable, resolve the final data first.
+        if (data && isPromiseLike(data)) {
+            // This means that the mutation is async, we need to check timestamps to
+            // avoid race conditions.
+            data = await data.catch((err)=>{
+                error = err;
+                isError = true;
+            });
+            // Check if other mutations have occurred since we've started this mutation.
+            // If there's a race we don't update cache or broadcast the change,
+            // just return the data.
+            if (beforeMutationTs !== MUTATION[key][0]) {
+                if (isError) throw error;
+                return data;
+            } else if (isError && hasOptimisticData && rollbackOnError(error)) {
+                // Rollback. Always populate the cache in this case but without
+                // transforming the data.
+                populateCache = true;
+                // Reset data to be the latest committed data, and clear the `_c` value.
+                set({
+                    data: committedData,
+                    _c: UNDEFINED
+                });
+            }
+        }
+        // If we should write back the cache after request.
+        if (populateCache) {
+            if (!isError) {
+                // Transform the result into data.
+                if (isFunction(populateCache)) {
+                    const populateCachedData = populateCache(data, committedData);
+                    set({
+                        data: populateCachedData,
+                        error: UNDEFINED,
+                        _c: UNDEFINED
+                    });
+                } else {
+                    // Only update cached data and reset the error if there's no error. Data can be `undefined` here.
+                    set({
+                        data,
+                        error: UNDEFINED,
+                        _c: UNDEFINED
+                    });
+                }
+            }
+        }
+        // Reset the timestamp to mark the mutation has ended.
+        MUTATION[key][1] = getTimestamp();
+        // Update existing SWR Hooks' internal states:
+        Promise.resolve(startRevalidate()).then(()=>{
+            // The mutation and revalidation are ended, we can clear it since the data is
+            // not an optimistic value anymore.
+            set({
+                _c: UNDEFINED
+            });
+        });
+        // Throw error or return data
+        if (isError) {
+            if (throwOnError) throw error;
+            return;
+        }
+        return data;
+    }
+}
+const revalidateAllKeys = (revalidators, type)=>{
+    for(const key in revalidators){
+        if (revalidators[key][0]) revalidators[key][0](type);
+    }
+};
+const initCache = (provider, options)=>{
+    // The global state for a specific provider will be used to deduplicate
+    // requests and store listeners. As well as a mutate function that is bound to
+    // the cache.
+    // The provider's global state might be already initialized. Let's try to get the
+    // global state associated with the provider first.
+    if (!SWRGlobalState.has(provider)) {
+        const opts = mergeObjects(defaultConfigOptions, options);
+        // If there's no global state bound to the provider, create a new one with the
+        // new mutate function.
+        const EVENT_REVALIDATORS = Object.create(null);
+        const mutate = internalMutate.bind(UNDEFINED, provider);
+        let unmount = noop;
+        const subscriptions = Object.create(null);
+        const subscribe = (key, callback)=>{
+            const subs = subscriptions[key] || [];
+            subscriptions[key] = subs;
+            subs.push(callback);
+            return ()=>subs.splice(subs.indexOf(callback), 1);
+        };
+        const setter = (key, value, prev)=>{
+            provider.set(key, value);
+            const subs = subscriptions[key];
+            if (subs) {
+                for (const fn of subs){
+                    fn(value, prev);
+                }
+            }
+        };
+        const initProvider = ()=>{
+            if (!SWRGlobalState.has(provider)) {
+                // Update the state if it's new, or if the provider has been extended.
+                SWRGlobalState.set(provider, [
+                    EVENT_REVALIDATORS,
+                    Object.create(null),
+                    Object.create(null),
+                    Object.create(null),
+                    mutate,
+                    setter,
+                    subscribe
+                ]);
+                if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+                ;
+            }
+        };
+        initProvider();
+        // This is a new provider, we need to initialize it and setup DOM events
+        // listeners for `focus` and `reconnect` actions.
+        // We might want to inject an extra layer on top of `provider` in the future,
+        // such as key serialization, auto GC, etc.
+        // For now, it's just a `Map` interface without any modifications.
+        return [
+            provider,
+            mutate,
+            initProvider,
+            unmount
+        ];
+    }
+    return [
+        provider,
+        SWRGlobalState.get(provider)[4]
+    ];
+};
+// error retry
+const onErrorRetry = (_, __, config, revalidate, opts)=>{
+    const maxRetryCount = config.errorRetryCount;
+    const currentRetryCount = opts.retryCount;
+    // Exponential backoff
+    const timeout = ~~((Math.random() + 0.5) * (1 << (currentRetryCount < 8 ? currentRetryCount : 8))) * config.errorRetryInterval;
+    if (!isUndefined(maxRetryCount) && currentRetryCount > maxRetryCount) {
+        return;
+    }
+    setTimeout(revalidate, timeout, opts);
+};
+const compare = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$dequal$2f$lite$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["dequal"];
+// Default cache provider
+const [cache, mutate] = initCache(new Map());
+// Default config
+const defaultConfig = mergeObjects({
+    // events
+    onLoadingSlow: noop,
+    onSuccess: noop,
+    onError: noop,
+    onErrorRetry,
+    onDiscarded: noop,
+    // switches
+    revalidateOnFocus: true,
+    revalidateOnReconnect: true,
+    revalidateIfStale: true,
+    shouldRetryOnError: true,
+    // timeouts
+    errorRetryInterval: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : 5000,
+    focusThrottleInterval: 5 * 1000,
+    dedupingInterval: 2 * 1000,
+    loadingTimeout: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : 3000,
+    // providers
+    compare,
+    isPaused: ()=>false,
+    cache,
+    mutate,
+    fallback: {}
+}, preset);
+const mergeConfigs = (a, b)=>{
+    // Need to create a new object to avoid mutating the original here.
+    const v = mergeObjects(a, b);
+    // If two configs are provided, merge their `use` and `fallback` options.
+    if (b) {
+        const { use: u1, fallback: f1 } = a;
+        const { use: u2, fallback: f2 } = b;
+        if (u1 && u2) {
+            v.use = u1.concat(u2);
+        }
+        if (f1 && f2) {
+            v.fallback = mergeObjects(f1, f2);
+        }
+    }
+    return v;
+};
+const SWRConfigContext = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"])({});
+const SWRConfig = (props)=>{
+    const { value } = props;
+    const parentConfig = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"])(SWRConfigContext);
+    const isFunctionalConfig = isFunction(value);
+    const config = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>isFunctionalConfig ? value(parentConfig) : value, [
+        isFunctionalConfig,
+        parentConfig,
+        value
+    ]);
+    // Extend parent context values and middleware.
+    const extendedConfig = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>isFunctionalConfig ? config : mergeConfigs(parentConfig, config), [
+        isFunctionalConfig,
+        parentConfig,
+        config
+    ]);
+    // Should not use the inherited provider.
+    const provider = config && config.provider;
+    // initialize the cache only on first access.
+    const cacheContextRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(UNDEFINED);
+    if (provider && !cacheContextRef.current) {
+        cacheContextRef.current = initCache(provider(extendedConfig.cache || cache), config);
+    }
+    const cacheContext = cacheContextRef.current;
+    // Override the cache if a new provider is given.
+    if (cacheContext) {
+        extendedConfig.cache = cacheContext[0];
+        extendedConfig.mutate = cacheContext[1];
+    }
+    // Unsubscribe events.
+    useIsomorphicLayoutEffect(()=>{
+        if (cacheContext) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            cacheContext[2] && cacheContext[2]();
+            return cacheContext[3];
+        }
+    }, []);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(SWRConfigContext.Provider, mergeObjects(props, {
+        value: extendedConfig
+    }));
+};
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export U as UNDEFINED>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "UNDEFINED",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["U"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export O as OBJECT>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "OBJECT",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["O"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export g as SWRConfig>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SWRConfig",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["g"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export d as defaultConfig>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "defaultConfig",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["d"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/constants.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "INFINITE_PREFIX",
+    ()=>INFINITE_PREFIX
+]);
+const INFINITE_PREFIX = '$inf$';
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/index.mjs [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "normalize",
+    ()=>normalize,
+    "preload",
+    ()=>preload,
+    "subscribeCallback",
+    ()=>subscribeCallback,
+    "useSWRConfig",
+    ()=>useSWRConfig,
+    "withArgs",
+    ()=>withArgs,
+    "withMiddleware",
+    ()=>withMiddleware
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/events.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$constants$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/constants.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+// @ts-expect-error
+const enableDevtools = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["i"] && window.__SWR_DEVTOOLS_USE__;
+const use = enableDevtools ? window.__SWR_DEVTOOLS_USE__ : [];
+const setupDevTools = ()=>{
+    if (enableDevtools) {
+        // @ts-expect-error
+        window.__SWR_DEVTOOLS_REACT__ = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"];
+    }
+};
+const normalize = (args)=>{
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["a"])(args[1]) ? [
+        args[0],
+        args[1],
+        args[2] || {}
+    ] : [
+        args[0],
+        null,
+        (args[1] === null ? args[2] : args[1]) || {}
+    ];
+};
+const useSWRConfig = ()=>{
+    const parentConfig = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["S"]);
+    const mergedConfig = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["m"])(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["d"], parentConfig), [
+        parentConfig
+    ]);
+    return mergedConfig;
+};
+const preload = (key_, fetcher)=>{
+    const [key, fnArg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["s"])(key_);
+    const [, , , PRELOAD] = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["b"].get(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["c"]);
+    // Prevent preload to be called multiple times before used.
+    if (PRELOAD[key]) return PRELOAD[key];
+    const req = fetcher(fnArg);
+    PRELOAD[key] = req;
+    return req;
+};
+const middleware = (useSWRNext)=>(key_, fetcher_, config)=>{
+        // fetcher might be a sync function, so this should not be an async function
+        const fetcher = fetcher_ && ((...args)=>{
+            const [key] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["s"])(key_);
+            const [, , , PRELOAD] = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["b"].get(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["c"]);
+            if (key.startsWith(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$constants$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["INFINITE_PREFIX"])) {
+                // we want the infinite fetcher to be called.
+                // handling of the PRELOAD cache happens there.
+                return fetcher_(...args);
+            }
+            const req = PRELOAD[key];
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["e"])(req)) return fetcher_(...args);
+            delete PRELOAD[key];
+            return req;
+        });
+        return useSWRNext(key_, fetcher, config);
+    };
+const BUILT_IN_MIDDLEWARE = use.concat(middleware);
+// It's tricky to pass generic types as parameters, so we just directly override
+// the types here.
+const withArgs = (hook)=>{
+    return function useSWRArgs(...args) {
+        // Get the default and inherited configuration.
+        const fallbackConfig = useSWRConfig();
+        // Normalize arguments.
+        const [key, fn, _config] = normalize(args);
+        // Merge configurations.
+        const config = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["f"])(fallbackConfig, _config);
+        // Apply middleware
+        let next = hook;
+        const { use } = config;
+        const middleware = (use || []).concat(BUILT_IN_MIDDLEWARE);
+        for(let i = middleware.length; i--;){
+            next = middleware[i](next);
+        }
+        return next(key, fn || config.fetcher || null, config);
+    };
+};
+// Add a callback function to a list of keyed callback functions and return
+// the unsubscribe function.
+const subscribeCallback = (key, callbacks, callback)=>{
+    const keyedRevalidators = callbacks[key] || (callbacks[key] = []);
+    keyedRevalidators.push(callback);
+    return ()=>{
+        const index = keyedRevalidators.indexOf(callback);
+        if (index >= 0) {
+            // O(1): faster than splice
+            keyedRevalidators[index] = keyedRevalidators[keyedRevalidators.length - 1];
+            keyedRevalidators.pop();
+        }
+    };
+};
+// Create a custom hook with a middleware
+const withMiddleware = (useSWR, middleware)=>{
+    return (...args)=>{
+        const [key, fn, config] = normalize(args);
+        const uses = (config.use || []).concat(middleware);
+        return useSWR(key, fn, {
+            ...config,
+            use: uses
+        });
+    };
+};
+setupDevTools();
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export b as SWRGlobalState>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SWRGlobalState",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["b"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export s as serialize>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "serialize",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["s"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export z as createCacheHelper>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createCacheHelper",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["z"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export e as isUndefined>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isUndefined",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["e"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export B as isPromiseLike>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isPromiseLike",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["B"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export r as IS_SERVER>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "IS_SERVER",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["r"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export A as noop>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "noop",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["A"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export o as getTimestamp>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getTimestamp",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["o"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export a as isFunction>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isFunction",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["a"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/events.mjs [app-ssr] (ecmascript) <export * as revalidateEvents>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "revalidateEvents",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/events.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export n as internalMutate>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "internalMutate",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["n"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export u as useIsomorphicLayoutEffect>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useIsomorphicLayoutEffect",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["u"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export t as rAF>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "rAF",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["t"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export I as IS_REACT_LEGACY>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "IS_REACT_LEGACY",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["I"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export m as mergeObjects>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "mergeObjects",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["m"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/swr/dist/index/index.mjs [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SWRConfig",
+    ()=>SWRConfig,
+    "default",
+    ()=>useSWR,
+    "unstable_serialize",
+    ()=>unstable_serialize
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$shim$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/use-sync-external-store/shim/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__U__as__UNDEFINED$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export U as UNDEFINED>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__O__as__OBJECT$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export O as OBJECT>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__g__as__SWRConfig$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export g as SWRConfig>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__d__as__defaultConfig$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export d as defaultConfig>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/index.mjs [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__b__as__SWRGlobalState$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export b as SWRGlobalState>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__s__as__serialize$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export s as serialize>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__z__as__createCacheHelper$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export z as createCacheHelper>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export e as isUndefined>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__B__as__isPromiseLike$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export B as isPromiseLike>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__r__as__IS_SERVER$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export r as IS_SERVER>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__A__as__noop$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export A as noop>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__o__as__getTimestamp$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export o as getTimestamp>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__a__as__isFunction$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export a as isFunction>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__revalidateEvents$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/events.mjs [app-ssr] (ecmascript) <export * as revalidateEvents>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__n__as__internalMutate$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export n as internalMutate>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__u__as__useIsomorphicLayoutEffect$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export u as useIsomorphicLayoutEffect>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__t__as__rAF$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export t as rAF>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__I__as__IS_REACT_LEGACY$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export I as IS_REACT_LEGACY>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__m__as__mergeObjects$3e$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/swr/dist/_internal/config-context-12s-Dh3trQsc.mjs [app-ssr] (ecmascript) <export m as mergeObjects>");
+;
+;
+;
+;
+// Shared state between server components and client components
+const noop = ()=>{};
+// Using noop() as the undefined value as undefined can be replaced
+// by something else. Prettier ignore and extra parentheses are necessary here
+// to ensure that tsc doesn't remove the __NOINLINE__ comment.
+// prettier-ignore
+const UNDEFINED = /*#__NOINLINE__*/ noop();
+const OBJECT = Object;
+const isUndefined = (v)=>v === UNDEFINED;
+const isFunction = (v)=>typeof v == 'function';
+// use WeakMap to store the object->key mapping
+// so the objects can be garbage collected.
+// WeakMap uses a hashtable under the hood, so the lookup
+// complexity is almost O(1).
+const table = new WeakMap();
+const getTypeName = (value)=>OBJECT.prototype.toString.call(value);
+const isObjectTypeName = (typeName, type)=>typeName === `[object ${type}]`;
+// counter of the key
+let counter = 0;
+// A stable hash implementation that supports:
+// - Fast and ensures unique hash properties
+// - Handles unserializable values
+// - Handles object key ordering
+// - Generates short results
+//
+// This is not a serialization function, and the result is not guaranteed to be
+// parsable.
+const stableHash = (arg)=>{
+    const type = typeof arg;
+    const typeName = getTypeName(arg);
+    const isDate = isObjectTypeName(typeName, 'Date');
+    const isRegex = isObjectTypeName(typeName, 'RegExp');
+    const isPlainObject = isObjectTypeName(typeName, 'Object');
+    let result;
+    let index;
+    if (OBJECT(arg) === arg && !isDate && !isRegex) {
+        // Object/function, not null/date/regexp. Use WeakMap to store the id first.
+        // If it's already hashed, directly return the result.
+        result = table.get(arg);
+        if (result) return result;
+        // Store the hash first for circular reference detection before entering the
+        // recursive `stableHash` calls.
+        // For other objects like set and map, we use this id directly as the hash.
+        result = ++counter + '~';
+        table.set(arg, result);
+        if (Array.isArray(arg)) {
+            // Array.
+            result = '@';
+            for(index = 0; index < arg.length; index++){
+                result += stableHash(arg[index]) + ',';
+            }
+            table.set(arg, result);
+        }
+        if (isPlainObject) {
+            // Object, sort keys.
+            result = '#';
+            const keys = OBJECT.keys(arg).sort();
+            while(!isUndefined(index = keys.pop())){
+                if (!isUndefined(arg[index])) {
+                    result += index + ':' + stableHash(arg[index]) + ',';
+                }
+            }
+            table.set(arg, result);
+        }
+    } else {
+        result = isDate ? arg.toJSON() : type == 'symbol' ? arg.toString() : type == 'string' ? JSON.stringify(arg) : '' + arg;
+    }
+    return result;
+};
+const serialize = (key)=>{
+    if (isFunction(key)) {
+        try {
+            key = key();
+        } catch (err) {
+            // dependencies not ready
+            key = '';
+        }
+    }
+    // Use the original key as the argument of fetcher. This can be a string or an
+    // array of values.
+    const args = key;
+    // If key is not falsy, or not an empty array, hash it.
+    key = typeof key == 'string' ? key : (Array.isArray(key) ? key.length : key) ? stableHash(key) : '';
+    return [
+        key,
+        args
+    ];
+};
+const unstable_serialize = (key)=>serialize(key)[0];
+/// <reference types="react/experimental" />
+const use = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].use || // This extra generic is to avoid TypeScript mixing up the generic and JSX sytax
+// and emitting an error.
+// We assume that this is only for the `use(thenable)` case, not `use(context)`.
+// https://github.com/facebook/react/blob/aed00dacfb79d17c53218404c52b1c7aa59c4a89/packages/react-server/src/ReactFizzThenable.js#L45
+((thenable)=>{
+    switch(thenable.status){
+        case 'pending':
+            throw thenable;
+        case 'fulfilled':
+            return thenable.value;
+        case 'rejected':
+            throw thenable.reason;
+        default:
+            thenable.status = 'pending';
+            thenable.then((v)=>{
+                thenable.status = 'fulfilled';
+                thenable.value = v;
+            }, (e)=>{
+                thenable.status = 'rejected';
+                thenable.reason = e;
+            });
+            throw thenable;
+    }
+});
+const WITH_DEDUPE = {
+    dedupe: true
+};
+const resolvedUndef = Promise.resolve(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__U__as__UNDEFINED$3e$__["UNDEFINED"]);
+const useSWRHandler = (_key, fetcher, config)=>{
+    const { cache, compare, suspense, fallbackData, revalidateOnMount, revalidateIfStale, refreshInterval, refreshWhenHidden, refreshWhenOffline, keepPreviousData, strictServerPrefetchWarning } = config;
+    const [EVENT_REVALIDATORS, MUTATION, FETCH, PRELOAD] = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__b__as__SWRGlobalState$3e$__["SWRGlobalState"].get(cache);
+    // `key` is the identifier of the SWR internal state,
+    // `fnArg` is the argument/arguments parsed from the key, which will be passed
+    // to the fetcher.
+    // All of them are derived from `_key`.
+    const [key, fnArg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__s__as__serialize$3e$__["serialize"])(_key);
+    // If it's the initial render of this hook.
+    const initialMountedRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
+    // If the hook is unmounted already. This will be used to prevent some effects
+    // to be called after unmounting.
+    const unmountedRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
+    // Refs to keep the key and config.
+    const keyRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(key);
+    const fetcherRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(fetcher);
+    const configRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(config);
+    const getConfig = ()=>configRef.current;
+    const isActive = ()=>getConfig().isVisible() && getConfig().isOnline();
+    const [getCache, setCache, subscribeCache, getInitialCache] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__z__as__createCacheHelper$3e$__["createCacheHelper"])(cache, key);
+    const stateDependencies = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({}).current;
+    // Resolve the fallback data from either the inline option, or the global provider.
+    // If it's a promise, we simply let React suspend and resolve it for us.
+    const fallback = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(fallbackData) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(config.fallback) ? __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__U__as__UNDEFINED$3e$__["UNDEFINED"] : config.fallback[key] : fallbackData;
+    const isEqual = (prev, current)=>{
+        for(const _ in stateDependencies){
+            const t = _;
+            if (t === 'data') {
+                if (!compare(prev[t], current[t])) {
+                    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(prev[t])) {
+                        return false;
+                    }
+                    if (!compare(returnedData, current[t])) {
+                        return false;
+                    }
+                }
+            } else {
+                if (current[t] !== prev[t]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
+    const getSnapshot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        const shouldStartRequest = (()=>{
+            if (!key) return false;
+            if (!fetcher) return false;
+            // If `revalidateOnMount` is set, we take the value directly.
+            if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(revalidateOnMount)) return revalidateOnMount;
+            // If it's paused, we skip revalidation.
+            if (getConfig().isPaused()) return false;
+            if (suspense) return false;
+            return revalidateIfStale !== false;
+        })();
+        // Get the cache and merge it with expected states.
+        const getSelectedCache = (state)=>{
+            // We only select the needed fields from the state.
+            const snapshot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__m__as__mergeObjects$3e$__["mergeObjects"])(state);
+            delete snapshot._k;
+            if (!shouldStartRequest) {
+                return snapshot;
+            }
+            return {
+                isValidating: true,
+                isLoading: true,
+                ...snapshot
+            };
+        };
+        const cachedData = getCache();
+        const initialData = getInitialCache();
+        const clientSnapshot = getSelectedCache(cachedData);
+        const serverSnapshot = cachedData === initialData ? clientSnapshot : getSelectedCache(initialData);
+        // To make sure that we are returning the same object reference to avoid
+        // unnecessary re-renders, we keep the previous snapshot and use deep
+        // comparison to check if we need to return a new one.
+        let memorizedSnapshot = clientSnapshot;
+        return [
+            ()=>{
+                const newSnapshot = getSelectedCache(getCache());
+                const compareResult = isEqual(newSnapshot, memorizedSnapshot);
+                if (compareResult) {
+                    // Mentally, we should always return the `memorizedSnapshot` here
+                    // as there's no change between the new and old snapshots.
+                    // However, since the `isEqual` function only compares selected fields,
+                    // the values of the unselected fields might be changed. That's
+                    // simply because we didn't track them.
+                    // To support the case in https://github.com/vercel/swr/pull/2576,
+                    // we need to update these fields in the `memorizedSnapshot` too
+                    // with direct mutations to ensure the snapshot is always up-to-date
+                    // even for the unselected fields, but only trigger re-renders when
+                    // the selected fields are changed.
+                    memorizedSnapshot.data = newSnapshot.data;
+                    memorizedSnapshot.isLoading = newSnapshot.isLoading;
+                    memorizedSnapshot.isValidating = newSnapshot.isValidating;
+                    memorizedSnapshot.error = newSnapshot.error;
+                    return memorizedSnapshot;
+                } else {
+                    memorizedSnapshot = newSnapshot;
+                    return newSnapshot;
+                }
+            },
+            ()=>serverSnapshot
+        ];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        cache,
+        key
+    ]);
+    // Get the current state that SWR should return.
+    const cached = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$shim$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSyncExternalStore"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((callback)=>subscribeCache(key, (current, prev)=>{
+            if (!isEqual(prev, current)) callback();
+        }), [
+        cache,
+        key
+    ]), getSnapshot[0], getSnapshot[1]);
+    const isInitialMount = !initialMountedRef.current;
+    const hasRevalidator = EVENT_REVALIDATORS[key] && EVENT_REVALIDATORS[key].length > 0;
+    const cachedData = cached.data;
+    const data = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(cachedData) ? fallback && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__B__as__isPromiseLike$3e$__["isPromiseLike"])(fallback) ? use(fallback) : fallback : cachedData;
+    const error = cached.error;
+    // Use a ref to store previously returned data. Use the initial data as its initial value.
+    const laggyDataRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(data);
+    const returnedData = keepPreviousData ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(cachedData) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(laggyDataRef.current) ? data : laggyDataRef.current : cachedData : data;
+    const hasKeyButNoData = key && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(data);
+    // Note: the conditionally hook call is fine because the environment
+    // `IS_SERVER` never changes.
+    const isHydration = !__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__r__as__IS_SERVER$3e$__["IS_SERVER"] && // eslint-disable-next-line react-hooks/rules-of-hooks
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$shim$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSyncExternalStore"])(()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__A__as__noop$3e$__["noop"], ()=>false, ()=>true);
+    // During the initial SSR render, warn if the key has no data pre-fetched via:
+    // - fallback data
+    // - preload calls
+    // - initial data from the cache provider
+    // We only warn once for each key during SSR.
+    if (strictServerPrefetchWarning && isHydration && !suspense && hasKeyButNoData) {
+        console.warn(`Missing pre-initiated data for serialized key "${key}" during server-side rendering. Data fethcing should be initiated on the server and provided to SWR via fallback data. You can set "strictServerPrefetchWarning: false" to disable this warning.`);
+    }
+    // - Suspense mode and there's stale data for the initial render.
+    // - Not suspense mode and there is no fallback data and `revalidateIfStale` is enabled.
+    // - `revalidateIfStale` is enabled but `data` is not defined.
+    const shouldDoInitialRevalidation = (()=>{
+        // if a key already has revalidators and also has error, we should not trigger revalidation
+        if (hasRevalidator && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(error)) return false;
+        // If `revalidateOnMount` is set, we take the value directly.
+        if (isInitialMount && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(revalidateOnMount)) return revalidateOnMount;
+        // If it's paused, we skip revalidation.
+        if (getConfig().isPaused()) return false;
+        // Under suspense mode, it will always fetch on render if there is no
+        // stale data so no need to revalidate immediately mount it again.
+        // If data exists, only revalidate if `revalidateIfStale` is true.
+        if (suspense) return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(data) ? false : revalidateIfStale;
+        // If there is no stale data, we need to revalidate when mount;
+        // If `revalidateIfStale` is set to true, we will always revalidate.
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(data) || revalidateIfStale;
+    })();
+    // Resolve the default validating state:
+    // If it's able to validate, and it should revalidate when mount, this will be true.
+    const defaultValidatingState = !!(key && fetcher && isInitialMount && shouldDoInitialRevalidation);
+    const isValidating = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(cached.isValidating) ? defaultValidatingState : cached.isValidating;
+    const isLoading = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(cached.isLoading) ? defaultValidatingState : cached.isLoading;
+    // The revalidation function is a carefully crafted wrapper of the original
+    // `fetcher`, to correctly handle the many edge cases.
+    const revalidate = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async (revalidateOpts)=>{
+        const currentFetcher = fetcherRef.current;
+        if (!key || !currentFetcher || unmountedRef.current || getConfig().isPaused()) {
+            return false;
+        }
+        let newData;
+        let startAt;
+        let loading = true;
+        const opts = revalidateOpts || {};
+        // If there is no ongoing concurrent request, or `dedupe` is not set, a
+        // new request should be initiated.
+        const shouldStartNewRequest = !FETCH[key] || !opts.dedupe;
+        /*
+         For React 17
+         Do unmount check for calls:
+         If key has changed during the revalidation, or the component has been
+         unmounted, old dispatch and old event callbacks should not take any
+         effect
+
+        For React 18
+        only check if key has changed
+        https://github.com/reactwg/react-18/discussions/82
+      */ const callbackSafeguard = ()=>{
+            if (__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__I__as__IS_REACT_LEGACY$3e$__["IS_REACT_LEGACY"]) {
+                return !unmountedRef.current && key === keyRef.current && initialMountedRef.current;
+            }
+            return key === keyRef.current;
+        };
+        // The final state object when the request finishes.
+        const finalState = {
+            isValidating: false,
+            isLoading: false
+        };
+        const finishRequestAndUpdateState = ()=>{
+            setCache(finalState);
+        };
+        const cleanupState = ()=>{
+            // Check if it's still the same request before deleting it.
+            const requestInfo = FETCH[key];
+            if (requestInfo && requestInfo[1] === startAt) {
+                delete FETCH[key];
+            }
+        };
+        // Start fetching. Change the `isValidating` state, update the cache.
+        const initialState = {
+            isValidating: true
+        };
+        // It is in the `isLoading` state, if and only if there is no cached data.
+        // This bypasses fallback data and laggy data.
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(getCache().data)) {
+            initialState.isLoading = true;
+        }
+        try {
+            if (shouldStartNewRequest) {
+                setCache(initialState);
+                // If no cache is being rendered currently (it shows a blank page),
+                // we trigger the loading slow event.
+                if (config.loadingTimeout && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(getCache().data)) {
+                    setTimeout(()=>{
+                        if (loading && callbackSafeguard()) {
+                            getConfig().onLoadingSlow(key, config);
+                        }
+                    }, config.loadingTimeout);
+                }
+                // Start the request and save the timestamp.
+                // Key must be truthy if entering here.
+                FETCH[key] = [
+                    currentFetcher(fnArg),
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__o__as__getTimestamp$3e$__["getTimestamp"])()
+                ];
+            }
+            // Wait until the ongoing request is done. Deduplication is also
+            // considered here.
+            ;
+            [newData, startAt] = FETCH[key];
+            newData = await newData;
+            if (shouldStartNewRequest) {
+                // If the request isn't interrupted, clean it up after the
+                // deduplication interval.
+                setTimeout(cleanupState, config.dedupingInterval);
+            }
+            // If there're other ongoing request(s), started after the current one,
+            // we need to ignore the current one to avoid possible race conditions:
+            //   req1------------------>res1        (current one)
+            //        req2---------------->res2
+            // the request that fired later will always be kept.
+            // The timestamp maybe be `undefined` or a number
+            if (!FETCH[key] || FETCH[key][1] !== startAt) {
+                if (shouldStartNewRequest) {
+                    if (callbackSafeguard()) {
+                        getConfig().onDiscarded(key);
+                    }
+                }
+                return false;
+            }
+            // Clear error.
+            finalState.error = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__U__as__UNDEFINED$3e$__["UNDEFINED"];
+            // If there're other mutations(s), that overlapped with the current revalidation:
+            // case 1:
+            //   req------------------>res
+            //       mutate------>end
+            // case 2:
+            //         req------------>res
+            //   mutate------>end
+            // case 3:
+            //   req------------------>res
+            //       mutate-------...---------->
+            // we have to ignore the revalidation result (res) because it's no longer fresh.
+            // meanwhile, a new revalidation should be triggered when the mutation ends.
+            const mutationInfo = MUTATION[key];
+            if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(mutationInfo) && // case 1
+            (startAt <= mutationInfo[0] || // case 2
+            startAt <= mutationInfo[1] || // case 3
+            mutationInfo[1] === 0)) {
+                finishRequestAndUpdateState();
+                if (shouldStartNewRequest) {
+                    if (callbackSafeguard()) {
+                        getConfig().onDiscarded(key);
+                    }
+                }
+                return false;
+            }
+            // Deep compare with the latest state to avoid extra re-renders.
+            // For local state, compare and assign.
+            const cacheData = getCache().data;
+            // Since the compare fn could be custom fn
+            // cacheData might be different from newData even when compare fn returns True
+            finalState.data = compare(cacheData, newData) ? cacheData : newData;
+            // Trigger the successful callback if it's the original request.
+            if (shouldStartNewRequest) {
+                if (callbackSafeguard()) {
+                    getConfig().onSuccess(newData, key, config);
+                }
+            }
+        } catch (err) {
+            cleanupState();
+            const currentConfig = getConfig();
+            const { shouldRetryOnError } = currentConfig;
+            // Not paused, we continue handling the error. Otherwise, discard it.
+            if (!currentConfig.isPaused()) {
+                // Get a new error, don't use deep comparison for errors.
+                finalState.error = err;
+                // Error event and retry logic. Only for the actual request, not
+                // deduped ones.
+                if (shouldStartNewRequest && callbackSafeguard()) {
+                    currentConfig.onError(err, key, currentConfig);
+                    if (shouldRetryOnError === true || (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__a__as__isFunction$3e$__["isFunction"])(shouldRetryOnError) && shouldRetryOnError(err)) {
+                        if (!getConfig().revalidateOnFocus || !getConfig().revalidateOnReconnect || isActive()) {
+                            // If it's inactive, stop. It will auto-revalidate when
+                            // refocusing or reconnecting.
+                            // When retrying, deduplication is always enabled.
+                            currentConfig.onErrorRetry(err, key, currentConfig, (_opts)=>{
+                                const revalidators = EVENT_REVALIDATORS[key];
+                                if (revalidators && revalidators[0]) {
+                                    revalidators[0](__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__revalidateEvents$3e$__["revalidateEvents"].ERROR_REVALIDATE_EVENT, _opts);
+                                }
+                            }, {
+                                retryCount: (opts.retryCount || 0) + 1,
+                                dedupe: true
+                            });
+                        }
+                    }
+                }
+            }
+        }
+        // Mark loading as stopped.
+        loading = false;
+        // Update the current hook's state.
+        finishRequestAndUpdateState();
+        return true;
+    }, // `keyValidating` are depending on `key`, so we can exclude them from
+    // the deps array.
+    //
+    // FIXME:
+    // `fn` and `config` might be changed during the lifecycle,
+    // but they might be changed every render like this.
+    // `useSWR('key', () => fetch('/api/'), { suspense: true })`
+    // So we omit the values from the deps array
+    // even though it might cause unexpected behaviors.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+        key,
+        cache
+    ]);
+    // Similar to the global mutate but bound to the current cache and key.
+    // `cache` isn't allowed to change during the lifecycle.
+    const boundMutate = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((...args)=>{
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__n__as__internalMutate$3e$__["internalMutate"])(cache, keyRef.current, ...args);
+    }, []);
+    // The logic for updating refs.
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__u__as__useIsomorphicLayoutEffect$3e$__["useIsomorphicLayoutEffect"])(()=>{
+        fetcherRef.current = fetcher;
+        configRef.current = config;
+        // Handle laggy data updates. If there's cached data of the current key,
+        // it'll be the correct reference.
+        if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(cachedData)) {
+            laggyDataRef.current = cachedData;
+        }
+    });
+    // After mounted or key changed.
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__u__as__useIsomorphicLayoutEffect$3e$__["useIsomorphicLayoutEffect"])(()=>{
+        if (!key) return;
+        const softRevalidate = revalidate.bind(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__U__as__UNDEFINED$3e$__["UNDEFINED"], WITH_DEDUPE);
+        let nextFocusRevalidatedAt = 0;
+        if (getConfig().revalidateOnFocus) {
+            const initNow = Date.now();
+            nextFocusRevalidatedAt = initNow + getConfig().focusThrottleInterval;
+        }
+        // Expose revalidators to global event listeners. So we can trigger
+        // revalidation from the outside.
+        const onRevalidate = (type, opts = {})=>{
+            if (type == __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__revalidateEvents$3e$__["revalidateEvents"].FOCUS_EVENT) {
+                const now = Date.now();
+                if (getConfig().revalidateOnFocus && now > nextFocusRevalidatedAt && isActive()) {
+                    nextFocusRevalidatedAt = now + getConfig().focusThrottleInterval;
+                    softRevalidate();
+                }
+            } else if (type == __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__revalidateEvents$3e$__["revalidateEvents"].RECONNECT_EVENT) {
+                if (getConfig().revalidateOnReconnect && isActive()) {
+                    softRevalidate();
+                }
+            } else if (type == __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__revalidateEvents$3e$__["revalidateEvents"].MUTATE_EVENT) {
+                return revalidate();
+            } else if (type == __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$events$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__revalidateEvents$3e$__["revalidateEvents"].ERROR_REVALIDATE_EVENT) {
+                return revalidate(opts);
+            }
+            return;
+        };
+        const unsubEvents = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["subscribeCallback"])(key, EVENT_REVALIDATORS, onRevalidate);
+        // Mark the component as mounted and update corresponding refs.
+        unmountedRef.current = false;
+        keyRef.current = key;
+        initialMountedRef.current = true;
+        // Keep the original key in the cache.
+        setCache({
+            _k: fnArg
+        });
+        // Trigger a revalidation
+        if (shouldDoInitialRevalidation) {
+            // Performance optimization: if a request is already in progress for this key,
+            // skip the revalidation to avoid redundant work
+            if (!FETCH[key]) {
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(data) || __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__r__as__IS_SERVER$3e$__["IS_SERVER"]) {
+                    // Revalidate immediately.
+                    softRevalidate();
+                } else {
+                    // Delay the revalidate if we have data to return so we won't block
+                    // rendering.
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__t__as__rAF$3e$__["rAF"])(softRevalidate);
+                }
+            }
+        }
+        return ()=>{
+            // Mark it as unmounted.
+            unmountedRef.current = true;
+            unsubEvents();
+        };
+    }, [
+        key
+    ]);
+    // Polling
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__u__as__useIsomorphicLayoutEffect$3e$__["useIsomorphicLayoutEffect"])(()=>{
+        let timer;
+        function next() {
+            // Use the passed interval
+            // ...or invoke the function with the updated data to get the interval
+            const interval = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__a__as__isFunction$3e$__["isFunction"])(refreshInterval) ? refreshInterval(getCache().data) : refreshInterval;
+            // We only start the next interval if `refreshInterval` is not 0, and:
+            // - `force` is true, which is the start of polling
+            // - or `timer` is not 0, which means the effect wasn't canceled
+            if (interval && timer !== -1) {
+                timer = setTimeout(execute, interval);
+            }
+        }
+        function execute() {
+            // Check if it's OK to execute:
+            // Only revalidate when the page is visible, online, and not errored.
+            if (!getCache().error && (refreshWhenHidden || getConfig().isVisible()) && (refreshWhenOffline || getConfig().isOnline())) {
+                revalidate(WITH_DEDUPE).then(next);
+            } else {
+                // Schedule the next interval to check again.
+                next();
+            }
+        }
+        next();
+        return ()=>{
+            if (timer) {
+                clearTimeout(timer);
+                timer = -1;
+            }
+        };
+    }, [
+        refreshInterval,
+        refreshWhenHidden,
+        refreshWhenOffline,
+        key
+    ]);
+    // Display debug info in React DevTools.
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDebugValue"])(returnedData);
+    // In Suspense mode, we can't return the empty `data` state.
+    // If there is an `error`, the `error` needs to be thrown to the error boundary.
+    // If there is no `error`, the `revalidation` promise needs to be thrown to
+    // the suspense boundary.
+    if (suspense) {
+        // SWR should throw when trying to use Suspense on the server with React 18,
+        // without providing any fallback data. This causes hydration errors. See:
+        // https://github.com/vercel/swr/issues/1832
+        if (!__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__I__as__IS_REACT_LEGACY$3e$__["IS_REACT_LEGACY"] && __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__r__as__IS_SERVER$3e$__["IS_SERVER"] && hasKeyButNoData) {
+            throw new Error('Fallback data is required when using Suspense in SSR.');
+        }
+        // Always update fetcher and config refs even with the Suspense mode.
+        if (hasKeyButNoData) {
+            fetcherRef.current = fetcher;
+            configRef.current = config;
+            unmountedRef.current = false;
+        }
+        const req = PRELOAD[key];
+        const mutateReq = !(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(req) && hasKeyButNoData ? boundMutate(req) : resolvedUndef;
+        use(mutateReq);
+        if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(error) && hasKeyButNoData) {
+            throw error;
+        }
+        const revalidation = hasKeyButNoData ? revalidate(WITH_DEDUPE) : resolvedUndef;
+        if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__e__as__isUndefined$3e$__["isUndefined"])(returnedData) && hasKeyButNoData) {
+            // @ts-ignore modify react promise status
+            revalidation.status = 'fulfilled';
+            // @ts-ignore modify react promise value
+            revalidation.value = true;
+        }
+        use(revalidation);
+    }
+    const swrResponse = {
+        mutate: boundMutate,
+        get data () {
+            stateDependencies.data = true;
+            return returnedData;
+        },
+        get error () {
+            stateDependencies.error = true;
+            return error;
+        },
+        get isValidating () {
+            stateDependencies.isValidating = true;
+            return isValidating;
+        },
+        get isLoading () {
+            stateDependencies.isLoading = true;
+            return isLoading;
+        }
+    };
+    return swrResponse;
+};
+const SWRConfig = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__O__as__OBJECT$3e$__["OBJECT"].defineProperty(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__g__as__SWRConfig$3e$__["SWRConfig"], 'defaultValue', {
+    value: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$config$2d$context$2d$12s$2d$Dh3trQsc$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__d__as__defaultConfig$3e$__["defaultConfig"]
+});
+/**
+ * A hook to fetch data.
+ *
+ * @link https://swr.vercel.app
+ * @example
+ * ```jsx
+ * import useSWR from 'swr'
+ * function Profile() {
+ *   const { data, error, isLoading } = useSWR('/api/user', fetcher)
+ *   if (error) return <div>failed to load</div>
+ *   if (isLoading) return <div>loading...</div>
+ *   return <div>hello {data.name}!</div>
+ * }
+ * ```
+ */ const useSWR = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$swr$2f$dist$2f$_internal$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["withArgs"])(useSWRHandler);
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/dequal/lite/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "dequal",
+    ()=>dequal
+]);
+var has = Object.prototype.hasOwnProperty;
+function dequal(foo, bar) {
+    var ctor, len;
+    if (foo === bar) return true;
+    if (foo && bar && (ctor = foo.constructor) === bar.constructor) {
+        if (ctor === Date) return foo.getTime() === bar.getTime();
+        if (ctor === RegExp) return foo.toString() === bar.toString();
+        if (ctor === Array) {
+            if ((len = foo.length) === bar.length) {
+                while(len-- && dequal(foo[len], bar[len]));
+            }
+            return len === -1;
+        }
+        if (!ctor || typeof foo === 'object') {
+            len = 0;
+            for(ctor in foo){
+                if (has.call(foo, ctor) && ++len && !has.call(bar, ctor)) return false;
+                if (!(ctor in bar) || !dequal(foo[ctor], bar[ctor])) return false;
+            }
+            return Object.keys(bar).length === len;
+        }
+    }
+    return foo !== foo && bar !== bar;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/defaultOptionsValidator.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "p",
+    ()=>r,
+    "v",
+    ()=>s
+]);
+const e = !(typeof navigator > "u") && "ReactNative" === navigator.product, t = {
+    timeout: e ? 6e4 : 12e4
+}, r = function(r) {
+    const a = {
+        ...t,
+        ..."string" == typeof r ? {
+            url: r
+        } : r
+    };
+    if (a.timeout = o(a.timeout), a.query) {
+        const { url: t, searchParams: r } = function(t) {
+            const r = t.indexOf("?");
+            if (-1 === r) return {
+                url: t,
+                searchParams: new URLSearchParams
+            };
+            const o = t.slice(0, r), a = t.slice(r + 1);
+            if (!e) return {
+                url: o,
+                searchParams: new URLSearchParams(a)
+            };
+            if ("function" != typeof decodeURIComponent) throw new Error("Broken `URLSearchParams` implementation, and `decodeURIComponent` is not defined");
+            const s = new URLSearchParams;
+            for (const e of a.split("&")){
+                const [t, r] = e.split("=");
+                t && s.append(n(t), n(r || ""));
+            }
+            return {
+                url: o,
+                searchParams: s
+            };
+        }(a.url);
+        for (const [e, n] of Object.entries(a.query)){
+            if (void 0 !== n) if (Array.isArray(n)) for (const t of n)r.append(e, t);
+            else r.append(e, n);
+            const o = r.toString();
+            o && (a.url = `${t}?${o}`);
+        }
+    }
+    return a.method = a.body && !a.method ? "POST" : (a.method || "GET").toUpperCase(), a;
+};
+function n(e) {
+    return decodeURIComponent(e.replace(/\+/g, " "));
+}
+function o(e) {
+    if (!1 === e || 0 === e) return !1;
+    if (e.connect || e.socket) return e;
+    const r = Number(e);
+    return isNaN(r) ? o(t.timeout) : {
+        connect: r,
+        socket: r
+    };
+}
+const a = /^https?:\/\//i, s = function(e) {
+    if (!a.test(e.url)) throw new Error(`"${e.url}" is not a valid URL`);
+};
+;
+ //# sourceMappingURL=defaultOptionsValidator.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/createRequester.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "c",
+    ()=>n
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$defaultOptionsValidator$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/defaultOptionsValidator.js [app-ssr] (ecmascript)");
+;
+const r = [
+    "request",
+    "response",
+    "progress",
+    "error",
+    "abort"
+], o = [
+    "processOptions",
+    "validateOptions",
+    "interceptRequest",
+    "finalizeOptions",
+    "onRequest",
+    "onResponse",
+    "onError",
+    "onReturn",
+    "onHeaders"
+];
+function n(s, i) {
+    const u = [], a = o.reduce((e, t)=>(e[t] = e[t] || [], e), {
+        processOptions: [
+            __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$defaultOptionsValidator$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["p"]
+        ],
+        validateOptions: [
+            __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$defaultOptionsValidator$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["v"]
+        ]
+    });
+    function c(e) {
+        const t = r.reduce((e, t)=>(e[t] = function() {
+                const e = /* @__PURE__ */ Object.create(null);
+                let t = 0;
+                return {
+                    publish: function(t) {
+                        for(const r in e)e[r](t);
+                    },
+                    subscribe: function(r) {
+                        const o = t++;
+                        return e[o] = r, function() {
+                            delete e[o];
+                        };
+                    }
+                };
+            }(), e), {}), o = ((e)=>function(t, r, ...o) {
+                const n = "onError" === t;
+                let s = r;
+                for(let r = 0; r < e[t].length && (s = (0, e[t][r])(s, ...o), !n || s); r++);
+                return s;
+            })(a), n = o("processOptions", e);
+        o("validateOptions", n);
+        const s = {
+            options: n,
+            channels: t,
+            applyMiddleware: o
+        };
+        let u;
+        const c = t.request.subscribe((e)=>{
+            u = i(e, (r, n)=>((e, r, n)=>{
+                    let s = e, i = r;
+                    if (!s) try {
+                        i = o("onResponse", r, n);
+                    } catch (e) {
+                        i = null, s = e;
+                    }
+                    s = s && o("onError", s, n), s ? t.error.publish(s) : i && t.response.publish(i);
+                })(r, n, e));
+        });
+        t.abort.subscribe(()=>{
+            c(), u && u.abort();
+        });
+        const l = o("onReturn", t, s);
+        return l === t && t.request.publish(s), l;
+    }
+    return c.use = function(e) {
+        if (!e) throw new Error("Tried to add middleware that resolved to falsey value");
+        if ("function" == typeof e) throw new Error("Tried to add middleware that was a function. It probably expects you to pass options to it.");
+        if (e.onReturn && a.onReturn.length > 0) throw new Error("Tried to add new middleware with `onReturn` handler, but another handler has already been registered for this event");
+        return o.forEach((t)=>{
+            e[t] && a[t].push(e[t]);
+        }), u.push(e), c;
+    }, c.clone = ()=>n(u, i), s.forEach(c.use), c;
+}
+;
+ //# sourceMappingURL=createRequester.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/node-request.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "N",
+    ()=>T,
+    "a",
+    ()=>O,
+    "h",
+    ()=>R,
+    "p",
+    ()=>f
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$decompress$2d$response$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/decompress-response/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$follow$2d$redirects$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/follow-redirects/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$http__$5b$external$5d$__$28$http$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/http [external] (http, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$https__$5b$external$5d$__$28$https$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/https [external] (https, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$querystring__$5b$external$5d$__$28$querystring$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/querystring [external] (querystring, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$stream__$5b$external$5d$__$28$stream$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/stream [external] (stream, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$url__$5b$external$5d$__$28$url$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/url [external] (url, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$through2$2f$through2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/through2/through2.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$tunnel$2d$agent$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/tunnel-agent/index.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+;
+function p(e) {
+    return Object.keys(e || {}).reduce((t, o)=>(t[o.toLowerCase()] = e[o], t), {});
+}
+let u = 1;
+const d = 65535;
+let h = null;
+const l = function() {
+    u = u + 1 & d;
+};
+function f(e) {
+    let t = e.length || 0, o = 0, r = Date.now() + e.time, n = 0;
+    const s = function() {
+        h || (h = setInterval(l, 250), h.unref && h.unref());
+        const e = [
+            0
+        ];
+        let t = 1, o = u - 1 & d;
+        return {
+            getSpeed: function(r) {
+                let n = u - o & d;
+                for(n > 20 && (n = 20), o = u; n--;)20 === t && (t = 0), e[t] = e[0 === t ? 19 : t - 1], t++;
+                r && (e[t - 1] += r);
+                const s = e[t - 1], c = e.length < 20 ? 0 : e[20 === t ? 0 : t];
+                return e.length < 4 ? s : 4 * (s - c) / e.length;
+            },
+            clear: function() {
+                h && (clearInterval(h), h = null);
+            }
+        };
+    }(), c = Date.now(), i = {
+        percentage: 0,
+        transferred: o,
+        length: t,
+        remaining: t,
+        eta: 0,
+        runtime: 0,
+        speed: 0,
+        delta: 0
+    }, p = function(a) {
+        i.delta = n, i.percentage = a ? 100 : t ? o / t * 100 : 0, i.speed = s.getSpeed(n), i.eta = Math.round(i.remaining / i.speed), i.runtime = Math.floor((Date.now() - c) / 1e3), r = Date.now() + e.time, n = 0, f.emit("progress", i);
+    }, f = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$through2$2f$through2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])({}, function(e, s, c) {
+        const a = e.length;
+        o += a, n += a, i.transferred = o, i.remaining = t >= o ? t - o : 0, Date.now() >= r && p(!1), c(null, e);
+    }, function(e) {
+        p(!0), s.clear(), e();
+    }), m = function(e) {
+        t = e, i.length = t, i.remaining = t - i.transferred, f.emit("length", t);
+    };
+    return f.on("pipe", function(e) {
+        if (!(t > 0)) {
+            if (e.readable && !("writable" in e) && "headers" in e && "object" == typeof (o = e.headers) && null !== o && !Array.isArray(o)) {
+                const t = "string" == typeof e.headers["content-length"] ? parseInt(e.headers["content-length"], 10) : 0;
+                return m(t);
+            }
+            if ("length" in e && "number" == typeof e.length) return m(e.length);
+            e.on("response", function(e) {
+                if (e && e.headers && "gzip" !== e.headers["content-encoding"] && e.headers["content-length"]) return m(parseInt(e.headers["content-length"]));
+            });
+        }
+        var o;
+    }), f.progress = function() {
+        return i.speed = s.getSpeed(0), i.eta = Math.round(i.remaining / i.speed), i;
+    }, f;
+}
+function m(e) {
+    return e.replace(/^\.*/, ".").toLowerCase();
+}
+function g(e) {
+    const t = e.trim().toLowerCase(), o = t.split(":", 2);
+    return {
+        hostname: m(o[0]),
+        port: o[1],
+        hasPort: t.indexOf(":") > -1
+    };
+}
+const y = [
+    "protocol",
+    "slashes",
+    "auth",
+    "host",
+    "port",
+    "hostname",
+    "hash",
+    "search",
+    "query",
+    "pathname",
+    "path",
+    "href"
+], b = [
+    "accept",
+    "accept-charset",
+    "accept-encoding",
+    "accept-language",
+    "accept-ranges",
+    "cache-control",
+    "content-encoding",
+    "content-language",
+    "content-location",
+    "content-md5",
+    "content-range",
+    "content-type",
+    "connection",
+    "date",
+    "expect",
+    "max-forwards",
+    "pragma",
+    "referer",
+    "te",
+    "user-agent",
+    "via"
+], x = [
+    "proxy-authorization"
+], w = (e)=>null !== e && "object" == typeof e && "function" == typeof e.pipe, O = "node";
+class T extends Error {
+    request;
+    code;
+    constructor(e, t){
+        super(e.message), this.request = t, this.code = e.code;
+    }
+}
+const v = (e, t, o, r, n)=>({
+        body: n,
+        url: o,
+        method: r,
+        headers: e.headers,
+        statusCode: e.statusCode || 0,
+        statusMessage: e.statusMessage || "",
+        remoteAddress: t
+    }), R = (a, u)=>{
+    const { options: d } = a, h = Object.assign({}, __TURBOPACK__imported__module__$5b$externals$5d2f$url__$5b$external$5d$__$28$url$2c$__cjs$29$__["default"].parse(d.url));
+    if ("function" == typeof fetch && d.fetch) {
+        const e = new AbortController, t = a.applyMiddleware("finalizeOptions", {
+            ...h,
+            method: d.method,
+            headers: {
+                ..."object" == typeof d.fetch && d.fetch.headers ? p(d.fetch.headers) : {},
+                ...p(d.headers)
+            },
+            maxRedirects: d.maxRedirects
+        }), o = {
+            credentials: d.withCredentials ? "include" : "omit",
+            ..."object" == typeof d.fetch ? d.fetch : {},
+            method: t.method,
+            headers: t.headers,
+            body: d.body,
+            signal: e.signal
+        }, r = a.applyMiddleware("interceptRequest", void 0, {
+            adapter: O,
+            context: a
+        });
+        if (r) {
+            const e = setTimeout(u, 0, null, r);
+            return {
+                abort: ()=>clearTimeout(e)
+            };
+        }
+        const n = fetch(d.url, o);
+        return a.applyMiddleware("onRequest", {
+            options: d,
+            adapter: O,
+            request: n,
+            context: a
+        }), n.then(async (e)=>{
+            const t = d.rawBody ? e.body : await e.text(), o = {};
+            e.headers.forEach((e, t)=>{
+                o[t] = e;
+            }), u(null, {
+                body: t,
+                url: e.url,
+                method: d.method,
+                headers: o,
+                statusCode: e.status,
+                statusMessage: e.statusText
+            });
+        }).catch((e)=>{
+            "AbortError" != e.name && u(e);
+        }), {
+            abort: ()=>e.abort()
+        };
+    }
+    const l = w(d.body) ? "stream" : typeof d.body;
+    if ("undefined" !== l && "stream" !== l && "string" !== l && !Buffer.isBuffer(d.body)) throw new Error(`Request body must be a string, buffer or stream, got ${l}`);
+    const R = {};
+    d.bodySize ? R["content-length"] = d.bodySize : d.body && "stream" !== l && (R["content-length"] = Buffer.byteLength(d.body));
+    let j = !1;
+    const M = (e, t)=>!j && u(e, t);
+    a.channels.abort.subscribe(()=>{
+        j = !0;
+    });
+    let $ = Object.assign({}, h, {
+        method: d.method,
+        headers: Object.assign({}, p(d.headers), R),
+        maxRedirects: d.maxRedirects
+    });
+    const q = function(e) {
+        const t = typeof e.proxy > "u" ? function(e) {
+            const t = process.env.NO_PROXY || process.env.no_proxy || "";
+            return "*" === t || "" !== t && function(e, t) {
+                const o = e.port || ("https:" === e.protocol ? "443" : "80"), r = m(e.hostname || "");
+                return t.split(",").map(g).some((e)=>{
+                    const t = r.indexOf(e.hostname), n = t > -1 && t === r.length - e.hostname.length;
+                    return e.hasPort ? o === e.port && n : n;
+                });
+            }(e, t) ? null : "http:" === e.protocol ? process.env.HTTP_PROXY || process.env.http_proxy || null : "https:" === e.protocol && (process.env.HTTPS_PROXY || process.env.https_proxy || process.env.HTTP_PROXY || process.env.http_proxy) || null;
+        }(__TURBOPACK__imported__module__$5b$externals$5d2f$url__$5b$external$5d$__$28$url$2c$__cjs$29$__["default"].parse(e.url)) : e.proxy;
+        return "string" == typeof t ? __TURBOPACK__imported__module__$5b$externals$5d2f$url__$5b$external$5d$__$28$url$2c$__cjs$29$__["default"].parse(t) : t || null;
+    }(d), C = q && function(e) {
+        return typeof e.tunnel < "u" ? !!e.tunnel : "https:" === __TURBOPACK__imported__module__$5b$externals$5d2f$url__$5b$external$5d$__$28$url$2c$__cjs$29$__["default"].parse(e.url).protocol;
+    }(d), S = a.applyMiddleware("interceptRequest", void 0, {
+        adapter: O,
+        context: a
+    });
+    if (S) {
+        const e = setImmediate(M, null, S);
+        return {
+            abort: ()=>clearImmediate(e)
+        };
+    }
+    if (0 !== d.maxRedirects && ($.maxRedirects = d.maxRedirects || 5), q && C ? $ = function(e = {}, t) {
+        const o = Object.assign({}, e), r = b.concat(o.proxyHeaderWhiteList || []).map((e)=>e.toLowerCase()), n = x.concat(o.proxyHeaderExclusiveList || []).map((e)=>e.toLowerCase()), s = (c = o.headers, a = r, Object.keys(c).filter((e)=>-1 !== a.indexOf(e.toLowerCase())).reduce((e, t)=>(e[t] = c[t], e), {}));
+        var c, a;
+        s.host = function(e) {
+            const t = e.port, o = e.protocol;
+            let r = `${e.hostname}:`;
+            return r += t || ("https:" === o ? "443" : "80"), r;
+        }(o), o.headers = Object.keys(o.headers || {}).reduce((e, t)=>(-1 === n.indexOf(t.toLowerCase()) && (e[t] = o.headers[t]), e), {});
+        const p = function(e, t) {
+            const o = function(e) {
+                return y.reduce((t, o)=>(t[o] = e[o], t), {});
+            }(e), r = function(e, t) {
+                return `${"https:" === e.protocol ? "https" : "http"}Over${"https:" === t.protocol ? "Https" : "Http"}`;
+            }(o, t);
+            return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$tunnel$2d$agent$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__[r];
+        }(o, t), u = function(e, t, o) {
+            return {
+                proxy: {
+                    host: t.hostname,
+                    port: +t.port,
+                    proxyAuth: t.auth,
+                    headers: o
+                },
+                headers: e.headers,
+                ca: e.ca,
+                cert: e.cert,
+                key: e.key,
+                passphrase: e.passphrase,
+                pfx: e.pfx,
+                ciphers: e.ciphers,
+                rejectUnauthorized: e.rejectUnauthorized,
+                secureOptions: e.secureOptions,
+                secureProtocol: e.secureProtocol
+            };
+        }(o, t, s);
+        return o.agent = p(u), o;
+    }($, q) : q && !C && ($ = function(e, t, o) {
+        const r = e.headers || {}, n = Object.assign({}, e, {
+            headers: r
+        });
+        return r.host = r.host || function(e) {
+            const t = e.port || ("https:" === e.protocol ? "443" : "80");
+            return `${e.hostname}:${t}`;
+        }(t), n.protocol = o.protocol || n.protocol, n.hostname = (o.host || "hostname" in o && o.hostname || n.hostname || "").replace(/:\d+/, ""), n.port = o.port ? `${o.port}` : n.port, n.host = function(e) {
+            let t = e.host;
+            return e.port && ("80" === e.port && "http:" === e.protocol || "443" === e.port && "https:" === e.protocol) && (t = e.hostname), t;
+        }(Object.assign({}, t, o)), n.href = `${n.protocol}//${n.host}${n.path}`, n.path = __TURBOPACK__imported__module__$5b$externals$5d2f$url__$5b$external$5d$__$28$url$2c$__cjs$29$__["default"].format(t), n;
+    }($, h, q)), !C && q && q.auth && !$.headers["proxy-authorization"]) {
+        const [e, t] = "string" == typeof q.auth ? q.auth.split(":").map((e)=>__TURBOPACK__imported__module__$5b$externals$5d2f$querystring__$5b$external$5d$__$28$querystring$2c$__cjs$29$__["default"].unescape(e)) : [
+            q.auth.username,
+            q.auth.password
+        ], o = Buffer.from(`${e}:${t}`, "utf8").toString("base64");
+        $.headers["proxy-authorization"] = `Basic ${o}`;
+    }
+    const z = function(e, n, s) {
+        const c = "https:" === e.protocol, a = 0 === e.maxRedirects ? {
+            http: __TURBOPACK__imported__module__$5b$externals$5d2f$http__$5b$external$5d$__$28$http$2c$__cjs$29$__["default"],
+            https: __TURBOPACK__imported__module__$5b$externals$5d2f$https__$5b$external$5d$__$28$https$2c$__cjs$29$__["default"]
+        } : {
+            http: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$follow$2d$redirects$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].http,
+            https: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$follow$2d$redirects$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].https
+        };
+        if (!n || s) return c ? a.https : a.http;
+        let i = 443 === n.port;
+        return n.protocol && (i = /^https:?/.test(n.protocol)), i ? a.https : a.http;
+    }($, q, C);
+    "function" == typeof d.debug && q && d.debug("Proxying using %s", $.agent ? "tunnel agent" : `${$.host}:${$.port}`);
+    const E = "HEAD" !== $.method;
+    let L;
+    E && !$.headers["accept-encoding"] && !1 !== d.compress && ($.headers["accept-encoding"] = typeof Bun < "u" ? "gzip, deflate" : "br, gzip, deflate");
+    const k = a.applyMiddleware("finalizeOptions", $), P = z.request(k, (t)=>{
+        const o = E ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$decompress$2d$response$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(t) : t;
+        L = o;
+        const r = a.applyMiddleware("onHeaders", o, {
+            headers: t.headers,
+            adapter: O,
+            context: a
+        }), n = "responseUrl" in t ? t.responseUrl : d.url, s = o.socket?.remoteAddress;
+        d.stream ? M(null, v(o, s, n, $.method, r)) : function(e, t) {
+            const o = [];
+            e.on("data", function(e) {
+                o.push(e);
+            }), e.once("end", function() {
+                t && t(null, Buffer.concat(o)), t = null;
+            }), e.once("error", function(e) {
+                t && t(e), t = null;
+            });
+        }(r, (e, t)=>{
+            if (e) return M(e);
+            const r = d.rawBody ? t : t.toString(), c = v(o, s, n, $.method, r);
+            return M(null, c);
+        });
+    });
+    function B(e) {
+        L && L.destroy(e), P.destroy(e);
+    }
+    P.once("socket", (e)=>{
+        e.once("error", B), P.once("response", (t)=>{
+            t.once("end", ()=>{
+                e.removeListener("error", B);
+            });
+        });
+    }), P.once("error", (e)=>{
+        L || M(new T(e, P));
+    }), d.timeout && function(e, t) {
+        if (e.timeoutTimer) return e;
+        const o = isNaN(t) ? t : {
+            socket: t,
+            connect: t
+        }, r = e.getHeader("host"), n = r ? " to " + r : "";
+        function s() {
+            e.timeoutTimer && (clearTimeout(e.timeoutTimer), e.timeoutTimer = null);
+        }
+        function c(t) {
+            if (s(), void 0 !== o.socket) {
+                const r = ()=>{
+                    const e = new Error("Socket timed out on request" + n);
+                    e.code = "ESOCKETTIMEDOUT", t.destroy(e);
+                };
+                t.setTimeout(o.socket, r), e.once("response", (e)=>{
+                    e.once("end", ()=>{
+                        t.removeListener("timeout", r);
+                    });
+                });
+            }
+        }
+        void 0 !== o.connect && (e.timeoutTimer = setTimeout(function() {
+            const t = new Error("Connection timed out on request" + n);
+            t.code = "ETIMEDOUT", e.destroy(t);
+        }, o.connect)), e.on("socket", function(e) {
+            e.connecting ? e.once("connect", ()=>c(e)) : c(e);
+        }), e.on("error", s);
+    }(P, d.timeout);
+    const { bodyStream: H, progress: A } = function(e) {
+        if (!e.body) return {};
+        const t = w(e.body), o = e.bodySize || (t ? null : Buffer.byteLength(e.body));
+        if (!o) return t ? {
+            bodyStream: e.body
+        } : {};
+        const r = f({
+            time: 32,
+            length: o
+        });
+        return {
+            bodyStream: (t ? e.body : __TURBOPACK__imported__module__$5b$externals$5d2f$stream__$5b$external$5d$__$28$stream$2c$__cjs$29$__["Readable"].from(e.body)).pipe(r),
+            progress: r
+        };
+    }(d);
+    return a.applyMiddleware("onRequest", {
+        options: d,
+        adapter: O,
+        request: P,
+        context: a,
+        progress: A
+    }), H ? H.pipe(P) : P.end(d.body), {
+        abort: ()=>P.abort()
+    };
+};
+;
+ //# sourceMappingURL=node-request.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "environment",
+    ()=>t,
+    "getIt",
+    ()=>o
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$createRequester$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/createRequester.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/node-request.js [app-ssr] (ecmascript)");
+;
+;
+;
+const o = (r = [], o = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["h"])=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$createRequester$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["c"])(r, o), t = "node";
+;
+ //# sourceMappingURL=index.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/node-request.js [app-ssr] (ecmascript) <export a as adapter>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "adapter",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["a"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/node-request.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/_commonjsHelpers.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "g",
+    ()=>c,
+    "p",
+    ()=>r,
+    "v",
+    ()=>s
+]);
+const e = !(typeof navigator > "u") && "ReactNative" === navigator.product, t = {
+    timeout: e ? 6e4 : 12e4
+}, r = function(r) {
+    const a = {
+        ...t,
+        ..."string" == typeof r ? {
+            url: r
+        } : r
+    };
+    if (a.timeout = n(a.timeout), a.query) {
+        const { url: t, searchParams: r } = function(t) {
+            const r = t.indexOf("?");
+            if (-1 === r) return {
+                url: t,
+                searchParams: new URLSearchParams
+            };
+            const n = t.slice(0, r), a = t.slice(r + 1);
+            if (!e) return {
+                url: n,
+                searchParams: new URLSearchParams(a)
+            };
+            if ("function" != typeof decodeURIComponent) throw new Error("Broken `URLSearchParams` implementation, and `decodeURIComponent` is not defined");
+            const s = new URLSearchParams;
+            for (const e of a.split("&")){
+                const [t, r] = e.split("=");
+                t && s.append(o(t), o(r || ""));
+            }
+            return {
+                url: n,
+                searchParams: s
+            };
+        }(a.url);
+        for (const [e, o] of Object.entries(a.query)){
+            if (void 0 !== o) if (Array.isArray(o)) for (const t of o)r.append(e, t);
+            else r.append(e, o);
+            const n = r.toString();
+            n && (a.url = `${t}?${n}`);
+        }
+    }
+    return a.method = a.body && !a.method ? "POST" : (a.method || "GET").toUpperCase(), a;
+};
+function o(e) {
+    return decodeURIComponent(e.replace(/\+/g, " "));
+}
+function n(e) {
+    if (!1 === e || 0 === e) return !1;
+    if (e.connect || e.socket) return e;
+    const r = Number(e);
+    return isNaN(r) ? n(t.timeout) : {
+        connect: r,
+        socket: r
+    };
+}
+const a = /^https?:\/\//i, s = function(e) {
+    if (!a.test(e.url)) throw new Error(`"${e.url}" is not a valid URL`);
+};
+function c(e) {
+    return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
+}
+;
+ //# sourceMappingURL=_commonjsHelpers.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/middleware.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Cancel",
+    ()=>Z,
+    "CancelToken",
+    ()=>K,
+    "agent",
+    ()=>l,
+    "base",
+    ()=>m,
+    "debug",
+    ()=>S,
+    "headers",
+    ()=>I,
+    "httpErrors",
+    ()=>$,
+    "injectResponse",
+    ()=>_,
+    "jsonRequest",
+    ()=>B,
+    "jsonResponse",
+    ()=>D,
+    "keepAlive",
+    ()=>ne,
+    "mtls",
+    ()=>L,
+    "observable",
+    ()=>G,
+    "progress",
+    ()=>V,
+    "promise",
+    ()=>W,
+    "proxy",
+    ()=>Q,
+    "retry",
+    ()=>ee,
+    "urlEncoded",
+    ()=>se
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$http__$5b$external$5d$__$28$http$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/http [external] (http, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$https__$5b$external$5d$__$28$https$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/https [external] (https, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$_commonjsHelpers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/_commonjsHelpers.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$tty__$5b$external$5d$__$28$tty$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/tty [external] (tty, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$util__$5b$external$5d$__$28$util$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/util [external] (util, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$defaultOptionsValidator$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/defaultOptionsValidator.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/get-it/dist/_chunks-es/node-request.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$is$2d$retry$2d$allowed$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/is-retry-allowed/index.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+const p = /^https:/i;
+function l(s) {
+    const n = new __TURBOPACK__imported__module__$5b$externals$5d2f$http__$5b$external$5d$__$28$http$2c$__cjs$29$__["Agent"](s), r = new __TURBOPACK__imported__module__$5b$externals$5d2f$https__$5b$external$5d$__$28$https$2c$__cjs$29$__["Agent"](s), o = {
+        http: n,
+        https: r
+    };
+    return {
+        finalizeOptions: (e)=>{
+            if (e.agent) return e;
+            if (e.maxRedirects > 0) return {
+                ...e,
+                agents: o
+            };
+            const t = p.test(e.href || e.protocol);
+            return {
+                ...e,
+                agent: t ? r : n
+            };
+        }
+    };
+}
+const d = /^\//, f = /\/$/;
+function m(e) {
+    const t = e.replace(f, "");
+    return {
+        processOptions: (e)=>{
+            if (/^https?:\/\//i.test(e.url)) return e;
+            const s = [
+                t,
+                e.url.replace(d, "")
+            ].join("/");
+            return Object.assign({}, e, {
+                url: s
+            });
+        }
+    };
+}
+var h, g, C, b, y, w = {
+    exports: {}
+}, O = {
+    exports: {}
+};
+function F() {
+    return b ? C : (b = 1, C = function(e) {
+        function t(e) {
+            let n, r, o, i = null;
+            function c(...e) {
+                if (!c.enabled) return;
+                const s = c, r = Number(/* @__PURE__ */ new Date), o = r - (n || r);
+                s.diff = o, s.prev = n, s.curr = r, n = r, e[0] = t.coerce(e[0]), "string" != typeof e[0] && e.unshift("%O");
+                let i = 0;
+                e[0] = e[0].replace(/%([a-zA-Z%])/g, (n, r)=>{
+                    if ("%%" === n) return "%";
+                    i++;
+                    const o = t.formatters[r];
+                    if ("function" == typeof o) {
+                        const t = e[i];
+                        n = o.call(s, t), e.splice(i, 1), i--;
+                    }
+                    return n;
+                }), t.formatArgs.call(s, e), (s.log || t.log).apply(s, e);
+            }
+            return c.namespace = e, c.useColors = t.useColors(), c.color = t.selectColor(e), c.extend = s, c.destroy = t.destroy, Object.defineProperty(c, "enabled", {
+                enumerable: !0,
+                configurable: !1,
+                get: ()=>null !== i ? i : (r !== t.namespaces && (r = t.namespaces, o = t.enabled(e)), o),
+                set: (e)=>{
+                    i = e;
+                }
+            }), "function" == typeof t.init && t.init(c), c;
+        }
+        function s(e, s) {
+            const n = t(this.namespace + (typeof s > "u" ? ":" : s) + e);
+            return n.log = this.log, n;
+        }
+        function n(e, t) {
+            let s = 0, n = 0, r = -1, o = 0;
+            for(; s < e.length;)if (n < t.length && (t[n] === e[s] || "*" === t[n])) "*" === t[n] ? (r = n, o = s, n++) : (s++, n++);
+            else {
+                if (-1 === r) return !1;
+                n = r + 1, o++, s = o;
+            }
+            for(; n < t.length && "*" === t[n];)n++;
+            return n === t.length;
+        }
+        return t.debug = t, t.default = t, t.coerce = function(e) {
+            return e instanceof Error ? e.stack || e.message : e;
+        }, t.disable = function() {
+            const e = [
+                ...t.names,
+                ...t.skips.map((e)=>"-" + e)
+            ].join(",");
+            return t.enable(""), e;
+        }, t.enable = function(e) {
+            t.save(e), t.namespaces = e, t.names = [], t.skips = [];
+            const s = ("string" == typeof e ? e : "").trim().replace(/\s+/g, ",").split(",").filter(Boolean);
+            for (const e of s)"-" === e[0] ? t.skips.push(e.slice(1)) : t.names.push(e);
+        }, t.enabled = function(e) {
+            for (const s of t.skips)if (n(e, s)) return !1;
+            for (const s of t.names)if (n(e, s)) return !0;
+            return !1;
+        }, t.humanize = function() {
+            if (g) return h;
+            g = 1;
+            var e = 1e3, t = 60 * e, s = 60 * t, n = 24 * s, r = 7 * n;
+            function o(e, t, s, n) {
+                var r = t >= 1.5 * s;
+                return Math.round(e / s) + " " + n + (r ? "s" : "");
+            }
+            return h = function(i, c) {
+                c = c || {};
+                var a, u, p = typeof i;
+                if ("string" === p && i.length > 0) return function(o) {
+                    if (!((o = String(o)).length > 100)) {
+                        var i = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(o);
+                        if (i) {
+                            var c = parseFloat(i[1]);
+                            switch((i[2] || "ms").toLowerCase()){
+                                case "years":
+                                case "year":
+                                case "yrs":
+                                case "yr":
+                                case "y":
+                                    return 315576e5 * c;
+                                case "weeks":
+                                case "week":
+                                case "w":
+                                    return c * r;
+                                case "days":
+                                case "day":
+                                case "d":
+                                    return c * n;
+                                case "hours":
+                                case "hour":
+                                case "hrs":
+                                case "hr":
+                                case "h":
+                                    return c * s;
+                                case "minutes":
+                                case "minute":
+                                case "mins":
+                                case "min":
+                                case "m":
+                                    return c * t;
+                                case "seconds":
+                                case "second":
+                                case "secs":
+                                case "sec":
+                                case "s":
+                                    return c * e;
+                                case "milliseconds":
+                                case "millisecond":
+                                case "msecs":
+                                case "msec":
+                                case "ms":
+                                    return c;
+                                default:
+                                    return;
+                            }
+                        }
+                    }
+                }(i);
+                if ("number" === p && isFinite(i)) return c.long ? (a = i, (u = Math.abs(a)) >= n ? o(a, u, n, "day") : u >= s ? o(a, u, s, "hour") : u >= t ? o(a, u, t, "minute") : u >= e ? o(a, u, e, "second") : a + " ms") : function(r) {
+                    var o = Math.abs(r);
+                    return o >= n ? Math.round(r / n) + "d" : o >= s ? Math.round(r / s) + "h" : o >= t ? Math.round(r / t) + "m" : o >= e ? Math.round(r / e) + "s" : r + "ms";
+                }(i);
+                throw new Error("val is not a non-empty string or a valid number. val=" + JSON.stringify(i));
+            };
+        }(), t.destroy = function() {
+            console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.");
+        }, Object.keys(e).forEach((s)=>{
+            t[s] = e[s];
+        }), t.names = [], t.skips = [], t.formatters = {}, t.selectColor = function(e) {
+            let s = 0;
+            for(let t = 0; t < e.length; t++)s = (s << 5) - s + e.charCodeAt(t), s |= 0;
+            return t.colors[Math.abs(s) % t.colors.length];
+        }, t.enable(t.load()), t;
+    });
+}
+var v, j, x, E, k = {
+    exports: {}
+}, R = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$_commonjsHelpers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["g"])((E || (E = 1, typeof process > "u" || "renderer" === process.type || !0 === ("TURBOPACK compile-time value", false) || process.__nwjs ? w.exports = (y || (y = 1, function(e, t) {
+    t.formatArgs = function(t) {
+        if (t[0] = (this.useColors ? "%c" : "") + this.namespace + (this.useColors ? " %c" : " ") + t[0] + (this.useColors ? "%c " : " ") + "+" + e.exports.humanize(this.diff), !this.useColors) return;
+        const s = "color: " + this.color;
+        t.splice(1, 0, s, "color: inherit");
+        let n = 0, r = 0;
+        t[0].replace(/%[a-zA-Z%]/g, (e)=>{
+            "%%" !== e && (n++, "%c" === e && (r = n));
+        }), t.splice(r, 0, s);
+    }, t.save = function(e) {
+        try {
+            e ? t.storage.setItem("debug", e) : t.storage.removeItem("debug");
+        } catch  {}
+    }, t.load = function() {
+        let e;
+        try {
+            e = t.storage.getItem("debug") || t.storage.getItem("DEBUG");
+        } catch  {}
+        return !e && typeof process < "u" && "env" in process && (e = process.env.DEBUG), e;
+    }, t.useColors = function() {
+        if (("TURBOPACK compile-time value", "undefined") < "u" && window.process && ("renderer" === window.process.type || window.process.__nwjs)) return !0;
+        if (typeof navigator < "u" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) return !1;
+        let e;
+        return typeof document < "u" && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || ("TURBOPACK compile-time value", "undefined") < "u" && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator < "u" && navigator.userAgent && (e = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(e[1], 10) >= 31 || typeof navigator < "u" && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+    }, t.storage = function() {
+        try {
+            return localStorage;
+        } catch  {}
+    }(), t.destroy = /* @__PURE__ */ (()=>{
+        let e = !1;
+        return ()=>{
+            e || (e = !0, console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."));
+        };
+    })(), t.colors = [
+        "#0000CC",
+        "#0000FF",
+        "#0033CC",
+        "#0033FF",
+        "#0066CC",
+        "#0066FF",
+        "#0099CC",
+        "#0099FF",
+        "#00CC00",
+        "#00CC33",
+        "#00CC66",
+        "#00CC99",
+        "#00CCCC",
+        "#00CCFF",
+        "#3300CC",
+        "#3300FF",
+        "#3333CC",
+        "#3333FF",
+        "#3366CC",
+        "#3366FF",
+        "#3399CC",
+        "#3399FF",
+        "#33CC00",
+        "#33CC33",
+        "#33CC66",
+        "#33CC99",
+        "#33CCCC",
+        "#33CCFF",
+        "#6600CC",
+        "#6600FF",
+        "#6633CC",
+        "#6633FF",
+        "#66CC00",
+        "#66CC33",
+        "#9900CC",
+        "#9900FF",
+        "#9933CC",
+        "#9933FF",
+        "#99CC00",
+        "#99CC33",
+        "#CC0000",
+        "#CC0033",
+        "#CC0066",
+        "#CC0099",
+        "#CC00CC",
+        "#CC00FF",
+        "#CC3300",
+        "#CC3333",
+        "#CC3366",
+        "#CC3399",
+        "#CC33CC",
+        "#CC33FF",
+        "#CC6600",
+        "#CC6633",
+        "#CC9900",
+        "#CC9933",
+        "#CCCC00",
+        "#CCCC33",
+        "#FF0000",
+        "#FF0033",
+        "#FF0066",
+        "#FF0099",
+        "#FF00CC",
+        "#FF00FF",
+        "#FF3300",
+        "#FF3333",
+        "#FF3366",
+        "#FF3399",
+        "#FF33CC",
+        "#FF33FF",
+        "#FF6600",
+        "#FF6633",
+        "#FF9900",
+        "#FF9933",
+        "#FFCC00",
+        "#FFCC33"
+    ], t.log = console.debug || console.log || (()=>{}), e.exports = F()(t);
+    const { formatters: s } = e.exports;
+    s.j = function(e) {
+        try {
+            return JSON.stringify(e);
+        } catch (e) {
+            return "[UnexpectedJSONParseError]: " + e.message;
+        }
+    };
+}(O, O.exports)), O.exports) : w.exports = (x || (x = 1, function(e, t) {
+    const s = __TURBOPACK__imported__module__$5b$externals$5d2f$tty__$5b$external$5d$__$28$tty$2c$__cjs$29$__["default"], o = __TURBOPACK__imported__module__$5b$externals$5d2f$util__$5b$external$5d$__$28$util$2c$__cjs$29$__["default"];
+    t.init = function(e) {
+        e.inspectOpts = {};
+        const s = Object.keys(t.inspectOpts);
+        for(let n = 0; n < s.length; n++)e.inspectOpts[s[n]] = t.inspectOpts[s[n]];
+    }, t.log = function(...e) {
+        return process.stderr.write(o.formatWithOptions(t.inspectOpts, ...e) + "\n");
+    }, t.formatArgs = function(s) {
+        const { namespace: n, useColors: r } = this;
+        if (r) {
+            const t = this.color, r = "[3" + (t < 8 ? t : "8;5;" + t), o = `  ${r};1m${n} [0m`;
+            s[0] = o + s[0].split("\n").join("\n" + o), s.push(r + "m+" + e.exports.humanize(this.diff) + "[0m");
+        } else s[0] = (t.inspectOpts.hideDate ? "" : /* @__PURE__ */ (new Date).toISOString() + " ") + n + " " + s[0];
+    }, t.save = function(e) {
+        e ? process.env.DEBUG = e : delete process.env.DEBUG;
+    }, t.load = function() {
+        return process.env.DEBUG;
+    }, t.useColors = function() {
+        return "colors" in t.inspectOpts ? !!t.inspectOpts.colors : s.isatty(process.stderr.fd);
+    }, t.destroy = o.deprecate(()=>{}, "Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."), t.colors = [
+        6,
+        2,
+        3,
+        4,
+        5,
+        1
+    ];
+    try {
+        const e = function() {
+            if (j) return v;
+            j = 1;
+            const e = function() {
+                const e = /(Chrome|Chromium)\/(?<chromeVersion>\d+)\./.exec(navigator.userAgent);
+                if (e) return Number.parseInt(e.groups.chromeVersion, 10);
+            }() >= 69 && {
+                level: 1,
+                hasBasic: !0,
+                has256: !1,
+                has16m: !1
+            };
+            return v = {
+                stdout: e,
+                stderr: e
+            };
+        }();
+        e && (e.stderr || e).level >= 2 && (t.colors = [
+            20,
+            21,
+            26,
+            27,
+            32,
+            33,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            56,
+            57,
+            62,
+            63,
+            68,
+            69,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            92,
+            93,
+            98,
+            99,
+            112,
+            113,
+            128,
+            129,
+            134,
+            135,
+            148,
+            149,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            178,
+            179,
+            184,
+            185,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            214,
+            215,
+            220,
+            221
+        ]);
+    } catch  {}
+    t.inspectOpts = Object.keys(process.env).filter((e)=>/^debug_/i.test(e)).reduce((e, t)=>{
+        const s = t.substring(6).toLowerCase().replace(/_([a-z])/g, (e, t)=>t.toUpperCase());
+        let n = process.env[t];
+        return n = !!/^(yes|on|true|enabled)$/i.test(n) || !/^(no|off|false|disabled)$/i.test(n) && ("null" === n ? null : Number(n)), e[s] = n, e;
+    }, {}), e.exports = F()(t);
+    const { formatters: i } = e.exports;
+    i.o = function(e) {
+        return this.inspectOpts.colors = this.useColors, o.inspect(e, this.inspectOpts).split("\n").map((e)=>e.trim()).join(" ");
+    }, i.O = function(e) {
+        return this.inspectOpts.colors = this.useColors, o.inspect(e, this.inspectOpts);
+    };
+}(k, k.exports)), k.exports)), w.exports));
+const A = [
+    "cookie",
+    "authorization"
+], q = Object.prototype.hasOwnProperty;
+function S(e = {}) {
+    const t = e.verbose, s = e.namespace || "get-it", n = R(s), r = e.log || n, o = r === n && !R.enabled(s);
+    let i = 0;
+    return {
+        processOptions: (e)=>(e.debug = r, e.requestId = e.requestId || ++i, e),
+        onRequest: (s)=>{
+            if (o || !s) return s;
+            const n = s.options;
+            if (r("[%s] HTTP %s %s", n.requestId, n.method, n.url), t && n.body && "string" == typeof n.body && r("[%s] Request body: %s", n.requestId, n.body), t && n.headers) {
+                const t = !1 === e.redactSensitiveHeaders ? n.headers : ((e, t)=>{
+                    const s = {};
+                    for(const n in e)q.call(e, n) && (s[n] = t.indexOf(n.toLowerCase()) > -1 ? "<redacted>" : e[n]);
+                    return s;
+                })(n.headers, A);
+                r("[%s] Request headers: %s", n.requestId, JSON.stringify(t, null, 2));
+            }
+            return s;
+        },
+        onResponse: (e, s)=>{
+            if (o || !e) return e;
+            const n = s.options.requestId;
+            return r("[%s] Response code: %s %s", n, e.statusCode, e.statusMessage), t && e.body && r("[%s] Response body: %s", n, function(e) {
+                return -1 !== (e.headers["content-type"] || "").toLowerCase().indexOf("application/json") ? function(e) {
+                    try {
+                        const t = "string" == typeof e ? JSON.parse(e) : e;
+                        return JSON.stringify(t, null, 2);
+                    } catch  {
+                        return e;
+                    }
+                }(e.body) : e.body;
+            }(e)), e;
+        },
+        onError: (e, t)=>{
+            const s = t.options.requestId;
+            return e ? (r("[%s] ERROR: %s", s, e.message), e) : (r("[%s] Error encountered, but handled by an earlier middleware", s), e);
+        }
+    };
+}
+function I(e, t = {}) {
+    return {
+        processOptions: (s)=>{
+            const n = s.headers || {};
+            return s.headers = t.override ? Object.assign({}, n, e) : Object.assign({}, e, n), s;
+        }
+    };
+}
+class N extends Error {
+    response;
+    request;
+    constructor(e, t){
+        super();
+        const s = e.url.length > 400 ? `${e.url.slice(0, 399)}…` : e.url;
+        let n = `${e.method}-request to ${s} resulted in `;
+        n += `HTTP ${e.statusCode} ${e.statusMessage}`, this.message = n.trim(), this.response = e, this.request = t.options;
+    }
+}
+function $() {
+    return {
+        onResponse: (e, t)=>{
+            if (!(e.statusCode >= 400)) return e;
+            throw new N(e, t);
+        }
+    };
+}
+function _(e = {}) {
+    if ("function" != typeof e.inject) throw new Error("`injectResponse` middleware requires a `inject` function");
+    return {
+        interceptRequest: function(t, s) {
+            const n = e.inject(s, t);
+            if (!n) return t;
+            const r = s.context.options;
+            return {
+                body: "",
+                url: r.url,
+                method: r.method,
+                headers: {},
+                statusCode: 200,
+                statusMessage: "OK",
+                ...n
+            };
+        }
+    };
+}
+const T = typeof Buffer > "u" ? ()=>!1 : (e)=>Buffer.isBuffer(e);
+function M(e) {
+    return "[object Object]" === Object.prototype.toString.call(e);
+}
+function P(e) {
+    if (!1 === M(e)) return !1;
+    const t = e.constructor;
+    if (void 0 === t) return !0;
+    const s = t.prototype;
+    return !(!1 === M(s) || !1 === s.hasOwnProperty("isPrototypeOf"));
+}
+const z = [
+    "boolean",
+    "string",
+    "number"
+];
+function B() {
+    return {
+        processOptions: (e)=>{
+            const t = e.body;
+            return !t || "function" == typeof t.pipe || T(t) || -1 === z.indexOf(typeof t) && !Array.isArray(t) && !P(t) ? e : Object.assign({}, e, {
+                body: JSON.stringify(e.body),
+                headers: Object.assign({}, e.headers, {
+                    "Content-Type": "application/json"
+                })
+            });
+        }
+    };
+}
+function D(e) {
+    return {
+        onResponse: (s)=>{
+            const n = s.headers["content-type"] || "", r = e && e.force || -1 !== n.indexOf("application/json");
+            return s.body && n && r ? Object.assign({}, s, {
+                body: t(s.body)
+            }) : s;
+        },
+        processOptions: (e)=>Object.assign({}, e, {
+                headers: Object.assign({
+                    Accept: "application/json"
+                }, e.headers)
+            })
+    };
+    //TURBOPACK unreachable
+    ;
+    function t(e) {
+        try {
+            return JSON.parse(e);
+        } catch (e) {
+            throw e.message = `Failed to parsed response body as JSON: ${e.message}`, e;
+        }
+    }
+}
+function L(e = {}) {
+    if (!e.ca) throw new Error('Required mtls option "ca" is missing');
+    if (!e.cert) throw new Error('Required mtls option "cert" is missing');
+    if (!e.key) throw new Error('Required mtls option "key" is missing');
+    return {
+        finalizeOptions: (t)=>{
+            if (function(e) {
+                return "object" == typeof e && null !== e && !("protocol" in e);
+            }(t)) return t;
+            const s = {
+                cert: e.cert,
+                key: e.key,
+                ca: e.ca
+            };
+            return Object.assign({}, t, s);
+        }
+    };
+}
+let J = {};
+typeof globalThis < "u" ? J = globalThis : ("TURBOPACK compile-time value", "undefined") < "u" ? J = window : ("TURBOPACK compile-time value", "object") < "u" ? J = /*TURBOPACK member replacement*/ __turbopack_context__.g : typeof self < "u" && (J = self);
+var U = J;
+function G(e = {}) {
+    const t = e.implementation || U.Observable;
+    if (!t) throw new Error("`Observable` is not available in global scope, and no implementation was passed");
+    return {
+        onReturn: (e, s)=>new t((t)=>(e.error.subscribe((e)=>t.error(e)), e.progress.subscribe((e)=>t.next(Object.assign({
+                        type: "progress"
+                    }, e))), e.response.subscribe((e)=>{
+                    t.next(Object.assign({
+                        type: "response"
+                    }, e)), t.complete();
+                }), e.request.publish(s), ()=>e.abort.publish()))
+    };
+}
+function H(e) {
+    return (t)=>({
+            stage: e,
+            percent: t.percentage,
+            total: t.length,
+            loaded: t.transferred,
+            lengthComputable: !(0 === t.length && 0 === t.percentage)
+        });
+}
+function V() {
+    let e = !1;
+    const t = H("download"), s = H("upload");
+    return {
+        onHeaders: (e, s)=>{
+            const n = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["p"])({
+                time: 32
+            });
+            return n.on("progress", (e)=>s.context.channels.progress.publish(t(e))), e.pipe(n);
+        },
+        onRequest: (t)=>{
+            t.progress && t.progress.on("progress", (n)=>{
+                e = !0, t.context.channels.progress.publish(s(n));
+            });
+        },
+        onResponse: (t, n)=>(!e && typeof n.options.body < "u" && n.channels.progress.publish(s({
+                length: 0,
+                transferred: 0,
+                percentage: 100
+            })), t)
+    };
+}
+const W = (e = {})=>{
+    const t = e.implementation || Promise;
+    if (!t) throw new Error("`Promise` is not available in global scope, and no implementation was passed");
+    return {
+        onReturn: (s, n)=>new t((t, r)=>{
+                const o = n.options.cancelToken;
+                o && o.promise.then((e)=>{
+                    s.abort.publish(e), r(e);
+                }), s.error.subscribe(r), s.response.subscribe((s)=>{
+                    t(e.onlyBody ? s.body : s);
+                }), setTimeout(()=>{
+                    try {
+                        s.request.publish(n);
+                    } catch (e) {
+                        r(e);
+                    }
+                }, 0);
+            })
+    };
+};
+class Z {
+    __CANCEL__ = !0;
+    message;
+    constructor(e){
+        this.message = e;
+    }
+    toString() {
+        return "Cancel" + (this.message ? `: ${this.message}` : "");
+    }
+}
+class K {
+    promise;
+    reason;
+    constructor(e){
+        if ("function" != typeof e) throw new TypeError("executor must be a function.");
+        let t = null;
+        this.promise = new Promise((e)=>{
+            t = e;
+        }), e((e)=>{
+            this.reason || (this.reason = new Z(e), t(this.reason));
+        });
+    }
+    static source = ()=>{
+        let e;
+        return {
+            token: new K((t)=>{
+                e = t;
+            }),
+            cancel: e
+        };
+    };
+}
+function Q(e) {
+    if (!(!1 === e || e && e.host)) throw new Error("Proxy middleware takes an object of host, port and auth properties");
+    return {
+        processOptions: (t)=>Object.assign({
+                proxy: e
+            }, t)
+    };
+}
+W.Cancel = Z, W.CancelToken = K, W.isCancel = (e)=>!(!e || !e?.__CANCEL__);
+var X = (e, t, s)=>!("GET" !== s.method && "HEAD" !== s.method || e.response && e.response.statusCode) && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$is$2d$retry$2d$allowed$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(e);
+function Y(e) {
+    return 100 * Math.pow(2, e) + 100 * Math.random();
+}
+const ee = (e = {})=>((e)=>{
+        const t = e.maxRetries || 5, s = e.retryDelay || Y, n = e.shouldRetry;
+        return {
+            onError: (e, r)=>{
+                const o = r.options, i = o.maxRetries || t, c = o.retryDelay || s, a = o.shouldRetry || n, u = o.attemptNumber || 0;
+                if (null !== (p = o.body) && "object" == typeof p && "function" == typeof p.pipe || !a(e, u, o) || u >= i) return e;
+                var p;
+                const l = Object.assign({}, r, {
+                    options: Object.assign({}, o, {
+                        attemptNumber: u + 1
+                    })
+                });
+                return setTimeout(()=>r.channels.request.publish(l), c(u)), null;
+            }
+        };
+    })({
+        shouldRetry: X,
+        ...e
+    });
+function te(e) {
+    const t = new URLSearchParams, s = (e, n)=>{
+        const r = n instanceof Set ? Array.from(n) : n;
+        if (Array.isArray(r)) if (r.length) for(const t in r)s(`${e}[${t}]`, r[t]);
+        else t.append(`${e}[]`, "");
+        else if ("object" == typeof r && null !== r) for (const [t, n] of Object.entries(r))s(`${e}[${t}]`, n);
+        else t.append(e, r);
+    };
+    for (const [t, n] of Object.entries(e))s(t, n);
+    return t.toString();
+}
+function se() {
+    return {
+        processOptions: (e)=>{
+            const t = e.body;
+            return t && "function" != typeof t.pipe && !T(t) && P(t) ? {
+                ...e,
+                body: te(e.body),
+                headers: {
+                    ...e.headers,
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            } : e;
+        }
+    };
+}
+ee.shouldRetry = X;
+const ne = (re = l, function(e = {}) {
+    const { maxRetries: t = 3, ms: s = 1e3, maxFree: n = 256 } = e, { finalizeOptions: r } = re({
+        keepAlive: !0,
+        keepAliveMsecs: s,
+        maxFreeSockets: n
+    });
+    return {
+        finalizeOptions: r,
+        onError: (e, s)=>{
+            if (("GET" === s.options.method || "POST" === s.options.method) && e instanceof __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$get$2d$it$2f$dist$2f$_chunks$2d$es$2f$node$2d$request$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["N"] && "ECONNRESET" === e.code && e.request.reusedSocket) {
+                const e = s.options.attemptNumber || 0;
+                if (e < t) {
+                    const t = Object.assign({}, s, {
+                        options: Object.assign({}, s.options, {
+                            attemptNumber: e + 1
+                        })
+                    });
+                    return setImmediate(()=>s.channels.request.publish(t)), null;
+                }
+            }
+            return e;
+        }
+    };
+});
+var re;
+;
+ //# sourceMappingURL=middleware.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/mimic-response/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// We define these manually to ensure they're always copied
+// even if they would move up the prototype chain
+// https://nodejs.org/api/http.html#http_class_http_incomingmessage
+const knownProperties = [
+    'aborted',
+    'complete',
+    'headers',
+    'httpVersion',
+    'httpVersionMinor',
+    'httpVersionMajor',
+    'method',
+    'rawHeaders',
+    'rawTrailers',
+    'setTimeout',
+    'socket',
+    'statusCode',
+    'statusMessage',
+    'trailers',
+    'url'
+];
+module.exports = (fromStream, toStream)=>{
+    if (toStream._readableState.autoDestroy) {
+        throw new Error('The second stream must have the `autoDestroy` option set to `false`');
+    }
+    const fromProperties = new Set(Object.keys(fromStream).concat(knownProperties));
+    const properties = {};
+    for (const property of fromProperties){
+        // Don't overwrite existing properties.
+        if (property in toStream) {
+            continue;
+        }
+        properties[property] = {
+            get () {
+                const value = fromStream[property];
+                const isFunction = typeof value === 'function';
+                return isFunction ? value.bind(fromStream) : value;
+            },
+            set (value) {
+                fromStream[property] = value;
+            },
+            enumerable: true,
+            configurable: false
+        };
+    }
+    Object.defineProperties(toStream, properties);
+    fromStream.once('aborted', ()=>{
+        toStream.destroy();
+        toStream.emit('aborted');
+    });
+    fromStream.once('close', ()=>{
+        if (fromStream.complete) {
+            if (toStream.readable) {
+                toStream.once('end', ()=>{
+                    toStream.emit('close');
+                });
+            } else {
+                toStream.emit('close');
+            }
+        } else {
+            toStream.emit('close');
+        }
+    });
+    return toStream;
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/decompress-response/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+const { Transform, PassThrough } = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)");
+const zlib = __turbopack_context__.r("[externals]/zlib [external] (zlib, cjs)");
+const mimicResponse = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/mimic-response/index.js [app-ssr] (ecmascript)");
+module.exports = (response)=>{
+    const contentEncoding = (response.headers['content-encoding'] || '').toLowerCase();
+    delete response.headers['content-encoding'];
+    if (![
+        'gzip',
+        'deflate',
+        'br'
+    ].includes(contentEncoding)) {
+        return response;
+    }
+    // TODO: Remove this when targeting Node.js 12.
+    const isBrotli = contentEncoding === 'br';
+    if (isBrotli && typeof zlib.createBrotliDecompress !== 'function') {
+        response.destroy(new Error('Brotli is not supported on Node.js < 12'));
+        return response;
+    }
+    let isEmpty = true;
+    const checker = new Transform({
+        transform (data, _encoding, callback) {
+            isEmpty = false;
+            callback(null, data);
+        },
+        flush (callback) {
+            callback();
+        }
+    });
+    const finalStream = new PassThrough({
+        autoDestroy: false,
+        destroy (error, callback) {
+            response.destroy();
+            callback(error);
+        }
+    });
+    const decompressStream = isBrotli ? zlib.createBrotliDecompress() : zlib.createUnzip();
+    decompressStream.once('error', (error)=>{
+        if (isEmpty && !response.readable) {
+            finalStream.end();
+            return;
+        }
+        finalStream.destroy(error);
+    });
+    mimicResponse(response, finalStream);
+    response.pipe(checker).pipe(decompressStream).pipe(finalStream);
+    return finalStream;
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/ms/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Helpers.
+ */ var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var w = d * 7;
+var y = d * 365.25;
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} [options]
+ * @throws {Error} throw an error if val is not a non-empty string or a number
+ * @return {String|Number}
+ * @api public
+ */ module.exports = function(val, options) {
+    options = options || {};
+    var type = typeof val;
+    if (type === 'string' && val.length > 0) {
+        return parse(val);
+    } else if (type === 'number' && isFinite(val)) {
+        return options.long ? fmtLong(val) : fmtShort(val);
+    }
+    throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val));
+};
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */ function parse(str) {
+    str = String(str);
+    if (str.length > 100) {
+        return;
+    }
+    var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(str);
+    if (!match) {
+        return;
+    }
+    var n = parseFloat(match[1]);
+    var type = (match[2] || 'ms').toLowerCase();
+    switch(type){
+        case 'years':
+        case 'year':
+        case 'yrs':
+        case 'yr':
+        case 'y':
+            return n * y;
+        case 'weeks':
+        case 'week':
+        case 'w':
+            return n * w;
+        case 'days':
+        case 'day':
+        case 'd':
+            return n * d;
+        case 'hours':
+        case 'hour':
+        case 'hrs':
+        case 'hr':
+        case 'h':
+            return n * h;
+        case 'minutes':
+        case 'minute':
+        case 'mins':
+        case 'min':
+        case 'm':
+            return n * m;
+        case 'seconds':
+        case 'second':
+        case 'secs':
+        case 'sec':
+        case 's':
+            return n * s;
+        case 'milliseconds':
+        case 'millisecond':
+        case 'msecs':
+        case 'msec':
+        case 'ms':
+            return n;
+        default:
+            return undefined;
+    }
+}
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */ function fmtShort(ms) {
+    var msAbs = Math.abs(ms);
+    if (msAbs >= d) {
+        return Math.round(ms / d) + 'd';
+    }
+    if (msAbs >= h) {
+        return Math.round(ms / h) + 'h';
+    }
+    if (msAbs >= m) {
+        return Math.round(ms / m) + 'm';
+    }
+    if (msAbs >= s) {
+        return Math.round(ms / s) + 's';
+    }
+    return ms + 'ms';
+}
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */ function fmtLong(ms) {
+    var msAbs = Math.abs(ms);
+    if (msAbs >= d) {
+        return plural(ms, msAbs, d, 'day');
+    }
+    if (msAbs >= h) {
+        return plural(ms, msAbs, h, 'hour');
+    }
+    if (msAbs >= m) {
+        return plural(ms, msAbs, m, 'minute');
+    }
+    if (msAbs >= s) {
+        return plural(ms, msAbs, s, 'second');
+    }
+    return ms + ' ms';
+}
+/**
+ * Pluralization helper.
+ */ function plural(ms, msAbs, n, name) {
+    var isPlural = msAbs >= n * 1.5;
+    return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/debug/src/common.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ */ function setup(env) {
+    createDebug.debug = createDebug;
+    createDebug.default = createDebug;
+    createDebug.coerce = coerce;
+    createDebug.disable = disable;
+    createDebug.enable = enable;
+    createDebug.enabled = enabled;
+    createDebug.humanize = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/ms/index.js [app-ssr] (ecmascript)");
+    createDebug.destroy = destroy;
+    Object.keys(env).forEach((key)=>{
+        createDebug[key] = env[key];
+    });
+    /**
+	* The currently active debug mode names, and names to skip.
+	*/ createDebug.names = [];
+    createDebug.skips = [];
+    /**
+	* Map of special "%n" handling functions, for the debug "format" argument.
+	*
+	* Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	*/ createDebug.formatters = {};
+    /**
+	* Selects a color for a debug namespace
+	* @param {String} namespace The namespace string for the debug instance to be colored
+	* @return {Number|String} An ANSI color code for the given namespace
+	* @api private
+	*/ function selectColor(namespace) {
+        let hash = 0;
+        for(let i = 0; i < namespace.length; i++){
+            hash = (hash << 5) - hash + namespace.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
+        return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+    }
+    createDebug.selectColor = selectColor;
+    /**
+	* Create a debugger with the given `namespace`.
+	*
+	* @param {String} namespace
+	* @return {Function}
+	* @api public
+	*/ function createDebug(namespace) {
+        let prevTime;
+        let enableOverride = null;
+        let namespacesCache;
+        let enabledCache;
+        function debug(...args) {
+            // Disabled?
+            if (!debug.enabled) {
+                return;
+            }
+            const self = debug;
+            // Set `diff` timestamp
+            const curr = Number(new Date());
+            const ms = curr - (prevTime || curr);
+            self.diff = ms;
+            self.prev = prevTime;
+            self.curr = curr;
+            prevTime = curr;
+            args[0] = createDebug.coerce(args[0]);
+            if (typeof args[0] !== 'string') {
+                // Anything else let's inspect with %O
+                args.unshift('%O');
+            }
+            // Apply any `formatters` transformations
+            let index = 0;
+            args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format)=>{
+                // If we encounter an escaped % then don't increase the array index
+                if (match === '%%') {
+                    return '%';
+                }
+                index++;
+                const formatter = createDebug.formatters[format];
+                if (typeof formatter === 'function') {
+                    const val = args[index];
+                    match = formatter.call(self, val);
+                    // Now we need to remove `args[index]` since it's inlined in the `format`
+                    args.splice(index, 1);
+                    index--;
+                }
+                return match;
+            });
+            // Apply env-specific formatting (colors, etc.)
+            createDebug.formatArgs.call(self, args);
+            const logFn = self.log || createDebug.log;
+            logFn.apply(self, args);
+        }
+        debug.namespace = namespace;
+        debug.useColors = createDebug.useColors();
+        debug.color = createDebug.selectColor(namespace);
+        debug.extend = extend;
+        debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
+        Object.defineProperty(debug, 'enabled', {
+            enumerable: true,
+            configurable: false,
+            get: ()=>{
+                if (enableOverride !== null) {
+                    return enableOverride;
+                }
+                if (namespacesCache !== createDebug.namespaces) {
+                    namespacesCache = createDebug.namespaces;
+                    enabledCache = createDebug.enabled(namespace);
+                }
+                return enabledCache;
+            },
+            set: (v)=>{
+                enableOverride = v;
+            }
+        });
+        // Env-specific initialization logic for debug instances
+        if (typeof createDebug.init === 'function') {
+            createDebug.init(debug);
+        }
+        return debug;
+    }
+    function extend(namespace, delimiter) {
+        const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+        newDebug.log = this.log;
+        return newDebug;
+    }
+    /**
+	* Enables a debug mode by namespaces. This can include modes
+	* separated by a colon and wildcards.
+	*
+	* @param {String} namespaces
+	* @api public
+	*/ function enable(namespaces) {
+        createDebug.save(namespaces);
+        createDebug.namespaces = namespaces;
+        createDebug.names = [];
+        createDebug.skips = [];
+        const split = (typeof namespaces === 'string' ? namespaces : '').trim().replace(/\s+/g, ',').split(',').filter(Boolean);
+        for (const ns of split){
+            if (ns[0] === '-') {
+                createDebug.skips.push(ns.slice(1));
+            } else {
+                createDebug.names.push(ns);
+            }
+        }
+    }
+    /**
+	 * Checks if the given string matches a namespace template, honoring
+	 * asterisks as wildcards.
+	 *
+	 * @param {String} search
+	 * @param {String} template
+	 * @return {Boolean}
+	 */ function matchesTemplate(search, template) {
+        let searchIndex = 0;
+        let templateIndex = 0;
+        let starIndex = -1;
+        let matchIndex = 0;
+        while(searchIndex < search.length){
+            if (templateIndex < template.length && (template[templateIndex] === search[searchIndex] || template[templateIndex] === '*')) {
+                // Match character or proceed with wildcard
+                if (template[templateIndex] === '*') {
+                    starIndex = templateIndex;
+                    matchIndex = searchIndex;
+                    templateIndex++; // Skip the '*'
+                } else {
+                    searchIndex++;
+                    templateIndex++;
+                }
+            } else if (starIndex !== -1) {
+                // Backtrack to the last '*' and try to match more characters
+                templateIndex = starIndex + 1;
+                matchIndex++;
+                searchIndex = matchIndex;
+            } else {
+                return false; // No match
+            }
+        }
+        // Handle trailing '*' in template
+        while(templateIndex < template.length && template[templateIndex] === '*'){
+            templateIndex++;
+        }
+        return templateIndex === template.length;
+    }
+    /**
+	* Disable debug output.
+	*
+	* @return {String} namespaces
+	* @api public
+	*/ function disable() {
+        const namespaces = [
+            ...createDebug.names,
+            ...createDebug.skips.map((namespace)=>'-' + namespace)
+        ].join(',');
+        createDebug.enable('');
+        return namespaces;
+    }
+    /**
+	* Returns true if the given mode name is enabled, false otherwise.
+	*
+	* @param {String} name
+	* @return {Boolean}
+	* @api public
+	*/ function enabled(name) {
+        for (const skip of createDebug.skips){
+            if (matchesTemplate(name, skip)) {
+                return false;
+            }
+        }
+        for (const ns of createDebug.names){
+            if (matchesTemplate(name, ns)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+	* Coerce `val`.
+	*
+	* @param {Mixed} val
+	* @return {Mixed}
+	* @api private
+	*/ function coerce(val) {
+        if (val instanceof Error) {
+            return val.stack || val.message;
+        }
+        return val;
+    }
+    /**
+	* XXX DO NOT USE. This is a temporary stub function.
+	* XXX It WILL be removed in the next major release.
+	*/ function destroy() {
+        console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+    }
+    createDebug.enable(createDebug.load());
+    return createDebug;
+}
+module.exports = setup;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/debug/src/node.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Module dependencies.
+ */ const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+/**
+ * This is the Node.js implementation of `debug()`.
+ */ exports.init = init;
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.destroy = util.deprecate(()=>{}, 'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+/**
+ * Colors.
+ */ exports.colors = [
+    6,
+    2,
+    3,
+    4,
+    5,
+    1
+];
+try {
+    // Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    const supportsColor = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/supports-color/index.js [app-ssr] (ecmascript)");
+    if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
+        exports.colors = [
+            20,
+            21,
+            26,
+            27,
+            32,
+            33,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            56,
+            57,
+            62,
+            63,
+            68,
+            69,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            92,
+            93,
+            98,
+            99,
+            112,
+            113,
+            128,
+            129,
+            134,
+            135,
+            148,
+            149,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            178,
+            179,
+            184,
+            185,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            214,
+            215,
+            220,
+            221
+        ];
+    }
+} catch (error) {
+// Swallow - we only care if `supports-color` is available; it doesn't have to be.
+}
+/**
+ * Build up the default `inspectOpts` object from the environment variables.
+ *
+ *   $ DEBUG_COLORS=no DEBUG_DEPTH=10 DEBUG_SHOW_HIDDEN=enabled node script.js
+ */ exports.inspectOpts = Object.keys(process.env).filter((key)=>{
+    return /^debug_/i.test(key);
+}).reduce((obj, key)=>{
+    // Camel-case
+    const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_, k)=>{
+        return k.toUpperCase();
+    });
+    // Coerce string value into JS value
+    let val = process.env[key];
+    if (/^(yes|on|true|enabled)$/i.test(val)) {
+        val = true;
+    } else if (/^(no|off|false|disabled)$/i.test(val)) {
+        val = false;
+    } else if (val === 'null') {
+        val = null;
+    } else {
+        val = Number(val);
+    }
+    obj[prop] = val;
+    return obj;
+}, {});
+/**
+ * Is stdout a TTY? Colored output is enabled when `true`.
+ */ function useColors() {
+    return 'colors' in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(process.stderr.fd);
+}
+/**
+ * Adds ANSI color escape codes if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    const { namespace: name, useColors } = this;
+    if (useColors) {
+        const c = this.color;
+        const colorCode = '\u001B[3' + (c < 8 ? c : '8;5;' + c);
+        const prefix = `  ${colorCode};1m${name} \u001B[0m`;
+        args[0] = prefix + args[0].split('\n').join('\n' + prefix);
+        args.push(colorCode + 'm+' + module.exports.humanize(this.diff) + '\u001B[0m');
+    } else {
+        args[0] = getDate() + name + ' ' + args[0];
+    }
+}
+function getDate() {
+    if (exports.inspectOpts.hideDate) {
+        return '';
+    }
+    return new Date().toISOString() + ' ';
+}
+/**
+ * Invokes `util.formatWithOptions()` with the specified arguments and writes to stderr.
+ */ function log(...args) {
+    return process.stderr.write(util.formatWithOptions(exports.inspectOpts, ...args) + '\n');
+}
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    if (namespaces) {
+        process.env.DEBUG = namespaces;
+    } else {
+        // If you set a process.env field to null or undefined, it gets cast to the
+        // string 'null' or 'undefined'. Just delete instead.
+        delete process.env.DEBUG;
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    return process.env.DEBUG;
+}
+/**
+ * Init logic for `debug` instances.
+ *
+ * Create a new `inspectOpts` object in case `useColors` is set
+ * differently for a particular `debug` instance.
+ */ function init(debug) {
+    debug.inspectOpts = {};
+    const keys = Object.keys(exports.inspectOpts);
+    for(let i = 0; i < keys.length; i++){
+        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
+    }
+}
+module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %o to `util.inspect()`, all on a single line.
+ */ formatters.o = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts).split('\n').map((str)=>str.trim()).join(' ');
+};
+/**
+ * Map %O to `util.inspect()`, allowing multiple lines if needed.
+ */ formatters.O = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts);
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/debug/src/browser.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/* eslint-env browser */ /**
+ * This is the web browser implementation of `debug()`.
+ */ exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = localstorage();
+exports.destroy = (()=>{
+    let warned = false;
+    return ()=>{
+        if (!warned) {
+            warned = true;
+            console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+        }
+    };
+})();
+/**
+ * Colors.
+ */ exports.colors = [
+    '#0000CC',
+    '#0000FF',
+    '#0033CC',
+    '#0033FF',
+    '#0066CC',
+    '#0066FF',
+    '#0099CC',
+    '#0099FF',
+    '#00CC00',
+    '#00CC33',
+    '#00CC66',
+    '#00CC99',
+    '#00CCCC',
+    '#00CCFF',
+    '#3300CC',
+    '#3300FF',
+    '#3333CC',
+    '#3333FF',
+    '#3366CC',
+    '#3366FF',
+    '#3399CC',
+    '#3399FF',
+    '#33CC00',
+    '#33CC33',
+    '#33CC66',
+    '#33CC99',
+    '#33CCCC',
+    '#33CCFF',
+    '#6600CC',
+    '#6600FF',
+    '#6633CC',
+    '#6633FF',
+    '#66CC00',
+    '#66CC33',
+    '#9900CC',
+    '#9900FF',
+    '#9933CC',
+    '#9933FF',
+    '#99CC00',
+    '#99CC33',
+    '#CC0000',
+    '#CC0033',
+    '#CC0066',
+    '#CC0099',
+    '#CC00CC',
+    '#CC00FF',
+    '#CC3300',
+    '#CC3333',
+    '#CC3366',
+    '#CC3399',
+    '#CC33CC',
+    '#CC33FF',
+    '#CC6600',
+    '#CC6633',
+    '#CC9900',
+    '#CC9933',
+    '#CCCC00',
+    '#CCCC33',
+    '#FF0000',
+    '#FF0033',
+    '#FF0066',
+    '#FF0099',
+    '#FF00CC',
+    '#FF00FF',
+    '#FF3300',
+    '#FF3333',
+    '#FF3366',
+    '#FF3399',
+    '#FF33CC',
+    '#FF33FF',
+    '#FF6600',
+    '#FF6633',
+    '#FF9900',
+    '#FF9933',
+    '#FFCC00',
+    '#FFCC33'
+];
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */ // eslint-disable-next-line complexity
+function useColors() {
+    // NB: In an Electron preload script, document will be defined but not fully
+    // initialized. Since we know we're in Chrome, we'll just detect this case
+    // explicitly
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Internet Explorer and Edge do not support colors.
+    if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+        return false;
+    }
+    let m;
+    // Is webkit? http://stackoverflow.com/a/16459606/376773
+    // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+    // eslint-disable-next-line no-return-assign
+    return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || ("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31 || typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+}
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
+    if (!this.useColors) {
+        return;
+    }
+    const c = 'color: ' + this.color;
+    args.splice(1, 0, c, 'color: inherit');
+    // The final "%c" is somewhat tricky, because there could be other
+    // arguments passed either before or after the %c, so we need to
+    // figure out the correct index to insert the CSS into
+    let index = 0;
+    let lastC = 0;
+    args[0].replace(/%[a-zA-Z%]/g, (match)=>{
+        if (match === '%%') {
+            return;
+        }
+        index++;
+        if (match === '%c') {
+            // We only are interested in the *last* %c
+            // (the user may have provided their own)
+            lastC = index;
+        }
+    });
+    args.splice(lastC, 0, c);
+}
+/**
+ * Invokes `console.debug()` when available.
+ * No-op when `console.debug` is not a "function".
+ * If `console.debug` is not available, falls back
+ * to `console.log`.
+ *
+ * @api public
+ */ exports.log = console.debug || console.log || (()=>{});
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    try {
+        if (namespaces) {
+            exports.storage.setItem('debug', namespaces);
+        } else {
+            exports.storage.removeItem('debug');
+        }
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    let r;
+    try {
+        r = exports.storage.getItem('debug') || exports.storage.getItem('DEBUG');
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+    // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+    if (!r && typeof process !== 'undefined' && 'env' in process) {
+        r = process.env.DEBUG;
+    }
+    return r;
+}
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */ function localstorage() {
+    try {
+        // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+        // The Browser also has localStorage in the global context.
+        return localStorage;
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */ formatters.j = function(v) {
+    try {
+        return JSON.stringify(v);
+    } catch (error) {
+        return '[UnexpectedJSONParseError]: ' + error.message;
+    }
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/debug/src/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Detect Electron renderer / nwjs process, which is node, but we should
+ * treat as a browser.
+ */ if (typeof process === 'undefined' || process.type === 'renderer' || ("TURBOPACK compile-time value", false) === true || process.__nwjs) {
+    module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/debug/src/browser.js [app-ssr] (ecmascript)");
+} else {
+    module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/debug/src/node.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/has-flag/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = (flag, argv = process.argv)=>{
+    const prefix = flag.startsWith('-') ? '' : flag.length === 1 ? '-' : '--';
+    const position = argv.indexOf(prefix + flag);
+    const terminatorPosition = argv.indexOf('--');
+    return position !== -1 && (terminatorPosition === -1 || position < terminatorPosition);
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/supports-color/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+const os = __turbopack_context__.r("[externals]/os [external] (os, cjs)");
+const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const hasFlag = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/has-flag/index.js [app-ssr] (ecmascript)");
+const { env } = process;
+let forceColor;
+if (hasFlag('no-color') || hasFlag('no-colors') || hasFlag('color=false') || hasFlag('color=never')) {
+    forceColor = 0;
+} else if (hasFlag('color') || hasFlag('colors') || hasFlag('color=true') || hasFlag('color=always')) {
+    forceColor = 1;
+}
+if ('FORCE_COLOR' in env) {
+    if (env.FORCE_COLOR === 'true') {
+        forceColor = 1;
+    } else if (env.FORCE_COLOR === 'false') {
+        forceColor = 0;
+    } else {
+        forceColor = env.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(env.FORCE_COLOR, 10), 3);
+    }
+}
+function translateLevel(level) {
+    if (level === 0) {
+        return false;
+    }
+    return {
+        level,
+        hasBasic: true,
+        has256: level >= 2,
+        has16m: level >= 3
+    };
+}
+function supportsColor(haveStream, streamIsTTY) {
+    if (forceColor === 0) {
+        return 0;
+    }
+    if (hasFlag('color=16m') || hasFlag('color=full') || hasFlag('color=truecolor')) {
+        return 3;
+    }
+    if (hasFlag('color=256')) {
+        return 2;
+    }
+    if (haveStream && !streamIsTTY && forceColor === undefined) {
+        return 0;
+    }
+    const min = forceColor || 0;
+    if (env.TERM === 'dumb') {
+        return min;
+    }
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    if ('CI' in env) {
+        if ([
+            'TRAVIS',
+            'CIRCLECI',
+            'APPVEYOR',
+            'GITLAB_CI',
+            'GITHUB_ACTIONS',
+            'BUILDKITE'
+        ].some((sign)=>sign in env) || env.CI_NAME === 'codeship') {
+            return 1;
+        }
+        return min;
+    }
+    if ('TEAMCITY_VERSION' in env) {
+        return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;
+    }
+    if (env.COLORTERM === 'truecolor') {
+        return 3;
+    }
+    if ('TERM_PROGRAM' in env) {
+        const version = parseInt((env.TERM_PROGRAM_VERSION || '').split('.')[0], 10);
+        switch(env.TERM_PROGRAM){
+            case 'iTerm.app':
+                return version >= 3 ? 3 : 2;
+            case 'Apple_Terminal':
+                return 2;
+        }
+    }
+    if (/-256(color)?$/i.test(env.TERM)) {
+        return 2;
+    }
+    if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(env.TERM)) {
+        return 1;
+    }
+    if ('COLORTERM' in env) {
+        return 1;
+    }
+    return min;
+}
+function getSupportLevel(stream) {
+    const level = supportsColor(stream, stream && stream.isTTY);
+    return translateLevel(level);
+}
+module.exports = {
+    supportsColor: getSupportLevel,
+    stdout: translateLevel(supportsColor(true, tty.isatty(1))),
+    stderr: translateLevel(supportsColor(true, tty.isatty(2)))
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/follow-redirects/debug.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var debug;
+module.exports = function() {
+    if (!debug) {
+        try {
+            /* eslint global-require: off */ debug = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/debug/src/index.js [app-ssr] (ecmascript)")("follow-redirects");
+        } catch (error) {}
+        if (typeof debug !== "function") {
+            debug = function() {};
+        }
+    }
+    debug.apply(null, arguments);
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/follow-redirects/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var url = __turbopack_context__.r("[externals]/url [external] (url, cjs)");
+var URL = url.URL;
+var http = __turbopack_context__.r("[externals]/http [external] (http, cjs)");
+var https = __turbopack_context__.r("[externals]/https [external] (https, cjs)");
+var Writable = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)").Writable;
+var assert = __turbopack_context__.r("[externals]/assert [external] (assert, cjs)");
+var debug = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/follow-redirects/debug.js [app-ssr] (ecmascript)");
+// Preventive platform detection
+// istanbul ignore next
+(function detectUnsupportedEnvironment() {
+    var looksLikeNode = typeof process !== "undefined";
+    var looksLikeBrowser = ("TURBOPACK compile-time value", "undefined") !== "undefined" && typeof document !== "undefined";
+    var looksLikeV8 = isFunction(Error.captureStackTrace);
+    if (!looksLikeNode && (looksLikeBrowser || !looksLikeV8)) {
+        console.warn("The follow-redirects package should be excluded from browser builds.");
+    }
+})();
+// Whether to use the native URL object or the legacy url module
+var useNativeURL = false;
+try {
+    assert(new URL(""));
+} catch (error) {
+    useNativeURL = error.code === "ERR_INVALID_URL";
+}
+// URL fields to preserve in copy operations
+var preservedUrlFields = [
+    "auth",
+    "host",
+    "hostname",
+    "href",
+    "path",
+    "pathname",
+    "port",
+    "protocol",
+    "query",
+    "search",
+    "hash"
+];
+// Create handlers that pass events from native requests
+var events = [
+    "abort",
+    "aborted",
+    "connect",
+    "error",
+    "socket",
+    "timeout"
+];
+var eventHandlers = Object.create(null);
+events.forEach(function(event) {
+    eventHandlers[event] = function(arg1, arg2, arg3) {
+        this._redirectable.emit(event, arg1, arg2, arg3);
+    };
+});
+// Error types with codes
+var InvalidUrlError = createErrorType("ERR_INVALID_URL", "Invalid URL", TypeError);
+var RedirectionError = createErrorType("ERR_FR_REDIRECTION_FAILURE", "Redirected request failed");
+var TooManyRedirectsError = createErrorType("ERR_FR_TOO_MANY_REDIRECTS", "Maximum number of redirects exceeded", RedirectionError);
+var MaxBodyLengthExceededError = createErrorType("ERR_FR_MAX_BODY_LENGTH_EXCEEDED", "Request body larger than maxBodyLength limit");
+var WriteAfterEndError = createErrorType("ERR_STREAM_WRITE_AFTER_END", "write after end");
+// istanbul ignore next
+var destroy = Writable.prototype.destroy || noop;
+// An HTTP(S) request that can be redirected
+function RedirectableRequest(options, responseCallback) {
+    // Initialize the request
+    Writable.call(this);
+    this._sanitizeOptions(options);
+    this._options = options;
+    this._ended = false;
+    this._ending = false;
+    this._redirectCount = 0;
+    this._redirects = [];
+    this._requestBodyLength = 0;
+    this._requestBodyBuffers = [];
+    // Attach a callback if passed
+    if (responseCallback) {
+        this.on("response", responseCallback);
+    }
+    // React to responses of native requests
+    var self = this;
+    this._onNativeResponse = function(response) {
+        try {
+            self._processResponse(response);
+        } catch (cause) {
+            self.emit("error", cause instanceof RedirectionError ? cause : new RedirectionError({
+                cause: cause
+            }));
+        }
+    };
+    // Perform the first request
+    this._performRequest();
+}
+RedirectableRequest.prototype = Object.create(Writable.prototype);
+RedirectableRequest.prototype.abort = function() {
+    destroyRequest(this._currentRequest);
+    this._currentRequest.abort();
+    this.emit("abort");
+};
+RedirectableRequest.prototype.destroy = function(error) {
+    destroyRequest(this._currentRequest, error);
+    destroy.call(this, error);
+    return this;
+};
+// Writes buffered data to the current native request
+RedirectableRequest.prototype.write = function(data, encoding, callback) {
+    // Writing is not allowed if end has been called
+    if (this._ending) {
+        throw new WriteAfterEndError();
+    }
+    // Validate input and shift parameters if necessary
+    if (!isString(data) && !isBuffer(data)) {
+        throw new TypeError("data should be a string, Buffer or Uint8Array");
+    }
+    if (isFunction(encoding)) {
+        callback = encoding;
+        encoding = null;
+    }
+    // Ignore empty buffers, since writing them doesn't invoke the callback
+    // https://github.com/nodejs/node/issues/22066
+    if (data.length === 0) {
+        if (callback) {
+            callback();
+        }
+        return;
+    }
+    // Only write when we don't exceed the maximum body length
+    if (this._requestBodyLength + data.length <= this._options.maxBodyLength) {
+        this._requestBodyLength += data.length;
+        this._requestBodyBuffers.push({
+            data: data,
+            encoding: encoding
+        });
+        this._currentRequest.write(data, encoding, callback);
+    } else {
+        this.emit("error", new MaxBodyLengthExceededError());
+        this.abort();
+    }
+};
+// Ends the current native request
+RedirectableRequest.prototype.end = function(data, encoding, callback) {
+    // Shift parameters if necessary
+    if (isFunction(data)) {
+        callback = data;
+        data = encoding = null;
+    } else if (isFunction(encoding)) {
+        callback = encoding;
+        encoding = null;
+    }
+    // Write data if needed and end
+    if (!data) {
+        this._ended = this._ending = true;
+        this._currentRequest.end(null, null, callback);
+    } else {
+        var self = this;
+        var currentRequest = this._currentRequest;
+        this.write(data, encoding, function() {
+            self._ended = true;
+            currentRequest.end(null, null, callback);
+        });
+        this._ending = true;
+    }
+};
+// Sets a header value on the current native request
+RedirectableRequest.prototype.setHeader = function(name, value) {
+    this._options.headers[name] = value;
+    this._currentRequest.setHeader(name, value);
+};
+// Clears a header value on the current native request
+RedirectableRequest.prototype.removeHeader = function(name) {
+    delete this._options.headers[name];
+    this._currentRequest.removeHeader(name);
+};
+// Global timeout for all underlying requests
+RedirectableRequest.prototype.setTimeout = function(msecs, callback) {
+    var self = this;
+    // Destroys the socket on timeout
+    function destroyOnTimeout(socket) {
+        socket.setTimeout(msecs);
+        socket.removeListener("timeout", socket.destroy);
+        socket.addListener("timeout", socket.destroy);
+    }
+    // Sets up a timer to trigger a timeout event
+    function startTimer(socket) {
+        if (self._timeout) {
+            clearTimeout(self._timeout);
+        }
+        self._timeout = setTimeout(function() {
+            self.emit("timeout");
+            clearTimer();
+        }, msecs);
+        destroyOnTimeout(socket);
+    }
+    // Stops a timeout from triggering
+    function clearTimer() {
+        // Clear the timeout
+        if (self._timeout) {
+            clearTimeout(self._timeout);
+            self._timeout = null;
+        }
+        // Clean up all attached listeners
+        self.removeListener("abort", clearTimer);
+        self.removeListener("error", clearTimer);
+        self.removeListener("response", clearTimer);
+        self.removeListener("close", clearTimer);
+        if (callback) {
+            self.removeListener("timeout", callback);
+        }
+        if (!self.socket) {
+            self._currentRequest.removeListener("socket", startTimer);
+        }
+    }
+    // Attach callback if passed
+    if (callback) {
+        this.on("timeout", callback);
+    }
+    // Start the timer if or when the socket is opened
+    if (this.socket) {
+        startTimer(this.socket);
+    } else {
+        this._currentRequest.once("socket", startTimer);
+    }
+    // Clean up on events
+    this.on("socket", destroyOnTimeout);
+    this.on("abort", clearTimer);
+    this.on("error", clearTimer);
+    this.on("response", clearTimer);
+    this.on("close", clearTimer);
+    return this;
+};
+// Proxy all other public ClientRequest methods
+[
+    "flushHeaders",
+    "getHeader",
+    "setNoDelay",
+    "setSocketKeepAlive"
+].forEach(function(method) {
+    RedirectableRequest.prototype[method] = function(a, b) {
+        return this._currentRequest[method](a, b);
+    };
+});
+// Proxy all public ClientRequest properties
+[
+    "aborted",
+    "connection",
+    "socket"
+].forEach(function(property) {
+    Object.defineProperty(RedirectableRequest.prototype, property, {
+        get: function() {
+            return this._currentRequest[property];
+        }
+    });
+});
+RedirectableRequest.prototype._sanitizeOptions = function(options) {
+    // Ensure headers are always present
+    if (!options.headers) {
+        options.headers = {};
+    }
+    // Since http.request treats host as an alias of hostname,
+    // but the url module interprets host as hostname plus port,
+    // eliminate the host property to avoid confusion.
+    if (options.host) {
+        // Use hostname if set, because it has precedence
+        if (!options.hostname) {
+            options.hostname = options.host;
+        }
+        delete options.host;
+    }
+    // Complete the URL object when necessary
+    if (!options.pathname && options.path) {
+        var searchPos = options.path.indexOf("?");
+        if (searchPos < 0) {
+            options.pathname = options.path;
+        } else {
+            options.pathname = options.path.substring(0, searchPos);
+            options.search = options.path.substring(searchPos);
+        }
+    }
+};
+// Executes the next native request (initial or redirect)
+RedirectableRequest.prototype._performRequest = function() {
+    // Load the native protocol
+    var protocol = this._options.protocol;
+    var nativeProtocol = this._options.nativeProtocols[protocol];
+    if (!nativeProtocol) {
+        throw new TypeError("Unsupported protocol " + protocol);
+    }
+    // If specified, use the agent corresponding to the protocol
+    // (HTTP and HTTPS use different types of agents)
+    if (this._options.agents) {
+        var scheme = protocol.slice(0, -1);
+        this._options.agent = this._options.agents[scheme];
+    }
+    // Create the native request and set up its event handlers
+    var request = this._currentRequest = nativeProtocol.request(this._options, this._onNativeResponse);
+    request._redirectable = this;
+    for (var event of events){
+        request.on(event, eventHandlers[event]);
+    }
+    // RFC7230§5.3.1: When making a request directly to an origin server, […]
+    // a client MUST send only the absolute path […] as the request-target.
+    this._currentUrl = /^\//.test(this._options.path) ? url.format(this._options) : // When making a request to a proxy, […]
+    // a client MUST send the target URI in absolute-form […].
+    this._options.path;
+    // End a redirected request
+    // (The first request must be ended explicitly with RedirectableRequest#end)
+    if (this._isRedirect) {
+        // Write the request entity and end
+        var i = 0;
+        var self = this;
+        var buffers = this._requestBodyBuffers;
+        (function writeNext(error) {
+            // Only write if this request has not been redirected yet
+            // istanbul ignore else
+            if (request === self._currentRequest) {
+                // Report any write errors
+                // istanbul ignore if
+                if (error) {
+                    self.emit("error", error);
+                } else if (i < buffers.length) {
+                    var buffer = buffers[i++];
+                    // istanbul ignore else
+                    if (!request.finished) {
+                        request.write(buffer.data, buffer.encoding, writeNext);
+                    }
+                } else if (self._ended) {
+                    request.end();
+                }
+            }
+        })();
+    }
+};
+// Processes a response from the current native request
+RedirectableRequest.prototype._processResponse = function(response) {
+    // Store the redirected response
+    var statusCode = response.statusCode;
+    if (this._options.trackRedirects) {
+        this._redirects.push({
+            url: this._currentUrl,
+            headers: response.headers,
+            statusCode: statusCode
+        });
+    }
+    // RFC7231§6.4: The 3xx (Redirection) class of status code indicates
+    // that further action needs to be taken by the user agent in order to
+    // fulfill the request. If a Location header field is provided,
+    // the user agent MAY automatically redirect its request to the URI
+    // referenced by the Location field value,
+    // even if the specific status code is not understood.
+    // If the response is not a redirect; return it as-is
+    var location = response.headers.location;
+    if (!location || this._options.followRedirects === false || statusCode < 300 || statusCode >= 400) {
+        response.responseUrl = this._currentUrl;
+        response.redirects = this._redirects;
+        this.emit("response", response);
+        // Clean up
+        this._requestBodyBuffers = [];
+        return;
+    }
+    // The response is a redirect, so abort the current request
+    destroyRequest(this._currentRequest);
+    // Discard the remainder of the response to avoid waiting for data
+    response.destroy();
+    // RFC7231§6.4: A client SHOULD detect and intervene
+    // in cyclical redirections (i.e., "infinite" redirection loops).
+    if (++this._redirectCount > this._options.maxRedirects) {
+        throw new TooManyRedirectsError();
+    }
+    // Store the request headers if applicable
+    var requestHeaders;
+    var beforeRedirect = this._options.beforeRedirect;
+    if (beforeRedirect) {
+        requestHeaders = Object.assign({
+            // The Host header was set by nativeProtocol.request
+            Host: response.req.getHeader("host")
+        }, this._options.headers);
+    }
+    // RFC7231§6.4: Automatic redirection needs to done with
+    // care for methods not known to be safe, […]
+    // RFC7231§6.4.2–3: For historical reasons, a user agent MAY change
+    // the request method from POST to GET for the subsequent request.
+    var method = this._options.method;
+    if ((statusCode === 301 || statusCode === 302) && this._options.method === "POST" || // RFC7231§6.4.4: The 303 (See Other) status code indicates that
+    // the server is redirecting the user agent to a different resource […]
+    // A user agent can perform a retrieval request targeting that URI
+    // (a GET or HEAD request if using HTTP) […]
+    statusCode === 303 && !/^(?:GET|HEAD)$/.test(this._options.method)) {
+        this._options.method = "GET";
+        // Drop a possible entity and headers related to it
+        this._requestBodyBuffers = [];
+        removeMatchingHeaders(/^content-/i, this._options.headers);
+    }
+    // Drop the Host header, as the redirect might lead to a different host
+    var currentHostHeader = removeMatchingHeaders(/^host$/i, this._options.headers);
+    // If the redirect is relative, carry over the host of the last request
+    var currentUrlParts = parseUrl(this._currentUrl);
+    var currentHost = currentHostHeader || currentUrlParts.host;
+    var currentUrl = /^\w+:/.test(location) ? this._currentUrl : url.format(Object.assign(currentUrlParts, {
+        host: currentHost
+    }));
+    // Create the redirected request
+    var redirectUrl = resolveUrl(location, currentUrl);
+    debug("redirecting to", redirectUrl.href);
+    this._isRedirect = true;
+    spreadUrlObject(redirectUrl, this._options);
+    // Drop confidential headers when redirecting to a less secure protocol
+    // or to a different domain that is not a superdomain
+    if (redirectUrl.protocol !== currentUrlParts.protocol && redirectUrl.protocol !== "https:" || redirectUrl.host !== currentHost && !isSubdomain(redirectUrl.host, currentHost)) {
+        removeMatchingHeaders(/^(?:(?:proxy-)?authorization|cookie)$/i, this._options.headers);
+    }
+    // Evaluate the beforeRedirect callback
+    if (isFunction(beforeRedirect)) {
+        var responseDetails = {
+            headers: response.headers,
+            statusCode: statusCode
+        };
+        var requestDetails = {
+            url: currentUrl,
+            method: method,
+            headers: requestHeaders
+        };
+        beforeRedirect(this._options, responseDetails, requestDetails);
+        this._sanitizeOptions(this._options);
+    }
+    // Perform the redirected request
+    this._performRequest();
+};
+// Wraps the key/value object of protocols with redirect functionality
+function wrap(protocols) {
+    // Default settings
+    var exports = {
+        maxRedirects: 21,
+        maxBodyLength: 10 * 1024 * 1024
+    };
+    // Wrap each protocol
+    var nativeProtocols = {};
+    Object.keys(protocols).forEach(function(scheme) {
+        var protocol = scheme + ":";
+        var nativeProtocol = nativeProtocols[protocol] = protocols[scheme];
+        var wrappedProtocol = exports[scheme] = Object.create(nativeProtocol);
+        // Executes a request, following redirects
+        function request(input, options, callback) {
+            // Parse parameters, ensuring that input is an object
+            if (isURL(input)) {
+                input = spreadUrlObject(input);
+            } else if (isString(input)) {
+                input = spreadUrlObject(parseUrl(input));
+            } else {
+                callback = options;
+                options = validateUrl(input);
+                input = {
+                    protocol: protocol
+                };
+            }
+            if (isFunction(options)) {
+                callback = options;
+                options = null;
+            }
+            // Set defaults
+            options = Object.assign({
+                maxRedirects: exports.maxRedirects,
+                maxBodyLength: exports.maxBodyLength
+            }, input, options);
+            options.nativeProtocols = nativeProtocols;
+            if (!isString(options.host) && !isString(options.hostname)) {
+                options.hostname = "::1";
+            }
+            assert.equal(options.protocol, protocol, "protocol mismatch");
+            debug("options", options);
+            return new RedirectableRequest(options, callback);
+        }
+        // Executes a GET request, following redirects
+        function get(input, options, callback) {
+            var wrappedRequest = wrappedProtocol.request(input, options, callback);
+            wrappedRequest.end();
+            return wrappedRequest;
+        }
+        // Expose the properties on the wrapped protocol
+        Object.defineProperties(wrappedProtocol, {
+            request: {
+                value: request,
+                configurable: true,
+                enumerable: true,
+                writable: true
+            },
+            get: {
+                value: get,
+                configurable: true,
+                enumerable: true,
+                writable: true
+            }
+        });
+    });
+    return exports;
+}
+function noop() {}
+function parseUrl(input) {
+    var parsed;
+    // istanbul ignore else
+    if (useNativeURL) {
+        parsed = new URL(input);
+    } else {
+        // Ensure the URL is valid and absolute
+        parsed = validateUrl(url.parse(input));
+        if (!isString(parsed.protocol)) {
+            throw new InvalidUrlError({
+                input
+            });
+        }
+    }
+    return parsed;
+}
+function resolveUrl(relative, base) {
+    // istanbul ignore next
+    return useNativeURL ? new URL(relative, base) : parseUrl(url.resolve(base, relative));
+}
+function validateUrl(input) {
+    if (/^\[/.test(input.hostname) && !/^\[[:0-9a-f]+\]$/i.test(input.hostname)) {
+        throw new InvalidUrlError({
+            input: input.href || input
+        });
+    }
+    if (/^\[/.test(input.host) && !/^\[[:0-9a-f]+\](:\d+)?$/i.test(input.host)) {
+        throw new InvalidUrlError({
+            input: input.href || input
+        });
+    }
+    return input;
+}
+function spreadUrlObject(urlObject, target) {
+    var spread = target || {};
+    for (var key of preservedUrlFields){
+        spread[key] = urlObject[key];
+    }
+    // Fix IPv6 hostname
+    if (spread.hostname.startsWith("[")) {
+        spread.hostname = spread.hostname.slice(1, -1);
+    }
+    // Ensure port is a number
+    if (spread.port !== "") {
+        spread.port = Number(spread.port);
+    }
+    // Concatenate path
+    spread.path = spread.search ? spread.pathname + spread.search : spread.pathname;
+    return spread;
+}
+function removeMatchingHeaders(regex, headers) {
+    var lastValue;
+    for(var header in headers){
+        if (regex.test(header)) {
+            lastValue = headers[header];
+            delete headers[header];
+        }
+    }
+    return lastValue === null || typeof lastValue === "undefined" ? undefined : String(lastValue).trim();
+}
+function createErrorType(code, message, baseClass) {
+    // Create constructor
+    function CustomError(properties) {
+        // istanbul ignore else
+        if (isFunction(Error.captureStackTrace)) {
+            Error.captureStackTrace(this, this.constructor);
+        }
+        Object.assign(this, properties || {});
+        this.code = code;
+        this.message = this.cause ? message + ": " + this.cause.message : message;
+    }
+    // Attach constructor and set default properties
+    CustomError.prototype = new (baseClass || Error)();
+    Object.defineProperties(CustomError.prototype, {
+        constructor: {
+            value: CustomError,
+            enumerable: false
+        },
+        name: {
+            value: "Error [" + code + "]",
+            enumerable: false
+        }
+    });
+    return CustomError;
+}
+function destroyRequest(request, error) {
+    for (var event of events){
+        request.removeListener(event, eventHandlers[event]);
+    }
+    request.on("error", noop);
+    request.destroy(error);
+}
+function isSubdomain(subdomain, domain) {
+    assert(isString(subdomain) && isString(domain));
+    var dot = subdomain.length - domain.length - 1;
+    return dot > 0 && subdomain[dot] === "." && subdomain.endsWith(domain);
+}
+function isString(value) {
+    return typeof value === "string" || value instanceof String;
+}
+function isFunction(value) {
+    return typeof value === "function";
+}
+function isBuffer(value) {
+    return typeof value === "object" && "length" in value;
+}
+function isURL(value) {
+    return URL && value instanceof URL;
+}
+// Exports
+module.exports = wrap({
+    http: http,
+    https: https
+});
+module.exports.wrap = wrap;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/stream.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/buffer_list.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        enumerableOnly && (symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })), keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = null != arguments[i] ? arguments[i] : {};
+        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _defineProperty(obj, key, value) {
+    key = _toPropertyKey(key);
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+        writable: false
+    });
+    return Constructor;
+}
+function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+        var res = prim.call(input, hint || "default");
+        if (typeof res !== "object") return res;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+}
+var _require = __turbopack_context__.r("[externals]/buffer [external] (buffer, cjs)"), Buffer = _require.Buffer;
+var _require2 = __turbopack_context__.r("[externals]/util [external] (util, cjs)"), inspect = _require2.inspect;
+var custom = inspect && inspect.custom || 'inspect';
+function copyBuffer(src, target, offset) {
+    Buffer.prototype.copy.call(src, target, offset);
+}
+module.exports = /*#__PURE__*/ function() {
+    function BufferList() {
+        _classCallCheck(this, BufferList);
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    _createClass(BufferList, [
+        {
+            key: "push",
+            value: function push(v) {
+                var entry = {
+                    data: v,
+                    next: null
+                };
+                if (this.length > 0) this.tail.next = entry;
+                else this.head = entry;
+                this.tail = entry;
+                ++this.length;
+            }
+        },
+        {
+            key: "unshift",
+            value: function unshift(v) {
+                var entry = {
+                    data: v,
+                    next: this.head
+                };
+                if (this.length === 0) this.tail = entry;
+                this.head = entry;
+                ++this.length;
+            }
+        },
+        {
+            key: "shift",
+            value: function shift() {
+                if (this.length === 0) return;
+                var ret = this.head.data;
+                if (this.length === 1) this.head = this.tail = null;
+                else this.head = this.head.next;
+                --this.length;
+                return ret;
+            }
+        },
+        {
+            key: "clear",
+            value: function clear() {
+                this.head = this.tail = null;
+                this.length = 0;
+            }
+        },
+        {
+            key: "join",
+            value: function join(s) {
+                if (this.length === 0) return '';
+                var p = this.head;
+                var ret = '' + p.data;
+                while(p = p.next)ret += s + p.data;
+                return ret;
+            }
+        },
+        {
+            key: "concat",
+            value: function concat(n) {
+                if (this.length === 0) return Buffer.alloc(0);
+                var ret = Buffer.allocUnsafe(n >>> 0);
+                var p = this.head;
+                var i = 0;
+                while(p){
+                    copyBuffer(p.data, ret, i);
+                    i += p.data.length;
+                    p = p.next;
+                }
+                return ret;
+            }
+        },
+        {
+            key: "consume",
+            value: function consume(n, hasStrings) {
+                var ret;
+                if (n < this.head.data.length) {
+                    // `slice` is the same for buffers and strings.
+                    ret = this.head.data.slice(0, n);
+                    this.head.data = this.head.data.slice(n);
+                } else if (n === this.head.data.length) {
+                    // First chunk is a perfect match.
+                    ret = this.shift();
+                } else {
+                    // Result spans more than one buffer.
+                    ret = hasStrings ? this._getString(n) : this._getBuffer(n);
+                }
+                return ret;
+            }
+        },
+        {
+            key: "first",
+            value: function first() {
+                return this.head.data;
+            }
+        },
+        {
+            key: "_getString",
+            value: function _getString(n) {
+                var p = this.head;
+                var c = 1;
+                var ret = p.data;
+                n -= ret.length;
+                while(p = p.next){
+                    var str = p.data;
+                    var nb = n > str.length ? str.length : n;
+                    if (nb === str.length) ret += str;
+                    else ret += str.slice(0, n);
+                    n -= nb;
+                    if (n === 0) {
+                        if (nb === str.length) {
+                            ++c;
+                            if (p.next) this.head = p.next;
+                            else this.head = this.tail = null;
+                        } else {
+                            this.head = p;
+                            p.data = str.slice(nb);
+                        }
+                        break;
+                    }
+                    ++c;
+                }
+                this.length -= c;
+                return ret;
+            }
+        },
+        {
+            key: "_getBuffer",
+            value: function _getBuffer(n) {
+                var ret = Buffer.allocUnsafe(n);
+                var p = this.head;
+                var c = 1;
+                p.data.copy(ret);
+                n -= p.data.length;
+                while(p = p.next){
+                    var buf = p.data;
+                    var nb = n > buf.length ? buf.length : n;
+                    buf.copy(ret, ret.length - n, 0, nb);
+                    n -= nb;
+                    if (n === 0) {
+                        if (nb === buf.length) {
+                            ++c;
+                            if (p.next) this.head = p.next;
+                            else this.head = this.tail = null;
+                        } else {
+                            this.head = p;
+                            p.data = buf.slice(nb);
+                        }
+                        break;
+                    }
+                    ++c;
+                }
+                this.length -= c;
+                return ret;
+            }
+        },
+        {
+            key: custom,
+            value: function value(_, options) {
+                return inspect(this, _objectSpread(_objectSpread({}, options), {}, {
+                    // Only inspect one level.
+                    depth: 0,
+                    // It should not recurse.
+                    customInspect: false
+                }));
+            }
+        }
+    ]);
+    return BufferList;
+}();
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/destroy.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// undocumented cb() API, needed for core, not for public API
+function destroy(err, cb) {
+    var _this = this;
+    var readableDestroyed = this._readableState && this._readableState.destroyed;
+    var writableDestroyed = this._writableState && this._writableState.destroyed;
+    if (readableDestroyed || writableDestroyed) {
+        if (cb) {
+            cb(err);
+        } else if (err) {
+            if (!this._writableState) {
+                process.nextTick(emitErrorNT, this, err);
+            } else if (!this._writableState.errorEmitted) {
+                this._writableState.errorEmitted = true;
+                process.nextTick(emitErrorNT, this, err);
+            }
+        }
+        return this;
+    }
+    // we set destroyed to true before firing error callbacks in order
+    // to make it re-entrance safe in case destroy() is called within callbacks
+    if (this._readableState) {
+        this._readableState.destroyed = true;
+    }
+    // if this is a duplex stream mark the writable part as destroyed as well
+    if (this._writableState) {
+        this._writableState.destroyed = true;
+    }
+    this._destroy(err || null, function(err) {
+        if (!cb && err) {
+            if (!_this._writableState) {
+                process.nextTick(emitErrorAndCloseNT, _this, err);
+            } else if (!_this._writableState.errorEmitted) {
+                _this._writableState.errorEmitted = true;
+                process.nextTick(emitErrorAndCloseNT, _this, err);
+            } else {
+                process.nextTick(emitCloseNT, _this);
+            }
+        } else if (cb) {
+            process.nextTick(emitCloseNT, _this);
+            cb(err);
+        } else {
+            process.nextTick(emitCloseNT, _this);
+        }
+    });
+    return this;
+}
+function emitErrorAndCloseNT(self, err) {
+    emitErrorNT(self, err);
+    emitCloseNT(self);
+}
+function emitCloseNT(self) {
+    if (self._writableState && !self._writableState.emitClose) return;
+    if (self._readableState && !self._readableState.emitClose) return;
+    self.emit('close');
+}
+function undestroy() {
+    if (this._readableState) {
+        this._readableState.destroyed = false;
+        this._readableState.reading = false;
+        this._readableState.ended = false;
+        this._readableState.endEmitted = false;
+    }
+    if (this._writableState) {
+        this._writableState.destroyed = false;
+        this._writableState.ended = false;
+        this._writableState.ending = false;
+        this._writableState.finalCalled = false;
+        this._writableState.prefinished = false;
+        this._writableState.finished = false;
+        this._writableState.errorEmitted = false;
+    }
+}
+function emitErrorNT(self, err) {
+    self.emit('error', err);
+}
+function errorOrDestroy(stream, err) {
+    // We have tests that rely on errors being emitted
+    // in the same tick, so changing this is semver major.
+    // For now when you opt-in to autoDestroy we allow
+    // the error to be emitted nextTick. In a future
+    // semver major update we should change the default to this.
+    var rState = stream._readableState;
+    var wState = stream._writableState;
+    if (rState && rState.autoDestroy || wState && wState.autoDestroy) stream.destroy(err);
+    else stream.emit('error', err);
+}
+module.exports = {
+    destroy: destroy,
+    undestroy: undestroy,
+    errorOrDestroy: errorOrDestroy
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+const codes = {};
+function createErrorType(code, message, Base) {
+    if (!Base) {
+        Base = Error;
+    }
+    function getMessage(arg1, arg2, arg3) {
+        if (typeof message === 'string') {
+            return message;
+        } else {
+            return message(arg1, arg2, arg3);
+        }
+    }
+    class NodeError extends Base {
+        constructor(arg1, arg2, arg3){
+            super(getMessage(arg1, arg2, arg3));
+        }
+    }
+    NodeError.prototype.name = Base.name;
+    NodeError.prototype.code = code;
+    codes[code] = NodeError;
+}
+// https://github.com/nodejs/node/blob/v10.8.0/lib/internal/errors.js
+function oneOf(expected, thing) {
+    if (Array.isArray(expected)) {
+        const len = expected.length;
+        expected = expected.map((i)=>String(i));
+        if (len > 2) {
+            return `one of ${thing} ${expected.slice(0, len - 1).join(', ')}, or ` + expected[len - 1];
+        } else if (len === 2) {
+            return `one of ${thing} ${expected[0]} or ${expected[1]}`;
+        } else {
+            return `of ${thing} ${expected[0]}`;
+        }
+    } else {
+        return `of ${thing} ${String(expected)}`;
+    }
+}
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+function startsWith(str, search, pos) {
+    return str.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+}
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+function endsWith(str, search, this_len) {
+    if (this_len === undefined || this_len > str.length) {
+        this_len = str.length;
+    }
+    return str.substring(this_len - search.length, this_len) === search;
+}
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+function includes(str, search, start) {
+    if (typeof start !== 'number') {
+        start = 0;
+    }
+    if (start + search.length > str.length) {
+        return false;
+    } else {
+        return str.indexOf(search, start) !== -1;
+    }
+}
+createErrorType('ERR_INVALID_OPT_VALUE', function(name, value) {
+    return 'The value "' + value + '" is invalid for option "' + name + '"';
+}, TypeError);
+createErrorType('ERR_INVALID_ARG_TYPE', function(name, expected, actual) {
+    // determiner: 'must be' or 'must not be'
+    let determiner;
+    if (typeof expected === 'string' && startsWith(expected, 'not ')) {
+        determiner = 'must not be';
+        expected = expected.replace(/^not /, '');
+    } else {
+        determiner = 'must be';
+    }
+    let msg;
+    if (endsWith(name, ' argument')) {
+        // For cases like 'first argument'
+        msg = `The ${name} ${determiner} ${oneOf(expected, 'type')}`;
+    } else {
+        const type = includes(name, '.') ? 'property' : 'argument';
+        msg = `The "${name}" ${type} ${determiner} ${oneOf(expected, 'type')}`;
+    }
+    msg += `. Received type ${typeof actual}`;
+    return msg;
+}, TypeError);
+createErrorType('ERR_STREAM_PUSH_AFTER_EOF', 'stream.push() after EOF');
+createErrorType('ERR_METHOD_NOT_IMPLEMENTED', function(name) {
+    return 'The ' + name + ' method is not implemented';
+});
+createErrorType('ERR_STREAM_PREMATURE_CLOSE', 'Premature close');
+createErrorType('ERR_STREAM_DESTROYED', function(name) {
+    return 'Cannot call ' + name + ' after a stream was destroyed';
+});
+createErrorType('ERR_MULTIPLE_CALLBACK', 'Callback called multiple times');
+createErrorType('ERR_STREAM_CANNOT_PIPE', 'Cannot pipe, not readable');
+createErrorType('ERR_STREAM_WRITE_AFTER_END', 'write after end');
+createErrorType('ERR_STREAM_NULL_VALUES', 'May not write null values to stream', TypeError);
+createErrorType('ERR_UNKNOWN_ENCODING', function(arg) {
+    return 'Unknown encoding: ' + arg;
+}, TypeError);
+createErrorType('ERR_STREAM_UNSHIFT_AFTER_END_EVENT', 'stream.unshift() after end event');
+module.exports.codes = codes;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/state.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var ERR_INVALID_OPT_VALUE = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes.ERR_INVALID_OPT_VALUE;
+function highWaterMarkFrom(options, isDuplex, duplexKey) {
+    return options.highWaterMark != null ? options.highWaterMark : isDuplex ? options[duplexKey] : null;
+}
+function getHighWaterMark(state, options, duplexKey, isDuplex) {
+    var hwm = highWaterMarkFrom(options, isDuplex, duplexKey);
+    if (hwm != null) {
+        if (!(isFinite(hwm) && Math.floor(hwm) === hwm) || hwm < 0) {
+            var name = isDuplex ? duplexKey : 'highWaterMark';
+            throw new ERR_INVALID_OPT_VALUE(name, hwm);
+        }
+        return Math.floor(hwm);
+    }
+    // Default value
+    return state.objectMode ? 16 : 16 * 1024;
+}
+module.exports = {
+    getHighWaterMark: getHighWaterMark
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+// A bit simpler than readable streams.
+// Implement an async ._write(chunk, encoding, cb), and it'll handle all
+// the drain event emission and buffering.
+module.exports = Writable;
+/* <replacement> */ function WriteReq(chunk, encoding, cb) {
+    this.chunk = chunk;
+    this.encoding = encoding;
+    this.callback = cb;
+    this.next = null;
+}
+// It seems a linked list but it is not
+// there will be only 2 of these for each stream
+function CorkedRequest(state) {
+    var _this = this;
+    this.next = null;
+    this.entry = null;
+    this.finish = function() {
+        onCorkedFinish(_this, state);
+    };
+}
+/* </replacement> */ /*<replacement>*/ var Duplex;
+/*</replacement>*/ Writable.WritableState = WritableState;
+/*<replacement>*/ var internalUtil = {
+    deprecate: __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/util-deprecate/node.js [app-ssr] (ecmascript)")
+};
+/*</replacement>*/ /*<replacement>*/ var Stream = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/stream.js [app-ssr] (ecmascript)");
+/*</replacement>*/ var Buffer = __turbopack_context__.r("[externals]/buffer [external] (buffer, cjs)").Buffer;
+var OurUint8Array = (("TURBOPACK compile-time truthy", 1) ? /*TURBOPACK member replacement*/ __turbopack_context__.g : "TURBOPACK unreachable").Uint8Array || function() {};
+function _uint8ArrayToBuffer(chunk) {
+    return Buffer.from(chunk);
+}
+function _isUint8Array(obj) {
+    return Buffer.isBuffer(obj) || obj instanceof OurUint8Array;
+}
+var destroyImpl = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/destroy.js [app-ssr] (ecmascript)");
+var _require = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/state.js [app-ssr] (ecmascript)"), getHighWaterMark = _require.getHighWaterMark;
+var _require$codes = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes, ERR_INVALID_ARG_TYPE = _require$codes.ERR_INVALID_ARG_TYPE, ERR_METHOD_NOT_IMPLEMENTED = _require$codes.ERR_METHOD_NOT_IMPLEMENTED, ERR_MULTIPLE_CALLBACK = _require$codes.ERR_MULTIPLE_CALLBACK, ERR_STREAM_CANNOT_PIPE = _require$codes.ERR_STREAM_CANNOT_PIPE, ERR_STREAM_DESTROYED = _require$codes.ERR_STREAM_DESTROYED, ERR_STREAM_NULL_VALUES = _require$codes.ERR_STREAM_NULL_VALUES, ERR_STREAM_WRITE_AFTER_END = _require$codes.ERR_STREAM_WRITE_AFTER_END, ERR_UNKNOWN_ENCODING = _require$codes.ERR_UNKNOWN_ENCODING;
+var errorOrDestroy = destroyImpl.errorOrDestroy;
+__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits.js [app-ssr] (ecmascript)")(Writable, Stream);
+function nop() {}
+function WritableState(options, stream, isDuplex) {
+    Duplex = Duplex || __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)");
+    options = options || {};
+    // Duplex streams are both readable and writable, but share
+    // the same options object.
+    // However, some cases require setting options to different
+    // values for the readable and the writable sides of the duplex stream,
+    // e.g. options.readableObjectMode vs. options.writableObjectMode, etc.
+    if (typeof isDuplex !== 'boolean') isDuplex = stream instanceof Duplex;
+    // object stream flag to indicate whether or not this stream
+    // contains buffers or objects.
+    this.objectMode = !!options.objectMode;
+    if (isDuplex) this.objectMode = this.objectMode || !!options.writableObjectMode;
+    // the point at which write() starts returning false
+    // Note: 0 is a valid value, means that we always return false if
+    // the entire buffer is not flushed immediately on write()
+    this.highWaterMark = getHighWaterMark(this, options, 'writableHighWaterMark', isDuplex);
+    // if _final has been called
+    this.finalCalled = false;
+    // drain event flag.
+    this.needDrain = false;
+    // at the start of calling end()
+    this.ending = false;
+    // when end() has been called, and returned
+    this.ended = false;
+    // when 'finish' is emitted
+    this.finished = false;
+    // has it been destroyed
+    this.destroyed = false;
+    // should we decode strings into buffers before passing to _write?
+    // this is here so that some node-core streams can optimize string
+    // handling at a lower level.
+    var noDecode = options.decodeStrings === false;
+    this.decodeStrings = !noDecode;
+    // Crypto is kind of old and crusty.  Historically, its default string
+    // encoding is 'binary' so we have to make this configurable.
+    // Everything else in the universe uses 'utf8', though.
+    this.defaultEncoding = options.defaultEncoding || 'utf8';
+    // not an actual buffer we keep track of, but a measurement
+    // of how much we're waiting to get pushed to some underlying
+    // socket or file.
+    this.length = 0;
+    // a flag to see when we're in the middle of a write.
+    this.writing = false;
+    // when true all writes will be buffered until .uncork() call
+    this.corked = 0;
+    // a flag to be able to tell if the onwrite cb is called immediately,
+    // or on a later tick.  We set this to true at first, because any
+    // actions that shouldn't happen until "later" should generally also
+    // not happen before the first write call.
+    this.sync = true;
+    // a flag to know if we're processing previously buffered items, which
+    // may call the _write() callback in the same tick, so that we don't
+    // end up in an overlapped onwrite situation.
+    this.bufferProcessing = false;
+    // the callback that's passed to _write(chunk,cb)
+    this.onwrite = function(er) {
+        onwrite(stream, er);
+    };
+    // the callback that the user supplies to write(chunk,encoding,cb)
+    this.writecb = null;
+    // the amount that is being written when _write is called.
+    this.writelen = 0;
+    this.bufferedRequest = null;
+    this.lastBufferedRequest = null;
+    // number of pending user-supplied write callbacks
+    // this must be 0 before 'finish' can be emitted
+    this.pendingcb = 0;
+    // emit prefinish if the only thing we're waiting for is _write cbs
+    // This is relevant for synchronous Transform streams
+    this.prefinished = false;
+    // True if the error was already emitted and should not be thrown again
+    this.errorEmitted = false;
+    // Should close be emitted on destroy. Defaults to true.
+    this.emitClose = options.emitClose !== false;
+    // Should .destroy() be called after 'finish' (and potentially 'end')
+    this.autoDestroy = !!options.autoDestroy;
+    // count buffered requests
+    this.bufferedRequestCount = 0;
+    // allocate the first CorkedRequest, there is always
+    // one allocated and free to use, and we maintain at most two
+    this.corkedRequestsFree = new CorkedRequest(this);
+}
+WritableState.prototype.getBuffer = function getBuffer() {
+    var current = this.bufferedRequest;
+    var out = [];
+    while(current){
+        out.push(current);
+        current = current.next;
+    }
+    return out;
+};
+(function() {
+    try {
+        Object.defineProperty(WritableState.prototype, 'buffer', {
+            get: internalUtil.deprecate(function writableStateBufferGetter() {
+                return this.getBuffer();
+            }, '_writableState.buffer is deprecated. Use _writableState.getBuffer ' + 'instead.', 'DEP0003')
+        });
+    } catch (_) {}
+})();
+// Test _writableState for inheritance to account for Duplex streams,
+// whose prototype chain only points to Readable.
+var realHasInstance;
+if (typeof Symbol === 'function' && Symbol.hasInstance && typeof Function.prototype[Symbol.hasInstance] === 'function') {
+    realHasInstance = Function.prototype[Symbol.hasInstance];
+    Object.defineProperty(Writable, Symbol.hasInstance, {
+        value: function value(object) {
+            if (realHasInstance.call(this, object)) return true;
+            if (this !== Writable) return false;
+            return object && object._writableState instanceof WritableState;
+        }
+    });
+} else {
+    realHasInstance = function realHasInstance(object) {
+        return object instanceof this;
+    };
+}
+function Writable(options) {
+    Duplex = Duplex || __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)");
+    // Writable ctor is applied to Duplexes, too.
+    // `realHasInstance` is necessary because using plain `instanceof`
+    // would return false, as no `_writableState` property is attached.
+    // Trying to use the custom `instanceof` for Writable here will also break the
+    // Node.js LazyTransform implementation, which has a non-trivial getter for
+    // `_writableState` that would lead to infinite recursion.
+    // Checking for a Stream.Duplex instance is faster here instead of inside
+    // the WritableState constructor, at least with V8 6.5
+    var isDuplex = this instanceof Duplex;
+    if (!isDuplex && !realHasInstance.call(Writable, this)) return new Writable(options);
+    this._writableState = new WritableState(options, this, isDuplex);
+    // legacy.
+    this.writable = true;
+    if (options) {
+        if (typeof options.write === 'function') this._write = options.write;
+        if (typeof options.writev === 'function') this._writev = options.writev;
+        if (typeof options.destroy === 'function') this._destroy = options.destroy;
+        if (typeof options.final === 'function') this._final = options.final;
+    }
+    Stream.call(this);
+}
+// Otherwise people can pipe Writable streams, which is just wrong.
+Writable.prototype.pipe = function() {
+    errorOrDestroy(this, new ERR_STREAM_CANNOT_PIPE());
+};
+function writeAfterEnd(stream, cb) {
+    var er = new ERR_STREAM_WRITE_AFTER_END();
+    // TODO: defer error events consistently everywhere, not just the cb
+    errorOrDestroy(stream, er);
+    process.nextTick(cb, er);
+}
+// Checks that a user-supplied chunk is valid, especially for the particular
+// mode the stream is in. Currently this means that `null` is never accepted
+// and undefined/non-string values are only allowed in object mode.
+function validChunk(stream, state, chunk, cb) {
+    var er;
+    if (chunk === null) {
+        er = new ERR_STREAM_NULL_VALUES();
+    } else if (typeof chunk !== 'string' && !state.objectMode) {
+        er = new ERR_INVALID_ARG_TYPE('chunk', [
+            'string',
+            'Buffer'
+        ], chunk);
+    }
+    if (er) {
+        errorOrDestroy(stream, er);
+        process.nextTick(cb, er);
+        return false;
+    }
+    return true;
+}
+Writable.prototype.write = function(chunk, encoding, cb) {
+    var state = this._writableState;
+    var ret = false;
+    var isBuf = !state.objectMode && _isUint8Array(chunk);
+    if (isBuf && !Buffer.isBuffer(chunk)) {
+        chunk = _uint8ArrayToBuffer(chunk);
+    }
+    if (typeof encoding === 'function') {
+        cb = encoding;
+        encoding = null;
+    }
+    if (isBuf) encoding = 'buffer';
+    else if (!encoding) encoding = state.defaultEncoding;
+    if (typeof cb !== 'function') cb = nop;
+    if (state.ending) writeAfterEnd(this, cb);
+    else if (isBuf || validChunk(this, state, chunk, cb)) {
+        state.pendingcb++;
+        ret = writeOrBuffer(this, state, isBuf, chunk, encoding, cb);
+    }
+    return ret;
+};
+Writable.prototype.cork = function() {
+    this._writableState.corked++;
+};
+Writable.prototype.uncork = function() {
+    var state = this._writableState;
+    if (state.corked) {
+        state.corked--;
+        if (!state.writing && !state.corked && !state.bufferProcessing && state.bufferedRequest) clearBuffer(this, state);
+    }
+};
+Writable.prototype.setDefaultEncoding = function setDefaultEncoding(encoding) {
+    // node::ParseEncoding() requires lower case.
+    if (typeof encoding === 'string') encoding = encoding.toLowerCase();
+    if (!([
+        'hex',
+        'utf8',
+        'utf-8',
+        'ascii',
+        'binary',
+        'base64',
+        'ucs2',
+        'ucs-2',
+        'utf16le',
+        'utf-16le',
+        'raw'
+    ].indexOf((encoding + '').toLowerCase()) > -1)) throw new ERR_UNKNOWN_ENCODING(encoding);
+    this._writableState.defaultEncoding = encoding;
+    return this;
+};
+Object.defineProperty(Writable.prototype, 'writableBuffer', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._writableState && this._writableState.getBuffer();
+    }
+});
+function decodeChunk(state, chunk, encoding) {
+    if (!state.objectMode && state.decodeStrings !== false && typeof chunk === 'string') {
+        chunk = Buffer.from(chunk, encoding);
+    }
+    return chunk;
+}
+Object.defineProperty(Writable.prototype, 'writableHighWaterMark', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._writableState.highWaterMark;
+    }
+});
+// if we're already writing something, then just put this
+// in the queue, and wait our turn.  Otherwise, call _write
+// If we return false, then we need a drain event, so set that flag.
+function writeOrBuffer(stream, state, isBuf, chunk, encoding, cb) {
+    if (!isBuf) {
+        var newChunk = decodeChunk(state, chunk, encoding);
+        if (chunk !== newChunk) {
+            isBuf = true;
+            encoding = 'buffer';
+            chunk = newChunk;
+        }
+    }
+    var len = state.objectMode ? 1 : chunk.length;
+    state.length += len;
+    var ret = state.length < state.highWaterMark;
+    // we must ensure that previous needDrain will not be reset to false.
+    if (!ret) state.needDrain = true;
+    if (state.writing || state.corked) {
+        var last = state.lastBufferedRequest;
+        state.lastBufferedRequest = {
+            chunk: chunk,
+            encoding: encoding,
+            isBuf: isBuf,
+            callback: cb,
+            next: null
+        };
+        if (last) {
+            last.next = state.lastBufferedRequest;
+        } else {
+            state.bufferedRequest = state.lastBufferedRequest;
+        }
+        state.bufferedRequestCount += 1;
+    } else {
+        doWrite(stream, state, false, len, chunk, encoding, cb);
+    }
+    return ret;
+}
+function doWrite(stream, state, writev, len, chunk, encoding, cb) {
+    state.writelen = len;
+    state.writecb = cb;
+    state.writing = true;
+    state.sync = true;
+    if (state.destroyed) state.onwrite(new ERR_STREAM_DESTROYED('write'));
+    else if (writev) stream._writev(chunk, state.onwrite);
+    else stream._write(chunk, encoding, state.onwrite);
+    state.sync = false;
+}
+function onwriteError(stream, state, sync, er, cb) {
+    --state.pendingcb;
+    if (sync) {
+        // defer the callback if we are being called synchronously
+        // to avoid piling up things on the stack
+        process.nextTick(cb, er);
+        // this can emit finish, and it will always happen
+        // after error
+        process.nextTick(finishMaybe, stream, state);
+        stream._writableState.errorEmitted = true;
+        errorOrDestroy(stream, er);
+    } else {
+        // the caller expect this to happen before if
+        // it is async
+        cb(er);
+        stream._writableState.errorEmitted = true;
+        errorOrDestroy(stream, er);
+        // this can emit finish, but finish must
+        // always follow error
+        finishMaybe(stream, state);
+    }
+}
+function onwriteStateUpdate(state) {
+    state.writing = false;
+    state.writecb = null;
+    state.length -= state.writelen;
+    state.writelen = 0;
+}
+function onwrite(stream, er) {
+    var state = stream._writableState;
+    var sync = state.sync;
+    var cb = state.writecb;
+    if (typeof cb !== 'function') throw new ERR_MULTIPLE_CALLBACK();
+    onwriteStateUpdate(state);
+    if (er) onwriteError(stream, state, sync, er, cb);
+    else {
+        // Check if we're actually ready to finish, but don't emit yet
+        var finished = needFinish(state) || stream.destroyed;
+        if (!finished && !state.corked && !state.bufferProcessing && state.bufferedRequest) {
+            clearBuffer(stream, state);
+        }
+        if (sync) {
+            process.nextTick(afterWrite, stream, state, finished, cb);
+        } else {
+            afterWrite(stream, state, finished, cb);
+        }
+    }
+}
+function afterWrite(stream, state, finished, cb) {
+    if (!finished) onwriteDrain(stream, state);
+    state.pendingcb--;
+    cb();
+    finishMaybe(stream, state);
+}
+// Must force callback to be called on nextTick, so that we don't
+// emit 'drain' before the write() consumer gets the 'false' return
+// value, and has a chance to attach a 'drain' listener.
+function onwriteDrain(stream, state) {
+    if (state.length === 0 && state.needDrain) {
+        state.needDrain = false;
+        stream.emit('drain');
+    }
+}
+// if there's something in the buffer waiting, then process it
+function clearBuffer(stream, state) {
+    state.bufferProcessing = true;
+    var entry = state.bufferedRequest;
+    if (stream._writev && entry && entry.next) {
+        // Fast case, write everything using _writev()
+        var l = state.bufferedRequestCount;
+        var buffer = new Array(l);
+        var holder = state.corkedRequestsFree;
+        holder.entry = entry;
+        var count = 0;
+        var allBuffers = true;
+        while(entry){
+            buffer[count] = entry;
+            if (!entry.isBuf) allBuffers = false;
+            entry = entry.next;
+            count += 1;
+        }
+        buffer.allBuffers = allBuffers;
+        doWrite(stream, state, true, state.length, buffer, '', holder.finish);
+        // doWrite is almost always async, defer these to save a bit of time
+        // as the hot path ends with doWrite
+        state.pendingcb++;
+        state.lastBufferedRequest = null;
+        if (holder.next) {
+            state.corkedRequestsFree = holder.next;
+            holder.next = null;
+        } else {
+            state.corkedRequestsFree = new CorkedRequest(state);
+        }
+        state.bufferedRequestCount = 0;
+    } else {
+        // Slow case, write chunks one-by-one
+        while(entry){
+            var chunk = entry.chunk;
+            var encoding = entry.encoding;
+            var cb = entry.callback;
+            var len = state.objectMode ? 1 : chunk.length;
+            doWrite(stream, state, false, len, chunk, encoding, cb);
+            entry = entry.next;
+            state.bufferedRequestCount--;
+            // if we didn't call the onwrite immediately, then
+            // it means that we need to wait until it does.
+            // also, that means that the chunk and cb are currently
+            // being processed, so move the buffer counter past them.
+            if (state.writing) {
+                break;
+            }
+        }
+        if (entry === null) state.lastBufferedRequest = null;
+    }
+    state.bufferedRequest = entry;
+    state.bufferProcessing = false;
+}
+Writable.prototype._write = function(chunk, encoding, cb) {
+    cb(new ERR_METHOD_NOT_IMPLEMENTED('_write()'));
+};
+Writable.prototype._writev = null;
+Writable.prototype.end = function(chunk, encoding, cb) {
+    var state = this._writableState;
+    if (typeof chunk === 'function') {
+        cb = chunk;
+        chunk = null;
+        encoding = null;
+    } else if (typeof encoding === 'function') {
+        cb = encoding;
+        encoding = null;
+    }
+    if (chunk !== null && chunk !== undefined) this.write(chunk, encoding);
+    // .end() fully uncorks
+    if (state.corked) {
+        state.corked = 1;
+        this.uncork();
+    }
+    // ignore unnecessary end() calls.
+    if (!state.ending) endWritable(this, state, cb);
+    return this;
+};
+Object.defineProperty(Writable.prototype, 'writableLength', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._writableState.length;
+    }
+});
+function needFinish(state) {
+    return state.ending && state.length === 0 && state.bufferedRequest === null && !state.finished && !state.writing;
+}
+function callFinal(stream, state) {
+    stream._final(function(err) {
+        state.pendingcb--;
+        if (err) {
+            errorOrDestroy(stream, err);
+        }
+        state.prefinished = true;
+        stream.emit('prefinish');
+        finishMaybe(stream, state);
+    });
+}
+function prefinish(stream, state) {
+    if (!state.prefinished && !state.finalCalled) {
+        if (typeof stream._final === 'function' && !state.destroyed) {
+            state.pendingcb++;
+            state.finalCalled = true;
+            process.nextTick(callFinal, stream, state);
+        } else {
+            state.prefinished = true;
+            stream.emit('prefinish');
+        }
+    }
+}
+function finishMaybe(stream, state) {
+    var need = needFinish(state);
+    if (need) {
+        prefinish(stream, state);
+        if (state.pendingcb === 0) {
+            state.finished = true;
+            stream.emit('finish');
+            if (state.autoDestroy) {
+                // In case of duplex streams we need a way to detect
+                // if the readable side is ready for autoDestroy as well
+                var rState = stream._readableState;
+                if (!rState || rState.autoDestroy && rState.endEmitted) {
+                    stream.destroy();
+                }
+            }
+        }
+    }
+    return need;
+}
+function endWritable(stream, state, cb) {
+    state.ending = true;
+    finishMaybe(stream, state);
+    if (cb) {
+        if (state.finished) process.nextTick(cb);
+        else stream.once('finish', cb);
+    }
+    state.ended = true;
+    stream.writable = false;
+}
+function onCorkedFinish(corkReq, state, err) {
+    var entry = corkReq.entry;
+    corkReq.entry = null;
+    while(entry){
+        var cb = entry.callback;
+        state.pendingcb--;
+        cb(err);
+        entry = entry.next;
+    }
+    // reuse the free corkReq.
+    state.corkedRequestsFree.next = corkReq;
+}
+Object.defineProperty(Writable.prototype, 'destroyed', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        if (this._writableState === undefined) {
+            return false;
+        }
+        return this._writableState.destroyed;
+    },
+    set: function set(value) {
+        // we ignore the value if the stream
+        // has not been initialized yet
+        if (!this._writableState) {
+            return;
+        }
+        // backward compatibility, the user is explicitly
+        // managing destroyed
+        this._writableState.destroyed = value;
+    }
+});
+Writable.prototype.destroy = destroyImpl.destroy;
+Writable.prototype._undestroy = destroyImpl.undestroy;
+Writable.prototype._destroy = function(err, cb) {
+    cb(err);
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+// a duplex stream is just a stream that is both readable and writable.
+// Since JS doesn't have multiple prototypal inheritance, this class
+// prototypally inherits from Readable, and then parasitically from
+// Writable.
+/*<replacement>*/ var objectKeys = Object.keys || function(obj) {
+    var keys = [];
+    for(var key in obj)keys.push(key);
+    return keys;
+};
+/*</replacement>*/ module.exports = Duplex;
+var Readable = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js [app-ssr] (ecmascript)");
+var Writable = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js [app-ssr] (ecmascript)");
+__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits.js [app-ssr] (ecmascript)")(Duplex, Readable);
+{
+    // Allow the keys array to be GC'ed.
+    var keys = objectKeys(Writable.prototype);
+    for(var v = 0; v < keys.length; v++){
+        var method = keys[v];
+        if (!Duplex.prototype[method]) Duplex.prototype[method] = Writable.prototype[method];
+    }
+}function Duplex(options) {
+    if (!(this instanceof Duplex)) return new Duplex(options);
+    Readable.call(this, options);
+    Writable.call(this, options);
+    this.allowHalfOpen = true;
+    if (options) {
+        if (options.readable === false) this.readable = false;
+        if (options.writable === false) this.writable = false;
+        if (options.allowHalfOpen === false) {
+            this.allowHalfOpen = false;
+            this.once('end', onend);
+        }
+    }
+}
+Object.defineProperty(Duplex.prototype, 'writableHighWaterMark', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._writableState.highWaterMark;
+    }
+});
+Object.defineProperty(Duplex.prototype, 'writableBuffer', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._writableState && this._writableState.getBuffer();
+    }
+});
+Object.defineProperty(Duplex.prototype, 'writableLength', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._writableState.length;
+    }
+});
+// the no-half-open enforcer
+function onend() {
+    // If the writable side ended, then we're ok.
+    if (this._writableState.ended) return;
+    // no more data can be written.
+    // But allow more writes to happen in this tick.
+    process.nextTick(onEndNT, this);
+}
+function onEndNT(self) {
+    self.end();
+}
+Object.defineProperty(Duplex.prototype, 'destroyed', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        if (this._readableState === undefined || this._writableState === undefined) {
+            return false;
+        }
+        return this._readableState.destroyed && this._writableState.destroyed;
+    },
+    set: function set(value) {
+        // we ignore the value if the stream
+        // has not been initialized yet
+        if (this._readableState === undefined || this._writableState === undefined) {
+            return;
+        }
+        // backward compatibility, the user is explicitly
+        // managing destroyed
+        this._readableState.destroyed = value;
+        this._writableState.destroyed = value;
+    }
+});
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/end-of-stream.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Ported from https://github.com/mafintosh/end-of-stream with
+// permission from the author, Mathias Buus (@mafintosh).
+var ERR_STREAM_PREMATURE_CLOSE = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes.ERR_STREAM_PREMATURE_CLOSE;
+function once(callback) {
+    var called = false;
+    return function() {
+        if (called) return;
+        called = true;
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        callback.apply(this, args);
+    };
+}
+function noop() {}
+function isRequest(stream) {
+    return stream.setHeader && typeof stream.abort === 'function';
+}
+function eos(stream, opts, callback) {
+    if (typeof opts === 'function') return eos(stream, null, opts);
+    if (!opts) opts = {};
+    callback = once(callback || noop);
+    var readable = opts.readable || opts.readable !== false && stream.readable;
+    var writable = opts.writable || opts.writable !== false && stream.writable;
+    var onlegacyfinish = function onlegacyfinish() {
+        if (!stream.writable) onfinish();
+    };
+    var writableEnded = stream._writableState && stream._writableState.finished;
+    var onfinish = function onfinish() {
+        writable = false;
+        writableEnded = true;
+        if (!readable) callback.call(stream);
+    };
+    var readableEnded = stream._readableState && stream._readableState.endEmitted;
+    var onend = function onend() {
+        readable = false;
+        readableEnded = true;
+        if (!writable) callback.call(stream);
+    };
+    var onerror = function onerror(err) {
+        callback.call(stream, err);
+    };
+    var onclose = function onclose() {
+        var err;
+        if (readable && !readableEnded) {
+            if (!stream._readableState || !stream._readableState.ended) err = new ERR_STREAM_PREMATURE_CLOSE();
+            return callback.call(stream, err);
+        }
+        if (writable && !writableEnded) {
+            if (!stream._writableState || !stream._writableState.ended) err = new ERR_STREAM_PREMATURE_CLOSE();
+            return callback.call(stream, err);
+        }
+    };
+    var onrequest = function onrequest() {
+        stream.req.on('finish', onfinish);
+    };
+    if (isRequest(stream)) {
+        stream.on('complete', onfinish);
+        stream.on('abort', onclose);
+        if (stream.req) onrequest();
+        else stream.on('request', onrequest);
+    } else if (writable && !stream._writableState) {
+        // legacy streams
+        stream.on('end', onlegacyfinish);
+        stream.on('close', onlegacyfinish);
+    }
+    stream.on('end', onend);
+    stream.on('finish', onfinish);
+    if (opts.error !== false) stream.on('error', onerror);
+    stream.on('close', onclose);
+    return function() {
+        stream.removeListener('complete', onfinish);
+        stream.removeListener('abort', onclose);
+        stream.removeListener('request', onrequest);
+        if (stream.req) stream.req.removeListener('finish', onfinish);
+        stream.removeListener('end', onlegacyfinish);
+        stream.removeListener('close', onlegacyfinish);
+        stream.removeListener('finish', onfinish);
+        stream.removeListener('end', onend);
+        stream.removeListener('error', onerror);
+        stream.removeListener('close', onclose);
+    };
+}
+module.exports = eos;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/async_iterator.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var _Object$setPrototypeO;
+function _defineProperty(obj, key, value) {
+    key = _toPropertyKey(key);
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+        var res = prim.call(input, hint || "default");
+        if (typeof res !== "object") return res;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+}
+var finished = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/end-of-stream.js [app-ssr] (ecmascript)");
+var kLastResolve = Symbol('lastResolve');
+var kLastReject = Symbol('lastReject');
+var kError = Symbol('error');
+var kEnded = Symbol('ended');
+var kLastPromise = Symbol('lastPromise');
+var kHandlePromise = Symbol('handlePromise');
+var kStream = Symbol('stream');
+function createIterResult(value, done) {
+    return {
+        value: value,
+        done: done
+    };
+}
+function readAndResolve(iter) {
+    var resolve = iter[kLastResolve];
+    if (resolve !== null) {
+        var data = iter[kStream].read();
+        // we defer if data is null
+        // we can be expecting either 'end' or
+        // 'error'
+        if (data !== null) {
+            iter[kLastPromise] = null;
+            iter[kLastResolve] = null;
+            iter[kLastReject] = null;
+            resolve(createIterResult(data, false));
+        }
+    }
+}
+function onReadable(iter) {
+    // we wait for the next tick, because it might
+    // emit an error with process.nextTick
+    process.nextTick(readAndResolve, iter);
+}
+function wrapForNext(lastPromise, iter) {
+    return function(resolve, reject) {
+        lastPromise.then(function() {
+            if (iter[kEnded]) {
+                resolve(createIterResult(undefined, true));
+                return;
+            }
+            iter[kHandlePromise](resolve, reject);
+        }, reject);
+    };
+}
+var AsyncIteratorPrototype = Object.getPrototypeOf(function() {});
+var ReadableStreamAsyncIteratorPrototype = Object.setPrototypeOf((_Object$setPrototypeO = {
+    get stream () {
+        return this[kStream];
+    },
+    next: function next() {
+        var _this = this;
+        // if we have detected an error in the meanwhile
+        // reject straight away
+        var error = this[kError];
+        if (error !== null) {
+            return Promise.reject(error);
+        }
+        if (this[kEnded]) {
+            return Promise.resolve(createIterResult(undefined, true));
+        }
+        if (this[kStream].destroyed) {
+            // We need to defer via nextTick because if .destroy(err) is
+            // called, the error will be emitted via nextTick, and
+            // we cannot guarantee that there is no error lingering around
+            // waiting to be emitted.
+            return new Promise(function(resolve, reject) {
+                process.nextTick(function() {
+                    if (_this[kError]) {
+                        reject(_this[kError]);
+                    } else {
+                        resolve(createIterResult(undefined, true));
+                    }
+                });
+            });
+        }
+        // if we have multiple next() calls
+        // we will wait for the previous Promise to finish
+        // this logic is optimized to support for await loops,
+        // where next() is only called once at a time
+        var lastPromise = this[kLastPromise];
+        var promise;
+        if (lastPromise) {
+            promise = new Promise(wrapForNext(lastPromise, this));
+        } else {
+            // fast path needed to support multiple this.push()
+            // without triggering the next() queue
+            var data = this[kStream].read();
+            if (data !== null) {
+                return Promise.resolve(createIterResult(data, false));
+            }
+            promise = new Promise(this[kHandlePromise]);
+        }
+        this[kLastPromise] = promise;
+        return promise;
+    }
+}, _defineProperty(_Object$setPrototypeO, Symbol.asyncIterator, function() {
+    return this;
+}), _defineProperty(_Object$setPrototypeO, "return", function _return() {
+    var _this2 = this;
+    // destroy(err, cb) is a private API
+    // we can guarantee we have that here, because we control the
+    // Readable class this is attached to
+    return new Promise(function(resolve, reject) {
+        _this2[kStream].destroy(null, function(err) {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(createIterResult(undefined, true));
+        });
+    });
+}), _Object$setPrototypeO), AsyncIteratorPrototype);
+var createReadableStreamAsyncIterator = function createReadableStreamAsyncIterator(stream) {
+    var _Object$create;
+    var iterator = Object.create(ReadableStreamAsyncIteratorPrototype, (_Object$create = {}, _defineProperty(_Object$create, kStream, {
+        value: stream,
+        writable: true
+    }), _defineProperty(_Object$create, kLastResolve, {
+        value: null,
+        writable: true
+    }), _defineProperty(_Object$create, kLastReject, {
+        value: null,
+        writable: true
+    }), _defineProperty(_Object$create, kError, {
+        value: null,
+        writable: true
+    }), _defineProperty(_Object$create, kEnded, {
+        value: stream._readableState.endEmitted,
+        writable: true
+    }), _defineProperty(_Object$create, kHandlePromise, {
+        value: function value(resolve, reject) {
+            var data = iterator[kStream].read();
+            if (data) {
+                iterator[kLastPromise] = null;
+                iterator[kLastResolve] = null;
+                iterator[kLastReject] = null;
+                resolve(createIterResult(data, false));
+            } else {
+                iterator[kLastResolve] = resolve;
+                iterator[kLastReject] = reject;
+            }
+        },
+        writable: true
+    }), _Object$create));
+    iterator[kLastPromise] = null;
+    finished(stream, function(err) {
+        if (err && err.code !== 'ERR_STREAM_PREMATURE_CLOSE') {
+            var reject = iterator[kLastReject];
+            // reject if we are waiting for data in the Promise
+            // returned by next() and store the error
+            if (reject !== null) {
+                iterator[kLastPromise] = null;
+                iterator[kLastResolve] = null;
+                iterator[kLastReject] = null;
+                reject(err);
+            }
+            iterator[kError] = err;
+            return;
+        }
+        var resolve = iterator[kLastResolve];
+        if (resolve !== null) {
+            iterator[kLastPromise] = null;
+            iterator[kLastResolve] = null;
+            iterator[kLastReject] = null;
+            resolve(createIterResult(undefined, true));
+        }
+        iterator[kEnded] = true;
+    });
+    stream.on('readable', onReadable.bind(null, iterator));
+    return iterator;
+};
+module.exports = createReadableStreamAsyncIterator;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/from.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+        var info = gen[key](arg);
+        var value = info.value;
+    } catch (error) {
+        reject(error);
+        return;
+    }
+    if (info.done) {
+        resolve(value);
+    } else {
+        Promise.resolve(value).then(_next, _throw);
+    }
+}
+function _asyncToGenerator(fn) {
+    return function() {
+        var self = this, args = arguments;
+        return new Promise(function(resolve, reject) {
+            var gen = fn.apply(self, args);
+            function _next(value) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+            }
+            function _throw(err) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+            }
+            _next(undefined);
+        });
+    };
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        enumerableOnly && (symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })), keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = null != arguments[i] ? arguments[i] : {};
+        i % 2 ? ownKeys(Object(source), !0).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _defineProperty(obj, key, value) {
+    key = _toPropertyKey(key);
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+}
+function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+        var res = prim.call(input, hint || "default");
+        if (typeof res !== "object") return res;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+}
+var ERR_INVALID_ARG_TYPE = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes.ERR_INVALID_ARG_TYPE;
+function from(Readable, iterable, opts) {
+    var iterator;
+    if (iterable && typeof iterable.next === 'function') {
+        iterator = iterable;
+    } else if (iterable && iterable[Symbol.asyncIterator]) iterator = iterable[Symbol.asyncIterator]();
+    else if (iterable && iterable[Symbol.iterator]) iterator = iterable[Symbol.iterator]();
+    else throw new ERR_INVALID_ARG_TYPE('iterable', [
+        'Iterable'
+    ], iterable);
+    var readable = new Readable(_objectSpread({
+        objectMode: true
+    }, opts));
+    // Reading boolean to protect against _read
+    // being called before last iteration completion.
+    var reading = false;
+    readable._read = function() {
+        if (!reading) {
+            reading = true;
+            next();
+        }
+    };
+    function next() {
+        return _next2.apply(this, arguments);
+    }
+    function _next2() {
+        _next2 = _asyncToGenerator(function*() {
+            try {
+                var _yield$iterator$next = yield iterator.next(), value = _yield$iterator$next.value, done = _yield$iterator$next.done;
+                if (done) {
+                    readable.push(null);
+                } else if (readable.push((yield value))) {
+                    next();
+                } else {
+                    reading = false;
+                }
+            } catch (err) {
+                readable.destroy(err);
+            }
+        });
+        return _next2.apply(this, arguments);
+    }
+    return readable;
+}
+module.exports = from;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+module.exports = Readable;
+/*<replacement>*/ var Duplex;
+/*</replacement>*/ Readable.ReadableState = ReadableState;
+/*<replacement>*/ var EE = __turbopack_context__.r("[externals]/events [external] (events, cjs)").EventEmitter;
+var EElistenerCount = function EElistenerCount(emitter, type) {
+    return emitter.listeners(type).length;
+};
+/*</replacement>*/ /*<replacement>*/ var Stream = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/stream.js [app-ssr] (ecmascript)");
+/*</replacement>*/ var Buffer = __turbopack_context__.r("[externals]/buffer [external] (buffer, cjs)").Buffer;
+var OurUint8Array = (("TURBOPACK compile-time truthy", 1) ? /*TURBOPACK member replacement*/ __turbopack_context__.g : "TURBOPACK unreachable").Uint8Array || function() {};
+function _uint8ArrayToBuffer(chunk) {
+    return Buffer.from(chunk);
+}
+function _isUint8Array(obj) {
+    return Buffer.isBuffer(obj) || obj instanceof OurUint8Array;
+}
+/*<replacement>*/ var debugUtil = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+var debug;
+if (debugUtil && debugUtil.debuglog) {
+    debug = debugUtil.debuglog('stream');
+} else {
+    debug = function debug() {};
+}
+/*</replacement>*/ var BufferList = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/buffer_list.js [app-ssr] (ecmascript)");
+var destroyImpl = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/destroy.js [app-ssr] (ecmascript)");
+var _require = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/state.js [app-ssr] (ecmascript)"), getHighWaterMark = _require.getHighWaterMark;
+var _require$codes = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes, ERR_INVALID_ARG_TYPE = _require$codes.ERR_INVALID_ARG_TYPE, ERR_STREAM_PUSH_AFTER_EOF = _require$codes.ERR_STREAM_PUSH_AFTER_EOF, ERR_METHOD_NOT_IMPLEMENTED = _require$codes.ERR_METHOD_NOT_IMPLEMENTED, ERR_STREAM_UNSHIFT_AFTER_END_EVENT = _require$codes.ERR_STREAM_UNSHIFT_AFTER_END_EVENT;
+// Lazy loaded to improve the startup performance.
+var StringDecoder;
+var createReadableStreamAsyncIterator;
+var from;
+__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits.js [app-ssr] (ecmascript)")(Readable, Stream);
+var errorOrDestroy = destroyImpl.errorOrDestroy;
+var kProxyEvents = [
+    'error',
+    'close',
+    'destroy',
+    'pause',
+    'resume'
+];
+function prependListener(emitter, event, fn) {
+    // Sadly this is not cacheable as some libraries bundle their own
+    // event emitter implementation with them.
+    if (typeof emitter.prependListener === 'function') return emitter.prependListener(event, fn);
+    // This is a hack to make sure that our error handler is attached before any
+    // userland ones.  NEVER DO THIS. This is here only because this code needs
+    // to continue to work with older versions of Node.js that do not include
+    // the prependListener() method. The goal is to eventually remove this hack.
+    if (!emitter._events || !emitter._events[event]) emitter.on(event, fn);
+    else if (Array.isArray(emitter._events[event])) emitter._events[event].unshift(fn);
+    else emitter._events[event] = [
+        fn,
+        emitter._events[event]
+    ];
+}
+function ReadableState(options, stream, isDuplex) {
+    Duplex = Duplex || __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)");
+    options = options || {};
+    // Duplex streams are both readable and writable, but share
+    // the same options object.
+    // However, some cases require setting options to different
+    // values for the readable and the writable sides of the duplex stream.
+    // These options can be provided separately as readableXXX and writableXXX.
+    if (typeof isDuplex !== 'boolean') isDuplex = stream instanceof Duplex;
+    // object stream flag. Used to make read(n) ignore n and to
+    // make all the buffer merging and length checks go away
+    this.objectMode = !!options.objectMode;
+    if (isDuplex) this.objectMode = this.objectMode || !!options.readableObjectMode;
+    // the point at which it stops calling _read() to fill the buffer
+    // Note: 0 is a valid value, means "don't call _read preemptively ever"
+    this.highWaterMark = getHighWaterMark(this, options, 'readableHighWaterMark', isDuplex);
+    // A linked list is used to store data chunks instead of an array because the
+    // linked list can remove elements from the beginning faster than
+    // array.shift()
+    this.buffer = new BufferList();
+    this.length = 0;
+    this.pipes = null;
+    this.pipesCount = 0;
+    this.flowing = null;
+    this.ended = false;
+    this.endEmitted = false;
+    this.reading = false;
+    // a flag to be able to tell if the event 'readable'/'data' is emitted
+    // immediately, or on a later tick.  We set this to true at first, because
+    // any actions that shouldn't happen until "later" should generally also
+    // not happen before the first read call.
+    this.sync = true;
+    // whenever we return null, then we set a flag to say
+    // that we're awaiting a 'readable' event emission.
+    this.needReadable = false;
+    this.emittedReadable = false;
+    this.readableListening = false;
+    this.resumeScheduled = false;
+    this.paused = true;
+    // Should close be emitted on destroy. Defaults to true.
+    this.emitClose = options.emitClose !== false;
+    // Should .destroy() be called after 'end' (and potentially 'finish')
+    this.autoDestroy = !!options.autoDestroy;
+    // has it been destroyed
+    this.destroyed = false;
+    // Crypto is kind of old and crusty.  Historically, its default string
+    // encoding is 'binary' so we have to make this configurable.
+    // Everything else in the universe uses 'utf8', though.
+    this.defaultEncoding = options.defaultEncoding || 'utf8';
+    // the number of writers that are awaiting a drain event in .pipe()s
+    this.awaitDrain = 0;
+    // if true, a maybeReadMore has been scheduled
+    this.readingMore = false;
+    this.decoder = null;
+    this.encoding = null;
+    if (options.encoding) {
+        if (!StringDecoder) StringDecoder = __turbopack_context__.f({
+            "string_decoder": {
+                id: ()=>"[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)",
+                module: ()=>__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)")
+            },
+            "string_decoder/": {
+                id: ()=>"[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)",
+                module: ()=>__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)")
+            }
+        })('string_decoder/').StringDecoder;
+        this.decoder = new StringDecoder(options.encoding);
+        this.encoding = options.encoding;
+    }
+}
+function Readable(options) {
+    Duplex = Duplex || __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)");
+    if (!(this instanceof Readable)) return new Readable(options);
+    // Checking for a Stream.Duplex instance is faster here instead of inside
+    // the ReadableState constructor, at least with V8 6.5
+    var isDuplex = this instanceof Duplex;
+    this._readableState = new ReadableState(options, this, isDuplex);
+    // legacy
+    this.readable = true;
+    if (options) {
+        if (typeof options.read === 'function') this._read = options.read;
+        if (typeof options.destroy === 'function') this._destroy = options.destroy;
+    }
+    Stream.call(this);
+}
+Object.defineProperty(Readable.prototype, 'destroyed', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        if (this._readableState === undefined) {
+            return false;
+        }
+        return this._readableState.destroyed;
+    },
+    set: function set(value) {
+        // we ignore the value if the stream
+        // has not been initialized yet
+        if (!this._readableState) {
+            return;
+        }
+        // backward compatibility, the user is explicitly
+        // managing destroyed
+        this._readableState.destroyed = value;
+    }
+});
+Readable.prototype.destroy = destroyImpl.destroy;
+Readable.prototype._undestroy = destroyImpl.undestroy;
+Readable.prototype._destroy = function(err, cb) {
+    cb(err);
+};
+// Manually shove something into the read() buffer.
+// This returns true if the highWaterMark has not been hit yet,
+// similar to how Writable.write() returns true if you should
+// write() some more.
+Readable.prototype.push = function(chunk, encoding) {
+    var state = this._readableState;
+    var skipChunkCheck;
+    if (!state.objectMode) {
+        if (typeof chunk === 'string') {
+            encoding = encoding || state.defaultEncoding;
+            if (encoding !== state.encoding) {
+                chunk = Buffer.from(chunk, encoding);
+                encoding = '';
+            }
+            skipChunkCheck = true;
+        }
+    } else {
+        skipChunkCheck = true;
+    }
+    return readableAddChunk(this, chunk, encoding, false, skipChunkCheck);
+};
+// Unshift should *always* be something directly out of read()
+Readable.prototype.unshift = function(chunk) {
+    return readableAddChunk(this, chunk, null, true, false);
+};
+function readableAddChunk(stream, chunk, encoding, addToFront, skipChunkCheck) {
+    debug('readableAddChunk', chunk);
+    var state = stream._readableState;
+    if (chunk === null) {
+        state.reading = false;
+        onEofChunk(stream, state);
+    } else {
+        var er;
+        if (!skipChunkCheck) er = chunkInvalid(state, chunk);
+        if (er) {
+            errorOrDestroy(stream, er);
+        } else if (state.objectMode || chunk && chunk.length > 0) {
+            if (typeof chunk !== 'string' && !state.objectMode && Object.getPrototypeOf(chunk) !== Buffer.prototype) {
+                chunk = _uint8ArrayToBuffer(chunk);
+            }
+            if (addToFront) {
+                if (state.endEmitted) errorOrDestroy(stream, new ERR_STREAM_UNSHIFT_AFTER_END_EVENT());
+                else addChunk(stream, state, chunk, true);
+            } else if (state.ended) {
+                errorOrDestroy(stream, new ERR_STREAM_PUSH_AFTER_EOF());
+            } else if (state.destroyed) {
+                return false;
+            } else {
+                state.reading = false;
+                if (state.decoder && !encoding) {
+                    chunk = state.decoder.write(chunk);
+                    if (state.objectMode || chunk.length !== 0) addChunk(stream, state, chunk, false);
+                    else maybeReadMore(stream, state);
+                } else {
+                    addChunk(stream, state, chunk, false);
+                }
+            }
+        } else if (!addToFront) {
+            state.reading = false;
+            maybeReadMore(stream, state);
+        }
+    }
+    // We can push more data if we are below the highWaterMark.
+    // Also, if we have no data yet, we can stand some more bytes.
+    // This is to work around cases where hwm=0, such as the repl.
+    return !state.ended && (state.length < state.highWaterMark || state.length === 0);
+}
+function addChunk(stream, state, chunk, addToFront) {
+    if (state.flowing && state.length === 0 && !state.sync) {
+        state.awaitDrain = 0;
+        stream.emit('data', chunk);
+    } else {
+        // update the buffer info.
+        state.length += state.objectMode ? 1 : chunk.length;
+        if (addToFront) state.buffer.unshift(chunk);
+        else state.buffer.push(chunk);
+        if (state.needReadable) emitReadable(stream);
+    }
+    maybeReadMore(stream, state);
+}
+function chunkInvalid(state, chunk) {
+    var er;
+    if (!_isUint8Array(chunk) && typeof chunk !== 'string' && chunk !== undefined && !state.objectMode) {
+        er = new ERR_INVALID_ARG_TYPE('chunk', [
+            'string',
+            'Buffer',
+            'Uint8Array'
+        ], chunk);
+    }
+    return er;
+}
+Readable.prototype.isPaused = function() {
+    return this._readableState.flowing === false;
+};
+// backwards compatibility.
+Readable.prototype.setEncoding = function(enc) {
+    if (!StringDecoder) StringDecoder = __turbopack_context__.f({
+        "string_decoder": {
+            id: ()=>"[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)",
+            module: ()=>__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)")
+        },
+        "string_decoder/": {
+            id: ()=>"[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)",
+            module: ()=>__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)")
+        }
+    })('string_decoder/').StringDecoder;
+    var decoder = new StringDecoder(enc);
+    this._readableState.decoder = decoder;
+    // If setEncoding(null), decoder.encoding equals utf8
+    this._readableState.encoding = this._readableState.decoder.encoding;
+    // Iterate over current buffer to convert already stored Buffers:
+    var p = this._readableState.buffer.head;
+    var content = '';
+    while(p !== null){
+        content += decoder.write(p.data);
+        p = p.next;
+    }
+    this._readableState.buffer.clear();
+    if (content !== '') this._readableState.buffer.push(content);
+    this._readableState.length = content.length;
+    return this;
+};
+// Don't raise the hwm > 1GB
+var MAX_HWM = 0x40000000;
+function computeNewHighWaterMark(n) {
+    if (n >= MAX_HWM) {
+        // TODO(ronag): Throw ERR_VALUE_OUT_OF_RANGE.
+        n = MAX_HWM;
+    } else {
+        // Get the next highest power of 2 to prevent increasing hwm excessively in
+        // tiny amounts
+        n--;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        n++;
+    }
+    return n;
+}
+// This function is designed to be inlinable, so please take care when making
+// changes to the function body.
+function howMuchToRead(n, state) {
+    if (n <= 0 || state.length === 0 && state.ended) return 0;
+    if (state.objectMode) return 1;
+    if (n !== n) {
+        // Only flow one buffer at a time
+        if (state.flowing && state.length) return state.buffer.head.data.length;
+        else return state.length;
+    }
+    // If we're asking for more than the current hwm, then raise the hwm.
+    if (n > state.highWaterMark) state.highWaterMark = computeNewHighWaterMark(n);
+    if (n <= state.length) return n;
+    // Don't have enough
+    if (!state.ended) {
+        state.needReadable = true;
+        return 0;
+    }
+    return state.length;
+}
+// you can override either this method, or the async _read(n) below.
+Readable.prototype.read = function(n) {
+    debug('read', n);
+    n = parseInt(n, 10);
+    var state = this._readableState;
+    var nOrig = n;
+    if (n !== 0) state.emittedReadable = false;
+    // if we're doing read(0) to trigger a readable event, but we
+    // already have a bunch of data in the buffer, then just trigger
+    // the 'readable' event and move on.
+    if (n === 0 && state.needReadable && ((state.highWaterMark !== 0 ? state.length >= state.highWaterMark : state.length > 0) || state.ended)) {
+        debug('read: emitReadable', state.length, state.ended);
+        if (state.length === 0 && state.ended) endReadable(this);
+        else emitReadable(this);
+        return null;
+    }
+    n = howMuchToRead(n, state);
+    // if we've ended, and we're now clear, then finish it up.
+    if (n === 0 && state.ended) {
+        if (state.length === 0) endReadable(this);
+        return null;
+    }
+    // All the actual chunk generation logic needs to be
+    // *below* the call to _read.  The reason is that in certain
+    // synthetic stream cases, such as passthrough streams, _read
+    // may be a completely synchronous operation which may change
+    // the state of the read buffer, providing enough data when
+    // before there was *not* enough.
+    //
+    // So, the steps are:
+    // 1. Figure out what the state of things will be after we do
+    // a read from the buffer.
+    //
+    // 2. If that resulting state will trigger a _read, then call _read.
+    // Note that this may be asynchronous, or synchronous.  Yes, it is
+    // deeply ugly to write APIs this way, but that still doesn't mean
+    // that the Readable class should behave improperly, as streams are
+    // designed to be sync/async agnostic.
+    // Take note if the _read call is sync or async (ie, if the read call
+    // has returned yet), so that we know whether or not it's safe to emit
+    // 'readable' etc.
+    //
+    // 3. Actually pull the requested chunks out of the buffer and return.
+    // if we need a readable event, then we need to do some reading.
+    var doRead = state.needReadable;
+    debug('need readable', doRead);
+    // if we currently have less than the highWaterMark, then also read some
+    if (state.length === 0 || state.length - n < state.highWaterMark) {
+        doRead = true;
+        debug('length less than watermark', doRead);
+    }
+    // however, if we've ended, then there's no point, and if we're already
+    // reading, then it's unnecessary.
+    if (state.ended || state.reading) {
+        doRead = false;
+        debug('reading or ended', doRead);
+    } else if (doRead) {
+        debug('do read');
+        state.reading = true;
+        state.sync = true;
+        // if the length is currently zero, then we *need* a readable event.
+        if (state.length === 0) state.needReadable = true;
+        // call internal read method
+        this._read(state.highWaterMark);
+        state.sync = false;
+        // If _read pushed data synchronously, then `reading` will be false,
+        // and we need to re-evaluate how much data we can return to the user.
+        if (!state.reading) n = howMuchToRead(nOrig, state);
+    }
+    var ret;
+    if (n > 0) ret = fromList(n, state);
+    else ret = null;
+    if (ret === null) {
+        state.needReadable = state.length <= state.highWaterMark;
+        n = 0;
+    } else {
+        state.length -= n;
+        state.awaitDrain = 0;
+    }
+    if (state.length === 0) {
+        // If we have nothing in the buffer, then we want to know
+        // as soon as we *do* get something into the buffer.
+        if (!state.ended) state.needReadable = true;
+        // If we tried to read() past the EOF, then emit end on the next tick.
+        if (nOrig !== n && state.ended) endReadable(this);
+    }
+    if (ret !== null) this.emit('data', ret);
+    return ret;
+};
+function onEofChunk(stream, state) {
+    debug('onEofChunk');
+    if (state.ended) return;
+    if (state.decoder) {
+        var chunk = state.decoder.end();
+        if (chunk && chunk.length) {
+            state.buffer.push(chunk);
+            state.length += state.objectMode ? 1 : chunk.length;
+        }
+    }
+    state.ended = true;
+    if (state.sync) {
+        // if we are sync, wait until next tick to emit the data.
+        // Otherwise we risk emitting data in the flow()
+        // the readable code triggers during a read() call
+        emitReadable(stream);
+    } else {
+        // emit 'readable' now to make sure it gets picked up.
+        state.needReadable = false;
+        if (!state.emittedReadable) {
+            state.emittedReadable = true;
+            emitReadable_(stream);
+        }
+    }
+}
+// Don't emit readable right away in sync mode, because this can trigger
+// another read() call => stack overflow.  This way, it might trigger
+// a nextTick recursion warning, but that's not so bad.
+function emitReadable(stream) {
+    var state = stream._readableState;
+    debug('emitReadable', state.needReadable, state.emittedReadable);
+    state.needReadable = false;
+    if (!state.emittedReadable) {
+        debug('emitReadable', state.flowing);
+        state.emittedReadable = true;
+        process.nextTick(emitReadable_, stream);
+    }
+}
+function emitReadable_(stream) {
+    var state = stream._readableState;
+    debug('emitReadable_', state.destroyed, state.length, state.ended);
+    if (!state.destroyed && (state.length || state.ended)) {
+        stream.emit('readable');
+        state.emittedReadable = false;
+    }
+    // The stream needs another readable event if
+    // 1. It is not flowing, as the flow mechanism will take
+    //    care of it.
+    // 2. It is not ended.
+    // 3. It is below the highWaterMark, so we can schedule
+    //    another readable later.
+    state.needReadable = !state.flowing && !state.ended && state.length <= state.highWaterMark;
+    flow(stream);
+}
+// at this point, the user has presumably seen the 'readable' event,
+// and called read() to consume some data.  that may have triggered
+// in turn another _read(n) call, in which case reading = true if
+// it's in progress.
+// However, if we're not ended, or reading, and the length < hwm,
+// then go ahead and try to read some more preemptively.
+function maybeReadMore(stream, state) {
+    if (!state.readingMore) {
+        state.readingMore = true;
+        process.nextTick(maybeReadMore_, stream, state);
+    }
+}
+function maybeReadMore_(stream, state) {
+    // Attempt to read more data if we should.
+    //
+    // The conditions for reading more data are (one of):
+    // - Not enough data buffered (state.length < state.highWaterMark). The loop
+    //   is responsible for filling the buffer with enough data if such data
+    //   is available. If highWaterMark is 0 and we are not in the flowing mode
+    //   we should _not_ attempt to buffer any extra data. We'll get more data
+    //   when the stream consumer calls read() instead.
+    // - No data in the buffer, and the stream is in flowing mode. In this mode
+    //   the loop below is responsible for ensuring read() is called. Failing to
+    //   call read here would abort the flow and there's no other mechanism for
+    //   continuing the flow if the stream consumer has just subscribed to the
+    //   'data' event.
+    //
+    // In addition to the above conditions to keep reading data, the following
+    // conditions prevent the data from being read:
+    // - The stream has ended (state.ended).
+    // - There is already a pending 'read' operation (state.reading). This is a
+    //   case where the the stream has called the implementation defined _read()
+    //   method, but they are processing the call asynchronously and have _not_
+    //   called push() with new data. In this case we skip performing more
+    //   read()s. The execution ends in this method again after the _read() ends
+    //   up calling push() with more data.
+    while(!state.reading && !state.ended && (state.length < state.highWaterMark || state.flowing && state.length === 0)){
+        var len = state.length;
+        debug('maybeReadMore read 0');
+        stream.read(0);
+        if (len === state.length) break;
+    }
+    state.readingMore = false;
+}
+// abstract method.  to be overridden in specific implementation classes.
+// call cb(er, data) where data is <= n in length.
+// for virtual (non-string, non-buffer) streams, "length" is somewhat
+// arbitrary, and perhaps not very meaningful.
+Readable.prototype._read = function(n) {
+    errorOrDestroy(this, new ERR_METHOD_NOT_IMPLEMENTED('_read()'));
+};
+Readable.prototype.pipe = function(dest, pipeOpts) {
+    var src = this;
+    var state = this._readableState;
+    switch(state.pipesCount){
+        case 0:
+            state.pipes = dest;
+            break;
+        case 1:
+            state.pipes = [
+                state.pipes,
+                dest
+            ];
+            break;
+        default:
+            state.pipes.push(dest);
+            break;
+    }
+    state.pipesCount += 1;
+    debug('pipe count=%d opts=%j', state.pipesCount, pipeOpts);
+    var doEnd = (!pipeOpts || pipeOpts.end !== false) && dest !== process.stdout && dest !== process.stderr;
+    var endFn = doEnd ? onend : unpipe;
+    if (state.endEmitted) process.nextTick(endFn);
+    else src.once('end', endFn);
+    dest.on('unpipe', onunpipe);
+    function onunpipe(readable, unpipeInfo) {
+        debug('onunpipe');
+        if (readable === src) {
+            if (unpipeInfo && unpipeInfo.hasUnpiped === false) {
+                unpipeInfo.hasUnpiped = true;
+                cleanup();
+            }
+        }
+    }
+    function onend() {
+        debug('onend');
+        dest.end();
+    }
+    // when the dest drains, it reduces the awaitDrain counter
+    // on the source.  This would be more elegant with a .once()
+    // handler in flow(), but adding and removing repeatedly is
+    // too slow.
+    var ondrain = pipeOnDrain(src);
+    dest.on('drain', ondrain);
+    var cleanedUp = false;
+    function cleanup() {
+        debug('cleanup');
+        // cleanup event handlers once the pipe is broken
+        dest.removeListener('close', onclose);
+        dest.removeListener('finish', onfinish);
+        dest.removeListener('drain', ondrain);
+        dest.removeListener('error', onerror);
+        dest.removeListener('unpipe', onunpipe);
+        src.removeListener('end', onend);
+        src.removeListener('end', unpipe);
+        src.removeListener('data', ondata);
+        cleanedUp = true;
+        // if the reader is waiting for a drain event from this
+        // specific writer, then it would cause it to never start
+        // flowing again.
+        // So, if this is awaiting a drain, then we just call it now.
+        // If we don't know, then assume that we are waiting for one.
+        if (state.awaitDrain && (!dest._writableState || dest._writableState.needDrain)) ondrain();
+    }
+    src.on('data', ondata);
+    function ondata(chunk) {
+        debug('ondata');
+        var ret = dest.write(chunk);
+        debug('dest.write', ret);
+        if (ret === false) {
+            // If the user unpiped during `dest.write()`, it is possible
+            // to get stuck in a permanently paused state if that write
+            // also returned false.
+            // => Check whether `dest` is still a piping destination.
+            if ((state.pipesCount === 1 && state.pipes === dest || state.pipesCount > 1 && indexOf(state.pipes, dest) !== -1) && !cleanedUp) {
+                debug('false write response, pause', state.awaitDrain);
+                state.awaitDrain++;
+            }
+            src.pause();
+        }
+    }
+    // if the dest has an error, then stop piping into it.
+    // however, don't suppress the throwing behavior for this.
+    function onerror(er) {
+        debug('onerror', er);
+        unpipe();
+        dest.removeListener('error', onerror);
+        if (EElistenerCount(dest, 'error') === 0) errorOrDestroy(dest, er);
+    }
+    // Make sure our error handler is attached before userland ones.
+    prependListener(dest, 'error', onerror);
+    // Both close and finish should trigger unpipe, but only once.
+    function onclose() {
+        dest.removeListener('finish', onfinish);
+        unpipe();
+    }
+    dest.once('close', onclose);
+    function onfinish() {
+        debug('onfinish');
+        dest.removeListener('close', onclose);
+        unpipe();
+    }
+    dest.once('finish', onfinish);
+    function unpipe() {
+        debug('unpipe');
+        src.unpipe(dest);
+    }
+    // tell the dest that it's being piped to
+    dest.emit('pipe', src);
+    // start the flow if it hasn't been started already.
+    if (!state.flowing) {
+        debug('pipe resume');
+        src.resume();
+    }
+    return dest;
+};
+function pipeOnDrain(src) {
+    return function pipeOnDrainFunctionResult() {
+        var state = src._readableState;
+        debug('pipeOnDrain', state.awaitDrain);
+        if (state.awaitDrain) state.awaitDrain--;
+        if (state.awaitDrain === 0 && EElistenerCount(src, 'data')) {
+            state.flowing = true;
+            flow(src);
+        }
+    };
+}
+Readable.prototype.unpipe = function(dest) {
+    var state = this._readableState;
+    var unpipeInfo = {
+        hasUnpiped: false
+    };
+    // if we're not piping anywhere, then do nothing.
+    if (state.pipesCount === 0) return this;
+    // just one destination.  most common case.
+    if (state.pipesCount === 1) {
+        // passed in one, but it's not the right one.
+        if (dest && dest !== state.pipes) return this;
+        if (!dest) dest = state.pipes;
+        // got a match.
+        state.pipes = null;
+        state.pipesCount = 0;
+        state.flowing = false;
+        if (dest) dest.emit('unpipe', this, unpipeInfo);
+        return this;
+    }
+    // slow case. multiple pipe destinations.
+    if (!dest) {
+        // remove all.
+        var dests = state.pipes;
+        var len = state.pipesCount;
+        state.pipes = null;
+        state.pipesCount = 0;
+        state.flowing = false;
+        for(var i = 0; i < len; i++)dests[i].emit('unpipe', this, {
+            hasUnpiped: false
+        });
+        return this;
+    }
+    // try to find the right one.
+    var index = indexOf(state.pipes, dest);
+    if (index === -1) return this;
+    state.pipes.splice(index, 1);
+    state.pipesCount -= 1;
+    if (state.pipesCount === 1) state.pipes = state.pipes[0];
+    dest.emit('unpipe', this, unpipeInfo);
+    return this;
+};
+// set up data events if they are asked for
+// Ensure readable listeners eventually get something
+Readable.prototype.on = function(ev, fn) {
+    var res = Stream.prototype.on.call(this, ev, fn);
+    var state = this._readableState;
+    if (ev === 'data') {
+        // update readableListening so that resume() may be a no-op
+        // a few lines down. This is needed to support once('readable').
+        state.readableListening = this.listenerCount('readable') > 0;
+        // Try start flowing on next tick if stream isn't explicitly paused
+        if (state.flowing !== false) this.resume();
+    } else if (ev === 'readable') {
+        if (!state.endEmitted && !state.readableListening) {
+            state.readableListening = state.needReadable = true;
+            state.flowing = false;
+            state.emittedReadable = false;
+            debug('on readable', state.length, state.reading);
+            if (state.length) {
+                emitReadable(this);
+            } else if (!state.reading) {
+                process.nextTick(nReadingNextTick, this);
+            }
+        }
+    }
+    return res;
+};
+Readable.prototype.addListener = Readable.prototype.on;
+Readable.prototype.removeListener = function(ev, fn) {
+    var res = Stream.prototype.removeListener.call(this, ev, fn);
+    if (ev === 'readable') {
+        // We need to check if there is someone still listening to
+        // readable and reset the state. However this needs to happen
+        // after readable has been emitted but before I/O (nextTick) to
+        // support once('readable', fn) cycles. This means that calling
+        // resume within the same tick will have no
+        // effect.
+        process.nextTick(updateReadableListening, this);
+    }
+    return res;
+};
+Readable.prototype.removeAllListeners = function(ev) {
+    var res = Stream.prototype.removeAllListeners.apply(this, arguments);
+    if (ev === 'readable' || ev === undefined) {
+        // We need to check if there is someone still listening to
+        // readable and reset the state. However this needs to happen
+        // after readable has been emitted but before I/O (nextTick) to
+        // support once('readable', fn) cycles. This means that calling
+        // resume within the same tick will have no
+        // effect.
+        process.nextTick(updateReadableListening, this);
+    }
+    return res;
+};
+function updateReadableListening(self) {
+    var state = self._readableState;
+    state.readableListening = self.listenerCount('readable') > 0;
+    if (state.resumeScheduled && !state.paused) {
+        // flowing needs to be set to true now, otherwise
+        // the upcoming resume will not flow.
+        state.flowing = true;
+    // crude way to check if we should resume
+    } else if (self.listenerCount('data') > 0) {
+        self.resume();
+    }
+}
+function nReadingNextTick(self) {
+    debug('readable nexttick read 0');
+    self.read(0);
+}
+// pause() and resume() are remnants of the legacy readable stream API
+// If the user uses them, then switch into old mode.
+Readable.prototype.resume = function() {
+    var state = this._readableState;
+    if (!state.flowing) {
+        debug('resume');
+        // we flow only if there is no one listening
+        // for readable, but we still have to call
+        // resume()
+        state.flowing = !state.readableListening;
+        resume(this, state);
+    }
+    state.paused = false;
+    return this;
+};
+function resume(stream, state) {
+    if (!state.resumeScheduled) {
+        state.resumeScheduled = true;
+        process.nextTick(resume_, stream, state);
+    }
+}
+function resume_(stream, state) {
+    debug('resume', state.reading);
+    if (!state.reading) {
+        stream.read(0);
+    }
+    state.resumeScheduled = false;
+    stream.emit('resume');
+    flow(stream);
+    if (state.flowing && !state.reading) stream.read(0);
+}
+Readable.prototype.pause = function() {
+    debug('call pause flowing=%j', this._readableState.flowing);
+    if (this._readableState.flowing !== false) {
+        debug('pause');
+        this._readableState.flowing = false;
+        this.emit('pause');
+    }
+    this._readableState.paused = true;
+    return this;
+};
+function flow(stream) {
+    var state = stream._readableState;
+    debug('flow', state.flowing);
+    while(state.flowing && stream.read() !== null);
+}
+// wrap an old-style stream as the async data source.
+// This is *not* part of the readable stream interface.
+// It is an ugly unfortunate mess of history.
+Readable.prototype.wrap = function(stream) {
+    var _this = this;
+    var state = this._readableState;
+    var paused = false;
+    stream.on('end', function() {
+        debug('wrapped end');
+        if (state.decoder && !state.ended) {
+            var chunk = state.decoder.end();
+            if (chunk && chunk.length) _this.push(chunk);
+        }
+        _this.push(null);
+    });
+    stream.on('data', function(chunk) {
+        debug('wrapped data');
+        if (state.decoder) chunk = state.decoder.write(chunk);
+        // don't skip over falsy values in objectMode
+        if (state.objectMode && (chunk === null || chunk === undefined)) return;
+        else if (!state.objectMode && (!chunk || !chunk.length)) return;
+        var ret = _this.push(chunk);
+        if (!ret) {
+            paused = true;
+            stream.pause();
+        }
+    });
+    // proxy all the other methods.
+    // important when wrapping filters and duplexes.
+    for(var i in stream){
+        if (this[i] === undefined && typeof stream[i] === 'function') {
+            this[i] = function methodWrap(method) {
+                return function methodWrapReturnFunction() {
+                    return stream[method].apply(stream, arguments);
+                };
+            }(i);
+        }
+    }
+    // proxy certain important events.
+    for(var n = 0; n < kProxyEvents.length; n++){
+        stream.on(kProxyEvents[n], this.emit.bind(this, kProxyEvents[n]));
+    }
+    // when we try to consume some more bytes, simply unpause the
+    // underlying stream.
+    this._read = function(n) {
+        debug('wrapped _read', n);
+        if (paused) {
+            paused = false;
+            stream.resume();
+        }
+    };
+    return this;
+};
+if (typeof Symbol === 'function') {
+    Readable.prototype[Symbol.asyncIterator] = function() {
+        if (createReadableStreamAsyncIterator === undefined) {
+            createReadableStreamAsyncIterator = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/async_iterator.js [app-ssr] (ecmascript)");
+        }
+        return createReadableStreamAsyncIterator(this);
+    };
+}
+Object.defineProperty(Readable.prototype, 'readableHighWaterMark', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._readableState.highWaterMark;
+    }
+});
+Object.defineProperty(Readable.prototype, 'readableBuffer', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._readableState && this._readableState.buffer;
+    }
+});
+Object.defineProperty(Readable.prototype, 'readableFlowing', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._readableState.flowing;
+    },
+    set: function set(state) {
+        if (this._readableState) {
+            this._readableState.flowing = state;
+        }
+    }
+});
+// exposed for testing purposes only.
+Readable._fromList = fromList;
+Object.defineProperty(Readable.prototype, 'readableLength', {
+    // making it explicit this property is not enumerable
+    // because otherwise some prototype manipulation in
+    // userland will fail
+    enumerable: false,
+    get: function get() {
+        return this._readableState.length;
+    }
+});
+// Pluck off n bytes from an array of buffers.
+// Length is the combined lengths of all the buffers in the list.
+// This function is designed to be inlinable, so please take care when making
+// changes to the function body.
+function fromList(n, state) {
+    // nothing buffered
+    if (state.length === 0) return null;
+    var ret;
+    if (state.objectMode) ret = state.buffer.shift();
+    else if (!n || n >= state.length) {
+        // read it all, truncate the list
+        if (state.decoder) ret = state.buffer.join('');
+        else if (state.buffer.length === 1) ret = state.buffer.first();
+        else ret = state.buffer.concat(state.length);
+        state.buffer.clear();
+    } else {
+        // read part of list
+        ret = state.buffer.consume(n, state.decoder);
+    }
+    return ret;
+}
+function endReadable(stream) {
+    var state = stream._readableState;
+    debug('endReadable', state.endEmitted);
+    if (!state.endEmitted) {
+        state.ended = true;
+        process.nextTick(endReadableNT, state, stream);
+    }
+}
+function endReadableNT(state, stream) {
+    debug('endReadableNT', state.endEmitted, state.length);
+    // Check that we didn't get one last unshift.
+    if (!state.endEmitted && state.length === 0) {
+        state.endEmitted = true;
+        stream.readable = false;
+        stream.emit('end');
+        if (state.autoDestroy) {
+            // In case of duplex streams we need a way to detect
+            // if the writable side is ready for autoDestroy as well
+            var wState = stream._writableState;
+            if (!wState || wState.autoDestroy && wState.finished) {
+                stream.destroy();
+            }
+        }
+    }
+}
+if (typeof Symbol === 'function') {
+    Readable.from = function(iterable, opts) {
+        if (from === undefined) {
+            from = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/from.js [app-ssr] (ecmascript)");
+        }
+        return from(Readable, iterable, opts);
+    };
+}
+function indexOf(xs, x) {
+    for(var i = 0, l = xs.length; i < l; i++){
+        if (xs[i] === x) return i;
+    }
+    return -1;
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+// a transform stream is a readable/writable stream where you do
+// something with the data.  Sometimes it's called a "filter",
+// but that's not a great name for it, since that implies a thing where
+// some bits pass through, and others are simply ignored.  (That would
+// be a valid example of a transform, of course.)
+//
+// While the output is causally related to the input, it's not a
+// necessarily symmetric or synchronous transformation.  For example,
+// a zlib stream might take multiple plain-text writes(), and then
+// emit a single compressed chunk some time in the future.
+//
+// Here's how this works:
+//
+// The Transform stream has all the aspects of the readable and writable
+// stream classes.  When you write(chunk), that calls _write(chunk,cb)
+// internally, and returns false if there's a lot of pending writes
+// buffered up.  When you call read(), that calls _read(n) until
+// there's enough pending readable data buffered up.
+//
+// In a transform stream, the written data is placed in a buffer.  When
+// _read(n) is called, it transforms the queued up data, calling the
+// buffered _write cb's as it consumes chunks.  If consuming a single
+// written chunk would result in multiple output chunks, then the first
+// outputted bit calls the readcb, and subsequent chunks just go into
+// the read buffer, and will cause it to emit 'readable' if necessary.
+//
+// This way, back-pressure is actually determined by the reading side,
+// since _read has to be called to start processing a new chunk.  However,
+// a pathological inflate type of transform can cause excessive buffering
+// here.  For example, imagine a stream where every byte of input is
+// interpreted as an integer from 0-255, and then results in that many
+// bytes of output.  Writing the 4 bytes {ff,ff,ff,ff} would result in
+// 1kb of data being output.  In this case, you could write a very small
+// amount of input, and end up with a very large amount of output.  In
+// such a pathological inflating mechanism, there'd be no way to tell
+// the system to stop doing the transform.  A single 4MB write could
+// cause the system to run out of memory.
+//
+// However, even in such a pathological case, only a single written chunk
+// would be consumed, and then the rest would wait (un-transformed) until
+// the results of the previous transformed chunk were consumed.
+module.exports = Transform;
+var _require$codes = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes, ERR_METHOD_NOT_IMPLEMENTED = _require$codes.ERR_METHOD_NOT_IMPLEMENTED, ERR_MULTIPLE_CALLBACK = _require$codes.ERR_MULTIPLE_CALLBACK, ERR_TRANSFORM_ALREADY_TRANSFORMING = _require$codes.ERR_TRANSFORM_ALREADY_TRANSFORMING, ERR_TRANSFORM_WITH_LENGTH_0 = _require$codes.ERR_TRANSFORM_WITH_LENGTH_0;
+var Duplex = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)");
+__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits.js [app-ssr] (ecmascript)")(Transform, Duplex);
+function afterTransform(er, data) {
+    var ts = this._transformState;
+    ts.transforming = false;
+    var cb = ts.writecb;
+    if (cb === null) {
+        return this.emit('error', new ERR_MULTIPLE_CALLBACK());
+    }
+    ts.writechunk = null;
+    ts.writecb = null;
+    if (data != null) // single equals check for both `null` and `undefined`
+    this.push(data);
+    cb(er);
+    var rs = this._readableState;
+    rs.reading = false;
+    if (rs.needReadable || rs.length < rs.highWaterMark) {
+        this._read(rs.highWaterMark);
+    }
+}
+function Transform(options) {
+    if (!(this instanceof Transform)) return new Transform(options);
+    Duplex.call(this, options);
+    this._transformState = {
+        afterTransform: afterTransform.bind(this),
+        needTransform: false,
+        transforming: false,
+        writecb: null,
+        writechunk: null,
+        writeencoding: null
+    };
+    // start out asking for a readable event once data is transformed.
+    this._readableState.needReadable = true;
+    // we have implemented the _read method, and done the other things
+    // that Readable wants before the first _read call, so unset the
+    // sync guard flag.
+    this._readableState.sync = false;
+    if (options) {
+        if (typeof options.transform === 'function') this._transform = options.transform;
+        if (typeof options.flush === 'function') this._flush = options.flush;
+    }
+    // When the writable side finishes, then flush out anything remaining.
+    this.on('prefinish', prefinish);
+}
+function prefinish() {
+    var _this = this;
+    if (typeof this._flush === 'function' && !this._readableState.destroyed) {
+        this._flush(function(er, data) {
+            done(_this, er, data);
+        });
+    } else {
+        done(this, null, null);
+    }
+}
+Transform.prototype.push = function(chunk, encoding) {
+    this._transformState.needTransform = false;
+    return Duplex.prototype.push.call(this, chunk, encoding);
+};
+// This is the part where you do stuff!
+// override this function in implementation classes.
+// 'chunk' is an input chunk.
+//
+// Call `push(newChunk)` to pass along transformed output
+// to the readable side.  You may call 'push' zero or more times.
+//
+// Call `cb(err)` when you are done with this chunk.  If you pass
+// an error, then that'll put the hurt on the whole operation.  If you
+// never call cb(), then you'll never get another chunk.
+Transform.prototype._transform = function(chunk, encoding, cb) {
+    cb(new ERR_METHOD_NOT_IMPLEMENTED('_transform()'));
+};
+Transform.prototype._write = function(chunk, encoding, cb) {
+    var ts = this._transformState;
+    ts.writecb = cb;
+    ts.writechunk = chunk;
+    ts.writeencoding = encoding;
+    if (!ts.transforming) {
+        var rs = this._readableState;
+        if (ts.needTransform || rs.needReadable || rs.length < rs.highWaterMark) this._read(rs.highWaterMark);
+    }
+};
+// Doesn't matter what the args are here.
+// _transform does all the work.
+// That we got here means that the readable side wants more data.
+Transform.prototype._read = function(n) {
+    var ts = this._transformState;
+    if (ts.writechunk !== null && !ts.transforming) {
+        ts.transforming = true;
+        this._transform(ts.writechunk, ts.writeencoding, ts.afterTransform);
+    } else {
+        // mark that we need a transform, so that any data that comes in
+        // will get processed, now that we've asked for it.
+        ts.needTransform = true;
+    }
+};
+Transform.prototype._destroy = function(err, cb) {
+    Duplex.prototype._destroy.call(this, err, function(err2) {
+        cb(err2);
+    });
+};
+function done(stream, er, data) {
+    if (er) return stream.emit('error', er);
+    if (data != null) // single equals check for both `null` and `undefined`
+    stream.push(data);
+    // TODO(BridgeAR): Write a test for these two error cases
+    // if there's nothing in the write buffer, then that means
+    // that nothing more will ever be provided
+    if (stream._writableState.length) throw new ERR_TRANSFORM_WITH_LENGTH_0();
+    if (stream._transformState.transforming) throw new ERR_TRANSFORM_ALREADY_TRANSFORMING();
+    return stream.push(null);
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_passthrough.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+// a passthrough stream.
+// basically just the most minimal sort of Transform stream.
+// Every written chunk gets output as-is.
+module.exports = PassThrough;
+var Transform = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js [app-ssr] (ecmascript)");
+__turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits.js [app-ssr] (ecmascript)")(PassThrough, Transform);
+function PassThrough(options) {
+    if (!(this instanceof PassThrough)) return new PassThrough(options);
+    Transform.call(this, options);
+}
+PassThrough.prototype._transform = function(chunk, encoding, cb) {
+    cb(null, chunk);
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/pipeline.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Ported from https://github.com/mafintosh/pump with
+// permission from the author, Mathias Buus (@mafintosh).
+var eos;
+function once(callback) {
+    var called = false;
+    return function() {
+        if (called) return;
+        called = true;
+        callback.apply(void 0, arguments);
+    };
+}
+var _require$codes = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/errors.js [app-ssr] (ecmascript)").codes, ERR_MISSING_ARGS = _require$codes.ERR_MISSING_ARGS, ERR_STREAM_DESTROYED = _require$codes.ERR_STREAM_DESTROYED;
+function noop(err) {
+    // Rethrow the error if it exists to avoid swallowing it
+    if (err) throw err;
+}
+function isRequest(stream) {
+    return stream.setHeader && typeof stream.abort === 'function';
+}
+function destroyer(stream, reading, writing, callback) {
+    callback = once(callback);
+    var closed = false;
+    stream.on('close', function() {
+        closed = true;
+    });
+    if (eos === undefined) eos = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/end-of-stream.js [app-ssr] (ecmascript)");
+    eos(stream, {
+        readable: reading,
+        writable: writing
+    }, function(err) {
+        if (err) return callback(err);
+        closed = true;
+        callback();
+    });
+    var destroyed = false;
+    return function(err) {
+        if (closed) return;
+        if (destroyed) return;
+        destroyed = true;
+        // request.destroy just do .end - .abort is what we want
+        if (isRequest(stream)) return stream.abort();
+        if (typeof stream.destroy === 'function') return stream.destroy();
+        callback(err || new ERR_STREAM_DESTROYED('pipe'));
+    };
+}
+function call(fn) {
+    fn();
+}
+function pipe(from, to) {
+    return from.pipe(to);
+}
+function popCallback(streams) {
+    if (!streams.length) return noop;
+    if (typeof streams[streams.length - 1] !== 'function') return noop;
+    return streams.pop();
+}
+function pipeline() {
+    for(var _len = arguments.length, streams = new Array(_len), _key = 0; _key < _len; _key++){
+        streams[_key] = arguments[_key];
+    }
+    var callback = popCallback(streams);
+    if (Array.isArray(streams[0])) streams = streams[0];
+    if (streams.length < 2) {
+        throw new ERR_MISSING_ARGS('streams');
+    }
+    var error;
+    var destroys = streams.map(function(stream, i) {
+        var reading = i < streams.length - 1;
+        var writing = i > 0;
+        return destroyer(stream, reading, writing, function(err) {
+            if (!error) error = err;
+            if (err) destroys.forEach(call);
+            if (reading) return;
+            destroys.forEach(call);
+            callback(error);
+        });
+    });
+    return streams.reduce(pipe);
+}
+module.exports = pipeline;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/readable.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var Stream = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)");
+if (process.env.READABLE_STREAM === 'disable' && Stream) {
+    module.exports = Stream.Readable;
+    Object.assign(module.exports, Stream);
+    module.exports.Stream = Stream;
+} else {
+    exports = module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js [app-ssr] (ecmascript)");
+    exports.Stream = Stream || exports;
+    exports.Readable = exports;
+    exports.Writable = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js [app-ssr] (ecmascript)");
+    exports.Duplex = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js [app-ssr] (ecmascript)");
+    exports.Transform = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js [app-ssr] (ecmascript)");
+    exports.PassThrough = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/_stream_passthrough.js [app-ssr] (ecmascript)");
+    exports.finished = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/end-of-stream.js [app-ssr] (ecmascript)");
+    exports.pipeline = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/lib/internal/streams/pipeline.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits_browser.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+if (typeof Object.create === 'function') {
+    // implementation from standard node.js 'util' module
+    module.exports = function inherits(ctor, superCtor) {
+        if (superCtor) {
+            ctor.super_ = superCtor;
+            ctor.prototype = Object.create(superCtor.prototype, {
+                constructor: {
+                    value: ctor,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                }
+            });
+        }
+    };
+} else {
+    // old school shim for old browsers
+    module.exports = function inherits(ctor, superCtor) {
+        if (superCtor) {
+            ctor.super_ = superCtor;
+            var TempCtor = function() {};
+            TempCtor.prototype = superCtor.prototype;
+            ctor.prototype = new TempCtor();
+            ctor.prototype.constructor = ctor;
+        }
+    };
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+try {
+    var util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+    /* istanbul ignore next */ if (typeof util.inherits !== 'function') throw '';
+    module.exports = util.inherits;
+} catch (e) {
+    /* istanbul ignore next */ module.exports = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/inherits/inherits_browser.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/util-deprecate/node.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * For Node.js, simply re-export the core `util.deprecate` function.
+ */ module.exports = __turbopack_context__.r("[externals]/util [external] (util, cjs)").deprecate;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/safe-buffer/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */ /* eslint-disable node/no-deprecated-api */ var buffer = __turbopack_context__.r("[externals]/buffer [external] (buffer, cjs)");
+var Buffer = buffer.Buffer;
+// alternative to using Object.keys for old browsers
+function copyProps(src, dst) {
+    for(var key in src){
+        dst[key] = src[key];
+    }
+}
+if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
+    module.exports = buffer;
+} else {
+    // Copy properties from require('buffer')
+    copyProps(buffer, exports);
+    exports.Buffer = SafeBuffer;
+}
+function SafeBuffer(arg, encodingOrOffset, length) {
+    return Buffer(arg, encodingOrOffset, length);
+}
+SafeBuffer.prototype = Object.create(Buffer.prototype);
+// Copy static methods from Buffer
+copyProps(Buffer, SafeBuffer);
+SafeBuffer.from = function(arg, encodingOrOffset, length) {
+    if (typeof arg === 'number') {
+        throw new TypeError('Argument must not be a number');
+    }
+    return Buffer(arg, encodingOrOffset, length);
+};
+SafeBuffer.alloc = function(size, fill, encoding) {
+    if (typeof size !== 'number') {
+        throw new TypeError('Argument must be a number');
+    }
+    var buf = Buffer(size);
+    if (fill !== undefined) {
+        if (typeof encoding === 'string') {
+            buf.fill(fill, encoding);
+        } else {
+            buf.fill(fill);
+        }
+    } else {
+        buf.fill(0);
+    }
+    return buf;
+};
+SafeBuffer.allocUnsafe = function(size) {
+    if (typeof size !== 'number') {
+        throw new TypeError('Argument must be a number');
+    }
+    return Buffer(size);
+};
+SafeBuffer.allocUnsafeSlow = function(size) {
+    if (typeof size !== 'number') {
+        throw new TypeError('Argument must be a number');
+    }
+    return buffer.SlowBuffer(size);
+};
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/string_decoder/lib/string_decoder.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+/*<replacement>*/ var Buffer = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/safe-buffer/index.js [app-ssr] (ecmascript)").Buffer;
+/*</replacement>*/ var isEncoding = Buffer.isEncoding || function(encoding) {
+    encoding = '' + encoding;
+    switch(encoding && encoding.toLowerCase()){
+        case 'hex':
+        case 'utf8':
+        case 'utf-8':
+        case 'ascii':
+        case 'binary':
+        case 'base64':
+        case 'ucs2':
+        case 'ucs-2':
+        case 'utf16le':
+        case 'utf-16le':
+        case 'raw':
+            return true;
+        default:
+            return false;
+    }
+};
+function _normalizeEncoding(enc) {
+    if (!enc) return 'utf8';
+    var retried;
+    while(true){
+        switch(enc){
+            case 'utf8':
+            case 'utf-8':
+                return 'utf8';
+            case 'ucs2':
+            case 'ucs-2':
+            case 'utf16le':
+            case 'utf-16le':
+                return 'utf16le';
+            case 'latin1':
+            case 'binary':
+                return 'latin1';
+            case 'base64':
+            case 'ascii':
+            case 'hex':
+                return enc;
+            default:
+                if (retried) return; // undefined
+                enc = ('' + enc).toLowerCase();
+                retried = true;
+        }
+    }
+}
+;
+// Do not cache `Buffer.isEncoding` when checking encoding names as some
+// modules monkey-patch it to support additional encodings
+function normalizeEncoding(enc) {
+    var nenc = _normalizeEncoding(enc);
+    if (typeof nenc !== 'string' && (Buffer.isEncoding === isEncoding || !isEncoding(enc))) throw new Error('Unknown encoding: ' + enc);
+    return nenc || enc;
+}
+// StringDecoder provides an interface for efficiently splitting a series of
+// buffers into a series of JS strings without breaking apart multi-byte
+// characters.
+exports.StringDecoder = StringDecoder;
+function StringDecoder(encoding) {
+    this.encoding = normalizeEncoding(encoding);
+    var nb;
+    switch(this.encoding){
+        case 'utf16le':
+            this.text = utf16Text;
+            this.end = utf16End;
+            nb = 4;
+            break;
+        case 'utf8':
+            this.fillLast = utf8FillLast;
+            nb = 4;
+            break;
+        case 'base64':
+            this.text = base64Text;
+            this.end = base64End;
+            nb = 3;
+            break;
+        default:
+            this.write = simpleWrite;
+            this.end = simpleEnd;
+            return;
+    }
+    this.lastNeed = 0;
+    this.lastTotal = 0;
+    this.lastChar = Buffer.allocUnsafe(nb);
+}
+StringDecoder.prototype.write = function(buf) {
+    if (buf.length === 0) return '';
+    var r;
+    var i;
+    if (this.lastNeed) {
+        r = this.fillLast(buf);
+        if (r === undefined) return '';
+        i = this.lastNeed;
+        this.lastNeed = 0;
+    } else {
+        i = 0;
+    }
+    if (i < buf.length) return r ? r + this.text(buf, i) : this.text(buf, i);
+    return r || '';
+};
+StringDecoder.prototype.end = utf8End;
+// Returns only complete characters in a Buffer
+StringDecoder.prototype.text = utf8Text;
+// Attempts to complete a partial non-UTF-8 character using bytes from a Buffer
+StringDecoder.prototype.fillLast = function(buf) {
+    if (this.lastNeed <= buf.length) {
+        buf.copy(this.lastChar, this.lastTotal - this.lastNeed, 0, this.lastNeed);
+        return this.lastChar.toString(this.encoding, 0, this.lastTotal);
+    }
+    buf.copy(this.lastChar, this.lastTotal - this.lastNeed, 0, buf.length);
+    this.lastNeed -= buf.length;
+};
+// Checks the type of a UTF-8 byte, whether it's ASCII, a leading byte, or a
+// continuation byte. If an invalid byte is detected, -2 is returned.
+function utf8CheckByte(byte) {
+    if (byte <= 0x7F) return 0;
+    else if (byte >> 5 === 0x06) return 2;
+    else if (byte >> 4 === 0x0E) return 3;
+    else if (byte >> 3 === 0x1E) return 4;
+    return byte >> 6 === 0x02 ? -1 : -2;
+}
+// Checks at most 3 bytes at the end of a Buffer in order to detect an
+// incomplete multi-byte UTF-8 character. The total number of bytes (2, 3, or 4)
+// needed to complete the UTF-8 character (if applicable) are returned.
+function utf8CheckIncomplete(self, buf, i) {
+    var j = buf.length - 1;
+    if (j < i) return 0;
+    var nb = utf8CheckByte(buf[j]);
+    if (nb >= 0) {
+        if (nb > 0) self.lastNeed = nb - 1;
+        return nb;
+    }
+    if (--j < i || nb === -2) return 0;
+    nb = utf8CheckByte(buf[j]);
+    if (nb >= 0) {
+        if (nb > 0) self.lastNeed = nb - 2;
+        return nb;
+    }
+    if (--j < i || nb === -2) return 0;
+    nb = utf8CheckByte(buf[j]);
+    if (nb >= 0) {
+        if (nb > 0) {
+            if (nb === 2) nb = 0;
+            else self.lastNeed = nb - 3;
+        }
+        return nb;
+    }
+    return 0;
+}
+// Validates as many continuation bytes for a multi-byte UTF-8 character as
+// needed or are available. If we see a non-continuation byte where we expect
+// one, we "replace" the validated continuation bytes we've seen so far with
+// a single UTF-8 replacement character ('\ufffd'), to match v8's UTF-8 decoding
+// behavior. The continuation byte check is included three times in the case
+// where all of the continuation bytes for a character exist in the same buffer.
+// It is also done this way as a slight performance increase instead of using a
+// loop.
+function utf8CheckExtraBytes(self, buf, p) {
+    if ((buf[0] & 0xC0) !== 0x80) {
+        self.lastNeed = 0;
+        return '\ufffd';
+    }
+    if (self.lastNeed > 1 && buf.length > 1) {
+        if ((buf[1] & 0xC0) !== 0x80) {
+            self.lastNeed = 1;
+            return '\ufffd';
+        }
+        if (self.lastNeed > 2 && buf.length > 2) {
+            if ((buf[2] & 0xC0) !== 0x80) {
+                self.lastNeed = 2;
+                return '\ufffd';
+            }
+        }
+    }
+}
+// Attempts to complete a multi-byte UTF-8 character using bytes from a Buffer.
+function utf8FillLast(buf) {
+    var p = this.lastTotal - this.lastNeed;
+    var r = utf8CheckExtraBytes(this, buf, p);
+    if (r !== undefined) return r;
+    if (this.lastNeed <= buf.length) {
+        buf.copy(this.lastChar, p, 0, this.lastNeed);
+        return this.lastChar.toString(this.encoding, 0, this.lastTotal);
+    }
+    buf.copy(this.lastChar, p, 0, buf.length);
+    this.lastNeed -= buf.length;
+}
+// Returns all complete UTF-8 characters in a Buffer. If the Buffer ended on a
+// partial character, the character's bytes are buffered until the required
+// number of bytes are available.
+function utf8Text(buf, i) {
+    var total = utf8CheckIncomplete(this, buf, i);
+    if (!this.lastNeed) return buf.toString('utf8', i);
+    this.lastTotal = total;
+    var end = buf.length - (total - this.lastNeed);
+    buf.copy(this.lastChar, 0, end);
+    return buf.toString('utf8', i, end);
+}
+// For UTF-8, a replacement character is added when ending on a partial
+// character.
+function utf8End(buf) {
+    var r = buf && buf.length ? this.write(buf) : '';
+    if (this.lastNeed) return r + '\ufffd';
+    return r;
+}
+// UTF-16LE typically needs two bytes per character, but even if we have an even
+// number of bytes available, we need to check if we end on a leading/high
+// surrogate. In that case, we need to wait for the next two bytes in order to
+// decode the last character properly.
+function utf16Text(buf, i) {
+    if ((buf.length - i) % 2 === 0) {
+        var r = buf.toString('utf16le', i);
+        if (r) {
+            var c = r.charCodeAt(r.length - 1);
+            if (c >= 0xD800 && c <= 0xDBFF) {
+                this.lastNeed = 2;
+                this.lastTotal = 4;
+                this.lastChar[0] = buf[buf.length - 2];
+                this.lastChar[1] = buf[buf.length - 1];
+                return r.slice(0, -1);
+            }
+        }
+        return r;
+    }
+    this.lastNeed = 1;
+    this.lastTotal = 2;
+    this.lastChar[0] = buf[buf.length - 1];
+    return buf.toString('utf16le', i, buf.length - 1);
+}
+// For UTF-16LE we do not explicitly append special replacement characters if we
+// end on a partial character, we simply let v8 handle that.
+function utf16End(buf) {
+    var r = buf && buf.length ? this.write(buf) : '';
+    if (this.lastNeed) {
+        var end = this.lastTotal - this.lastNeed;
+        return r + this.lastChar.toString('utf16le', 0, end);
+    }
+    return r;
+}
+function base64Text(buf, i) {
+    var n = (buf.length - i) % 3;
+    if (n === 0) return buf.toString('base64', i);
+    this.lastNeed = 3 - n;
+    this.lastTotal = 3;
+    if (n === 1) {
+        this.lastChar[0] = buf[buf.length - 1];
+    } else {
+        this.lastChar[0] = buf[buf.length - 2];
+        this.lastChar[1] = buf[buf.length - 1];
+    }
+    return buf.toString('base64', i, buf.length - n);
+}
+function base64End(buf) {
+    var r = buf && buf.length ? this.write(buf) : '';
+    if (this.lastNeed) return r + this.lastChar.toString('base64', 0, 3 - this.lastNeed);
+    return r;
+}
+// Pass bytes on through for single-byte encodings (e.g. ascii, latin1, hex)
+function simpleWrite(buf) {
+    return buf.toString(this.encoding);
+}
+function simpleEnd(buf) {
+    return buf && buf.length ? this.write(buf) : '';
+}
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/through2/through2.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+const { Transform } = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/through2/node_modules/readable-stream/readable.js [app-ssr] (ecmascript)");
+function inherits(fn, sup) {
+    fn.super_ = sup;
+    fn.prototype = Object.create(sup.prototype, {
+        constructor: {
+            value: fn,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+}
+// create a new export function, used by both the main export and
+// the .ctor export, contains common logic for dealing with arguments
+function through2(construct) {
+    return (options, transform, flush)=>{
+        if (typeof options === 'function') {
+            flush = transform;
+            transform = options;
+            options = {};
+        }
+        if (typeof transform !== 'function') {
+            // noop
+            transform = (chunk, enc, cb)=>cb(null, chunk);
+        }
+        if (typeof flush !== 'function') {
+            flush = null;
+        }
+        return construct(options, transform, flush);
+    };
+}
+// main export, just make me a transform stream!
+const make = through2((options, transform, flush)=>{
+    const t2 = new Transform(options);
+    t2._transform = transform;
+    if (flush) {
+        t2._flush = flush;
+    }
+    return t2;
+});
+// make me a reusable prototype that I can `new`, or implicitly `new`
+// with a constructor call
+const ctor = through2((options, transform, flush)=>{
+    function Through2(override) {
+        if (!(this instanceof Through2)) {
+            return new Through2(override);
+        }
+        this.options = Object.assign({}, options, override);
+        Transform.call(this, this.options);
+        this._transform = transform;
+        if (flush) {
+            this._flush = flush;
+        }
+    }
+    inherits(Through2, Transform);
+    return Through2;
+});
+const obj = through2(function(options, transform, flush) {
+    const t2 = new Transform(Object.assign({
+        objectMode: true,
+        highWaterMark: 16
+    }, options));
+    t2._transform = transform;
+    if (flush) {
+        t2._flush = flush;
+    }
+    return t2;
+});
+module.exports = make;
+module.exports.ctor = ctor;
+module.exports.obj = obj;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/tunnel-agent/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var net = __turbopack_context__.r("[externals]/net [external] (net, cjs)"), tls = __turbopack_context__.r("[externals]/tls [external] (tls, cjs)"), http = __turbopack_context__.r("[externals]/http [external] (http, cjs)"), https = __turbopack_context__.r("[externals]/https [external] (https, cjs)"), events = __turbopack_context__.r("[externals]/events [external] (events, cjs)"), assert = __turbopack_context__.r("[externals]/assert [external] (assert, cjs)"), util = __turbopack_context__.r("[externals]/util [external] (util, cjs)"), Buffer = __turbopack_context__.r("[project]/clc next/prod clc/clc_website/node_modules/safe-buffer/index.js [app-ssr] (ecmascript)").Buffer;
+exports.httpOverHttp = httpOverHttp;
+exports.httpsOverHttp = httpsOverHttp;
+exports.httpOverHttps = httpOverHttps;
+exports.httpsOverHttps = httpsOverHttps;
+function httpOverHttp(options) {
+    var agent = new TunnelingAgent(options);
+    agent.request = http.request;
+    return agent;
+}
+function httpsOverHttp(options) {
+    var agent = new TunnelingAgent(options);
+    agent.request = http.request;
+    agent.createSocket = createSecureSocket;
+    agent.defaultPort = 443;
+    return agent;
+}
+function httpOverHttps(options) {
+    var agent = new TunnelingAgent(options);
+    agent.request = https.request;
+    return agent;
+}
+function httpsOverHttps(options) {
+    var agent = new TunnelingAgent(options);
+    agent.request = https.request;
+    agent.createSocket = createSecureSocket;
+    agent.defaultPort = 443;
+    return agent;
+}
+function TunnelingAgent(options) {
+    var self = this;
+    self.options = options || {};
+    self.proxyOptions = self.options.proxy || {};
+    self.maxSockets = self.options.maxSockets || http.Agent.defaultMaxSockets;
+    self.requests = [];
+    self.sockets = [];
+    self.on('free', function onFree(socket, host, port) {
+        for(var i = 0, len = self.requests.length; i < len; ++i){
+            var pending = self.requests[i];
+            if (pending.host === host && pending.port === port) {
+                // Detect the request to connect same origin server,
+                // reuse the connection.
+                self.requests.splice(i, 1);
+                pending.request.onSocket(socket);
+                return;
+            }
+        }
+        socket.destroy();
+        self.removeSocket(socket);
+    });
+}
+util.inherits(TunnelingAgent, events.EventEmitter);
+TunnelingAgent.prototype.addRequest = function addRequest(req, options) {
+    var self = this;
+    // Legacy API: addRequest(req, host, port, path)
+    if (typeof options === 'string') {
+        options = {
+            host: options,
+            port: arguments[2],
+            path: arguments[3]
+        };
+    }
+    if (self.sockets.length >= this.maxSockets) {
+        // We are over limit so we'll add it to the queue.
+        self.requests.push({
+            host: options.host,
+            port: options.port,
+            request: req
+        });
+        return;
+    }
+    // If we are under maxSockets create a new one.
+    self.createConnection({
+        host: options.host,
+        port: options.port,
+        request: req
+    });
+};
+TunnelingAgent.prototype.createConnection = function createConnection(pending) {
+    var self = this;
+    self.createSocket(pending, function(socket) {
+        socket.on('free', onFree);
+        socket.on('close', onCloseOrRemove);
+        socket.on('agentRemove', onCloseOrRemove);
+        pending.request.onSocket(socket);
+        function onFree() {
+            self.emit('free', socket, pending.host, pending.port);
+        }
+        function onCloseOrRemove(err) {
+            self.removeSocket(socket);
+            socket.removeListener('free', onFree);
+            socket.removeListener('close', onCloseOrRemove);
+            socket.removeListener('agentRemove', onCloseOrRemove);
+        }
+    });
+};
+TunnelingAgent.prototype.createSocket = function createSocket(options, cb) {
+    var self = this;
+    var placeholder = {};
+    self.sockets.push(placeholder);
+    var connectOptions = mergeOptions({}, self.proxyOptions, {
+        method: 'CONNECT',
+        path: options.host + ':' + options.port,
+        agent: false
+    });
+    if (connectOptions.proxyAuth) {
+        connectOptions.headers = connectOptions.headers || {};
+        connectOptions.headers['Proxy-Authorization'] = 'Basic ' + Buffer.from(connectOptions.proxyAuth).toString('base64');
+    }
+    debug('making CONNECT request');
+    var connectReq = self.request(connectOptions);
+    connectReq.useChunkedEncodingByDefault = false; // for v0.6
+    connectReq.once('response', onResponse); // for v0.6
+    connectReq.once('upgrade', onUpgrade); // for v0.6
+    connectReq.once('connect', onConnect); // for v0.7 or later
+    connectReq.once('error', onError);
+    connectReq.end();
+    function onResponse(res) {
+        // Very hacky. This is necessary to avoid http-parser leaks.
+        res.upgrade = true;
+    }
+    function onUpgrade(res, socket, head) {
+        // Hacky.
+        process.nextTick(function() {
+            onConnect(res, socket, head);
+        });
+    }
+    function onConnect(res, socket, head) {
+        connectReq.removeAllListeners();
+        socket.removeAllListeners();
+        if (res.statusCode === 200) {
+            assert.equal(head.length, 0);
+            debug('tunneling connection has established');
+            self.sockets[self.sockets.indexOf(placeholder)] = socket;
+            cb(socket);
+        } else {
+            debug('tunneling socket could not be established, statusCode=%d', res.statusCode);
+            var error = new Error('tunneling socket could not be established, ' + 'statusCode=' + res.statusCode);
+            error.code = 'ECONNRESET';
+            options.request.emit('error', error);
+            self.removeSocket(placeholder);
+        }
+    }
+    function onError(cause) {
+        connectReq.removeAllListeners();
+        debug('tunneling socket could not be established, cause=%s\n', cause.message, cause.stack);
+        var error = new Error('tunneling socket could not be established, ' + 'cause=' + cause.message);
+        error.code = 'ECONNRESET';
+        options.request.emit('error', error);
+        self.removeSocket(placeholder);
+    }
+};
+TunnelingAgent.prototype.removeSocket = function removeSocket(socket) {
+    var pos = this.sockets.indexOf(socket);
+    if (pos === -1) return;
+    this.sockets.splice(pos, 1);
+    var pending = this.requests.shift();
+    if (pending) {
+        // If we have pending requests and a socket gets closed a new one
+        // needs to be created to take over in the pool for the one that closed.
+        this.createConnection(pending);
+    }
+};
+function createSecureSocket(options, cb) {
+    var self = this;
+    TunnelingAgent.prototype.createSocket.call(self, options, function(socket) {
+        // 0 is dummy port for v0.6
+        var secureSocket = tls.connect(0, mergeOptions({}, self.options, {
+            servername: options.host,
+            socket: socket
+        }));
+        self.sockets[self.sockets.indexOf(socket)] = secureSocket;
+        cb(secureSocket);
+    });
+}
+function mergeOptions(target) {
+    for(var i = 1, len = arguments.length; i < len; ++i){
+        var overrides = arguments[i];
+        if (typeof overrides === 'object') {
+            var keys = Object.keys(overrides);
+            for(var j = 0, keyLen = keys.length; j < keyLen; ++j){
+                var k = keys[j];
+                if (overrides[k] !== undefined) {
+                    target[k] = overrides[k];
+                }
+            }
+        }
+    }
+    return target;
+}
+var debug;
+if (process.env.NODE_DEBUG && /\btunnel\b/.test(process.env.NODE_DEBUG)) {
+    debug = function() {
+        var args = Array.prototype.slice.call(arguments);
+        if (typeof args[0] === 'string') {
+            args[0] = 'TUNNEL: ' + args[0];
+        } else {
+            args.unshift('TUNNEL:');
+        }
+        console.error.apply(console, args);
+    };
+} else {
+    debug = function() {};
+}
+exports.debug = debug; // for test
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/is-retry-allowed/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+const denyList = new Set([
+    'ENOTFOUND',
+    'ENETUNREACH',
+    // SSL errors from https://github.com/nodejs/node/blob/fc8e3e2cdc521978351de257030db0076d79e0ab/src/crypto/crypto_common.cc#L301-L328
+    'UNABLE_TO_GET_ISSUER_CERT',
+    'UNABLE_TO_GET_CRL',
+    'UNABLE_TO_DECRYPT_CERT_SIGNATURE',
+    'UNABLE_TO_DECRYPT_CRL_SIGNATURE',
+    'UNABLE_TO_DECODE_ISSUER_PUBLIC_KEY',
+    'CERT_SIGNATURE_FAILURE',
+    'CRL_SIGNATURE_FAILURE',
+    'CERT_NOT_YET_VALID',
+    'CERT_HAS_EXPIRED',
+    'CRL_NOT_YET_VALID',
+    'CRL_HAS_EXPIRED',
+    'ERROR_IN_CERT_NOT_BEFORE_FIELD',
+    'ERROR_IN_CERT_NOT_AFTER_FIELD',
+    'ERROR_IN_CRL_LAST_UPDATE_FIELD',
+    'ERROR_IN_CRL_NEXT_UPDATE_FIELD',
+    'OUT_OF_MEM',
+    'DEPTH_ZERO_SELF_SIGNED_CERT',
+    'SELF_SIGNED_CERT_IN_CHAIN',
+    'UNABLE_TO_GET_ISSUER_CERT_LOCALLY',
+    'UNABLE_TO_VERIFY_LEAF_SIGNATURE',
+    'CERT_CHAIN_TOO_LONG',
+    'CERT_REVOKED',
+    'INVALID_CA',
+    'PATH_LENGTH_EXCEEDED',
+    'INVALID_PURPOSE',
+    'CERT_UNTRUSTED',
+    'CERT_REJECTED',
+    'HOSTNAME_MISMATCH'
+]);
+// TODO: Use `error?.code` when targeting Node.js 14
+module.exports = (error)=>!denyList.has(error && error.code);
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/nanoid/url-alphabet/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "urlAlphabet",
+    ()=>urlAlphabet
+]);
+let urlAlphabet = 'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict';
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/nanoid/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "customAlphabet",
+    ()=>customAlphabet,
+    "customRandom",
+    ()=>customRandom,
+    "nanoid",
+    ()=>nanoid,
+    "random",
+    ()=>random
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/crypto [external] (crypto, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$nanoid$2f$url$2d$alphabet$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/nanoid/url-alphabet/index.js [app-ssr] (ecmascript)");
+;
+;
+const POOL_SIZE_MULTIPLIER = 128;
+let pool, poolOffset;
+let fillPool = (bytes)=>{
+    if (!pool || pool.length < bytes) {
+        pool = Buffer.allocUnsafe(bytes * POOL_SIZE_MULTIPLIER);
+        __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomFillSync(pool);
+        poolOffset = 0;
+    } else if (poolOffset + bytes > pool.length) {
+        __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomFillSync(pool);
+        poolOffset = 0;
+    }
+    poolOffset += bytes;
+};
+let random = (bytes)=>{
+    fillPool(bytes |= 0);
+    return pool.subarray(poolOffset - bytes, poolOffset);
+};
+let customRandom = (alphabet, defaultSize, getRandom)=>{
+    let mask = (2 << 31 - Math.clz32(alphabet.length - 1 | 1)) - 1;
+    let step = Math.ceil(1.6 * mask * defaultSize / alphabet.length);
+    return (size = defaultSize)=>{
+        let id = '';
+        while(true){
+            let bytes = getRandom(step);
+            let i = step;
+            while(i--){
+                id += alphabet[bytes[i] & mask] || '';
+                if (id.length === size) return id;
+            }
+        }
+    };
+};
+let customAlphabet = (alphabet, size = 21)=>customRandom(alphabet, size, random);
+let nanoid = (size = 21)=>{
+    fillPool(size |= 0);
+    let id = '';
+    for(let i = poolOffset - size; i < poolOffset; i++){
+        id += __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$nanoid$2f$url$2d$alphabet$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["urlAlphabet"][pool[i] & 63];
+    }
+    return id;
+};
+;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@sanity/image-url/lib/_chunks-es/compat.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ImageUrlBuilderImpl",
+    ()=>ImageUrlBuilderImpl,
+    "constructNewOptions",
+    ()=>constructNewOptions,
+    "createBuilder",
+    ()=>createBuilder,
+    "createImageUrlBuilder",
+    ()=>createImageUrlBuilder,
+    "defineDeprecated",
+    ()=>defineDeprecated,
+    "urlForImage",
+    ()=>urlForImage
+]);
+const example = "image-Tb9Ew8CXIwaY6R1kjMvI0uRR-2000x3000-jpg";
+function parseAssetId(ref) {
+    const [, id, dimensionString, format] = ref.split("-");
+    if (!id || !dimensionString || !format) throw new Error(`Malformed asset _ref '${ref}'. Expected an id like "${example}".`);
+    const [imgWidthStr, imgHeightStr] = dimensionString.split("x"), width = +imgWidthStr, height = +imgHeightStr;
+    if (!(isFinite(width) && isFinite(height))) throw new Error(`Malformed asset _ref '${ref}'. Expected an id like "${example}".`);
+    return {
+        id,
+        width,
+        height,
+        format
+    };
+}
+const isRef = (src)=>{
+    const source = src;
+    return source ? typeof source._ref == "string" : !1;
+}, isAsset = (src)=>{
+    const source = src;
+    return source ? typeof source._id == "string" : !1;
+}, isAssetStub = (src)=>{
+    const source = src;
+    return source && source.asset ? typeof source.asset.url == "string" : !1;
+}, isInProgressUpload = (src)=>{
+    if (typeof src == "object" && src !== null) {
+        const obj = src;
+        return obj._upload && (!obj.asset || !obj.asset._ref);
+    }
+    return !1;
+};
+function parseSource(source) {
+    if (!source) return null;
+    let image;
+    if (typeof source == "string" && isUrl(source)) image = {
+        asset: {
+            _ref: urlToId(source)
+        }
+    };
+    else if (typeof source == "string") image = {
+        asset: {
+            _ref: source
+        }
+    };
+    else if (isRef(source)) image = {
+        asset: source
+    };
+    else if (isAsset(source)) image = {
+        asset: {
+            _ref: source._id || ""
+        }
+    };
+    else if (isAssetStub(source)) image = {
+        asset: {
+            _ref: urlToId(source.asset.url)
+        }
+    };
+    else if (typeof source.asset == "object") image = {
+        ...source
+    };
+    else return null;
+    const img = source;
+    return img.crop && (image.crop = img.crop), img.hotspot && (image.hotspot = img.hotspot), applyDefaults(image);
+}
+function isUrl(url) {
+    return /^https?:\/\//.test(`${url}`);
+}
+function urlToId(url) {
+    return `image-${url.split("/").slice(-1)[0]}`.replace(/\.([a-z]+)$/, "-$1");
+}
+function applyDefaults(image) {
+    if (image.crop && image.hotspot) return image;
+    const result = {
+        ...image
+    };
+    return result.crop || (result.crop = {
+        left: 0,
+        top: 0,
+        bottom: 0,
+        right: 0
+    }), result.hotspot || (result.hotspot = {
+        x: 0.5,
+        y: 0.5,
+        height: 1,
+        width: 1
+    }), result;
+}
+const SPEC_NAME_TO_URL_NAME_MAPPINGS = [
+    [
+        "width",
+        "w"
+    ],
+    [
+        "height",
+        "h"
+    ],
+    [
+        "format",
+        "fm"
+    ],
+    [
+        "download",
+        "dl"
+    ],
+    [
+        "blur",
+        "blur"
+    ],
+    [
+        "sharpen",
+        "sharp"
+    ],
+    [
+        "invert",
+        "invert"
+    ],
+    [
+        "orientation",
+        "or"
+    ],
+    [
+        "minHeight",
+        "min-h"
+    ],
+    [
+        "maxHeight",
+        "max-h"
+    ],
+    [
+        "minWidth",
+        "min-w"
+    ],
+    [
+        "maxWidth",
+        "max-w"
+    ],
+    [
+        "quality",
+        "q"
+    ],
+    [
+        "fit",
+        "fit"
+    ],
+    [
+        "crop",
+        "crop"
+    ],
+    [
+        "saturation",
+        "sat"
+    ],
+    [
+        "auto",
+        "auto"
+    ],
+    [
+        "dpr",
+        "dpr"
+    ],
+    [
+        "pad",
+        "pad"
+    ],
+    [
+        "frame",
+        "frame"
+    ]
+];
+function urlForImage(options) {
+    let spec = {
+        ...options || {}
+    };
+    const source = spec.source;
+    delete spec.source;
+    const image = parseSource(source);
+    if (!image) {
+        if (source && isInProgressUpload(source)) return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8HwQACfsD/QNViZkAAAAASUVORK5CYII=";
+        throw new Error(`Unable to resolve image URL from source (${JSON.stringify(source)})`);
+    }
+    const id = image.asset._ref || image.asset._id || "", asset = parseAssetId(id), cropLeft = Math.round(image.crop.left * asset.width), cropTop = Math.round(image.crop.top * asset.height), crop = {
+        left: cropLeft,
+        top: cropTop,
+        width: Math.round(asset.width - image.crop.right * asset.width - cropLeft),
+        height: Math.round(asset.height - image.crop.bottom * asset.height - cropTop)
+    }, hotSpotVerticalRadius = image.hotspot.height * asset.height / 2, hotSpotHorizontalRadius = image.hotspot.width * asset.width / 2, hotSpotCenterX = image.hotspot.x * asset.width, hotSpotCenterY = image.hotspot.y * asset.height, hotspot = {
+        left: hotSpotCenterX - hotSpotHorizontalRadius,
+        top: hotSpotCenterY - hotSpotVerticalRadius,
+        right: hotSpotCenterX + hotSpotHorizontalRadius,
+        bottom: hotSpotCenterY + hotSpotVerticalRadius
+    };
+    return spec.rect || spec.focalPoint || spec.ignoreImageParams || spec.crop || (spec = {
+        ...spec,
+        ...fit({
+            crop,
+            hotspot
+        }, spec)
+    }), specToImageUrl({
+        ...spec,
+        asset
+    });
+}
+function specToImageUrl(spec) {
+    const cdnUrl = (spec.baseUrl || "https://cdn.sanity.io").replace(/\/+$/, ""), vanityStub = spec.vanityName ? `/${spec.vanityName}` : "", filename = `${spec.asset.id}-${spec.asset.width}x${spec.asset.height}.${spec.asset.format}${vanityStub}`, baseUrl = spec.mediaLibraryId ? `${cdnUrl}/media-libraries/${spec.mediaLibraryId}/images/${filename}` : `${cdnUrl}/images/${spec.projectId}/${spec.dataset}/${filename}`, params = [];
+    if (spec.rect) {
+        const { left, top, width, height } = spec.rect;
+        (left !== 0 || top !== 0 || height !== spec.asset.height || width !== spec.asset.width) && params.push(`rect=${left},${top},${width},${height}`);
+    }
+    spec.bg && params.push(`bg=${spec.bg}`), spec.focalPoint && (params.push(`fp-x=${spec.focalPoint.x}`), params.push(`fp-y=${spec.focalPoint.y}`));
+    const flip = [
+        spec.flipHorizontal && "h",
+        spec.flipVertical && "v"
+    ].filter(Boolean).join("");
+    return flip && params.push(`flip=${flip}`), SPEC_NAME_TO_URL_NAME_MAPPINGS.forEach((mapping)=>{
+        const [specName, param] = mapping;
+        typeof spec[specName] < "u" ? params.push(`${param}=${encodeURIComponent(spec[specName])}`) : typeof spec[param] < "u" && params.push(`${param}=${encodeURIComponent(spec[param])}`);
+    }), params.length === 0 ? baseUrl : `${baseUrl}?${params.join("&")}`;
+}
+function fit(source, spec) {
+    let cropRect;
+    const imgWidth = spec.width, imgHeight = spec.height;
+    if (!(imgWidth && imgHeight)) return {
+        width: imgWidth,
+        height: imgHeight,
+        rect: source.crop
+    };
+    const crop = source.crop, hotspot = source.hotspot, desiredAspectRatio = imgWidth / imgHeight;
+    if (crop.width / crop.height > desiredAspectRatio) {
+        const height = Math.round(crop.height), width = Math.round(height * desiredAspectRatio), top = Math.max(0, Math.round(crop.top)), hotspotXCenter = Math.round((hotspot.right - hotspot.left) / 2 + hotspot.left);
+        let left = Math.max(0, Math.round(hotspotXCenter - width / 2));
+        left < crop.left ? left = crop.left : left + width > crop.left + crop.width && (left = crop.left + crop.width - width), cropRect = {
+            left,
+            top,
+            width,
+            height
+        };
+    } else {
+        const width = crop.width, height = Math.round(width / desiredAspectRatio), left = Math.max(0, Math.round(crop.left)), hotspotYCenter = Math.round((hotspot.bottom - hotspot.top) / 2 + hotspot.top);
+        let top = Math.max(0, Math.round(hotspotYCenter - height / 2));
+        top < crop.top ? top = crop.top : top + height > crop.top + crop.height && (top = crop.top + crop.height - height), cropRect = {
+            left,
+            top,
+            width,
+            height
+        };
+    }
+    return {
+        width: imgWidth,
+        height: imgHeight,
+        rect: cropRect
+    };
+}
+const validFits = [
+    "clip",
+    "crop",
+    "fill",
+    "fillmax",
+    "max",
+    "scale",
+    "min"
+], validCrops = [
+    "top",
+    "bottom",
+    "left",
+    "right",
+    "center",
+    "focalpoint",
+    "entropy"
+], validAutoModes = [
+    "format"
+];
+function isSanityModernClientLike(client) {
+    return client && "config" in client ? typeof client.config == "function" : !1;
+}
+function isSanityClientLike(client) {
+    return client && "clientConfig" in client ? typeof client.clientConfig == "object" : !1;
+}
+function clientConfigToOptions(config) {
+    const { apiHost: apiUrl, projectId, dataset } = config, baseOptions = {
+        baseUrl: (apiUrl || "https://api.sanity.io").replace(/^https:\/\/api\./, "https://cdn.")
+    }, resource = config["~experimental_resource"];
+    if (resource?.type === "media-library") {
+        if (typeof resource.id != "string" || resource.id.length === 0) throw new Error('Media library clients must include an id in "~experimental_resource"');
+        return {
+            ...baseOptions,
+            mediaLibraryId: resource.id
+        };
+    }
+    return {
+        ...baseOptions,
+        projectId,
+        dataset
+    };
+}
+function rewriteSpecName(key) {
+    const specs = SPEC_NAME_TO_URL_NAME_MAPPINGS;
+    for (const entry of specs){
+        const [specName, param] = entry;
+        if (key === specName || key === param) return specName;
+    }
+    return key;
+}
+function getOptions(_options) {
+    let options = {};
+    return isSanityModernClientLike(_options) ? options = clientConfigToOptions(_options.config()) : isSanityClientLike(_options) ? options = clientConfigToOptions(_options.clientConfig) : options = _options || {}, options;
+}
+function createBuilder(Builder, _options) {
+    const options = getOptions(_options);
+    return new Builder(null, options);
+}
+function createImageUrlBuilder(options) {
+    return createBuilder(ImageUrlBuilderImpl, options);
+}
+function constructNewOptions(currentOptions, options) {
+    const baseUrl = options.baseUrl || currentOptions.baseUrl, newOptions = {
+        baseUrl
+    };
+    for(const key in options)if (options.hasOwnProperty(key)) {
+        const specKey = rewriteSpecName(key);
+        newOptions[specKey] = options[key];
+    }
+    return {
+        baseUrl,
+        ...newOptions
+    };
+}
+class ImageUrlBuilderImpl {
+    options;
+    constructor(parent, options){
+        this.options = parent ? {
+            ...parent.options || {},
+            ...options || {}
+        } : {
+            ...options || {}
+        };
+    }
+    withOptions(options) {
+        const newOptions = constructNewOptions(this.options, options);
+        return new ImageUrlBuilderImpl(this, newOptions);
+    }
+    // The image to be represented. Accepts a Sanity 'image'-document, 'asset'-document or
+    // _id of asset. To get the benefit of automatic hot-spot/crop integration with the content
+    // studio, the 'image'-document must be provided.
+    image(source) {
+        return this.withOptions({
+            source
+        });
+    }
+    // Specify the dataset
+    dataset(dataset) {
+        return this.withOptions({
+            dataset
+        });
+    }
+    // Specify the projectId
+    projectId(projectId) {
+        return this.withOptions({
+            projectId
+        });
+    }
+    withClient(client) {
+        const newOptions = getOptions(client), preservedOptions = {
+            ...this.options
+        };
+        return delete preservedOptions.baseUrl, delete preservedOptions.projectId, delete preservedOptions.dataset, delete preservedOptions.mediaLibraryId, new ImageUrlBuilderImpl(null, {
+            ...newOptions,
+            ...preservedOptions
+        });
+    }
+    // Specify background color
+    bg(bg) {
+        return this.withOptions({
+            bg
+        });
+    }
+    // Set DPR scaling factor
+    dpr(dpr) {
+        return this.withOptions(dpr && dpr !== 1 ? {
+            dpr
+        } : {});
+    }
+    // Specify the width of the image in pixels
+    width(width) {
+        return this.withOptions({
+            width
+        });
+    }
+    // Specify the height of the image in pixels
+    height(height) {
+        return this.withOptions({
+            height
+        });
+    }
+    // Specify focal point in fraction of image dimensions. Each component 0.0-1.0
+    focalPoint(x, y) {
+        return this.withOptions({
+            focalPoint: {
+                x,
+                y
+            }
+        });
+    }
+    maxWidth(maxWidth) {
+        return this.withOptions({
+            maxWidth
+        });
+    }
+    minWidth(minWidth) {
+        return this.withOptions({
+            minWidth
+        });
+    }
+    maxHeight(maxHeight) {
+        return this.withOptions({
+            maxHeight
+        });
+    }
+    minHeight(minHeight) {
+        return this.withOptions({
+            minHeight
+        });
+    }
+    // Specify width and height in pixels
+    size(width, height) {
+        return this.withOptions({
+            width,
+            height
+        });
+    }
+    // Specify blur between 0 and 100
+    blur(blur) {
+        return this.withOptions({
+            blur
+        });
+    }
+    sharpen(sharpen) {
+        return this.withOptions({
+            sharpen
+        });
+    }
+    // Specify the desired rectangle of the image
+    rect(left, top, width, height) {
+        return this.withOptions({
+            rect: {
+                left,
+                top,
+                width,
+                height
+            }
+        });
+    }
+    // Specify the image format of the image. 'jpg', 'pjpg', 'png', 'webp'
+    format(format) {
+        return this.withOptions({
+            format
+        });
+    }
+    invert(invert) {
+        return this.withOptions({
+            invert
+        });
+    }
+    // Rotation in degrees 0, 90, 180, 270
+    orientation(orientation) {
+        return this.withOptions({
+            orientation
+        });
+    }
+    // Compression quality 0-100
+    quality(quality) {
+        return this.withOptions({
+            quality
+        });
+    }
+    // Make it a download link. Parameter is default filename.
+    forceDownload(download) {
+        return this.withOptions({
+            download
+        });
+    }
+    // Flip image horizontally
+    flipHorizontal() {
+        return this.withOptions({
+            flipHorizontal: !0
+        });
+    }
+    // Flip image vertically
+    flipVertical() {
+        return this.withOptions({
+            flipVertical: !0
+        });
+    }
+    // Ignore crop/hotspot from image record, even when present
+    ignoreImageParams() {
+        return this.withOptions({
+            ignoreImageParams: !0
+        });
+    }
+    fit(value) {
+        if (validFits.indexOf(value) === -1) throw new Error(`Invalid fit mode "${value}"`);
+        return this.withOptions({
+            fit: value
+        });
+    }
+    crop(value) {
+        if (validCrops.indexOf(value) === -1) throw new Error(`Invalid crop mode "${value}"`);
+        return this.withOptions({
+            crop: value
+        });
+    }
+    // Saturation
+    saturation(saturation) {
+        return this.withOptions({
+            saturation
+        });
+    }
+    auto(value) {
+        if (validAutoModes.indexOf(value) === -1) throw new Error(`Invalid auto mode "${value}"`);
+        return this.withOptions({
+            auto: value
+        });
+    }
+    // Specify the number of pixels to pad the image
+    pad(pad) {
+        return this.withOptions({
+            pad
+        });
+    }
+    // Vanity URL for more SEO friendly URLs
+    vanityName(value) {
+        return this.withOptions({
+            vanityName: value
+        });
+    }
+    frame(frame) {
+        if (frame !== 1) throw new Error(`Invalid frame value "${frame}"`);
+        return this.withOptions({
+            frame
+        });
+    }
+    // Gets the url based on the submitted parameters
+    url() {
+        return urlForImage(this.options);
+    }
+    // Alias for url()
+    toString() {
+        return this.url();
+    }
+}
+function once(fn) {
+    let didCall = !1, returnValue;
+    return (...args)=>(didCall || (returnValue = fn(...args), didCall = !0), returnValue);
+}
+const createWarningPrinter = (message)=>once((...args)=>{
+        console.warn(message.join(" "), ...args);
+    }), printNoDefaultExport = createWarningPrinter([
+    "The default export of @sanity/image-url has been deprecated. Use the named export `createImageUrlBuilder` instead."
+]);
+function defineDeprecated(createImageUrlBuilder2) {
+    return function(options) {
+        return printNoDefaultExport(), createImageUrlBuilder2(options);
+    };
+}
+;
+ //# sourceMappingURL=compat.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-compose-refs/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// packages/react/compose-refs/src/compose-refs.tsx
+__turbopack_context__.s([
+    "composeRefs",
+    ()=>composeRefs,
+    "useComposedRefs",
+    ()=>useComposedRefs
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+function setRef(ref, value) {
+    if (typeof ref === "function") {
+        return ref(value);
+    } else if (ref !== null && ref !== void 0) {
+        ref.current = value;
+    }
+}
+function composeRefs(...refs) {
+    return (node)=>{
+        let hasCleanup = false;
+        const cleanups = refs.map((ref)=>{
+            const cleanup = setRef(ref, node);
+            if (!hasCleanup && typeof cleanup == "function") {
+                hasCleanup = true;
+            }
+            return cleanup;
+        });
+        if (hasCleanup) {
+            return ()=>{
+                for(let i = 0; i < cleanups.length; i++){
+                    const cleanup = cleanups[i];
+                    if (typeof cleanup == "function") {
+                        cleanup();
+                    } else {
+                        setRef(refs[i], null);
+                    }
+                }
+            };
+        }
+    };
+}
+function useComposedRefs(...refs) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"](composeRefs(...refs), refs);
+}
+;
+ //# sourceMappingURL=index.mjs.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-slot/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// src/slot.tsx
+__turbopack_context__.s([
+    "Root",
+    ()=>Slot,
+    "Slot",
+    ()=>Slot,
+    "Slottable",
+    ()=>Slottable,
+    "createSlot",
+    ()=>createSlot,
+    "createSlottable",
+    ()=>createSlottable
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$compose$2d$refs$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-compose-refs/dist/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+;
+;
+;
+var REACT_LAZY_TYPE = Symbol.for("react.lazy");
+var use = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__[" use ".trim().toString()];
+function isPromiseLike(value) {
+    return typeof value === "object" && value !== null && "then" in value;
+}
+function isLazyComponent(element) {
+    return element != null && typeof element === "object" && "$$typeof" in element && element.$$typeof === REACT_LAZY_TYPE && "_payload" in element && isPromiseLike(element._payload);
+}
+// @__NO_SIDE_EFFECTS__
+function createSlot(ownerName) {
+    const SlotClone = /* @__PURE__ */ createSlotClone(ownerName);
+    const Slot2 = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.forwardRef((props, forwardedRef)=>{
+        let { children, ...slotProps } = props;
+        if (isLazyComponent(children) && typeof use === "function") {
+            children = use(children._payload);
+        }
+        const childrenArray = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.Children.toArray(children);
+        const slottable = childrenArray.find(isSlottable);
+        if (slottable) {
+            const newElement = slottable.props.children;
+            const newChildren = childrenArray.map((child)=>{
+                if (child === slottable) {
+                    if (__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.Children.count(newElement) > 1) return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.Children.only(null);
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.isValidElement(newElement) ? newElement.props.children : null;
+                } else {
+                    return child;
+                }
+            });
+            return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(SlotClone, {
+                ...slotProps,
+                ref: forwardedRef,
+                children: __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.isValidElement(newElement) ? __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.cloneElement(newElement, void 0, newChildren) : null
+            });
+        }
+        return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(SlotClone, {
+            ...slotProps,
+            ref: forwardedRef,
+            children
+        });
+    });
+    Slot2.displayName = `${ownerName}.Slot`;
+    return Slot2;
+}
+var Slot = /* @__PURE__ */ createSlot("Slot");
+// @__NO_SIDE_EFFECTS__
+function createSlotClone(ownerName) {
+    const SlotClone = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.forwardRef((props, forwardedRef)=>{
+        let { children, ...slotProps } = props;
+        if (isLazyComponent(children) && typeof use === "function") {
+            children = use(children._payload);
+        }
+        if (__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.isValidElement(children)) {
+            const childrenRef = getElementRef(children);
+            const props2 = mergeProps(slotProps, children.props);
+            if (children.type !== __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.Fragment) {
+                props2.ref = forwardedRef ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$compose$2d$refs$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["composeRefs"])(forwardedRef, childrenRef) : childrenRef;
+            }
+            return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.cloneElement(children, props2);
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.Children.count(children) > 1 ? __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.Children.only(null) : null;
+    });
+    SlotClone.displayName = `${ownerName}.SlotClone`;
+    return SlotClone;
+}
+var SLOTTABLE_IDENTIFIER = Symbol("radix.slottable");
+// @__NO_SIDE_EFFECTS__
+function createSlottable(ownerName) {
+    const Slottable2 = ({ children })=>{
+        return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+            children
+        });
+    };
+    Slottable2.displayName = `${ownerName}.Slottable`;
+    Slottable2.__radixId = SLOTTABLE_IDENTIFIER;
+    return Slottable2;
+}
+var Slottable = /* @__PURE__ */ createSlottable("Slottable");
+function isSlottable(child) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER;
+}
+function mergeProps(slotProps, childProps) {
+    const overrideProps = {
+        ...childProps
+    };
+    for(const propName in childProps){
+        const slotPropValue = slotProps[propName];
+        const childPropValue = childProps[propName];
+        const isHandler = /^on[A-Z]/.test(propName);
+        if (isHandler) {
+            if (slotPropValue && childPropValue) {
+                overrideProps[propName] = (...args)=>{
+                    const result = childPropValue(...args);
+                    slotPropValue(...args);
+                    return result;
+                };
+            } else if (slotPropValue) {
+                overrideProps[propName] = slotPropValue;
+            }
+        } else if (propName === "style") {
+            overrideProps[propName] = {
+                ...slotPropValue,
+                ...childPropValue
+            };
+        } else if (propName === "className") {
+            overrideProps[propName] = [
+                slotPropValue,
+                childPropValue
+            ].filter(Boolean).join(" ");
+        }
+    }
+    return {
+        ...slotProps,
+        ...overrideProps
+    };
+}
+function getElementRef(element) {
+    let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
+    let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+    if (mayWarn) {
+        return element.ref;
+    }
+    getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
+    mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
+    if (mayWarn) {
+        return element.props.ref;
+    }
+    return element.props.ref || element.ref;
+}
+;
+ //# sourceMappingURL=index.mjs.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-separator/node_modules/@radix-ui/react-primitive/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// src/primitive.tsx
+__turbopack_context__.s([
+    "Primitive",
+    ()=>Primitive,
+    "Root",
+    ()=>Root,
+    "dispatchDiscreteCustomEvent",
+    ()=>dispatchDiscreteCustomEvent
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$dom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-dom.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$slot$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-slot/dist/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+var NODES = [
+    "a",
+    "button",
+    "div",
+    "form",
+    "h2",
+    "h3",
+    "img",
+    "input",
+    "label",
+    "li",
+    "nav",
+    "ol",
+    "p",
+    "select",
+    "span",
+    "svg",
+    "ul"
+];
+var Primitive = NODES.reduce((primitive, node)=>{
+    const Slot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$slot$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSlot"])(`Primitive.${node}`);
+    const Node = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"]((props, forwardedRef)=>{
+        const { asChild, ...primitiveProps } = props;
+        const Comp = asChild ? Slot : node;
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(Comp, {
+            ...primitiveProps,
+            ref: forwardedRef
+        });
+    });
+    Node.displayName = `Primitive.${node}`;
+    return {
+        ...primitive,
+        [node]: Node
+    };
+}, {});
+function dispatchDiscreteCustomEvent(target, event) {
+    if (target) __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$dom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["flushSync"](()=>target.dispatchEvent(event));
+}
+var Root = Primitive;
+;
+ //# sourceMappingURL=index.mjs.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-separator/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// src/separator.tsx
+__turbopack_context__.s([
+    "Root",
+    ()=>Root,
+    "Separator",
+    ()=>Separator
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$separator$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$primitive$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@radix-ui/react-separator/node_modules/@radix-ui/react-primitive/dist/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+;
+;
+;
+var NAME = "Separator";
+var DEFAULT_ORIENTATION = "horizontal";
+var ORIENTATIONS = [
+    "horizontal",
+    "vertical"
+];
+var Separator = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"]((props, forwardedRef)=>{
+    const { decorative, orientation: orientationProp = DEFAULT_ORIENTATION, ...domProps } = props;
+    const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
+    const ariaOrientation = orientation === "vertical" ? orientation : void 0;
+    const semanticProps = decorative ? {
+        role: "none"
+    } : {
+        "aria-orientation": ariaOrientation,
+        role: "separator"
+    };
+    return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$separator$2f$node_modules$2f40$radix$2d$ui$2f$react$2d$primitive$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Primitive"].div, {
+        "data-orientation": orientation,
+        ...semanticProps,
+        ...domProps,
+        ref: forwardedRef
+    });
+});
+Separator.displayName = NAME;
+function isValidOrientation(orientation) {
+    return ORIENTATIONS.includes(orientation);
+}
+var Root = Separator;
+;
+ //# sourceMappingURL=index.mjs.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/clsx/dist/clsx.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "clsx",
+    ()=>clsx,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+function r(e) {
+    var t, f, n = "";
+    if ("string" == typeof e || "number" == typeof e) n += e;
+    else if ("object" == typeof e) if (Array.isArray(e)) {
+        var o = e.length;
+        for(t = 0; t < o; t++)e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+    } else for(f in e)e[f] && (n && (n += " "), n += f);
+    return n;
+}
+function clsx() {
+    for(var e, t, f = 0, n = "", o = arguments.length; f < o; f++)(e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+    return n;
+}
+const __TURBOPACK__default__export__ = clsx;
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "hasA11yProp",
+    ()=>hasA11yProp,
+    "mergeClasses",
+    ()=>mergeClasses,
+    "toCamelCase",
+    ()=>toCamelCase,
+    "toKebabCase",
+    ()=>toKebabCase,
+    "toPascalCase",
+    ()=>toPascalCase
+]);
+const toKebabCase = (string)=>string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string)=>string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2)=>p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toPascalCase = (string)=>{
+    const camelCase = toCamelCase(string);
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
+        return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+    }).join(" ").trim();
+const hasA11yProp = (props)=>{
+    for(const prop in props){
+        if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+            return true;
+        }
+    }
+};
+;
+ //# sourceMappingURL=utils.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/defaultAttributes.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>defaultAttributes
+]);
+var defaultAttributes = {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+};
+;
+ //# sourceMappingURL=defaultAttributes.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/Icon.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>Icon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/defaultAttributes.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)");
+;
+;
+;
+const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children, iconNode, ...rest }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])("svg", {
+        ref,
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
+        width: size,
+        height: size,
+        stroke: color,
+        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])("lucide", className),
+        ...!children && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["hasA11yProp"])(rest) && {
+            "aria-hidden": "true"
+        },
+        ...rest
+    }, [
+        ...iconNode.map(([tag, attrs])=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(tag, attrs)),
+        ...Array.isArray(children) ? children : [
+            children
+        ]
+    ]));
+;
+ //# sourceMappingURL=Icon.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>createLucideIcon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/Icon.js [app-ssr] (ecmascript)");
+;
+;
+;
+const createLucideIcon = (iconName, iconNode)=>{
+    const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, ...props }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+            ref,
+            iconNode,
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toKebabCase"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName))}`, `lucide-${iconName}`, className),
+            ...props
+        }));
+    Component.displayName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName);
+    return Component;
+};
+;
+ //# sourceMappingURL=createLucideIcon.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Mail
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",
+            key: "132q7q"
+        }
+    ],
+    [
+        "rect",
+        {
+            x: "2",
+            y: "4",
+            width: "20",
+            height: "16",
+            rx: "2",
+            key: "izxlao"
+        }
+    ]
+];
+const Mail = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("mail", __iconNode);
+;
+ //# sourceMappingURL=mail.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript) <export default as Mail>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Mail",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/mail.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/phone.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Phone
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
+            key: "9njp5v"
+        }
+    ]
+];
+const Phone = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("phone", __iconNode);
+;
+ //# sourceMappingURL=phone.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/phone.js [app-ssr] (ecmascript) <export default as Phone>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Phone",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/phone.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>MapPin
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+            key: "1r0f0z"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "10",
+            r: "3",
+            key: "ilqhr7"
+        }
+    ]
+];
+const MapPin = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("map-pin", __iconNode);
+;
+ //# sourceMappingURL=map-pin.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript) <export default as MapPin>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "MapPin",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Linkedin
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+            key: "c2jq9f"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "4",
+            height: "12",
+            x: "2",
+            y: "9",
+            key: "mk3on5"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "4",
+            cy: "4",
+            r: "2",
+            key: "bt5ra8"
+        }
+    ]
+];
+const Linkedin = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("linkedin", __iconNode);
+;
+ //# sourceMappingURL=linkedin.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-ssr] (ecmascript) <export default as Linkedin>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Linkedin",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/linkedin.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Menu
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M4 5h16",
+            key: "1tepv9"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M4 12h16",
+            key: "1lakjw"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M4 19h16",
+            key: "1djgab"
+        }
+    ]
+];
+const Menu = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("menu", __iconNode);
+;
+ //# sourceMappingURL=menu.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript) <export default as Menu>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Menu",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>X
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M18 6 6 18",
+            key: "1bl5f8"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m6 6 12 12",
+            key: "d8bk6v"
+        }
+    ]
+];
+const X = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("x", __iconNode);
+;
+ //# sourceMappingURL=x.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "X",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Users
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+            key: "1yyitq"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 3.128a4 4 0 0 1 0 7.744",
+            key: "16gr8j"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 21v-2a4 4 0 0 0-3-3.87",
+            key: "kshegd"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "9",
+            cy: "7",
+            r: "4",
+            key: "nufk8"
+        }
+    ]
+];
+const Users = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("users", __iconNode);
+;
+ //# sourceMappingURL=users.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript) <export default as Users>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Users",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>GraduationCap
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",
+            key: "j76jl0"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 10v6",
+            key: "1lu8f3"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5",
+            key: "1r8lef"
+        }
+    ]
+];
+const GraduationCap = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("graduation-cap", __iconNode);
+;
+ //# sourceMappingURL=graduation-cap.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript) <export default as GraduationCap>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "GraduationCap",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Clock
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 6v6l4 2",
+            key: "mmk7yg"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "10",
+            key: "1mglay"
+        }
+    ]
+];
+const Clock = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("clock", __iconNode);
+;
+ //# sourceMappingURL=clock.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript) <export default as Clock>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Clock",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.555.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Building2
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M10 12h4",
+            key: "a56b0p"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 8h4",
+            key: "1sr2af"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M14 21v-3a2 2 0 0 0-4 0v3",
+            key: "1rgiei"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2",
+            key: "secmi2"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16",
+            key: "16ra0t"
+        }
+    ]
+];
+const Building2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("building-2", __iconNode);
+;
+ //# sourceMappingURL=building-2.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript) <export default as Building2>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Building2",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript)");
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/class-variance-authority/dist/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Copyright 2022 Joe Bell. All rights reserved.
+ *
+ * This file is licensed to you under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR REPRESENTATIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */ __turbopack_context__.s([
+    "cva",
+    ()=>cva,
+    "cx",
+    ()=>cx
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/clsx/dist/clsx.mjs [app-ssr] (ecmascript)");
+;
+const falsyToString = (value)=>typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
+const cx = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["clsx"];
+const cva = (base, config)=>(props)=>{
+        var _config_compoundVariants;
+        if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+        const { variants, defaultVariants } = config;
+        const getVariantClassNames = Object.keys(variants).map((variant)=>{
+            const variantProp = props === null || props === void 0 ? void 0 : props[variant];
+            const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
+            if (variantProp === null) return null;
+            const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
+            return variants[variant][variantKey];
+        });
+        const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param)=>{
+            let [key, value] = param;
+            if (value === undefined) {
+                return acc;
+            }
+            acc[key] = value;
+            return acc;
+        }, {});
+        const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (_config_compoundVariants = config.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param)=>{
+            let { class: cvClass, className: cvClassName, ...compoundVariantOptions } = param;
+            return Object.entries(compoundVariantOptions).every((param)=>{
+                let [key, value] = param;
+                return Array.isArray(value) ? value.includes({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                }[key]) : ({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                })[key] === value;
+            }) ? [
+                ...acc,
+                cvClass,
+                cvClassName
+            ] : acc;
+        }, []);
+        return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+    };
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "QueryClientContext",
+    ()=>QueryClientContext,
+    "QueryClientProvider",
+    ()=>QueryClientProvider,
+    "useQueryClient",
+    ()=>useQueryClient
+]);
+// src/QueryClientProvider.tsx
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+"use client";
+;
+;
+var QueryClientContext = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"](void 0);
+var useQueryClient = (queryClient)=>{
+    const client = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"](QueryClientContext);
+    if (queryClient) {
+        return queryClient;
+    }
+    if (!client) {
+        throw new Error("No QueryClient set, use QueryClientProvider to set one");
+    }
+    return client;
+};
+var QueryClientProvider = ({ client, children })=>{
+    __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](()=>{
+        client.mount();
+        return ()=>{
+            client.unmount();
+        };
+    }, [
+        client
+    ]);
+    return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(QueryClientContext.Provider, {
+        value: client,
+        children
+    });
+};
+;
+ //# sourceMappingURL=QueryClientProvider.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/QueryErrorResetBoundary.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "QueryErrorResetBoundary",
+    ()=>QueryErrorResetBoundary,
+    "useQueryErrorResetBoundary",
+    ()=>useQueryErrorResetBoundary
+]);
+// src/QueryErrorResetBoundary.tsx
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+"use client";
+;
+;
+function createValue() {
+    let isReset = false;
+    return {
+        clearReset: ()=>{
+            isReset = false;
+        },
+        reset: ()=>{
+            isReset = true;
+        },
+        isReset: ()=>{
+            return isReset;
+        }
+    };
+}
+var QueryErrorResetBoundaryContext = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"](createValue());
+var useQueryErrorResetBoundary = ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"](QueryErrorResetBoundaryContext);
+var QueryErrorResetBoundary = ({ children })=>{
+    const [value] = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"](()=>createValue());
+    return /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(QueryErrorResetBoundaryContext.Provider, {
+        value,
+        children: typeof children === "function" ? children(value) : children
+    });
+};
+;
+ //# sourceMappingURL=QueryErrorResetBoundary.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ensurePreventErrorBoundaryRetry",
+    ()=>ensurePreventErrorBoundaryRetry,
+    "getHasError",
+    ()=>getHasError,
+    "useClearResetErrorBoundary",
+    ()=>useClearResetErrorBoundary
+]);
+// src/errorBoundaryUtils.ts
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/query-core/build/modern/utils.js [app-ssr] (ecmascript)");
+"use client";
+;
+;
+var ensurePreventErrorBoundaryRetry = (options, errorResetBoundary)=>{
+    if (options.suspense || options.throwOnError || options.experimental_prefetchInRender) {
+        if (!errorResetBoundary.isReset()) {
+            options.retryOnMount = false;
+        }
+    }
+};
+var useClearResetErrorBoundary = (errorResetBoundary)=>{
+    __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](()=>{
+        errorResetBoundary.clearReset();
+    }, [
+        errorResetBoundary
+    ]);
+};
+var getHasError = ({ result, errorResetBoundary, throwOnError, query, suspense })=>{
+    return result.isError && !errorResetBoundary.isReset() && !result.isFetching && query && (suspense && result.data === void 0 || (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["shouldThrowError"])(throwOnError, [
+        result.error,
+        query
+    ]));
+};
+;
+ //# sourceMappingURL=errorBoundaryUtils.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/IsRestoringProvider.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "IsRestoringProvider",
+    ()=>IsRestoringProvider,
+    "useIsRestoring",
+    ()=>useIsRestoring
+]);
+// src/IsRestoringProvider.ts
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+"use client";
+;
+var IsRestoringContext = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createContext"](false);
+var useIsRestoring = ()=>__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"](IsRestoringContext);
+var IsRestoringProvider = IsRestoringContext.Provider;
+;
+ //# sourceMappingURL=IsRestoringProvider.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/suspense.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// src/suspense.ts
+__turbopack_context__.s([
+    "defaultThrowOnError",
+    ()=>defaultThrowOnError,
+    "ensureSuspenseTimers",
+    ()=>ensureSuspenseTimers,
+    "fetchOptimistic",
+    ()=>fetchOptimistic,
+    "shouldSuspend",
+    ()=>shouldSuspend,
+    "willFetch",
+    ()=>willFetch
+]);
+var defaultThrowOnError = (_error, query)=>query.state.data === void 0;
+var ensureSuspenseTimers = (defaultedOptions)=>{
+    if (defaultedOptions.suspense) {
+        const MIN_SUSPENSE_TIME_MS = 1e3;
+        const clamp = (value)=>value === "static" ? value : Math.max(value ?? MIN_SUSPENSE_TIME_MS, MIN_SUSPENSE_TIME_MS);
+        const originalStaleTime = defaultedOptions.staleTime;
+        defaultedOptions.staleTime = typeof originalStaleTime === "function" ? (...args)=>clamp(originalStaleTime(...args)) : clamp(originalStaleTime);
+        if (typeof defaultedOptions.gcTime === "number") {
+            defaultedOptions.gcTime = Math.max(defaultedOptions.gcTime, MIN_SUSPENSE_TIME_MS);
+        }
+    }
+};
+var willFetch = (result, isRestoring)=>result.isLoading && result.isFetching && !isRestoring;
+var shouldSuspend = (defaultedOptions, result)=>defaultedOptions?.suspense && result.isPending;
+var fetchOptimistic = (defaultedOptions, observer, errorResetBoundary)=>observer.fetchOptimistic(defaultedOptions).catch(()=>{
+        errorResetBoundary.clearReset();
+    });
+;
+ //# sourceMappingURL=suspense.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/useBaseQuery.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useBaseQuery",
+    ()=>useBaseQuery
+]);
+// src/useBaseQuery.ts
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/query-core/build/modern/utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$notifyManager$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/query-core/build/modern/notifyManager.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryErrorResetBoundary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/QueryErrorResetBoundary.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$errorBoundaryUtils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$IsRestoringProvider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/IsRestoringProvider.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$suspense$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/suspense.js [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+;
+;
+;
+function useBaseQuery(options, Observer, queryClient) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (typeof options !== "object" || Array.isArray(options)) {
+            throw new Error('Bad argument type. Starting with v5, only the "Object" form is allowed when calling query related functions. Please use the error stack to find the culprit call. More info here: https://tanstack.com/query/latest/docs/react/guides/migrating-to-v5#supports-a-single-signature-one-object');
+        }
+    }
+    const isRestoring = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$IsRestoringProvider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIsRestoring"])();
+    const errorResetBoundary = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryErrorResetBoundary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useQueryErrorResetBoundary"])();
+    const client = (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useQueryClient"])(queryClient);
+    const defaultedOptions = client.defaultQueryOptions(options);
+    client.getDefaultOptions().queries?._experimental_beforeQuery?.(defaultedOptions);
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (!defaultedOptions.queryFn) {
+            console.error(`[${defaultedOptions.queryHash}]: No queryFn was passed as an option, and no default queryFn was found. The queryFn parameter is only optional when using a default queryFn. More info here: https://tanstack.com/query/latest/docs/framework/react/guides/default-query-function`);
+        }
+    }
+    defaultedOptions._optimisticResults = isRestoring ? "isRestoring" : "optimistic";
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$suspense$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ensureSuspenseTimers"])(defaultedOptions);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$errorBoundaryUtils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ensurePreventErrorBoundaryRetry"])(defaultedOptions, errorResetBoundary);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$errorBoundaryUtils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useClearResetErrorBoundary"])(errorResetBoundary);
+    const isNewCacheEntry = !client.getQueryCache().get(defaultedOptions.queryHash);
+    const [observer] = __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"](()=>new Observer(client, defaultedOptions));
+    const result = observer.getOptimisticResult(defaultedOptions);
+    const shouldSubscribe = !isRestoring && options.subscribed !== false;
+    __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSyncExternalStore"](__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"]((onStoreChange)=>{
+        const unsubscribe = shouldSubscribe ? observer.subscribe(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$notifyManager$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["notifyManager"].batchCalls(onStoreChange)) : __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["noop"];
+        observer.updateResult();
+        return unsubscribe;
+    }, [
+        observer,
+        shouldSubscribe
+    ]), ()=>observer.getCurrentResult(), ()=>observer.getCurrentResult());
+    __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](()=>{
+        observer.setOptions(defaultedOptions);
+    }, [
+        defaultedOptions,
+        observer
+    ]);
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$suspense$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["shouldSuspend"])(defaultedOptions, result)) {
+        throw (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$suspense$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchOptimistic"])(defaultedOptions, observer, errorResetBoundary);
+    }
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$errorBoundaryUtils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getHasError"])({
+        result,
+        errorResetBoundary,
+        throwOnError: defaultedOptions.throwOnError,
+        query: client.getQueryCache().get(defaultedOptions.queryHash),
+        suspense: defaultedOptions.suspense
+    })) {
+        throw result.error;
+    }
+    ;
+    client.getDefaultOptions().queries?._experimental_afterQuery?.(defaultedOptions, result);
+    if (defaultedOptions.experimental_prefetchInRender && !__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isServer"] && (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$suspense$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["willFetch"])(result, isRestoring)) {
+        const promise = isNewCacheEntry ? // Fetch immediately on render in order to ensure `.promise` is resolved even if the component is unmounted
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$suspense$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["fetchOptimistic"])(defaultedOptions, observer, errorResetBoundary) : // subscribe to the "cache promise" so that we can finalize the currentThenable once data comes in
+        client.getQueryCache().get(defaultedOptions.queryHash)?.promise;
+        promise?.catch(__TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["noop"]).finally(()=>{
+            observer.updateResult();
+        });
+    }
+    return !defaultedOptions.notifyOnChangeProps ? observer.trackResult(result) : result;
+}
+;
+ //# sourceMappingURL=useBaseQuery.js.map
+}),
+"[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/useQuery.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useQuery",
+    ()=>useQuery
+]);
+// src/useQuery.ts
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$queryObserver$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/query-core/build/modern/queryObserver.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useBaseQuery$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/clc next/prod clc/clc_website/node_modules/@tanstack/react-query/build/modern/useBaseQuery.js [app-ssr] (ecmascript)");
+"use client";
+;
+;
+function useQuery(options, queryClient) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useBaseQuery$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useBaseQuery"])(options, __TURBOPACK__imported__module__$5b$project$5d2f$clc__next$2f$prod__clc$2f$clc_website$2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$queryObserver$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["QueryObserver"], queryClient);
+}
+;
+ //# sourceMappingURL=useQuery.js.map
+}),
+];
+
+//# sourceMappingURL=e3314_9e6d221c._.js.map
