@@ -6,14 +6,14 @@ const Expertise = () => {
       icon: Calculator,
       title: "Direct & Indirect Tax",
       subtitle: "Strategic Tax Advisory Across Borders and Sectors",
-      description: "Our tax practice offers deep, cross-functional expertise in direct and indirect taxation, international tax structuring, and customs advisory. We advise on corporate, commercial, and financial transactions with focus on tax-efficient investments and cross-border operations.",
+      description: "Specialized tax and commercial  law services covering GST, customs, income tax, investigations, and appellate litigation",
       highlights: [
-        "Transfer Pricing (TP) audits and disputes",
-        "Customs valuation and classification",
-        "Supply chain restructuring",
-        "DTAA, FTA, and BIT advisory",
-        "International investment treaty claims",
-        "Cross-border tax strategies"
+        "GST advisory & litigation",
+        "Customs disputes & classification issues",
+        "Income tax assessments & appeals",
+        "Indirect tax investigations",
+        "Cross-border tax structuring",
+        'Corporate tax planning & compliance'
       ],
       experience: [
         "Advised Government of India in bilateral treaty dispute",
@@ -24,16 +24,16 @@ const Expertise = () => {
     },
     {
       icon: Building,
-      title: "Regulatory and Commercial Disputes",
+      title: "Regulatory and Commercial Disputes Under Tax and Commercial  Laws",
       subtitle: "Focused Expertise in Regulatory and Commercial Disputes",
       description: "We provide strategic, outcome-oriented legal representation in complex regulatory and commercial disputes. Our regulatory practice spans engagements with government bodies, statutory regulators, and adjudicatory forums.",
       highlights: [
-        "SEBI enforcement actions and investigations",
-        "Competition Commission of India (CCI) matters",
-        "NCLT proceedings and corporate disputes",
-        "Shareholder conflicts and joint ventures",
-        "Commercial fraud and investment disputes",
-        "Licensing and compliance disputes"
+        "Regulatory compliance disputes",
+        "Corporate commercial litigation",
+        "Contractual & business disputes",
+        "Enforcement & recovery matters",
+        "Fraud, investigation & white-collar issues",
+        "PAN-India representation before tribunals & courts"
       ],
       experience: [
         "High-stakes shareholder conflicts resolution",
@@ -50,10 +50,10 @@ const Expertise = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-              Comprehensive Legal Solutions
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+              Tax and Commercial Law – Comprehensive Litigation Solutions
             </h1>
-            <p className="text-base sm:text-lg text-gray-600">
+            <p className="text-base sm:text-md text-gray-600">
               Research-intensive, solution-driven approach tailored to align with 
               both legal and business objectives.
             </p>
@@ -93,7 +93,7 @@ const Expertise = () => {
                           <div className="bg-[#B3C7AB] rounded-full p-1 mt-1 flex-shrink-0">
                             <div className="w-1.5 h-1.5 bg-[#163C0F] rounded-full"></div>
                           </div>
-                          <span className="text-sm text-gray-700 leading-relaxed">{highlight}</span>
+                          <h3 className="text-sm text-gray-700 leading-relaxed">{highlight}</h3>
                         </li>
                       ))}
                     </ul>

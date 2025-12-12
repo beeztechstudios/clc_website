@@ -7,24 +7,27 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
 export default function CareerPage() {
-  const metaTitle = "Career Opportunities - Join Our Legal Team | Commercial Law Chamber";
-  const metaDescription = "Join Commercial Law Chamber - a boutique law practice specializing in tax and commercial disputes. Career opportunities for lawyers, associates, and legal professionals. Collaborative environment, learning & development, and professional growth.";
+  const metaTitle = "Legal Careers in Tax & Commercial Law | Join CLC Team";
+  const metaDescription = "Explore legal careers in tax and commercial law at CLC. We offer growth-focused opportunities for lawyers in litigation, dispute resolution, and regulatory advisory.";
   const canonicalUrl = "https://www.clclaw.in/career";
-  const ogImage = "https://www.clclaw.in/clc-logo.png";
+  const ogImage = "https://www.clclaw.in/favicon.png";
+
+  const OgTitle= "Build Your Legal Career in Tax & Commercial Law | CLC";
+  const OgDesc= "Join Commercial Law Chamber for career opportunities in tax, commercial law, litigation, and dispute resolution. Work with leading legal professionals.";
 
   return (
     <>
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content="legal career opportunities, law firm jobs, tax lawyer jobs, commercial disputes lawyer jobs, legal associate positions, law firm careers India, legal jobs New Delhi, law firm hiring" />
+        <meta name="keywords" content="legal careers in tax and commercial law, tax lawyer jobs, commercial law jobs, legal job openings, law firm careers india, advocate jobs" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
         <meta name="bingbot" content="index, follow" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDescription} />
+        <meta property="og:title" content={OgTitle} />
+        <meta property="og:description" content={OgDesc} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={ogImage} />
@@ -32,8 +35,8 @@ export default function CareerPage() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:title" content={OgTitle} />
+        <meta name="twitter:description" content={OgDesc} />
         <meta name="twitter:image" content={ogImage} />
 
         <link rel="canonical" href={canonicalUrl} />
@@ -59,7 +62,7 @@ export default function CareerPage() {
                 "@type": "LegalService",
                 "name": "Commercial Law Chamber",
                 "sameAs": "https://www.clclaw.in",
-                "logo": "https://www.clclaw.in/clc-logo.png"
+                "logo": "https://www.clclaw.in/favicon.png"
               },
               "jobLocation": {
                 "@type": "Place",

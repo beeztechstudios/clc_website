@@ -11,20 +11,20 @@ import Script from "next/script";
 // PAGE-SPECIFIC SEO  (Google LOVES THIS)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Our Team - Legal Experts | Commercial Law Chamber",
+  title: "Best Tax Lawyers in India | Commercial Law Chamber Team",
   description:
-    "Meet the expert legal team at Commercial Law Chamber, specializing in tax advisory, litigation, commercial disputes, and regulatory matters.",
+    "Meet India's best tax lawyers. Our expert team specializes in complex tax advisory, litigation, commercial disputes, and Supreme Court. Consult us today.",
   keywords:
-    "legal team, tax lawyers, commercial law experts, Supreme Court lawyers, tax litigation attorneys, regulatory compliance lawyers, law firm partners India",
+    "best tax lawyers in india, top tax attorney, tax advisory, commercial disputes, best gst lawyer, supreme court lawyers, regulatory disputes",
   alternates: {
     canonical: "https://www.clclaw.in/team",
   },
   openGraph: {
-    title: "Our Team - Legal Experts | Commercial Law Chamber",
+    title: "Meet India's Top Tax Lawyers | Commercial Law ",
     description:
-      "Meet our experienced team specializing in tax and commercial dispute resolution.",
+      "Expertise in Direct & Indirect Tax, GST, and high-stakes Commercial Disputes. Our team combines research-driven analysis with 20+ years of legal excellence.",
     url: "https://www.clclaw.in/team",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+    images: ["https://www.clclaw.in/favicon.png"],
     locale: "en_IN",
     siteName: "Commercial Law Chamber",
   },
@@ -45,7 +45,7 @@ function generateTeamSchema() {
   const members = Object.values(teamMembers).map((m) => ({
     "@type": "Person",
     name: m.name,
-    jobTitle: m.title,
+    
   }));
 
   return {

@@ -11,31 +11,31 @@ import About from "@/components/About";
 // SEO METADATA (NO <Head>, FULL SSR)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "About Us - Commercial Law Chamber | Leading Tax & Commercial Disputes Law Firm",
+  title: "About Commercial Law Chamber | Best Tax Law Firm in India",
   description:
-    "Learn about Commercial Law Chamber — Founded in 2008, a boutique law practice specializing in tax advisory and dispute resolution with partners, associates, and a pan-India representation network.",
+    "Commercial Law Chamber is among the best tax law firms in India, offering strategic litigation, research-driven analysis, and client-focused solutions.",
   keywords:
-    "about commercial law chamber, tax law firm history, boutique law practice, tax litigation experts, Supreme Court lawyers, legal firm India, tax advisory firm",
+    "best tax law firm, boutique law firm, corporate tax advisory, tax and corporate law, dispute resolution law firm",
   alternates: {
     canonical: "https://www.clclaw.in/about",
   },
   openGraph: {
     title:
-      "About Us - Commercial Law Chamber | Tax & Commercial Disputes Law Firm",
+      "About the Best Tax Law Firms – Commercial Law Chamber",
     description:
       "Boutique law practice specializing in tax advisory and dispute resolution with representation across India.",
     url: "https://www.clclaw.in/about",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+    images: ["https://www.clclaw.in/favicon.png"],
     locale: "en_IN",
     type: "website",
     siteName: "Commercial Law Chamber",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Commercial Law Chamber",
+    title: "About the Best Tax Law Firms – Commercial Law Chamber",
     description:
-      "Boutique law practice specializing in tax advisory, litigation, and commercial disputes.",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+      "Learn about Commercial Law Chamber, one of India’s best tax law firms, delivering research-driven analysis, strategic litigation & client-centric solutions.",
+    images: ["https://www.clclaw.in/favicon.png"],
   },
   robots:
     "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
@@ -51,9 +51,9 @@ const aboutSchema = {
     "@type": "LegalService",
     name: "Commercial Law Chamber",
     description:
-      "Boutique law practice specializing in tax advisory and dispute resolution.",
+      "Learn about Commercial Law Chamber, one of India’s best tax law firms, delivering research-driven analysis, strategic litigation & client-centric solutions.",
     url: "https://www.clclaw.in",
-    logo: "https://www.clclaw.in/clc-logo.png",
+    logo: "https://www.clclaw.in/favicong.png",
     foundingDate: "2008",
     numberOfEmployees: {
       "@type": "QuantitativeValue",

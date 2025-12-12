@@ -8,12 +8,12 @@ const Career = () => {
   const whyJoinUs = [
     {
       icon: Users,
-      title: "Collaborative Environment",
+      title: "Collaborative Environment & Inclusive Culture",
       description: "Work with experienced professionals in a supportive team setting"
     },
     {
       icon: GraduationCap,
-      title: "Learning & Development",
+      title: "Accelerated Learning & Professional Development",
       description: "Regular training programs and mentorship opportunities"
     },
     {
@@ -23,7 +23,7 @@ const Career = () => {
     },
     {
       icon: Clock,
-      title: "Work-Life Balance",
+      title: "Sustainable Work-Life Balance",
       description: "Flexible working arrangements and supportive policies"
     }
   ];
@@ -34,8 +34,9 @@ const Career = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-              Career Opportunities
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+             Legal Careers in Tax & Commercial Law
+
             </h1>
             <p className="text-base sm:text-lg text-gray-600">
               Join Our Team of Legal Excellence
@@ -117,7 +118,7 @@ const Career = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3">Why Join Us</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3">Why Build Your Legal Career at Commercial Law Chamber?</h2>
             <p className="text-base sm:text-lg text-gray-600">Benefits of building your career with CLC</p>
           </div>
 

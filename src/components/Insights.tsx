@@ -38,10 +38,11 @@ const Insights = () => {
       ---------------------------------------------- */}
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto text-center mb-8">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-            Legal Insights & Updates
+          <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+            Legal Insights & Tax Law Updates
+
           </h1>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-md text-gray-600">
             Stay informed with our latest insights on trending topics in tax law, 
             commercial litigation, and regulatory developments.
           </p>

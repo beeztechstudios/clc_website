@@ -5,7 +5,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Head Office",
+      title: "Head Office: Contact Our Litigation Team Directly",
       details: [
         "Commercial Law Chamber",
         "New Delhi, India",
@@ -45,10 +45,11 @@ const Contact = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-              Get Expert Legal Consultation
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+             Contact India’s Leading Litigation & Dispute Resolution Experts
+
             </h1>
-            <p className="text-base sm:text-lg text-gray-600">
+            <p className="text-base sm:text-md text-gray-600">
               Reach out to our experienced team for strategic legal counsel in tax 
               and commercial disputes. We're here to protect your interests.
             </p>
@@ -116,7 +117,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8">
             <div className="mb-6">
-              <h2 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-2">Send us a Message</h2>
+              <h2 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-2">Send us a Message for Dispute Resolution Counsel</h2>
               <p className="text-sm sm:text-base text-gray-600">
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
@@ -237,7 +238,7 @@ const Contact = () => {
           <div className="bg-[#B3C7AB] border border-[#163C0F] rounded-lg p-6 sm:p-8 text-center">
             <MapPin className="h-12 w-12 mx-auto mb-4 text-[#163C0F]" />
             <h3 className="text-xl font-bold poppins text-[#163C0F] mb-2">
-              Pan-India Legal Network
+              Pan-India Legal Network for Complex Disputes
             </h3>
             <p className="text-sm sm:text-base text-black">
               With representation across all state capitals, we provide seamless 

@@ -57,12 +57,12 @@ const Team = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-              Our Team
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+              Our Team – Best Tax Lawyers in India & Legal Experts
             </h1>
-            <p className="text-base sm:text-lg text-gray-600">
+            {/* <p className="text-base sm:text-lg text-gray-600">
               Meet Our Legal Experts
-            </p>
+            </p> */}
           </div>
 
           {/* Team Grid */}
@@ -77,7 +77,7 @@ const Team = () => {
       {/* Additional Info Section */}
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4">Join Our Team</h2>
+          <h3 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4">Careers: Join Our Expert Tax & Commercial Dispute Team</h3>
           <p className="text-sm sm:text-base text-gray-600 mb-4">
             We're always looking for talented professionals to join our team. If you're passionate about 
             tax law and commercial litigation, we'd love to hear from you.

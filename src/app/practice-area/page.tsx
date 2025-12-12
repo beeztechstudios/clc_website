@@ -10,29 +10,29 @@ import Expertise from "@/components/Expertise";
 // PAGE SEO (Correct for Next.js App Router)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Practice Areas - Tax & Commercial Disputes | Commercial Law Chamber",
+  title: "Tax and Commercial Law Services | Practice Areas | CLC",
   description:
-    "Commercial Law Chamber provides legal expertise in Direct & Indirect Tax, Regulatory Disputes, Commercial Arbitration, and cross-border advisory. Representing clients before Supreme Court, High Courts, and tribunals across India.",
+    "Explore our tax and corporate law services, covering direct & indirect tax, regulatory disputes, commercial litigation, and high-stakes legal representation across India.",
   keywords:
-    "tax law, practice areas, direct tax advisory, indirect tax litigation, GST disputes, transfer pricing, customs valuation, SEBI matters, CCI disputes, commercial litigation, regulatory disputes, international tax, DTAA advisory",
+    "tax and commercial law, corporate tax advisory, indirect tax law firms in delhi, commercial dispute resolution, regulatory disputes, cross border tax lawyer, business tax advisory",
   alternates: {
     canonical: "https://www.clclaw.in/practice-area",
   },
   openGraph: {
-    title: "Practice Areas - Tax & Commercial Disputes | Commercial Law Chamber",
+    title: "Tax and Commercial Law – Practice Areas | Commercial Law Chamber",
     description:
-      "Comprehensive legal solutions in tax advisory, regulatory matters and commercial dispute resolution.",
+      "Discover CLC’s tax and corporate law expertise, including direct & indirect tax, regulatory disputes, commercial litigation, and cross-border advisory services.",
     url: "https://www.clclaw.in/practice-area",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+    images: ["https://www.clclaw.in/favicon.png"],
     type: "website",
     locale: "en_IN",
     siteName: "Commercial Law Chamber",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Practice Areas - Commercial Law Chamber",
+    title: "Tax and Commercial Law – Practice Areas | Commercial Law Chamber",
     description:
-      "Expert representation in tax advisory, regulatory disputes and commercial litigation across India.",
+      "Discover CLC’s tax and corporate law expertise, including direct & indirect tax, regulatory disputes, commercial litigation, and cross-border advisory services.",
   },
   robots: "index, follow",
 };

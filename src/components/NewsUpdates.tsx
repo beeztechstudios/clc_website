@@ -52,10 +52,11 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-              News & Updates
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+              Latest Tax Law News & Legal Judgments in India
+
             </h1>
-            <p className="text-base sm:text-lg text-gray-600">
+            <p className="text-base sm:text-md text-gray-600">
               Stay informed with our latest case updates, news, and publications
               from Commercial Law Chambers.
             </p>

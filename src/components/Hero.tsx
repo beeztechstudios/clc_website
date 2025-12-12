@@ -147,17 +147,17 @@ import Image from "next/image";
 
 const Hero = () => {
   const practiceAreas = [
-    { icon: Calculator, title: "Direct & Indirect Tax", description: "Comprehensive direct tax advisory and litigation services" },
-    { icon: Gavel, title: "Commercial Disputes", description: "Strategic litigation and dispute resolution" },
-    { icon: Building, title: "Regulatory Disputes", description: "Corporate compliance and regulatory advisory" },
-    { icon: Globe, title: "International Tax", description: "Cross-border tax structuring and planning" },
+    { icon: Calculator, title: "Direct & Indirect Tax Litigation", description: "Comprehensive direct tax advisory and litigation services" },
+    { icon: Gavel, title: "Complex Commercial Dispute Resolution", description: "Strategic litigation and dispute resolution" },
+    { icon: Building, title: "Regulatory & Compliance Disputes", description: "Corporate compliance and regulatory advisory" },
+    { icon: Globe, title: "International Tax Disputes & Advisory", description: "Cross-border tax structuring and planning" },
   ];
 
   const whyChooseUs = [
-    { icon: Scale, title: "Supreme Court Representation", description: "Extensive experience before the highest court of India" },
-    { icon: Award, title: "20+ Years Experience", description: "Combined expertise in tax and commercial law" },
-    { icon: Users, title: "Pan-India Network", description: "Legal professionals across all state capitals" },
-    { icon: BookOpen, title: "Research-Driven Approach", description: "Solution-oriented legal strategies" },
+    { icon: Scale, title: " Expert Supreme Court Litigation", description: "Extensive experience before the highest court of India" },
+    { icon: Award, title: "20+ Years of Tax & Dispute Expertise", description: "Combined expertise in tax and commercial law" },
+    { icon: Users, title: "Pan-India Litigation Network", description: "Legal professionals across all state capitals" },
+    { icon: BookOpen, title: "Research-Driven Legal Strategies", description: "Solution-oriented legal strategies" },
   ];
   
 
@@ -193,7 +193,7 @@ const Hero = () => {
           {/* TEXT CONTENT */}
           <div className="text-center space-y-6 relative z-10">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg">
-              Specialized in Tax & Commercial Disputes
+               Specialized Tax & Commercial Disputes Law Firm
             </h1>
 
             <div className="flex flex-wrap gap-4 justify-center pt-2">
@@ -214,6 +214,7 @@ const Hero = () => {
       <section className="p-2 sm:p-3 md:p-4 border-t border-gray-200">
           <div className="bg-gray-50 rounded-lg p-2 sm:p-3 ">
           <h2 className="text-xl sm:text-2xl font-bold poppins text-center text-[#163C0F] mb-4">Welcome to Commercial Law Chamber</h2>
+          
           <div className="grid lg:grid-cols-1 gap-4 sm:gap-6">
             <div>
               <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4">
@@ -333,7 +334,7 @@ const Hero = () => {
           </div>
             <div className="bg-white border-2 border-[#163C0F] rounded-xl p-6 sm:p-8">
             <div className="text-center">
-              <h3 className="font-bold text-[#163C0F] mb-3 text-lg sm:text-xl">Legal Excellence</h3>
+              <h3 className="font-bold text-[#163C0F] mb-3 text-lg sm:text-xl">Commitment to Legal Excellence</h3>
               <p className="text-gray-700 text-sm sm:text-base mb-6">
                 Trusted by corporations and individuals across India for strategic legal solutions
               </p>

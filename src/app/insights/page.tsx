@@ -10,30 +10,30 @@ import InsightsClientWrapper from "@/components/InsightsClientWrapper";
 // PAGE SEO USING METADATA API
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Legal Insights & Publications | Commercial Law Chamber",
+  title: "Legal Insights & Tax Law Updates | Commercial Law Chamber",
   description:
-    "Stay informed with the latest legal insights, case law updates, and regulatory developments in tax law, commercial litigation, and compliance from Commercial Law Chamber.",
+    "Explore expert legal insights and tax law updates. Our team analyzes the latest GST rulings, insolvency cases, and commercial litigation trends in India.",
   keywords:
-    "legal insights, tax law updates, commercial litigation insights, regulatory developments, case law updates, legal publications, GST updates, tax advisory insights",
+    "legal insights india, tax law updates, gst law analysis, insolvency law articles, commercial litigation insights, commercial law trends, clc blog",
   alternates: {
     canonical: "https://www.clclaw.in/insights",
   },
   openGraph: {
-    title: "Legal Insights & Publications | Commercial Law Chamber",
+    title: "Legal Insights & Analysis – Stay Ahead of Regulatory Changes",
     description:
-      "Latest insights on tax law, GST, litigation strategy, regulatory updates, and commercial disputes from experienced legal experts.",
+      "Read our latest expert analysis on tax law, GST amendments, and commercial dispute resolution. Stay informed with CLC.",
     url: "https://www.clclaw.in/insights",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+    images: ["https://www.clclaw.in/favicon.png"],
     type: "website",
     locale: "en_IN",
     siteName: "Commercial Law Chamber",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Legal Insights & Publications | Commercial Law Chamber",
+    title: "Legal Insights & Analysis – Stay Ahead of Regulatory Changes",
     description:
-      "Explore expert insights on taxation, litigation, and regulatory law.",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+      "Read our latest expert analysis on tax law, GST amendments, and commercial dispute resolution. Stay informed with CLC.",
+    images: ["https://www.clclaw.in/favicon.png"],
   },
   robots:
     "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
 const insightsSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Legal Insights & Publications",
+  name: "Legal Insights & Analysis – Stay Ahead of Regulatory Changes",
   description:
-    "Expert legal insights, tax law updates, regulatory developments, and commercial dispute analysis.",
+    "Read our latest expert analysis on tax law, GST amendments, and commercial dispute resolution. Stay informed with CLC.",
   url: "https://www.clclaw.in/insights",
   mainEntity: {
     "@type": "ItemList",

@@ -12,17 +12,17 @@ const About = () => {
   const approaches = [
     {
       icon: BookOpen,
-      title: "Research-Driven Analysis",
+      title: "Research-Driven Tax & Corporate Analysis",
       description: "Rigorous legal research and precedent analysis for strategic advantage"
     },
     {
       icon: Scale,
-      title: "Strategic Litigation",
+      title: "Strategic Tax & Commercial Litigation",
       description: "Outcome-oriented approach in high-stakes disputes and appellate matters"
     },
     {
       icon: Users,
-      title: "Client-Centric Solutions",
+      title: "Client-Centric Legal Solutions",
       description: "Bespoke legal solutions aligned with commercial imperatives"
     },
     {
@@ -61,10 +61,11 @@ const About = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl poppins font-bold text-[#163C0F] mb-3">
-              About Commercial Law Chamber
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+             About Commercial Law Chamber – One of India’s Best Tax Law Practice
+
             </h1>
-            <p className="text-base sm:text-lg text-gray-600">
+            <p className="text-base sm:text-md text-gray-600">
               Strategic Legal Excellence in Tax and Commercial Disputes
             </p>
           </div>
@@ -76,7 +77,7 @@ const About = () => {
                 {/* <div className="bg-[#B3C7AB] rounded-lg p-2.5 inline-block mb-3">
                   <stat.icon className="h-5 w-5 text-[#163C0F]" />
                 </div> */}
-                <div className="text-xl sm:text-2xl font-bold text-[#163C0F] mb-1">{stat.value}</div>
+                <div className="text-xl sm:text-xl font-bold text-[#163C0F] mb-1">{stat.value}</div>
                 <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}

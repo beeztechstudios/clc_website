@@ -3,22 +3,22 @@ import Hero from "@/components/Hero";
 
 // ⭐ Homepage SEO Metadata
 export const metadata = {
-  title: "Commercial Law Chamber - Leading Tax & Commercial Litigation Firm",
+  title: "Tax & Commercial Disputes Law Firm | Commercial Law Chamber",
   description:
-    "Commercial Law Chamber is a boutique law practice specializing in tax advisory and dispute resolution. Representing clients before Supreme Court, High Courts, and tribunals across India.",
+    "Specialized lawyers for GST, tax, and complex commercial disputes with 20+ years of experience and Supreme Court representation. Book a consultation.",
   keywords:
-    "tax law firm India, commercial litigation, GST, income tax disputes, customs law, legal advisory, Supreme Court lawyer, tax attorney Delhi",
+    "tax disputes, commercial disputes, gst disputes, tax litigation, commercial litigation, supreme court lawyer, indirect tax, business disputes",
   alternates: {
     canonical: "https://www.clclaw.in",
   },
   openGraph: {
-    title: "Commercial Law Chamber - Leading Tax & Commercial Litigation Firm",
+    title: "Leading Tax & Commercial Disputes Law Firm in India",
     description:
-      "Strategic legal representation in tax, commercial and regulatory disputes across India.",
+      "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
     url: "https://www.clclaw.in",
     images: [
       {
-        url: "https://www.clclaw.in/clc-logo.png",
+        url: "https://www.clclaw.in/favicon.png",
         width: 1200,
         height: 630,
       },
@@ -29,10 +29,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Law Chamber - Leading Tax & Commercial Litigation Firm",
+    title: "Commercial Law Chamber - Leading Tax & Commercial Disputes Law Firm in India",
     description:
-      "Boutique law practice specializing in tax advisory and commercial disputes.",
-    images: ["https://www.clclaw.in/clc-logo.png"],
+      "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
+    images: ["https://www.clclaw.in/favicon.png"],
   },
 };
 
@@ -43,7 +43,7 @@ const homepageSchema = {
   name: "Commercial Law Chamber",
   url: "https://www.clclaw.in",
   description:
-    "Boutique law practice specializing in tax advisory and commercial dispute resolution.",
+    "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
   image: "https://www.clclaw.in/clc-logo.png",
 };
 

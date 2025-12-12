@@ -17,18 +17,12 @@ const geistMono = Geist_Mono({
  * Global metadata (defaults). Per-page metadata will override these.
  */
 export const metadata: Metadata = {
-  title: "Commercial Law Chamber - Leading Tax & Commercial Litigation Firm",
+  title: "Tax & Commercial Disputes Law Firm | Commercial Law Chamber",
   description:
-    "Commercial Law Chamber is a boutique law practice specializing in tax advisory and dispute resolution. Expert representation before Supreme Court, High Courts, and specialized tribunals across India.",
+    "Specialized lawyers for GST, tax, and complex commercial disputes with 20+ years of experience and Supreme Court representation. Book a consultation.",
   keywords: [
-    "tax law",
-    "commercial litigation",
-    "GST",
-    "income tax",
-    "customs",
-    "legal services",
-    "Supreme Court",
-    "law firm India",
+   ' tax disputes', 'commercial disputes', 'gst disputes', 'commercial litigation', 'supreme court lawyer',' indirect tax', 'business disputes'
+
   ],
   metadataBase: new URL("https://www.clclaw.in"),
   icons: {
@@ -40,9 +34,9 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Commercial Law Chamber - Leading Tax & Commercial Litigation Firm",
+    title: "Leading Tax & Commercial Disputes Law Firm in India",
     description:
-      "Strategic Legal Excellence in Tax and Commercial Disputes. Founded in 2008, we deliver bespoke solutions across all Indian jurisdictions.",
+      "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
     url: "https://www.clclaw.in",
     siteName: "Commercial Law Chamber",
     locale: "en_IN",
@@ -57,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Law Chamber - Leading Tax & Commercial Litigation Firm",
+    title: "Leading Tax & Commercial Disputes Law Firm in India",
     description:
-      "Commercial Law Chamber is a boutique law practice specializing in tax advisory and dispute resolution.",
+      "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
     creator: "@CommercialLawChamber",
     images: ["https://www.clclaw.in/clc-logo.png"],
   },
@@ -82,7 +76,7 @@ const localBusinessLD = {
   "@type": ["LegalService", "LocalBusiness"],
   name: "Commercial Law Chamber",
   description:
-    "Boutique law practice specializing in tax advisory and dispute resolution",
+    "Leading Tax & Commercial Disputes Law Firm in India",
   url: "https://www.clclaw.in",
   logo: "https://www.clclaw.in/clc-logo.png",
   foundingDate: "2008",
@@ -147,15 +141,7 @@ export default function RootLayout({
         {/* Preconnect + Preload Google Fonts (League Spartan as in SEO doc) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
-        /> */}
+       
        
         <link
           href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
@@ -193,70 +179,6 @@ export default function RootLayout({
             gtag('config', '${GA_ID}');
           `}
         </Script>
-
-        {/* Facebook Pixel (replace ID) */}
-        {/* <Script id="fb-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s){
-              if(f.fbq) return; n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
-              t=b.createElement(e); t.async=!0; t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
-            }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', 'XXXXXXXXXXXXXXX');
-            fbq('track', 'PageView');
-          `}
-        </Script> */}
-
-        {/* Twitter / X pixel */}
-        {/* <Script id="twitter-pixel" strategy="afterInteractive">
-          {`
-            !function(e,t,n,s,u,a){
-              e.twq || (s=e.twq=function(){ s.exe? s.exe.apply(s,arguments):s.queue.push(arguments) }, s.version='1.1', s.queue=[],
-              u=t.createElement(n), u.async=!0, u.src='https://static.ads-twitter.com/uwt.js', a=t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u,a));
-            }(window, document, 'script');
-            twq('config', 'oXXXXXXXXXXXXXXX');
-          `}
-        </Script> */}
-
-        {/* LinkedIn Insight */}
-        {/* <Script id="linkedin-insight" strategy="afterInteractive">
-          {`
-            _linkedin_partner_id = "XXXXXXXX";
-            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-          `}
-        </Script> */}
-        {/* <Script id="linkedin-script" strategy="afterInteractive">
-          {`
-            (function(l){
-              if(!l){
-                window.lintrk = function(a,b){ window.lintrk.q.push([a,b]) };
-                window.lintrk.q = [];
-              }
-              var s = document.getElementsByTagName("script")[0];
-              var b = document.createElement("script");
-              b.type = "text/javascript"; b.async = true;
-              b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-              s.parentNode.insertBefore(b, s);
-            })(window.lintrk);
-          `}
-        </Script> */}
-
-        {/* Pinterest */}
-        {/* <Script id="pinterest-pixel" strategy="afterInteractive">
-          {`
-            !function(e){
-              if(!window.pintrk){
-                window.pintrk = function(){ window.pintrk.queue.push(Array.prototype.slice.call(arguments)) };
-                var n = window.pintrk; n.queue = []; n.version = "3.0";
-                var t = document.createElement("script"); t.async = !0; t.src = e;
-                var r = document.getElementsByTagName("script")[0]; r.parentNode.insertBefore(t, r);
-              }
-            }("https://s.pinimg.com/ct/core.js");
-            pintrk('load', 'XXXXXXXXXXXXXXX', { em: '' });
-            pintrk('page');
-          `}
-        </Script> */}
 
         {/* Microsoft Clarity */}
         <Script id="clarity" strategy="afterInteractive">

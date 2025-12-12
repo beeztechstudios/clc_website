@@ -33,15 +33,15 @@ async function getNewsUpdates() {
 // Metadata
 // ----------------------
 export const metadata: Metadata = {
-  title: "News & Updates - Legal Case Updates & Publications | Commercial Law Chamber",
-  description: "Stay informed with latest news, case updates, publications, and deal corner updates from Commercial Law Chamber.",
-  keywords: "legal news, case updates, legal publications, tax law news, commercial disputes updates",
+  title: "Latest Tax Law News & Legal Judgments | Commercial Law Chamber",
+  description: "Stay updated with the latest tax law news, GST amendments, and landmark legal judgments from High Courts and the Supreme Court of India.",
+  keywords: "tax law news india, latest gst updates, income tax judgments, supreme court tax rulings, legal news india, clclaw news, commercial law updates",
   openGraph: {
-    title: "News & Updates - Legal Case Updates & Publications",
-    description: "Latest news, case updates, and publications on tax law, commercial disputes, and regulatory developments.",
+    title: "Legal Newsroom: Latest Tax & Corporate Law Updates",
+    description: "Read the latest insights on GST, Income Tax, and Corporate Law judgments. Expert analysis of recent High Court and Supreme Court rulings.",
     type: "website",
     url: "https://www.clclaw.in/news",
-    images: [{ url: "https://www.clclaw.in/clc-logo.png" }],
+    images: [{ url: "https://www.clclaw.in/favicon.png" }],
   },
 };
 
