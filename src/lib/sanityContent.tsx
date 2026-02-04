@@ -57,6 +57,23 @@ const portableTextComponents: PortableTextComponents = {
   marks: {
     strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
+    link: ({ value, children }) => {
+      const href = value?.href as string | undefined;
+      if (!href) return <>{children}</>;
+
+      const isExternal = href.startsWith("http");
+
+      return (
+        <a
+          href={href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="font-semibold text-blue-600 hover:text-blue-700"
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
 
