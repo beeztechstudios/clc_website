@@ -5,11 +5,34 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Head Office: Contact Our Litigation Team Directly",
+      title: "Delhi Office",
       details: [
-        "Commercial Law Chamber",
-        "New Delhi, India",
-        "Pan-India presence across all state capitals"
+        "A1, Block A, Jangpura Extension,",
+        "New Delhi - 110014, India"
+      ]
+    },
+    {
+      icon: MapPin,
+      title: "Mumbai Office",
+      details: [
+        "76, 7th Floor, Bajaj Bhawan, Nariman Point,",
+        "Mumbai – 400021, India"
+      ]
+    },
+    {
+      icon: MapPin,
+      title: "Bengaluru Office",
+      details: [
+        "No. 6/A, 3A Main Road, Ramaiah Layout,",
+        "Bengaluru – 560 084, India"
+      ]
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      details: [
+        "legal@clclaw.in",
+        "Quick response within 24 hours"
       ]
     },
     {
@@ -17,24 +40,7 @@ const Contact = () => {
       title: "Phone",
       details: [
         "+91 99999 20118",
-        "24/7 Emergency Legal Support"
-      ]
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      details: [
-        "vivek.sarin@clclaw.in",
-        "Quick response within 24 hours"
-      ]
-    },
-    {
-      icon: Clock,
-      title: "Office Hours",
-      details: [
-        "Monday - Friday: 9:00 AM - 7:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM",
-        "Sunday: Emergency consultations only"
+        "Strategic Legal Counsel"
       ]
     }
   ];
@@ -44,15 +50,36 @@ const Contact = () => {
       {/* Header Section */}
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
-             Contact India’s Leading Litigation & Dispute Resolution Experts
-
+          <div className="text-center mb-10">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-6">
+              Why Choose Our Tax Law Firm?
             </h1>
-            <p className="text-base sm:text-md text-gray-600">
-              Reach out to our experienced team for strategic legal counsel in tax 
-              and commercial disputes. We're here to protect your interests.
+
+            <div className="max-w-4xl mx-auto mb-8">
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-left">
+                {[
+                  "Boutique law practice - Client-focused strategic tax advisory.",
+                  "Supreme Court Expertise - Proven experience in Tax and Commercial Disputes.",
+                  "20+ Years of Experience - Leading among taxation law firms in India.",
+                  "Pan-India Presence - Seamless representation across jurisdictions.",
+                  "Research-Driven Approach – Strategy built on strong legal research, precedents, and practical solutions."
+                ].map((point, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-gray-700">
+                    <span className="text-[#163C0F] font-bold text-lg leading-none">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p className="text-base sm:text-lg text-gray-600 mb-6 font-medium">
+              Reach out to our experienced team for strategic legal counsel in tax and commercial disputes. We’re here to protect your interests.
             </p>
+
+            <div className="mt-8">
+              <p className="text-[#163C0F] font-bold text-xl mb-1">Commercial Law Chamber</p>
+              <p className="text-sm sm:text-base text-gray-500 italic">Your Trusted Business Law Chambers for Tax Excellence.</p>
+            </div>
           </div>
 
           {/* Contact Information Cards */}
@@ -71,12 +98,12 @@ const Contact = () => {
                         const isPhone = /^\+?91[\s-]?\d{5}[\s-]?\d{5}$/.test(detail.replace(/\s/g, ''));
                         // Check if detail is an email
                         const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(detail);
-                        
+
                         if (isPhone) {
                           const phoneNumber = detail.replace(/\s|-/g, '');
                           return (
                             <p key={i} className="text-sm text-gray-600 break-words">
-                              <a 
+                              <a
                                 href={`tel:${phoneNumber}`}
                                 className="text-[#163C0F] hover:underline font-medium"
                               >
@@ -87,7 +114,7 @@ const Contact = () => {
                         } else if (isEmail) {
                           return (
                             <p key={i} className="text-sm text-gray-600 break-words">
-                              <a 
+                              <a
                                 href={`mailto:${detail}`}
                                 className="text-[#163C0F] hover:underline font-medium"
                               >
@@ -122,12 +149,12 @@ const Contact = () => {
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
             </div>
-            <form className="space-y-6" action="https://formsubmit.co/vivek.sarin@clclaw.in" method="POST">
-                {/* FormSubmit hidden fields */}
-                <input type="hidden" name="_subject" value="New Contact Form Submission - CLC Website" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/contact?success=true" : "/contact?success=true"} />
-                <input type="hidden" name="_template" value="box" />
+            <form className="space-y-6" action="https://formsubmit.co/legal@clclaw.in" method="POST">
+              {/* FormSubmit hidden fields */}
+              <input type="hidden" name="_subject" value="New Contact Form Submission - CLC Website" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + "/contact?success=true" : "/contact?success=true"} />
+              <input type="hidden" name="_template" value="box" />
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -241,7 +268,7 @@ const Contact = () => {
               Pan-India Legal Network for Complex Disputes
             </h3>
             <p className="text-sm sm:text-base text-black">
-              With representation across all state capitals, we provide seamless 
+              With representation across all state capitals, we provide seamless
               legal support throughout India with local insight and expertise.
             </p>
           </div>

@@ -55,7 +55,7 @@ const contactSchema = {
     name: "Commercial Law Chamber",
     url: "https://www.clclaw.in",
     telephone: "+91-99999-20118",
-    email: "vivek.sarin@clclaw.in",
+    email: "legal@clclaw.in",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Commercial Law Chamber",
