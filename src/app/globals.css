@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 /* -----------------------------
    Root variables (light & dark)
 -------------------------------- */
@@ -54,19 +52,19 @@
    Base styles
 -------------------------------- */
 @layer base {
- body {
-  @apply font-sans bg-white text-black;
-  background-image: url('/bg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media (min-width: 1024px) {
   body {
-    background-attachment: fixed;
+    @apply font-sans bg-white text-black;
+    background-image: url("/new/Overlay.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
   }
-}
+
+  @media (min-width: 1024px) {
+    body {
+      background-attachment: fixed;
+    }
+  }
 
   /* Custom border utility replacement for border-border */
   .border-border {
@@ -92,62 +90,138 @@
 .right-sidebar,
 .left-sidebar p,
 .right-sidebar p {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
 /* -----------------------------
    Animations
 -------------------------------- */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes bounce-slow {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 @keyframes slide-in-left {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes slide-in-right {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes float-slow {
-  0%,100% { transform: translateY(0) translateX(0) rotate(0deg); }
-  33% { transform: translateY(-20px) translateX(10px) rotate(5deg); }
-  66% { transform: translateY(10px) translateX(-10px) rotate(-5deg); }
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px) rotate(-5deg);
+  }
 }
 @keyframes float-medium {
-  0%,100% { transform: translateY(0) translateX(0) scale(1); }
-  50% { transform: translateY(-30px) translateX(15px) scale(1.1); }
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) translateX(15px) scale(1.1);
+  }
 }
 @keyframes pattern-shift {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(40px, 40px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
 }
 
-.animate-fade-in { animation: fade-in 0.8s ease-out forwards; }
-.animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
-.animate-slide-in-left { animation: slide-in-left 0.6s ease-out forwards; }
-.animate-slide-in-right { animation: slide-in-right 0.6s ease-out forwards; }
-.animate-scale-in { animation: scale-in 0.6s ease-out forwards; }
-.animate-float-slow { animation: float-slow 20s ease-in-out infinite; }
-.animate-float-medium { animation: float-medium 15s ease-in-out infinite; }
-.animate-pattern-shift { animation: pattern-shift 30s linear infinite; }
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+.animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+}
+.animate-pattern-shift {
+  animation: pattern-shift 30s linear infinite;
+}
 
 /* -----------------------------
    Law texture background
 -------------------------------- */
 .bg-law-texture {
   background-image:
-    radial-gradient(circle at 25% 25%, rgba(33,72,19,0.02) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(249,190,29,0.03) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(248,250,252,0.9) 100%);
-  background-size: 40px 40px, 60px 60px, 100% 100%;
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(33, 72, 19, 0.02) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(249, 190, 29, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(248, 250, 252, 0.9) 100%
+    );
+  background-size:
+    40px 40px,
+    60px 60px,
+    100% 100%;
 }

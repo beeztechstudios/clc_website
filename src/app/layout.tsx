@@ -141,8 +141,8 @@ export default function RootLayout({
         {/* Preconnect + Preload Google Fonts (League Spartan as in SEO doc) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-       
-       
+
+
         <link
           href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
           rel="stylesheet"
@@ -192,7 +192,7 @@ export default function RootLayout({
         </Script>
 
         {/* JSON-LD Structured Data (LocalBusiness + LegalService) */}
-       <Script id="local-schema" type="application/ld+json" strategy="afterInteractive">
+        <Script id="local-schema" type="application/ld+json" strategy="afterInteractive">
 
           {JSON.stringify(localBusinessLD)}
         </Script>
