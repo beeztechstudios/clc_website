@@ -114,42 +114,50 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
   ];
 
   return (
-    <div className="left-sidebar w-full lg:w-auto bg-white backdrop-blur-lg text-[#163C0F] h-fit flex flex-col sticky top-0 self-start lg:max-h-screen overflow-y-auto">
-      <div className="p-3">
-        {/* Main navigation */}
-        <nav className="space-y-1">
+    <div className="left-sidebar w-full lg:w-48 xl:w-52 text-[#163C0F] h-full flex flex-col sticky top-0 self-start">
+      {/* Top dark green box */}
+      <div className="bg-[#163C0F] py-4">
+        <nav className="flex flex-col">
           {menuItems.map((item, index) => {
             const isActive = pathname === item.href || activeSection === item.key;
             return (
-              <Link key={index} href={item.href}>
+              <Link key={index} href={item.href} className="w-full">
                 <button
                   onClick={() => setActiveSection?.(item.key)}
-                  className={`w-full flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors ${
-                    isActive ? 'bg-[#163C0F] text-white' : 'hover:bg-[#163C0F] hover:text-white'
-                  }`}
+                  className={`w-full text-left px-4 py-2 text-[13px] font-bold tracking-wider transition-colors border-b border-white/10 last:border-0 ${isActive ? 'text-[#B3C7AB]' : 'text-gray-300 hover:text-white'
+                    }`}
+                  style={{ fontFamily: 'var(--font-inter), sans-serif' }}
                 >
-                  <div className="h-5 w-5 mr-3 flex-shrink-0 flex items-center justify-center">{item.icon}</div>
-                  <span className="text-left flex-1 leading-tight">{item.label}</span>
+                  {item.label}
                 </button>
               </Link>
             );
           })}
         </nav>
-
-        <hr className="my-4 border-t border-[#163C0F]" />
       </div>
 
-      {/* Bottom sections */}
-      <div className="bg-white p-2 mt-auto">
-        <div className="space-y-2">
+      {/* Bottom sections in lighter green box */}
+      <div className="bg-[#779E5A] p-3 mt-0 flex-1 min-h-[400px]">
+        <div className="space-y-4">
           {sections.map((section, index) => (
-            <div key={index} className="px-3 py-2.5 rounded-md bg-white border border-[#163C0F] hover:bg-[#B3C7AB] transition-colors cursor-pointer">
-              <h3 className="font-bold text-[#163C0F] text-sm leading-tight">{section.title}</h3>
+            <div key={index} className="group cursor-pointer">
+              <h3 className="font-bold text-white text-[14px] leading-tight uppercase tracking-wide group-hover:underline">
+                {section.title}
+              </h3>
               {section.subtitle && (
-                <p className="text-[.8rem] text-[#779E5A] hover:text-white mt-1.5 leading-relaxed">{section.subtitle}</p>
+                <p className="text-[11px] text-white/80 mt-1 italic leading-relaxed">
+                  {section.subtitle}
+                </p>
               )}
             </div>
           ))}
+
+          <div className="pt-4 mt-4 border-t border-white/20">
+            <div className="text-white">
+              <h3 className="font-bold text-[14px] uppercase tracking-wide">MATTER <span className="font-normal text-[11px] opacity-70">Hotline</span></h3>
+              <p className="text-[10px] text-white/80 mt-1">Latest discussions</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

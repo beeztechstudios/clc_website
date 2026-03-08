@@ -48,29 +48,41 @@ export default function Layout({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-5xl mx-auto ">
-        {/* <img src="/Overlay.png" alt="" /> */}
-        <Header />
+    <div className="min-h-screen flex flex-col items-center">
+      {/* Container that allows for sidebars + center column */}
+      <div className="flex flex-row items-start justify-center w-full max-w-[1600px] px-4">
 
-        {/* MOBILE MENU BUTTON */}
+        {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
-          <div className="lg:hidden mb-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-            >
-              {isMobileSidebarOpen ? <X className="h-4 w-4 mr-2" /> : <Menu className="h-4 w-4 mr-2" />}
-              {isMobileSidebarOpen ? "Close Menu" : "Open Menu"}
-            </Button>
+          <div className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[230px] -mr-32 z-20">
+            <LeftSidebar
+              activeSection={activeSection}
+              setActiveSection={() => setIsMobileSidebarOpen(false)}
+            />
           </div>
         )}
 
-        <div className="flex flex-col lg:flex-row gap-4">
+        {/* MAIN PAGE BLOCK (Center) */}
+        <div className="w-full max-w-[1100px] shadow-2xl relative z-10 overflow-hidden border border-gray-200">
+          <Header />
 
-          {/* MOBILE BACKDROP */}
+          {/* MOBILE MENU BUTTON (Only visible on small screens) */}
+          {showSidebars && (
+            <div className="lg:hidden p-4 bg-gray-50 border-b border-gray-100 flex justify-between items-center">
+              <span className="text-xs font-bold text-[#163C0F] uppercase tracking-widest">Navigation</span>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
+                className="bg-white border-gray-200 text-[#163C0F] hover:bg-gray-50"
+              >
+                {isMobileSidebarOpen ? <X className="h-4 w-4 mr-2" /> : <Menu className="h-4 w-4 mr-2" />}
+                {isMobileSidebarOpen ? "Close" : "Menu"}
+              </Button>
+            </div>
+          )}
+
+          {/* MOBILE SIDEBAR OVERLAY */}
           {isMobileSidebarOpen && showSidebars && (
             <div
               className="fixed inset-0 bg-black/50 z-40 lg:hidden"
@@ -78,13 +90,16 @@ export default function Layout({ children }: { children: ReactNode }) {
             />
           )}
 
-          {/* MOBILE SIDEBAR */}
+          {/* MOBILE SIDEBAR SLIDE-IN */}
           {showSidebars && (
             <div
-              className={`lg:hidden transition-all duration-300 z-50 relative ${
-                isMobileSidebarOpen ? "block" : "hidden"
-              }`}
+              className={`lg:hidden transition-all duration-300 z-50 fixed left-0 top-0 h-full w-64 bg-white shadow-xl ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                }`}
             >
+              <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-[#163C0F] text-white">
+                <span className="font-bold">MENU</span>
+                <X className="h-5 w-5 cursor-pointer" onClick={() => setIsMobileSidebarOpen(false)} />
+              </div>
               <LeftSidebar
                 activeSection={activeSection}
                 setActiveSection={() => setIsMobileSidebarOpen(false)}
@@ -92,25 +107,20 @@ export default function Layout({ children }: { children: ReactNode }) {
             </div>
           )}
 
-          {/* DESKTOP SIDEBAR */}
-          {showSidebars && (
-            <div className="hidden lg:block lg:w-48 xl:w-52">
-              <LeftSidebar activeSection={activeSection} />
-            </div>
-          )}
+          {/* MAIN CONTENT AREA */}
+          <div className="min-w-0">
+            {children}
+          </div>
 
-          {/* MAIN CONTENT */}
-          <div className="flex-1 min-w-0">{children}</div>
-
-          {/* RIGHT SIDEBAR */}
-          {showSidebars && (
-            <div className="hidden lg:block lg:w-60 xl:w-64">
-              <RightSidebar />
-            </div>
-          )}
+          <Footer />
         </div>
 
-        <Footer />
+        {/* RIGHT SIDEBAR - Pinned to the right of the main block */}
+        {showSidebars && (
+          <div className="hidden lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[230px] -ml-40 z-20">
+            <RightSidebar />
+          </div>
+        )}
       </div>
     </div>
   );

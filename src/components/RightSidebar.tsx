@@ -5,28 +5,13 @@ import { format } from "date-fns";
 import SearchClient from "@/components/SearchClient";
 import { useSidebarData } from "@/hooks/useSidebarData";
 
-function getTypeDisplayName(type: string) {
-  switch (type) {
-    case "case-update":
-      return "Case Update";
-    case "news":
-      return "News";
-    case "publication":
-      return "Publication";
-    case "deal-corner":
-      return "Deal Corner";
-    default:
-      return type;
-  }
-}
-
 export default function RightSidebar() {
-  const { featuredBlogs, featuredNews, isLoading, error } = useSidebarData();
+  const { featuredBlogs, isLoading, error } = useSidebarData();
 
   if (isLoading) {
     return (
       <aside className="p-4">
-        <p className="text-sm text-gray-500">Loading sidebar…</p>
+        <p className="text-sm text-gray-500">Loading sidebar&hellip;</p>
       </aside>
     );
   }
@@ -40,75 +25,73 @@ export default function RightSidebar() {
   }
 
   return (
-    <aside className="right-sidebar w-full lg:w-auto bg-white border-l border-gray-200 sticky top-0 self-start lg:max-h-screen overflow-y-auto flex flex-col">
-
-      {/* TITLE */}
-      <div className="border-b border-gray-200 flex-shrink-0">
-        <div className="bg-[#163C0F] text-white px-4 py-2.5">
-          <h3 className="text-sm font-semibold">INSIGHTS AND PUBLICATIONS</h3>
-        </div>
+    <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-[#F1F3F2] min-h-full flex flex-col sticky top-0 self-start">
+      {/* SEARCH */}
+      <div className="p-4 bg-white border-b border-gray-100">
+        <SearchClient />
       </div>
 
-      {/* SEARCH */}
-      <SearchClient />
+      {/* MISSION AND VISION */}
+      <div className="p-4 bg-[#B3C7AB]/30 border-b border-[#B3C7AB]">
+        <h3 className="text-[13px] font-bold text-[#163C0F] uppercase tracking-wider mb-2">MISSION AND VISION</h3>
+        <p className="text-[12px] text-gray-700 italic">Distinctly Different</p>
+      </div>
 
-      {/* RECENT BLOGS */}
-      <div className="border-b border-gray-200 flex-shrink-0">
-        <div className="bg-white px-4 py-2.5 border-b border-gray-200">
-          <h3 className="text-sm font-semibold text-[#163C0F]">RECENT BLOGS</h3>
-        </div>
-
-        <div className="p-4 space-y-4">
+      {/* WHAT'S NEW */}
+      <div className="p-4 bg-white">
+        <h3 className="text-[13px] font-bold text-[#163C0F] uppercase tracking-wider mb-4 border-b-2 border-[#163C0F] pb-1 inline-block">WHAT&apos;S NEW</h3>
+        <div className="space-y-4">
           {featuredBlogs?.length > 0 ? (
-            featuredBlogs.slice(0, 3).map((blog: any) => (
-              <div key={blog._id} className="border-b border-gray-200 pb-2">
-                <Link
-                  href={`/blog/${blog.slug.current}`}
-                  className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 group"
-                >
-                  <h4 className="text-sm font-semibold text-gray-800 group-hover:text-[#163C0F]">
+            featuredBlogs.slice(0, 2).map((blog: any) => (
+              <div key={blog._id} className="group cursor-pointer">
+                <Link href={`/blog/${blog.slug.current}`}>
+                  <h4 className="text-[13px] font-bold text-gray-900 group-hover:text-[#163C0F] leading-tight mb-1">
                     {blog.title}
                   </h4>
-                  <p className="text-xs text-gray-500 group-hover:text-gray-600">
-                    Blog · {blog.category?.name || "Uncategorized"} ·{" "}
-                    {format(new Date(blog.publishedAt), "MMM dd yyyy")}
+                  <p className="text-[10px] text-gray-500 uppercase tracking-tight">
+                    Regulatory Digest &middot; {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
                   </p>
                 </Link>
               </div>
             ))
           ) : (
-            <p className="text-sm text-gray-500 text-center">No blogs available</p>
+            <p className="text-[11px] text-gray-500">No recent updates</p>
           )}
         </div>
       </div>
 
-      {/* RECENT NEWS */}
-      <div className="border-b border-gray-200 flex-shrink-0">
-        <div className="bg-white px-4 py-2.5 border-b border-gray-200">
-          <h3 className="text-sm font-semibold text-[#163C0F]">RECENT NEWS</h3>
+      {/* EVENTS */}
+      <div className="p-4 bg-white border-t border-gray-100">
+        <h3 className="text-[13px] font-bold text-red-600 uppercase tracking-wider mb-4">EVENTS</h3>
+        <div className="space-y-4">
+          <div className="group cursor-pointer border-b border-gray-50 pb-3">
+            <h4 className="text-[11px] font-bold text-gray-500 uppercase mb-1">WEBINAR</h4>
+            <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-red-600 leading-tight mb-1">
+              Decoding India&apos;s 2026 Budget &amp; Global Competitiveness
+            </h4>
+            <p className="text-[10px] text-gray-500">February 04, 2026</p>
+          </div>
+          <div className="group cursor-pointer">
+            <h4 className="text-[11px] font-bold text-gray-500 uppercase mb-1">SEMINAR</h4>
+            <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-red-600 leading-tight mb-1">
+              TALTalks 2026 Mumbai (Health Edition)
+            </h4>
+            <p className="text-[10px] text-gray-500">February 21, 2026</p>
+          </div>
         </div>
+      </div>
 
-        <div className="p-4 space-y-4">
-          {featuredNews?.length > 0 ? (
-            featuredNews.map((news: any) => (
-              <div key={news._id} className="border-b border-gray-200 pb-2">
-                <Link
-                  href={`/news/${news.slug.current}`}
-                  className="block p-2 -mx-2 rounded-lg hover:bg-gray-50 group"
-                >
-                  <h4 className="text-sm font-semibold text-gray-800 group-hover:text-[#163C0F]">
-                    {news.title}
-                  </h4>
-                  <p className="text-xs text-gray-500 group-hover:text-gray-600">
-                    {getTypeDisplayName(news.type)} ·{" "}
-                    {format(new Date(news.publishedAt), "MMM dd yyyy")}
-                  </p>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <p className="text-sm text-gray-500 text-center">No news available</p>
-          )}
+      {/* NEWSLETTERS */}
+      <div className="p-4 bg-[#F1F3F2] flex-1">
+        <h3 className="text-[13px] font-bold text-red-600 uppercase tracking-wider mb-4">NEWSLETTERS</h3>
+        <div className="space-y-4">
+          <div className="group cursor-pointer">
+            <h4 className="text-[11px] font-bold text-gray-500 uppercase mb-1">REGULATORY DIGEST</h4>
+            <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-red-600 leading-tight mb-1">
+              DPIIT&apos;s New Startup Framework: Deep Tech Startup Recognition and Key Reforms
+            </h4>
+            <p className="text-[10px] text-gray-500">February 09, 2026</p>
+          </div>
         </div>
       </div>
     </aside>

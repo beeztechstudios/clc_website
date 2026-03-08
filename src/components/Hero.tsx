@@ -1,366 +1,238 @@
-// import { Button } from "@/components/ui/button";
-// import { ArrowRight, Scale, Shield, Award, Users, BookOpen, Gavel, Building, Calculator, Globe } from "lucide-react";
-// import Link from "next/link";
-// import Image from "next/image";
 
-// const Hero = () => {
-//   const practiceAreas = [
-//     { icon: Calculator, title: "Direct & Indirect Tax", description: "Comprehensive direct tax advisory and litigation services" },
-//     { icon: Gavel, title: "Commercial Disputes", description: "Strategic litigation and dispute resolution" },
-//     { icon: Building, title: "Regulatory Disputes", description: "Corporate compliance and regulatory advisory" },
-//     { icon: Globe, title: "International Tax", description: "Cross-border tax structuring and planning" },
-//   ];
-
-//   const whyChooseUs = [
-//     { icon: Scale, title: "Supreme Court Representation", description: "Extensive experience before the highest court of India" },
-//     { icon: Award, title: "20+ Years Experience", description: "Combined expertise in tax and commercial law" },
-//     { icon: Users, title: "Pan-India Network", description: "Legal professionals across all state capitals" },
-//     { icon: BookOpen, title: "Research-Driven Approach", description: "Solution-oriented legal strategies" },
-//   ];
-
-//   const teamMembers = [
-//     { name: "Vivek Sarin", designation: "Partner", image: "/vivek.webp" },
-//     { name: "Shreyas Srivastava", designation: "Partner", image: "/shreya.webp" },
-//   ];
-
-//   return (
-//     <div className="flex-1 bg-white">
-//       {/* Hero Section */}
-//       <section className="relative p-4 sm:p-6 md:p-8 overflow-hidden">
-//         <div className="relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden"
-//           style={{
-//             backgroundImage: 'url(/bgpattern.webp)',
-//             backgroundSize: 'cover',
-//             backgroundPosition: 'center',
-//             backgroundRepeat: 'no-repeat'
-//           }}
-//         >
-//           <div className="text-center space-y-6 relative z-10">
-//             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg">
-//               Specialized in Tax & Commercial Disputes
-//             </h1>
-
-//             <div className="flex flex-wrap gap-4 justify-center pt-2">
-//               <Link href="/contact" className="bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
-//                 Discuss your Issue
-//                 <ArrowRight className="h-5 w-5 text-[#163C0F]" />
-//               </Link>
-//               <Link href="/practice-area" className="bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
-//                 Our Expertise
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Welcome Section */}
-//       <section className="p-2 sm:p-3 md:p-4 border-t border-gray-200 bg-gray-50">
-//         <div className="max-w-6xl mx-auto">
-//           <h2 className="text-xl sm:text-2xl font-bold poppins text-center text-[#163C0F] mb-4">Welcome to Commercial Law Chamber</h2>
-//           <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4">
-//             Founded in 2008, Commercial Law Chamber is a boutique law practice distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned Partners and a team of 15 adept associates, we operate through a robust national network of legal professionals.
-//           </p>
-//           <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed">
-//             Our philosophy is rooted in strategic thinking and rigorous legal research—crafting bespoke solutions that align with both legal precedents and commercial imperatives.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Core Practice Areas */}
-//       <section className="p-4 sm:p-3 md:p-4 border-t border-gray-200 bg-gray-50">
-//         <div className="max-w-6xl mx-auto">
-//           <h2 className="text-2xl sm:text-3xl poppins font-bold text-[#163C0F] mb-3 text-center">Core Practice Areas</h2>
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//             {practiceAreas.map((area, index) => (
-//               <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
-//                 <div className="flex items-start gap-4">
-//                   <div className="bg-[#B3C7AB] rounded-lg p-2 flex-shrink-0">
-//                     <area.icon className="h-8 w-8 text-[#163C0F]" />
-//                   </div>
-//                   <div>
-//                     <h3 className="font-bold text-[#163C0F] text-lg mb-1">{area.title}</h3>
-//                     <p className="text-sm text-gray-700 leading-relaxed">{area.description}</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Team Section */}
-//       <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200">
-//         <div className="max-w-4xl mx-auto">
-//           <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3 text-center">Our Team</h2>
-//           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-//             {teamMembers.map((member, index) => (
-//               <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl overflow-hidden hover:shadow-xl transition-all hover:scale-[1.02]">
-//                 <div className="aspect-square bg-gray-200 relative">
-//                   <Image
-//                     src={member.image}
-//                     alt={`${member.name} - ${member.designation}`}
-//                     fill
-//                     className="object-cover"
-//                     placeholder="blur"
-//                     blurDataURL="/placeholder.png"
-//                   />
-//                 </div>
-//                 <div className="p-5 text-center bg-[#B3C7AB]">
-//                   <h3 className="font-bold text-[#163C0F] text-lg mb-1">{member.name}</h3>
-//                   <p className="text-sm font-medium text-[#163C0F]">{member.designation}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Why Choose Us */}
-//       <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200 bg-white">
-//         <div className="max-w-6xl mx-auto">
-//           <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3 text-center">Why Choose Commercial Law Chamber</h2>
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-//             {whyChooseUs.map((item, index) => (
-//               <div key={index} className="bg-[#E5E7EB] rounded-xl p-3 hover:shadow-lg transition-all">
-//                 <div className="flex items-start gap-4">
-//                   <div className="bg-[#B3C7AB] rounded-lg p-4 flex-shrink-0">
-//                     <item.icon className="h-7 w-7 text-[#163C0F]" />
-//                   </div>
-//                   <div>
-//                     <h3 className="font-semibold text-[#163C0F] text-[16px] mb-1">{item.title}</h3>
-//                     <p className="text-gray-700 text-[14px] leading-relaxed">{item.description}</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default Hero;
-import {ArrowRight, Scale, Shield, Award, Users, BookOpen, Briefcase, Gavel, Building, Calculator, Globe  } from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Hero = () => {
-  const practiceAreas = [
-    { icon: Calculator, title: "Direct & Indirect Tax Litigation", description: "Comprehensive direct tax advisory and litigation services" },
-    { icon: Gavel, title: "Complex Commercial Dispute Resolution", description: "Strategic litigation and dispute resolution" },
-    { icon: Building, title: "Regulatory & Compliance Disputes", description: "Corporate compliance and regulatory advisory" },
-    { icon: Globe, title: "International Tax Disputes & Advisory", description: "Cross-border tax structuring and planning" },
-  ];
-
-  const whyChooseUs = [
-    { icon: Scale, title: " Expert Supreme Court Litigation", description: "Extensive experience before the highest court of India" },
-    { icon: Award, title: "20+ Years of Tax & Dispute Expertise", description: "Combined expertise in tax and commercial law" },
-    { icon: Users, title: "Pan-India Litigation Network", description: "Legal professionals across all state capitals" },
-    { icon: BookOpen, title: "Research-Driven Legal Strategies", description: "Solution-oriented legal strategies" },
-  ];
-  
-
-  
-
-  const teamMembers = [
-    { name: "Vivek Sarin", designation: "Partner", image: "/vivek.webp" },
-    { name: "Shreyas Srivastava", designation: "Partner", image: "/shreya.webp" },
-  ];
-
   return (
-    <div className="flex-1 bg-white">
+    <div className="flex-1">
+      {/* Hero Section */}
+      <section className="relative py-20 px-6 text-center border-b bg-white border-gray-100 overflow-hidden">
 
-      {/* HERO SECTION */}
-      <section className="relative p-4 sm:p-6 md:p-8 overflow-hidden">
-        <div className="relative max-w-5xl mx-auto border-2 border-[#163C0F] rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl overflow-hidden">
+        {/* Circle Background */}
+        <div className="absolute left-1/2 top-36 -translate-x-1/2 
+                  w-[100vw] h-[100vw] 
+                  bg-[#6B8066]/10 
+                  rounded-full">
+        </div>
+        <h1 className=" font-bold text-[#163C0F] leading-tight mb-4">
+          <span className="text-[#163C0F]" style={{
+            fontFamily: "League Spartan",
+          fontWeight: 700,
+          fontStyle: "Bold",
+          fontSize: "58px",
+          lineHeight: "58px",
+          letterSpacing: "2px",
+          textAlign: "center",
 
-          {/* 🔥 Optimized Background Image (LCP Fix) */}
-          <Image
-            src="/bgpattern.webp"
-            alt="Background pattern"
-            fill
-            priority
-            fetchPriority="high"
-            quality={55}
-            sizes="(max-width: 480px) 480px,
-                   (max-width: 768px) 768px,
-                   (max-width: 1200px) 1200px,
-                   100vw"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          }}>Commitment to </span> <br /> <span className="text-[#2A5A21]" style={{
+            fontFamily: "League Spartan",
+          fontWeight: 700,
+          fontStyle: "Bold",
+            fontSize: "58px",
+            lineHeight: "58px",
+          letterSpacing: "2px",
+          textAlign: "center",
 
-          {/* TEXT CONTENT */}
-          <div className="text-center space-y-6 relative z-10">
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg">
-               Specialized Tax & Commercial Disputes Law Firm
-            </h1>
+          }}> Legal Excellence. </span>
+        </h1>
 
-            <div className="flex flex-wrap gap-4 justify-center pt-2">
-              <Link href="/contact" className="bg-white px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
-                Discuss your Issue
-                <ArrowRight className="h-5 w-5 text-[#163C0F]" />
-              </Link>
+        <p className=" text-gray-600 max-w-lg mx-auto mb-8 " style={{
+          fontFamily: "League Spartan",
+        fontWeight: 400,
+        fontStyle: "Regular",
+        fontSize: "16px",
+        lineHeight: "21px",
+        letterSpacing: "0px",
+        textAlign: "center",
 
-              <Link href="/practice-area" className="bg-[#B3C7AB] px-4 py-2 rounded-xl text-base sm:text-lg font-semibold text-[#163C0F] flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
-                Our Expertise
-              </Link>
-            </div>
+        }}>
+          Trusted by corporations and individuals across India for strategic legal solutions that drive success and protect your interests.
+        </p>
+
+        <div className="flex justify-center gap-4 mb-16" style={{
+          fontFamily: "Arial",
+        fontStyle: "Bold"
+       
+
+        }}>
+          <Link href="/contact" className="bg-[#163C0F] z-80 cursor-pointer text-white px-6 py-2.5  flex items-center gap-2 font-bold ">
+            Partner With Us <ArrowRight className="h-4 w-4 " />
+          </Link>
+          <button className="bg-white text-gray-800 z-80 cursor-pointer border-[#163C0F26]/90 border-1 px-8 py-2.5  font-bold hover:bg-gray-50 transition-all">
+            Review Firm Profile
+          </button>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-gray-100">
+          <div>
+            <div className="text-[32px] font-bold text-[#336429] mb-1" style={{
+              fontFamily: "Arial",
+            fontWeight: 700,
+            fontStyle: "Bold",
+            fontSize: "32px",
+            lineHeight: "48px",
+            letterSpacing: "0px",
+            textAlign: "center",
+
+
+            }}>500+</div>
+            <div className=" text-[#000000]" style={{
+              fontFamily: "Inter",
+            fontWeight: 400,
+            fontStyle: "Regular",
+            fontSize: "14px",
+         
+            lineHeight: "21px",
+            letterSpacing: "0px",
+            textAlign: "center",
+            textTransform: "uppercase",
+
+            }}>CASES WON</div>
+          </div>
+          <div>
+            <div className="text-[32px] font-bold text-[#336429] mb-1" style={{
+              fontFamily: "Arial",
+              fontWeight: 700,
+              fontStyle: "Bold",
+              fontSize: "32px",
+              lineHeight: "48px",
+              letterSpacing: "0px",
+              textAlign: "center",
+            }}>25+</div>
+            <div className=" text-[#000000]" style={{
+              fontFamily: "Inter",
+              fontWeight: 400,
+              fontStyle: "Regular",
+              fontSize: "14px",
+
+              lineHeight: "21px",
+              letterSpacing: "0px",
+              textAlign: "center",
+              textTransform: "uppercase",
+
+            }}>YEARS EXPERIENCE</div>
+          </div>
+          <div>
+            <div className="text-[32px] font-bold text-[#336429] mb-1" style={{
+              fontFamily: "Arial",
+              fontWeight: 700,
+              fontStyle: "Bold",
+              fontSize: "32px",
+              lineHeight: "48px",
+              letterSpacing: "0px",
+              textAlign: "center",
+            }}>98%</div>
+            <div className=" text-[#000000]" style={{
+              fontFamily: "Inter",
+              fontWeight: 400,
+              fontStyle: "Regular",
+              fontSize: "14px",
+
+              lineHeight: "21px",
+              letterSpacing: "0px",
+              textAlign: "center",
+              textTransform: "uppercase",
+
+            }}>CLIENT SATISFACTION</div>
           </div>
         </div>
       </section>
 
-      {/* WELCOME SECTION */}
-      <section className="p-2 sm:p-3 md:p-4 border-t border-gray-200">
-          <div className="bg-gray-50 rounded-lg p-2 sm:p-3 ">
-          <h2 className="text-xl sm:text-2xl font-bold poppins text-center text-[#163C0F] mb-4">Welcome to Commercial Law Chamber</h2>
-          
-          <div className="grid lg:grid-cols-1 gap-4 sm:gap-6">
+      {/* Welcome Section */}
+      <section className="py-4 px-12 pr-18 mx-30  bg-white ">
+
+        <div className="w-full h-full border border-dotted  border-[#22461B]/50"></div>
+
+        <h2 className="font-bold text-[#336429] mt-[35px] mb-6 " style={{
+          fontFamily: "Arial",
+        fontWeight: 700,
+        fontStyle: "Bold",
+        fontSize: "24px",
+        lineHeight: "24px",
+        letterSpacing: "0px",
+        verticalAlign: "middle",
+        textTransform: "uppercase",
+
+        }}>WELCOME TO COMMERCIAL LAW CHAMBER</h2>
+        <div className=" text-gray-800  space-y-4" style={{
+          fontFamily: "League Spartan",
+        fontWeight: 400,
+        fontStyle: "Regular",
+        fontSize: "16.4px",
+        
+        lineHeight: "20px",
+        letterSpacing: "0px",
+        verticalAlign: "middle",
+        textTransform: "capitalize",
+
+        }}>
+          <p>
+            Established In 2008, The Commercial Law Chamber (CLC) Is A Boutique Law Firm Widely Recognized For Its Specialized Tax Advisory And High-Stakes Dispute Resolution Practice. As One Of The Top Taxation Law Firms In India, We Maintain A Strong Focus On The Goods And Services Tax Act And Customs Laws. Led By The Team Of Best GST Lawyers In Delhi And Supported By A Team Of 15 Associates, CLC Delivers Strategic, Research-Driven, And Commercially Aligned Legal Solutions Across Complex Tax And Commercial Disputes.
+          </p>
+
+          <div className="w-full h-full border border-dotted mt-[35px]  border-[#22461B]/50"></div>
+        </div>
+      </section>
+
+      {/* Our Distinction */}
+      <section className="py-12 pr-18 mx-30 border-b border-dashed border-gray-300">
+        <h2 className="text-[18px] font-bold text-[#163C0F] uppercase tracking-wider mb-8">OUR DISTINCTION</h2>
+        <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+          <div className="flex gap-4 items-start">
+            <div className="w-16 h-12 bg-gray-100 rounded relative shrink-0">
+              <Image src="/vivek.webp" alt="" fill className="object-cover rounded grayscale" />
+            </div>
             <div>
-              <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed mb-4">
-                Founded in 2008, Commercial Law Chamber is a boutique law practice distinguished by its deep
-                specialization in tax advisory and dispute resolution. With three seasoned Partners and a team
-                of 15 adept associates, we operate through a robust national network of legal professionals.
-              </p>
-              <p className="text-sm sm:text-base text-justify text-gray-600 leading-relaxed">
-                Our philosophy is rooted in strategic thinking and rigorous legal research—crafting bespoke
-                solutions that align with both legal precedents and commercial imperatives.
-              </p>
+              <h4 className="text-[12px] font-bold text-gray-900 leading-tight">Boutique Law Practice Specializing In GST Law Services, Customs, And Commercial Dispute Resolution</h4>
             </div>
-            <div className="bg-[#B3C7AB] rounded-lg p-5 sm:p-6 border-2 border-[#163C0F]">
-              <h3 className="font-bold poppins text-[#163C0F] mb-4 text-center text-lg sm:text-xl">Our Distinction</h3>
-              <ul className="space-y-3 text-sm sm:text-base text-justify text-black">
-                <li className="flex items-start gap-3">
-                  <Shield className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Specialized in tax and commercial disputes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Users className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Pan-India legal network coverage</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <BookOpen className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Research-intensive approach</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Award className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
-                  <span className="font-medium">Supreme Court representation</span>
-                </li>
-              </ul>
+          </div>
+          <div className="flex gap-4 items-start">
+            <div className="w-16 h-12 bg-gray-100 rounded relative shrink-0">
+              <Image src="/shreya.webp" alt="" fill className="object-cover rounded grayscale" />
+            </div>
+            <div>
+              <h4 className="text-[12px] font-bold text-gray-900 leading-tight">Regular Representation Before The Supreme Court Of India</h4>
+            </div>
+          </div>
+          <div className="flex gap-4 items-start">
+            <div className="w-16 h-12 bg-gray-100 rounded relative shrink-0">
+              <Image src="/new/NavLogo.svg" alt="" fill className="object-contain p-1 rounded" />
+            </div>
+            <div>
+              <h4 className="text-[12px] font-bold text-gray-900 leading-tight">Business Law Chambers With A Pan-India Legal Network And Seamless Multi-Jurisdictional Coverage</h4>
+            </div>
+          </div>
+          <div className="flex gap-4 items-start">
+            <div className="w-16 h-12 bg-gray-100 rounded relative shrink-0">
+              <Briefcase className="w-full h-full p-2 text-gray-400" />
+            </div>
+            <div>
+              <h4 className="text-[12px] font-bold text-gray-900 leading-tight">Led By Top Tax Lawyers In India With Deep Advisory And Litigation Expertise</h4>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CORE PRACTICE AREAS */}
-      <section className="p-4 sm:p-3 md:p-4 border-t border-gray-200 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl poppins font-bold text-[#163C0F] mb-3 text-center">Core Practice Areas</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {practiceAreas.map((area, index) => (
-              <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#B3C7AB] rounded-lg p-2 flex-shrink-0">
-                    <area.icon className="h-8 w-8 text-[#163C0F]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#163C0F] text-lg mb-1">{area.title}</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">{area.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+      {/* Core Practice Areas */}
+      <section className="py-12 px-8">
+        <h2 className="text-[18px] font-bold text-[#163C0F] uppercase tracking-wider mb-8">CORE PRACTICE AREAS</h2>
+        <div className="space-y-0 border-t border-gray-200">
+          <div className="grid grid-cols-3 border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <div className="p-6 bg-[#B3C7AB]/10 font-bold text-[#163C0F] text-[14px]">Direct Tax</div>
+            <div className="col-span-2 p-6 text-[12px] text-gray-700 leading-relaxed italic">
+              End-To-End Advisory By Experienced Taxation Lawyers, Covering Compliance And Dispute Resolution Across Corporate And Individual Tax Matters, Including Complex Assessments And High-Value Tax Litigation.
+            </div>
           </div>
-
-        </div>
-      </section>
-
-      {/* TEAM SECTION */}
-      <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3 text-center">Our Team</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl overflow-hidden hover:shadow-xl transition-all hover:scale-[1.02]">
-
-                <div className="aspect-square bg-gray-200 relative">
-                  {/* 🔥 Optimized Team Images */}
-                  <Image
-                    src={member.image}
-                    alt={`${member.name} - ${member.designation}`}
-                    fill
-                    quality={55}
-                    loading="lazy"
-                    sizes="(max-width: 480px) 300px,
-                           (max-width: 768px) 350px,
-                           500px"
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="p-5 text-center bg-[#B3C7AB]">
-                  <h3 className="font-bold text-[#163C0F] text-lg mb-1">{member.name}</h3>
-                  <p className="text-sm font-medium text-[#163C0F]">{member.designation}</p>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3 text-center">Why Choose Commercial Law Chamber</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {whyChooseUs.map((item, index) => (
-              <div key={index} className="bg-[#E5E7EB] rounded-xl p-3 hover:shadow-lg transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#B3C7AB] rounded-lg p-4 flex-shrink-0">
-                    <item.icon className="h-7 w-7 text-[#163C0F]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#163C0F] text-[16px] mb-1">{item.title}</h3>
-                    <p className="text-gray-700 text-[14px] leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-            <div className="bg-white border-2 border-[#163C0F] rounded-xl p-6 sm:p-8">
-            <div className="text-center">
-              <h3 className="font-bold text-[#163C0F] mb-3 text-lg sm:text-xl">Commitment to Legal Excellence</h3>
-              <p className="text-gray-700 text-sm sm:text-base mb-6">
-                Trusted by corporations and individuals across India for strategic legal solutions
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">2</div>
-                  <div className="text-sm font-medium text-gray-700">Partners</div>
-                </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">15+</div>
-                  <div className="text-sm font-medium text-gray-700">Associates</div>
-                </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">All</div>
-                  <div className="text-sm font-medium text-gray-700">State Capitals</div>
-                </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-[#163C0F] mb-2">2008</div>
-                  <div className="text-sm font-medium text-gray-700">Founded</div>
-                </div>
-              </div>
+          <div className="grid grid-cols-3 border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <div className="p-6 bg-[#B3C7AB]/10 font-bold text-[#163C0F] text-[14px]">Indirect Tax</div>
+            <div className="col-span-2 p-6 text-[12px] text-gray-700 leading-relaxed italic border-l border-gray-100">
+              Comprehensive GST Lawyer Advisory, Compliance Management, And Representation In Complex Litigation, Including Classification Disputes, GST Input Tax Credit Rules, Investigation, And Enforcement Actions.
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 };
