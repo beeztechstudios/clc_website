@@ -6,8 +6,7 @@ import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -63,24 +62,11 @@ export default function Layout({ children }: { children: ReactNode }) {
         )}
 
         {/* MAIN PAGE BLOCK (Center) */}
-        <div className="w-full max-w-[1100px] shadow-2xl relative z-10 overflow-hidden border border-gray-200">
-          <Header />
+        <div>
+        <Header />
+        <div className="w-full max-w-[1100px] shadow-2xl relative z-10 overflow-hidden border bg-white border-gray-200">
+          
 
-          {/* MOBILE MENU BUTTON (Only visible on small screens) */}
-          {showSidebars && (
-            <div className="lg:hidden p-4 bg-gray-50 border-b border-gray-100 flex justify-between items-center">
-              <span className="text-xs font-bold text-[#163C0F] uppercase tracking-widest">Navigation</span>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
-                className="bg-white border-gray-200 text-[#163C0F] hover:bg-gray-50"
-              >
-                {isMobileSidebarOpen ? <X className="h-4 w-4 mr-2" /> : <Menu className="h-4 w-4 mr-2" />}
-                {isMobileSidebarOpen ? "Close" : "Menu"}
-              </Button>
-            </div>
-          )}
 
           {/* MOBILE SIDEBAR OVERLAY */}
           {isMobileSidebarOpen && showSidebars && (
@@ -113,6 +99,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
 
           <Footer />
+        </div>
         </div>
 
         {/* RIGHT SIDEBAR - Pinned to the right of the main block */}
