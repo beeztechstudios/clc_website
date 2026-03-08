@@ -178,7 +178,7 @@ const Career = () => {
                   </div>
                 </div>
                 <Button
-                  className="shrink-0 bg-[#163C0F] hover:bg-[#1a4a1a] text-white"
+                  className="shrink-0 bg-[#163C0F] cursor-pointer hover:bg-[#1a4a1a] text-white"
                   style={{ fontFamily: "League Spartan", fontWeight: 600, fontSize: "13px" }}
                 >
                   Apply Now

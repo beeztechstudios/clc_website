@@ -1,274 +1,162 @@
-import { notFound } from "next/navigation";
-import { client } from "@/lib/sanity";
-import { urlFor } from "@/lib/sanity";
-import Header from "@/components/Header";
-import LeftSidebar from "@/components/LeftSidebar";
-import RightSidebar from "@/components/RightSidebar";
-import Footer from "@/components/Footer";
+import { client, urlFor } from "@/lib/sanity";
+import Layout from "@/components/Layout";
 import Link from "next/link";
-import { ArrowLeft, Eye } from "lucide-react";
+import { ArrowLeft, Eye, Calendar, Tag } from "lucide-react";
 import { format } from "date-fns";
 import { SanityContentRenderer } from "@/lib/sanityContent";
 import { Metadata } from "next";
 
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// const queryClient = new QueryClient();
-
 type Params = { slug: string | string[] | undefined };
 
-// ----------------------
-// Debuggable fetch
-// ----------------------
-async function getBlogPostDebug(slug?: string | string[]) {
-  console.log("[getBlogPostDebug] called with slug:", slug);
-
-  if (!slug || Array.isArray(slug)) {
-    console.log("[getBlogPostDebug] invalid or missing slug -> returning null");
-    return null;
-  }
-
+async function getBlogPost(slug?: string | string[]) {
+  if (!slug || Array.isArray(slug)) return null;
   const query = `
     *[_type == "blogPost" && slug.current == $slug][0]{
-      title,
-      excerpt,
-      content,
-      featuredImage,
-      publishedAt,
-      category->{name},
-      seo,
-      slug,
-      downloadUrl
+      title, excerpt, content, featuredImage,
+      publishedAt, category->{name}, seo, slug, downloadUrl
     }
   `;
-
   try {
-    const res = await client.fetch(query, { slug });
-    console.log(
-      "[getBlogPostDebug] sanity response present:",
-      !!res,
-      res ? { title: res.title, slug: res.slug } : null
-    );
-    return res;
-  } catch (err: any) {
-    console.error("[getBlogPostDebug] fetch error:", err?.message ?? err);
-    // If Sanity returns detailed response, log it too
-    if (err?.response) {
-      try {
-        console.error("[getBlogPostDebug] error.response:", err.response);
-      } catch { }
-    }
-    return { __debugError: err?.message ?? String(err) };
+    return await client.fetch(query, { slug });
+  } catch {
+    return null;
   }
 }
 
-// ----------------------
-// Dynamic Metadata Generator
-// ----------------------
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const resolvedParams = await params;
-  const slug = Array.isArray(resolvedParams.slug)
-    ? resolvedParams.slug[0]
-    : resolvedParams.slug;
-
-  const blogPost = await getBlogPostDebug(slug);
-
-  // Fallback if post not found or error
-  if (!blogPost || (blogPost as any).__debugError) {
-    return {
-      title: "Blog Post Not Found",
-    };
-  }
-
-  // Use Sanity SEO field if available, otherwise fallback to title/excerpt
-  const title = blogPost.seo?.metaTitle || blogPost.title;
-  const description = blogPost.seo?.metaDescription || blogPost.excerpt;
-
-  // Construct Image URL if exists
-  const ogImage = blogPost.featuredImage
-    ? urlFor(blogPost.featuredImage).width(1200).height(630).url()
-    : null;
-
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
+  const post = await getBlogPost(slug);
+  if (!post) return { title: "Blog Post Not Found" };
+  const title = post.seo?.metaTitle || post.title;
+  const description = post.seo?.metaDescription || post.excerpt;
+  const ogImage = post.featuredImage ? urlFor(post.featuredImage).width(1200).height(630).url() : null;
   return {
-    title: title,
-    description: description,
-    openGraph: {
-      title: title,
-      description: description,
-      type: "article",
-      publishedTime: blogPost.publishedAt,
-      images: ogImage ? [{ url: ogImage }] : [],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: title,
-      description: description,
-      images: ogImage ? [ogImage] : [],
-    },
+    title,
+    description,
+    openGraph: { title, description, type: "article", publishedTime: post.publishedAt, images: ogImage ? [{ url: ogImage }] : [] },
+    twitter: { card: "summary_large_image", title, description, images: ogImage ? [ogImage] : [] },
   };
 }
 
-// ----------------------
-// Page with debug UI (Server Component)
-// ----------------------
 export default async function BlogPage({ params }: { params: Params }) {
-
-  // FIX → unwrap the Promise
   const resolvedParams = await params;
-  const slug = Array.isArray(resolvedParams.slug)
-    ? resolvedParams.slug[0]
-    : resolvedParams.slug;
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
+  const post = await getBlogPost(slug);
 
-  console.log("[BlogPage] resolved slug:", slug);
-
-  const blogPost = await getBlogPostDebug(slug);
-
-  console.log("[BlogPage] blogPost found:", !!blogPost && !(blogPost as any).__debugError);
-
-  const fetchError =
-    blogPost && (blogPost as any).__debugError
-      ? (blogPost as any).__debugError
-      : null;
-
-  if (!blogPost || fetchError) {
+  if (!post) {
     return (
-      <div style={{ padding: 24, fontFamily: "system-ui, Arial" }}>
-        <h2 style={{ marginBottom: 12 }}>
-          Debug — Blog post not found or fetch failed
-        </h2>
-
-        <section style={{ marginBottom: 16 }}>
-          <strong>Route params (after await):</strong>
-          <pre
-            style={{
-              whiteSpace: "pre-wrap",
-              background: "#f6f8fa",
-              padding: 12,
-            }}
-          >
-            {JSON.stringify(resolvedParams, null, 2)}
-          </pre>
-        </section>
-
-        <section style={{ marginBottom: 16 }}>
-          <strong>Sanity response / error:</strong>
-          <pre
-            style={{
-              whiteSpace: "pre-wrap",
-              background: "#f6f8fa",
-              padding: 12,
-            }}
-          >
-            {fetchError
-              ? `FETCH ERROR: ${String(fetchError)}`
-              : JSON.stringify(blogPost, null, 2)}
-          </pre>
-        </section>
-
-        <section style={{ color: "#555" }}>
-          <p>
-            <strong>Checklist:</strong>
+      <Layout>
+        <div className="flex-1 bg-white py-8 px-4 sm:px-8 md:px-12 lg:px-16">
+          <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
+          <p style={{ fontFamily: "League Spartan", fontSize: "16px", color: "#4B5563" }}>
+            Blog post not found.{" "}
+            <Link href="/insights" style={{ color: "#163C0F", fontWeight: 600 }}>← Back to Insights</Link>
           </p>
-          <ol>
-            <li>
-              Open Sanity Studio → Vision and run the GROQ below for the exact
-              slug you see in <code>params</code>.
-            </li>
-            <li>
-              Ensure the document for that slug is <strong>published</strong>{" "}
-              (not draft).
-            </li>
-            <li>Confirm the slug text exactly matches.</li>
-            <li>If fetch error appears → paste it here.</li>
-          </ol>
-        </section>
-      </div>
+        </div>
+      </Layout>
     );
   }
 
-  const publishedDate = blogPost.publishedAt
-    ? new Date(blogPost.publishedAt)
-    : new Date();
+  const publishedDate = post.publishedAt ? new Date(post.publishedAt) : new Date();
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl bg-slate-900/40 mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <Header />
+    <Layout>
+      <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
 
-        <div className="flex flex-col lg:flex-row gap-4">
-          <div className="hidden lg:block lg:w-48 xl:w-52">
-            <LeftSidebar activeSection="insights" />
+        {/* ── Header ── */}
+        <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 border-b border-gray-200">
+          <Link
+            href="/insights"
+            className="inline-flex items-center gap-2 mb-6"
+            style={{ fontFamily: "Inter", fontWeight: 500, fontSize: "13px", color: "#5A6F55" }}
+          >
+            <ArrowLeft className="h-4 w-4" /> Back to Insights
+          </Link>
+
+          {/* Category tag */}
+          {post.category?.name && (
+            <div className="flex items-center gap-2 mb-3">
+              <Tag className="h-3 w-3 text-[#336429]" />
+              <span
+                className="px-3 py-1 rounded-full border border-[#5A6F554D]/90"
+                style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "12px", color: "#5A6F55" }}
+              >
+                {post.category.name}
+              </span>
+            </div>
+          )}
+
+          <h1
+            className="mb-4"
+            style={{
+              fontFamily: "League Spartan",
+              fontWeight: 700,
+              fontSize: "clamp(22px, 4vw, 38px)",
+              lineHeight: "1.2",
+              letterSpacing: "1px",
+              color: "#163C0F",
+            }}
+          >
+            {post.title}
+          </h1>
+
+          <div className="flex items-center gap-2">
+            <Calendar className="h-3 w-3 text-[#5A6F55]" />
+            <time
+              dateTime={publishedDate.toISOString()}
+              style={{ fontFamily: "Inter", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+            >
+              {format(publishedDate, "MMMM d, yyyy")}
+            </time>
+          </div>
+        </section>
+
+        {/* ── Content ── */}
+        <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+          <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
+
+          {/* Featured image */}
+          {post.featuredImage && (
+            <img
+              src={urlFor(post.featuredImage).width(800).height(400).url()}
+              alt={post.title}
+              className="w-full h-auto mb-8"
+              style={{ borderRadius: "4px" }}
+            />
+          )}
+
+          {/* Article body */}
+          <div
+            style={{
+              fontFamily: "League Spartan",
+              fontWeight: 400,
+              fontSize: "clamp(14px, 1.8vw, 16px)",
+              lineHeight: "26px",
+              color: "#1F2937",
+            }}
+          >
+            <SanityContentRenderer content={post.content} />
           </div>
 
-          <div className="flex-1 min-w-0">
-            <article className="bg-white/95 backdrop-blur-sm p-8  shadow-sm">
-              <div className="max-w-4xl mx-auto">
-                <div className="mb-6">
-                  <Link
-                    href="/insights"
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-800"
-                  >
-                    <ArrowLeft className="h-4 w-4" /> Back to Insights
-                  </Link>
-                </div>
+          {/* Download */}
+          {post.downloadUrl && (
+            <div className="mt-8">
+              <Link
+                href={post.downloadUrl}
+                target="_blank"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-[#163C0F] hover:bg-[#163C0F] hover:text-white transition-all"
+                style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "13px", color: "#163C0F" }}
+              >
+                <Eye className="h-4 w-4" /> Read The Full Document Here
+              </Link>
+            </div>
+          )}
 
-                <h1 className="text-3xl lg:text-4xl font-bold poppins text-[#163C0F] mb-6">
-                  {blogPost.title}
-                </h1>
+          <div className="w-full border border-dotted border-[#22461B]/50 mt-10" />
+        </section>
 
-                {blogPost.category?.name && (
-                  <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    {blogPost.category.name}
-                  </span>
-                )}
-
-                <time
-                  className="text-sm text-gray-600 block mb-5"
-                  dateTime={publishedDate.toISOString()}
-                >
-                  {format(publishedDate, "MMMM d, yyyy")}
-                </time>
-
-                {blogPost.featuredImage && (
-                  <img
-                    src={urlFor(blogPost.featuredImage)
-                      .width(800)
-                      .height(400)
-                      .url()}
-                    alt={blogPost.title}
-                    className="w-full h-auto  shadow-md mb-8"
-                  />
-                )}
-
-                <div itemProp="articleBody" className="text-gray-700">
-                  <SanityContentRenderer content={blogPost.content} />
-                </div>
-
-
-                {blogPost.downloadUrl && (
-                  <div className="mt-8">
-                    <Link
-                      href={blogPost.downloadUrl}
-                      target="_blank"
-                      className="inline-flex items-center gap-2 border px-4 py-2 rounded-md hover:bg-gray-50"
-                    >
-                      <Eye className="h-4 w-4" />
-                      Read The Full Document Here
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </article>
-          </div>
-
-          <div className="hidden lg:block lg:w-60 xl:w-64">
-            {/* <QueryClientProvider client={queryClient}> */}
-            <RightSidebar />
-            {/* </QueryClientProvider> */}
-          </div>
-        </div>
-
-        <Footer />
       </div>
-    </div>
+    </Layout>
   );
 }

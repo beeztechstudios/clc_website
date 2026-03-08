@@ -1,230 +1,162 @@
-import { notFound } from "next/navigation";
-import { client } from "@/lib/sanity";
-import { urlFor } from "@/lib/sanity";
-import Header from "@/components/Header";
-import LeftSidebar from "@/components/LeftSidebar";
-import RightSidebar from "@/components/RightSidebar";
-import Footer from "@/components/Footer";
+import { client, urlFor } from "@/lib/sanity";
+import Layout from "@/components/Layout";
 import Link from "next/link";
-import { ArrowLeft, Eye } from "lucide-react";
+import { ArrowLeft, Eye, Calendar, Tag } from "lucide-react";
 import { format } from "date-fns";
 import { SanityContentRenderer } from "@/lib/sanityContent";
 import { Metadata } from "next";
 
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// const queryClient = new QueryClient();
-
 type Params = { slug: string | string[] | undefined };
 
-// ----------------------
-// Fetch Function
-// ----------------------
-async function getNewsDebug(slug?: string | string[]) {
-  console.log("[getNewsDebug] slug:", slug);
-
-  if (!slug || Array.isArray(slug)) {
-    console.log("[getNewsDebug] INVALID slug →", slug);
-    return null;
-  }
-
+async function getNews(slug?: string | string[]) {
+  if (!slug || Array.isArray(slug)) return null;
   const query = `
     *[_type == "newsUpdate" && slug.current == $slug][0]{
-      title,
-      excerpt,
-      type,
-      content,
-      featuredImage,
-      publishedAt,
-      downloadUrl,
-      seo,
-      slug
+      title, excerpt, type, content, featuredImage,
+      publishedAt, downloadUrl, seo, slug
     }
   `;
-
   try {
-    const result = await client.fetch(query, { slug });
-    console.log("[getNewsDebug] fetch result:", result ? true : false);
-    return result;
-  } catch (err: any) {
-    console.error("[getNewsDebug] ERROR:", err);
-    return { __debugError: err?.message ?? String(err) };
+    return await client.fetch(query, { slug });
+  } catch {
+    return null;
   }
 }
 
-// ----------------------
-// Dynamic Metadata Generator
-// ----------------------
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const resolvedParams = await params;
-  const slug = Array.isArray(resolvedParams.slug)
-    ? resolvedParams.slug[0]
-    : resolvedParams.slug;
-
-  const news = await getNewsDebug(slug);
-
-  if (!news || (news as any).__debugError) {
-    return {
-      title: "News Not Found",
-    };
-  }
-
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
+  const news = await getNews(slug);
+  if (!news) return { title: "News Not Found" };
   const title = news.seo?.metaTitle || news.title;
   const description = news.seo?.metaDescription || news.excerpt;
-  const ogImage = news.featuredImage
-    ? urlFor(news.featuredImage).width(1200).height(630).url()
-    : null;
-
+  const ogImage = news.featuredImage ? urlFor(news.featuredImage).width(1200).height(630).url() : null;
   return {
-    title: title,
-    description: description,
-    openGraph: {
-      title: title,
-      description: description,
-      type: "article",
-      publishedTime: news.publishedAt,
-      images: ogImage ? [{ url: ogImage }] : [],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: title,
-      description: description,
-      images: ogImage ? [ogImage] : [],
-    },
+    title,
+    description,
+    openGraph: { title, description, type: "article", publishedTime: news.publishedAt, images: ogImage ? [{ url: ogImage }] : [] },
+    twitter: { card: "summary_large_image", title, description, images: ogImage ? [ogImage] : [] },
   };
 }
 
-// ----------------------
-// PAGE (Server Component)
-// ----------------------
-export default async function NewsPage({ params }: { params: Params }) {
-  // ⭐ FIX → unwrap the Promise
+export default async function NewsDetailPage({ params }: { params: Params }) {
   const resolvedParams = await params;
-  const slug = Array.isArray(resolvedParams.slug)
-    ? resolvedParams.slug[0]
-    : resolvedParams.slug;
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
+  const news = await getNews(slug);
 
-  console.log("[NewsPage] resolved slug:", slug);
-
-  const news = await getNewsDebug(slug);
-  const fetchError =
-    news && (news as any).__debugError
-      ? (news as any).__debugError
-      : null;
-
-  if (!news || fetchError) {
+  if (!news) {
     return (
-      <div style={{ padding: 24, fontFamily: "system-ui" }}>
-        <h2>❌ News Not Found or Fetch Failed</h2>
-
-        <div style={{ marginTop: 14 }}>
-          <strong>Params:</strong>
-          <pre>{JSON.stringify(resolvedParams, null, 2)}</pre>
+      <Layout>
+        <div className="flex-1 bg-white py-8 px-4 sm:px-8 md:px-12 lg:px-16">
+          <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
+          <p style={{ fontFamily: "League Spartan", fontSize: "16px", color: "#4B5563" }}>
+            News article not found.{" "}
+            <Link href="/news" style={{ color: "#163C0F", fontWeight: 600 }}>← Back to News</Link>
+          </p>
         </div>
-
-        <div style={{ marginTop: 14 }}>
-          <strong>Sanity Response / Error:</strong>
-          <pre>
-            {fetchError
-              ? `FETCH ERROR → ${fetchError}`
-              : JSON.stringify(news, null, 2)}
-          </pre>
-        </div>
-      </div>
+      </Layout>
     );
   }
 
-  const publishedDate = news.publishedAt
-    ? new Date(news.publishedAt)
-    : new Date();
+  const publishedDate = news.publishedAt ? new Date(news.publishedAt) : new Date();
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl bg-slate-900/40 mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <Header />
+    <Layout>
+      <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
 
-        <div className="flex flex-col lg:flex-row gap-4">
-          <div className="hidden lg:block lg:w-48 xl:w-52">
-            <LeftSidebar activeSection="content" />
+        {/* ── Header ── */}
+        <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 border-b border-gray-200">
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-2 mb-6"
+            style={{ fontFamily: "Inter", fontWeight: 500, fontSize: "13px", color: "#5A6F55" }}
+          >
+            <ArrowLeft className="h-4 w-4" /> Back to News
+          </Link>
+
+          {/* Type tag */}
+          {news.type && (
+            <div className="flex items-center gap-2 mb-3">
+              <Tag className="h-3 w-3 text-[#336429]" />
+              <span
+                className="px-3 py-1 rounded-full border border-[#5A6F554D]/90"
+                style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "12px", color: "#5A6F55" }}
+              >
+                {news.type}
+              </span>
+            </div>
+          )}
+
+          <h1
+            className="mb-4"
+            style={{
+              fontFamily: "League Spartan",
+              fontWeight: 700,
+              fontSize: "clamp(22px, 4vw, 38px)",
+              lineHeight: "1.2",
+              letterSpacing: "1px",
+              color: "#163C0F",
+            }}
+          >
+            {news.title}
+          </h1>
+
+          <div className="flex items-center gap-2">
+            <Calendar className="h-3 w-3 text-[#5A6F55]" />
+            <time
+              dateTime={publishedDate.toISOString()}
+              style={{ fontFamily: "Inter", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+            >
+              {format(publishedDate, "MMMM d, yyyy")}
+            </time>
+          </div>
+        </section>
+
+        {/* ── Content ── */}
+        <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+          <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
+
+          {/* Featured image */}
+          {news.featuredImage && (
+            <img
+              src={urlFor(news.featuredImage).width(800).height(400).url()}
+              alt={news.title}
+              className="w-full h-auto mb-8"
+              style={{ borderRadius: "4px" }}
+            />
+          )}
+
+          {/* Article body */}
+          <div
+            style={{
+              fontFamily: "League Spartan",
+              fontWeight: 400,
+              fontSize: "clamp(14px, 1.8vw, 16px)",
+              lineHeight: "26px",
+              color: "#1F2937",
+            }}
+          >
+            <SanityContentRenderer content={news.content} />
           </div>
 
-          <div className="flex-1 min-w-0">
-            <article className="bg-white/95 p-8  shadow-sm">
-              <div className="max-w-4xl mx-auto">
+          {/* Download */}
+          {news.downloadUrl && (
+            <div className="mt-8">
+              <Link
+                href={news.downloadUrl}
+                target="_blank"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-[#163C0F] hover:bg-[#163C0F] hover:text-white transition-all"
+                style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "13px", color: "#163C0F" }}
+              >
+                <Eye className="h-4 w-4" /> Read The Full Document Here
+              </Link>
+            </div>
+          )}
 
-                {/* Back Button */}
-                <div className="mb-6">
-                  <Link
-                    href="/news"
-                    className="flex items-center gap-2 text-gray-600 hover:text-gray-800"
-                  >
-                    <ArrowLeft className="h-4 w-4" /> Back to News
-                  </Link>
-                </div>
+          <div className="w-full border border-dotted border-[#22461B]/50 mt-10" />
+        </section>
 
-                {/* Title */}
-                <h1 className="text-3xl lg:text-4xl font-bold poppins text-[#163C0F] my-6">
-                  {news.title}
-                </h1>
-
-                {/* Type */}
-                {news.type && (
-                  <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    {news.type}
-                  </span>
-                )}
-
-                {/* Date */}
-                <time
-                  className="text-sm text-gray-600 block mb-5"
-                  dateTime={publishedDate.toISOString()}
-                >
-                  {format(publishedDate, "MMMM d, yyyy")}
-                </time>
-
-                {/* Image */}
-                {news.featuredImage && (
-                  <img
-                    src={urlFor(news.featuredImage)
-                      .width(800)
-                      .height(400)
-                      .url()}
-                    alt={news.title}
-                    className="w-full h-auto  shadow-md mb-8"
-                  />
-                )}
-
-                {/* Main Content */}
-                <div className="text-gray-700">
-                  <SanityContentRenderer content={news.content} />
-                </div>
-
-                {/* Download Button */}
-                {news.downloadUrl && (
-                  <div className="mt-8">
-                    <Link
-                      href={news.downloadUrl}
-                      target="_blank"
-                      className="inline-flex items-center gap-2 border px-4 py-2 rounded-md hover:bg-gray-50"
-                    >
-                      <Eye className="h-4 w-4" />
-                      Read The Full Document Here
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </article>
-          </div>
-
-          {/* Sidebar */}
-          <div className="hidden lg:block lg:w-60 xl:w-64">
-            {/* <QueryClientProvider client={queryClient}> */}
-            <RightSidebar />
-            {/* </QueryClientProvider> */}
-          </div>
-        </div>
-
-        <Footer />
       </div>
-    </div>
+    </Layout>
   );
 }
