@@ -5,7 +5,7 @@ const About = () => {
     { icon: Building2, label: "Founded", value: "2008" },
     { icon: Users, label: "Partners", value: "2" },
     { icon: Users, label: "Associates", value: "15+" },
-    { icon: Gavel, label: "All", value: "Capital States" },
+    // { icon: Gavel, label: "All", value: "Capital States" },
   ];
 
 
@@ -56,29 +56,85 @@ const About = () => {
   ];
 
   return (
-    <div className="flex-1 bg-white">
+    <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
       {/* About Header Section */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+      <section className="p-6 sm:p-8 md:p-12 border-b border-dotted border-[#22461B]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+            {/* <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
              About Commercial Law Chamber – One of India’s Best Tax Law Practice
 
+            </h1> */}
+
+            <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+              <span
+                className="text-[#163C0F]"
+                style={{
+                  fontFamily: "League Spartan",
+                  fontWeight: 700,
+                  fontSize: "clamp(32px, 6vw, 45px)",
+                  lineHeight: "1.1",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                  display: "block",
+                }}
+              >
+                About Commercial Law Chamber
+              </span>
+              <span
+                className="text-[#2A5A21]"
+                style={{
+                  fontFamily: "League Spartan",
+                  fontWeight: 700,
+                  fontSize: "clamp(32px, 6vw, 44px)",
+                  lineHeight: "1.1",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                  display: "block",
+                }}
+              >
+               One of India’s Best Tax Law Practice
+              </span>
             </h1>
+
             <p className="text-base sm:text-md text-gray-600">
               Strategic Legal Excellence in Tax and Commercial Disputes
             </p>
           </div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="flex justify-center  gap-4"> 
             {stats.map((stat, index) => (
-              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:border-[#163C0F] transition-all">
-                {/* <div className="bg-[#B3C7AB] rounded-lg p-2.5 inline-block mb-3">
-                  <stat.icon className="h-5 w-5 text-[#163C0F]" />
-                </div> */}
-                <div className="text-xl sm:text-xl font-bold text-[#163C0F] mb-1">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+              <div key={index} style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }} className=" border border-dashed  border-[#22461B]/40 p-4 text-center hover:border-[#163C0F] transition-all">
+               
+                <div
+                  className="font-bold text-[#336429] mb-1"
+                  style={{
+                    fontFamily: "Arial",
+                    fontWeight: 700,
+                    fontSize: "clamp(22px, 3.5vw, 25px)",
+                    lineHeight: "48px",
+                    letterSpacing: "0px",
+                    textAlign: "center",
+                  }}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    fontSize: "clamp(10px, 1.5vw, 14px)",
+                    lineHeight: "21px",
+                    letterSpacing: "0px",
+                    textAlign: "center",
+                    textTransform: "uppercase",
+                    color: "#000000",
+                  }}
+                >
+                  {stat.label}
+                </div>
+              
               </div>
             ))}
           </div>
@@ -87,9 +143,31 @@ const About = () => {
 
       {/* Our Story Section */}
       <section className="p-4 mb-8 ">
-        <div className="bg-gray-100 rounded-lg p-6">
-          <h2 className="text-2xl font-bold poppins  text-center text-[#163C0F] mb-6">Our Story</h2>
-          <div className="space-y-4 text-gray-600 text-justify leading-relaxed">
+        <div className=" rounded-lg p-6">
+          {/* <h2 className="text-2xl font-bold poppins  text-center text-[#163C0F] mb-6">Our Story</h2>
+           */}
+          <h2
+            className="uppercase text-center mb-6 sm:mb-8"
+            style={{
+              fontFamily: "Arial",
+              fontWeight: 700,
+              fontSize: "20px",
+              lineHeight: "24px",
+              letterSpacing: "0px",
+              color: "#336429",
+            }}
+          >
+            Our Story
+          </h2>
+          <div className="space-y-4 text-black text-justify leading-relaxed" style={{
+            fontFamily: "League Spartan",
+            fontWeight: 400,
+            fontSize: "clamp(14px, 1.8vw, 16.4px)",
+            lineHeight: "20px",
+            letterSpacing: "0px",
+            verticalAlign: "middle",
+            textTransform: "capitalize",
+          }}>
             <p>
               Founded in 2008, Commercial Law Chamber emerged from a vision to create a boutique law practice 
               distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned 
@@ -116,32 +194,73 @@ const About = () => {
 
 
       {/* Our Approach Section */}
-      <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200 bg-white">
+      <section className="p-4 sm:p-6 md:p-8 border-t border-dotted border-[#22461B] bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl poppins font-bold text-[#163C0F] mb-3">Our Approach</h2>
-            <p className="text-base sm:text-lg text-gray-600">Methodology in handling complex legal matters</p>
+            <h2 className="= uppercase mb-3" style={{
+              fontFamily: "Arial",
+              fontWeight: 700,
+              fontSize: "20px",
+              lineHeight: "24px",
+              letterSpacing: "0px",
+              color: "#336429",
+            }}>Our Approach</h2>
+            <p className="text-base sm:text-md text-gray-600">Methodology in handling complex legal matters</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {approaches.map((approach, index) => (
-              <div key={index} className="bg-white border-2 border-[#163C0F] rounded-xl p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
+              <div key={index} className="bg-white border-1 border-dashed border-[#22461B]   p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#B3C7AB] rounded-lg p-2 flex-shrink-0">
-                    <approach.icon className="h-8 w-8 text-[#163C0F]" />
+                  <div className="bg-[#B3C7AB]/40 rounded-lg p-2 flex-shrink-0">
+                    <approach.icon className="h-8 w-8 text-[#163C0F]/80" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-[#163C0F] text-lg mb-1">{approach.title}</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">{approach.description}</p>
+                    <h3 className="mb-1" style={{
+                      fontFamily: "League Spartan",
+                      fontWeight: 600,
+                      color: "#336429",
+                      fontSize: "clamp(14px, 1.8vw, 14.6px)",
+                      lineHeight: "20px",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                      textTransform: "capitalize",
+                    }}>{approach.title}</h3>
+                    <p style={{
+                      fontFamily: "League Spartan",
+                      fontWeight: 400,
+                      fontSize: "clamp(11px, 1.8vw, 14.4px)",
+                      lineHeight: "20px",
+                      letterSpacing: "0px",
+                      verticalAlign: "middle",
+                      textTransform: "capitalize",
+                    }}>{approach.description}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="bg-[#B3C7AB] rounded-lg p-5 sm:p-6 border-2 border-[#163C0F]">
-            <h3 className="font-bold poppins text-[#163C0F] mb-3 text-lg sm:text-xl">Pan-India Footprint</h3>
-            <p className="text-sm sm:text-base text-justify text-black leading-relaxed">
+          <div className="  p-5 sm:p-6 border-1 border-dashed border-[#22461B] " style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }}>
+            <h3 className="text-[#163C0F] mb-3 " style={{
+              fontFamily: "League Spartan",
+              fontWeight: 600,
+              color: "#336429",
+              fontSize: "clamp(14px, 1.8vw, 18.6px)",
+              lineHeight: "20px",
+              letterSpacing: "0px",
+              verticalAlign: "middle",
+              textTransform: "capitalize",
+            }}>Pan-India Footprint</h3>
+            <p style={{
+              fontFamily: "League Spartan",
+              fontWeight: 400,
+              fontSize: "clamp(11px, 1.8vw, 16.4px)",
+              lineHeight: "20px",
+              letterSpacing: "0px",
+              verticalAlign: "middle",
+              textTransform: "capitalize",
+            }}>
               With on-ground representation in every Indian state capital, our pan-India footprint allows for 
               swift, coordinated action and local insight—ensuring efficiency without compromise. This extensive 
               network enables us to provide seamless legal support across diverse jurisdictions while maintaining 
@@ -152,19 +271,59 @@ const About = () => {
       </section>
 
       {/* Values & Vision Section */}
-      <section className="p-4 sm:p-6 md:p-8 border-t border-gray-200 bg-white">
+      <section className="p-4 sm:p-6 md:p-8 border-t border-dotted border-[#22461B] mt-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-3">Values & Vision</h2>
-            <p className="text-base sm:text-lg text-gray-600">Core principles of client service and ethical standards</p>
+            <h2 className="= uppercase mb-3" style={{
+              fontFamily: "Arial",
+              fontWeight: 700,
+              fontSize: "20px",
+              lineHeight: "24px",
+              letterSpacing: "0px",
+              color: "#336429",
+            }}>Values & Vision</h2>
+            <p className="text-base sm:text-md text-gray-600">Core principles of client service and ethical standards</p>
+          </div>
+
+          <div className="bg-white  border-[#22461B] mb-8 p-3 sm:p-4">
+            <div className="">
+              <h3 className="text-[#163C0F] mb-3 " style={{
+                fontFamily: "League Spartan",
+                fontWeight: 600,
+                color: "#336429",
+                fontSize: "clamp(14px, 1.8vw, 18.6px)",
+                lineHeight: "20px",
+                letterSpacing: "0px",
+                verticalAlign: "middle",
+                textTransform: "capitalize",
+              }}>Our Vision</h3>
+              <p style={{
+                fontFamily: "League Spartan",
+                fontWeight: 400,
+                fontSize: "clamp(11px, 1.8vw, 16.4px)",
+                lineHeight: "20px",
+                letterSpacing: "0px",
+                verticalAlign: "middle",
+                textTransform: "capitalize",
+              }}>
+                We are proud of our track record in precedent-setting matters across courts and tribunals—rulings
+                that have shaped jurisprudence on anti-dumping, transfer pricing, indirect taxes, and constitutional
+                tax challenges. At the Commercial Law Chamber, we don't just solve legal problems—we craft strategies
+                that protect, defend, and advance your interests in the most complex and high-value disputes.
+              </p>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="flex flex-col gap-6 mb-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-[#E5E7EB] rounded-xl p-3 hover:shadow-lg transition-all">
+              <div key={index} className=" p-3 hover:shadow-lg transition-all" style={
+                index % 2 === 0
+                  ? { background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }
+                  : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
+              }>
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#B3C7AB] rounded-lg p-4 flex-shrink-0">
-                    <value.icon className="h-7 w-7 text-[#163C0F]" />
+                  <div className="bg-transparent rounded-lg p-2 flex-shrink-0">
+                    <value.icon className="h-8 w-8 text-[#163C0F]/80" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#163C0F] text-[16px] mb-1">{value.title}</h3>
@@ -175,17 +334,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="bg-white border-2 border-[#163C0F] rounded-xl p-3 sm:p-4">
-            <div className="text-center">
-              <h3 className="font-bold text-[#163C0F] mb-3 text-lg sm:text-xl">Our Vision</h3>
-              <p className="text-gray-700 text-sm sm:text-base mb-2">
-                We are proud of our track record in precedent-setting matters across courts and tribunals—rulings 
-                that have shaped jurisprudence on anti-dumping, transfer pricing, indirect taxes, and constitutional 
-                tax challenges. At the Commercial Law Chamber, we don't just solve legal problems—we craft strategies 
-                that protect, defend, and advance your interests in the most complex and high-value disputes.
-              </p>
-            </div>
-          </div>
+         
         </div>
       </section>
 

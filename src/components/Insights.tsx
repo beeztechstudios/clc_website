@@ -32,7 +32,7 @@ const Insights = () => {
   }, [blogs, selectedCategory]);
 
   return (
-    <div className="flex-1 bg-white">
+    <div className="flex-1 bg-white  py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
       {/* ----------------------------------------------
           HEADER SECTION
       ---------------------------------------------- */}

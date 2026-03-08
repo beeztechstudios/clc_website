@@ -29,7 +29,7 @@ const Career = () => {
   ];
 
   return (
-    <div className="flex-1 bg-white">
+    <div className="flex-1 bg-white  py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
       {/* Career Header Section */}
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
