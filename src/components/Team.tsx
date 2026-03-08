@@ -7,15 +7,37 @@ const Team = () => {
   return (
     <div className="flex-1 bg-white  py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
       {/* Team Header Section */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+      <section className="p-6 sm:p-8 md:p-12  ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
-              Our Team – Best Tax Lawyers in India & Legal Experts
+            <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+              <span
+                className="text-[#163C0F]"
+                style={{
+                  fontFamily: "League Spartan",
+                  fontWeight: 700,
+                  fontSize: "clamp(32px, 6vw, 45px)",
+                  lineHeight: "1.1",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                  display: "block",
+                }}
+              >Our Team Best Tax
+              </span>
+              <span
+                className="text-[#2A5A21]"
+                style={{
+                  fontFamily: "League Spartan",
+                  fontWeight: 700,
+                  fontSize: "clamp(32px, 6vw, 44px)",
+                  lineHeight: "1.1",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                  display: "block",
+                }}
+              > Lawyers in India & Legal Experts</span>
             </h1>
-            {/* <p className="text-base sm:text-lg text-gray-600">
-              Meet Our Legal Experts
-            </p> */}
+          
           </div>
 
           {/* Team Grid */}
@@ -28,16 +50,31 @@ const Team = () => {
       </section>
 
       {/* Additional Info Section */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
+      <section className="p-6 sm:p-8 md:p-12 border-b border-dotted border-[#22461B]">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4">Careers: Join Our Expert Tax & Commercial Dispute Team</h3>
-          <p className="text-sm sm:text-base text-gray-600 mb-4">
+          <h3 className=" text-[#163C0F] mb-4" style={{
+            fontFamily: "Arial",
+            fontWeight: 700,
+            fontSize: "23px",
+            lineHeight: "24px",
+            letterSpacing: "0px",
+            color: "#336429",
+          }}>Careers: Join Our Expert Tax & Commercial Dispute Team</h3>
+          <p className=" mb-4" style={{
+            fontFamily: "League Spartan",
+            fontWeight: 400,
+            fontSize: "clamp(14px, 1.8vw, 18.4px)",
+            lineHeight: "20px",
+            letterSpacing: "0px",
+            verticalAlign: "middle",
+            textTransform: "capitalize",
+          }}>
             We're always looking for talented professionals to join our team. If you're passionate about 
             tax law and commercial litigation, we'd love to hear from you.
           </p>
           <Link 
              href="/career"
-             className="text-[#163C0F] hover:text-[#1a4a1a] font-semibold transition-colors"
+             className="text-[#163C0F] hover:text-[#1a4a1a] hover:scale-110 font-semibold transition-colors"
            >
              View Career Opportunities →
            </Link>

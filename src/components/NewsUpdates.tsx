@@ -52,7 +52,17 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
+            <h1
+              className="text-[#163C0F] mb-4 "
+              style={{
+                fontFamily: "League Spartan",
+                fontWeight: 700,
+                fontSize: "clamp(32px, 6vw, 45px)",
+                lineHeight: "1.1",
+                letterSpacing: "2px",
+                textAlign: "center",
+                display: "block",
+              }}>
               Latest Tax Law News & Legal Judgments in India
 
             </h1>
@@ -68,11 +78,10 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
               <button
                 key={type}
                 onClick={() => setSelectedType(type)}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                  type === selectedType
+                className={`px-4 py-2 text-sm font-medium  transition-all ${type === selectedType
                     ? "bg-[#163C0F] text-white"
                     : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
-                }`}
+                  }`}
               >
                 {getTypeDisplayName(type)}
               </button>
@@ -82,25 +91,25 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       </section>
 
       {/* News Cards */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+      <section className="p-6 sm:p-8 md:p-12 ">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* News Data */}
           {filteredNews.length > 0 ? (
             <div className="grid lg:grid-cols-2 gap-6">
               {filteredNews.map((news) => (
                 <div
                   key={news._id}
-                  className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#163C0F] transition-all flex flex-col h-full"
+                  className="bg-white border border-gray-200  p-6 hover:border-[#163C0F] transition-all flex flex-col h-full"
                 >
                   <div className="mb-4">
                     <div className="flex items-start justify-between mb-3">
-                      <span className="bg-[#B3C7AB] text-[#163C0F] text-xs font-medium px-3 py-1 rounded-full">
+                      <span className="bg-[#B3C7AB] text-[#163C0F] text-xs font-bold px-3 py-1 rounded-md">
                         {getTypeDisplayName(news.type)}
                       </span>
 
                       {news.isNew && (
-                        <span className="bg-[#163C0F] text-white text-xs font-medium px-3 py-1 rounded-full">
+                        <span className="bg-[#163C0F]/80 text-white text-xs font-bold px-3 py-1 rounded-md">
                           New
                         </span>
                       )}
@@ -122,14 +131,14 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
                       >
                         <Image
                           src={
-  news.featuredImage?.asset?._ref
-    ? urlFor(news.featuredImage).width(600).height(300).fit("crop").url()
-    : "/placeholder.png"
-}
+                            news.featuredImage?.asset?._ref
+                              ? urlFor(news.featuredImage).width(600).height(300).fit("crop").url()
+                              : "/placeholder.png"
+                          }
                           alt={news.featuredImage.alt || news.title}
                           width={600}
                           height={300}
-                          className="w-full h-auto object-cover rounded-lg border border-gray-200 hover:border-[#163C0F] transition-all"
+                          className="w-full h-auto object-cover  border border-gray-200 hover:border-[#163C0F] transition-all"
                         />
                       </Link>
                     )}
@@ -190,14 +199,29 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200 bg-gray-50">
+      <section className="p-6 sm:p-8 md:p-12 border-b border-dotted border-[#22461B] ">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white border border-[#163C0F] rounded-lg p-6 sm:p-8 text-center">
-            <h3 className="text-xl sm:text-2xl font-bold poppins text-[#163C0F] mb-4">
+          <div className="bg-white border border-[#163C0F] border-dotted p-6 sm:p-8 text-center">
+            <h3 className=" text-[#163C0F] mb-4" style={{
+              fontFamily: "Arial",
+              fontWeight: 700,
+              fontSize: "23px",
+              lineHeight: "24px",
+              letterSpacing: "0px",
+              color: "#336429",
+            }}>
               Stay Updated with Legal Developments
             </h3>
 
-            <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className=" mb-8" style={{
+              fontFamily: "League Spartan",
+              fontWeight: 400,
+              fontSize: "clamp(14px, 1.8vw, 18.4px)",
+              lineHeight: "20px",
+              letterSpacing: "0px",
+              verticalAlign: "middle",
+              textTransform: "capitalize",
+            }}>
               Subscribe to our newsletter to receive the latest case updates,
               news, and regulatory changes directly in your inbox.
             </p>
@@ -206,9 +230,9 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#163C0F]"
+                className="flex-1 px-4 py-2 border border-gray-300  focus:ring-2 focus:ring-[#163C0F]"
               />
-              <Button className="bg-[#163C0F] hover:bg-[#1a4a1a] text-white">
+              <Button className="bg-[#163C0F]  hover:bg-[#1a4a1a] text-white">
                 Subscribe <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>

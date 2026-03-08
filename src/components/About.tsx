@@ -61,10 +61,6 @@ const About = () => {
       <section className="p-6 sm:p-8 md:p-12 border-b border-dotted border-[#22461B]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            {/* <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
-             About Commercial Law Chamber – One of India’s Best Tax Law Practice
-
-            </h1> */}
 
             <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
               <span
@@ -93,7 +89,7 @@ const About = () => {
                   display: "block",
                 }}
               >
-               One of India’s Best Tax Law Practice
+                One of India’s Best Tax Law Practice
               </span>
             </h1>
 
@@ -103,10 +99,10 @@ const About = () => {
           </div>
 
           {/* Stats Section */}
-          <div className="flex justify-center  gap-4"> 
+          <div className="flex justify-center  gap-4">
             {stats.map((stat, index) => (
               <div key={index} style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }} className=" border border-dashed  border-[#22461B]/40 p-4 text-center hover:border-[#163C0F] transition-all">
-               
+
                 <div
                   className="font-bold text-[#336429] mb-1"
                   style={{
@@ -134,7 +130,7 @@ const About = () => {
                 >
                   {stat.label}
                 </div>
-              
+
               </div>
             ))}
           </div>
@@ -143,7 +139,7 @@ const About = () => {
 
       {/* Our Story Section */}
       <section className="p-4 mb-8 ">
-        <div className=" rounded-lg p-6">
+        <div className="  p-6">
           {/* <h2 className="text-2xl font-bold poppins  text-center text-[#163C0F] mb-6">Our Story</h2>
            */}
           <h2
@@ -169,23 +165,23 @@ const About = () => {
             textTransform: "capitalize",
           }}>
             <p>
-              Founded in 2008, Commercial Law Chamber emerged from a vision to create a boutique law practice 
-              distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned 
-              Partners and a team of 15 adept associates, we have built a robust national network of legal 
+              Founded in 2008, Commercial Law Chamber emerged from a vision to create a boutique law practice
+              distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned
+              Partners and a team of 15 adept associates, we have built a robust national network of legal
               professionals and expert counsels, ensuring seamless support across jurisdictions in India.
             </p>
             <p>
-              Our founding philosophy was rooted in strategic thinking and rigorous legal research—crafting bespoke 
-              solutions that not only address legal complexities but also align with our clients' commercial 
-              imperatives. Over the years, we have become particularly known for our formidable expertise in tax 
-              litigation, representing clients before the Supreme Court of India (including SLPs), various High Courts, 
+              Our founding philosophy was rooted in strategic thinking and rigorous legal research—crafting bespoke
+              solutions that not only address legal complexities but also align with our clients' commercial
+              imperatives. Over the years, we have become particularly known for our formidable expertise in tax
+              litigation, representing clients before the Supreme Court of India (including SLPs), various High Courts,
               and specialized tax tribunals such as ITAT, CESTAT, and VAT Tribunals.
             </p>
             <p>
-              Our comprehensive practice spans the full spectrum of contentious and advisory tax matters, including 
-              departmental proceedings, GST investigations, refund litigation, and trade remedies before the 
-              Directorate General of Trade Remedies (DGTR) and other international forums. From high-stakes search 
-              and seizure defense to meticulous representation in adjudication and appellate proceedings, we deliver 
+              Our comprehensive practice spans the full spectrum of contentious and advisory tax matters, including
+              departmental proceedings, GST investigations, refund litigation, and trade remedies before the
+              Directorate General of Trade Remedies (DGTR) and other international forums. From high-stakes search
+              and seizure defense to meticulous representation in adjudication and appellate proceedings, we deliver
               end-to-end legal counsel.
             </p>
           </div>
@@ -207,12 +203,12 @@ const About = () => {
             }}>Our Approach</h2>
             <p className="text-base sm:text-md text-gray-600">Methodology in handling complex legal matters</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {approaches.map((approach, index) => (
               <div key={index} className="bg-white border-1 border-dashed border-[#22461B]   p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#B3C7AB]/40 rounded-lg p-2 flex-shrink-0">
+                  <div className="bg-[#B3C7AB]/40  p-2 flex-shrink-0">
                     <approach.icon className="h-8 w-8 text-[#163C0F]/80" />
                   </div>
                   <div className="flex-1">
@@ -261,9 +257,9 @@ const About = () => {
               verticalAlign: "middle",
               textTransform: "capitalize",
             }}>
-              With on-ground representation in every Indian state capital, our pan-India footprint allows for 
-              swift, coordinated action and local insight—ensuring efficiency without compromise. This extensive 
-              network enables us to provide seamless legal support across diverse jurisdictions while maintaining 
+              With on-ground representation in every Indian state capital, our pan-India footprint allows for
+              swift, coordinated action and local insight—ensuring efficiency without compromise. This extensive
+              network enables us to provide seamless legal support across diverse jurisdictions while maintaining
               the highest standards of professional service.
             </p>
           </div>
@@ -313,7 +309,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="flex flex-col gap-6 mb-8">
             {values.map((value, index) => (
               <div key={index} className=" p-3 hover:shadow-lg transition-all" style={
@@ -322,7 +318,7 @@ const About = () => {
                   : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
               }>
                 <div className="flex items-start gap-4">
-                  <div className="bg-transparent rounded-lg p-2 flex-shrink-0">
+                  <div className="bg-transparent  p-2 flex-shrink-0">
                     <value.icon className="h-8 w-8 text-[#163C0F]/80" />
                   </div>
                   <div>
@@ -334,7 +330,7 @@ const About = () => {
             ))}
           </div>
 
-         
+
         </div>
       </section>
 

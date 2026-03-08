@@ -55,7 +55,7 @@ async function getBlogPostDebug(slug?: string | string[]) {
     if (err?.response) {
       try {
         console.error("[getBlogPostDebug] error.response:", err.response);
-      } catch {}
+      } catch { }
     }
     return { __debugError: err?.message ?? String(err) };
   }
@@ -82,9 +82,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   // Use Sanity SEO field if available, otherwise fallback to title/excerpt
   const title = blogPost.seo?.metaTitle || blogPost.title;
   const description = blogPost.seo?.metaDescription || blogPost.excerpt;
-  
+
   // Construct Image URL if exists
-  const ogImage = blogPost.featuredImage 
+  const ogImage = blogPost.featuredImage
     ? urlFor(blogPost.featuredImage).width(1200).height(630).url()
     : null;
 
@@ -111,7 +111,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 // Page with debug UI (Server Component)
 // ----------------------
 export default async function BlogPage({ params }: { params: Params }) {
-  
+
   // FIX → unwrap the Promise
   const resolvedParams = await params;
   const slug = Array.isArray(resolvedParams.slug)
@@ -200,7 +200,7 @@ export default async function BlogPage({ params }: { params: Params }) {
           </div>
 
           <div className="flex-1 min-w-0">
-            <article className="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-sm">
+            <article className="bg-white/95 backdrop-blur-sm p-8  shadow-sm">
               <div className="max-w-4xl mx-auto">
                 <div className="mb-6">
                   <Link
@@ -235,13 +235,13 @@ export default async function BlogPage({ params }: { params: Params }) {
                       .height(400)
                       .url()}
                     alt={blogPost.title}
-                    className="w-full h-auto rounded-lg shadow-md mb-8"
+                    className="w-full h-auto  shadow-md mb-8"
                   />
                 )}
-                
-                  <div itemProp="articleBody" className="text-gray-700">
-                    <SanityContentRenderer content={blogPost.content} />
-                  </div>
+
+                <div itemProp="articleBody" className="text-gray-700">
+                  <SanityContentRenderer content={blogPost.content} />
+                </div>
 
 
                 {blogPost.downloadUrl && (

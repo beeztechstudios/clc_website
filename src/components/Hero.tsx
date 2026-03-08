@@ -360,7 +360,7 @@ const Hero = () => {
           ].map(({ name, role, degree, experience, image, expertise }) => (
             <div
               key={name}
-              className="rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center"
+              className=" border border-[#22461B] border-dotted p-6 flex flex-col items-center text-center"
             >
               {/* Avatar + experience badge */}
               <div className="relative mb-4">

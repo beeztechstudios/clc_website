@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   const title = news.seo?.metaTitle || news.title;
   const description = news.seo?.metaDescription || news.excerpt;
-  const ogImage = news.featuredImage 
+  const ogImage = news.featuredImage
     ? urlFor(news.featuredImage).width(1200).height(630).url()
     : null;
 
@@ -148,7 +148,7 @@ export default async function NewsPage({ params }: { params: Params }) {
           </div>
 
           <div className="flex-1 min-w-0">
-            <article className="bg-white/95 p-8 rounded-lg shadow-sm">
+            <article className="bg-white/95 p-8  shadow-sm">
               <div className="max-w-4xl mx-auto">
 
                 {/* Back Button */}
@@ -189,7 +189,7 @@ export default async function NewsPage({ params }: { params: Params }) {
                       .height(400)
                       .url()}
                     alt={news.title}
-                    className="w-full h-auto rounded-lg shadow-md mb-8"
+                    className="w-full h-auto  shadow-md mb-8"
                   />
                 )}
 
@@ -218,7 +218,7 @@ export default async function NewsPage({ params }: { params: Params }) {
           {/* Sidebar */}
           <div className="hidden lg:block lg:w-60 xl:w-64">
             {/* <QueryClientProvider client={queryClient}> */}
-              <RightSidebar />
+            <RightSidebar />
             {/* </QueryClientProvider> */}
           </div>
         </div>

@@ -36,14 +36,28 @@ const Insights = () => {
       {/* ----------------------------------------------
           HEADER SECTION
       ---------------------------------------------- */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+      <section className="p-6 sm:p-8 md:p-12 ">
         <div className="max-w-6xl mx-auto text-center mb-8">
-          <h1 className="text-2xl sm:text-3xl md:text-3xl poppins font-bold text-[#163C0F] mb-3">
-            Legal Insights & Tax Law Updates
+          <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+            <span
+              className="text-[#163C0F]"
+              style={{
+                fontFamily: "League Spartan",
+                fontWeight: 700,
+                fontSize: "clamp(32px, 6vw, 45px)",
+                lineHeight: "1.1",
+                letterSpacing: "2px",
+                textAlign: "center",
+                display: "block",
+              }}
+            >
+              Legal Insights & Tax Law Updates
+            </span>
+
 
           </h1>
           <p className="text-base sm:text-md text-gray-600">
-            Stay informed with our latest insights on trending topics in tax law, 
+            Stay informed with our latest insights on trending topics in tax law,
             commercial litigation, and regulatory developments.
           </p>
         </div>
@@ -54,11 +68,10 @@ const Insights = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                category === selectedCategory
+              className={`px-4 py-2 text-sm font-medium  transition-all ${category === selectedCategory
                   ? "bg-[#163C0F] text-white"
                   : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#163C0F] hover:text-[#163C0F]"
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -69,7 +82,7 @@ const Insights = () => {
       {/* ----------------------------------------------
           BLOG GRID SECTION
       ---------------------------------------------- */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+      <section className="p-6 sm:p-8 md:p-12  border-t border-dotted border-[#22461B]">
         <div className="max-w-6xl mx-auto">
 
           {/* ------------------------------
@@ -78,10 +91,10 @@ const Insights = () => {
           {blogsLoading && (
             <div className="grid lg:grid-cols-2 gap-6">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg p-6 animate-pulse">
+                <div key={i} className="bg-gray-50 border border-gray-200  p-6 animate-pulse">
                   <div className="h-4 bg-gray-300 rounded w-1/4 mb-4"></div>
                   <div className="h-6 bg-gray-300 rounded mb-4"></div>
-                  <div className="h-48 bg-gray-300 rounded-lg mb-4"></div>
+                  <div className="h-48 bg-gray-300  mb-4"></div>
                   <div className="space-y-3">
                     <div className="h-4 bg-gray-300 rounded w-1/3"></div>
                     <div className="h-4 bg-gray-300 rounded w-1/4"></div>
@@ -104,15 +117,15 @@ const Insights = () => {
                 return (
                   <article
                     key={blog._id}
-                    className="bg-white border border-gray-200 rounded-lg p-6 hover:border-[#163C0F] transition-all flex flex-col h-full"
+                    className="bg-white border border-gray-200 p-6 hover:border-[#163C0F] transition-all flex flex-col h-full"
                   >
                     {/* CATEGORY TAG + NEW LABEL */}
                     <div className="flex justify-between mb-4">
-                      <span className="bg-[#B3C7AB] text-[#163C0F] text-xs font-medium px-3 py-1 rounded-full">
+                      <span className="bg-[#B3C7AB]/80 text-[#163C0F] text-xs font-bold px-3 py-1 rounded-md">
                         {blog.category?.name || "Uncategorized"}
                       </span>
                       {blog.isNew && (
-                        <span className="bg-[#163C0F] text-white text-xs font-medium px-3 py-1 rounded-full">
+                        <span className="bg-[#163C0F] text-white text-xs font-bold px-3 py-1 rounded-md">
                           New
                         </span>
                       )}
@@ -131,7 +144,7 @@ const Insights = () => {
                         <img
                           src={urlFor(blog.featuredImage).width(600).height(300).fit("crop").url()}
                           alt={blog.title}
-                          className="w-full h-auto object-cover rounded-lg border border-gray-200 hover:border-[#163C0F] transition-all"
+                          className="w-full h-auto object-cover  border border-gray-200 hover:border-[#163C0F] transition-all"
                         />
                       </Link>
                     )}

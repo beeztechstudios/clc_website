@@ -33,11 +33,11 @@ const teamMembers = {
       "His blend of deep domestic insight and global perspective makes him a trusted advisor in complex legal landscapes."
     ],
     expertise: [
-      "Constitutional Tax Challenges",
       "High Court & Supreme Court Litigation",
-      "Regulatory & Compliance Strategy",
+      "Constitutional Tax Challenges",
       "CIRP Matters",
-      "Shareholder Disputes"
+      "Regulatory & Compliance Strategy",
+      "Shareholder Disputes",
     ],
     education: [
       "Bachelor of Laws (LLB)",
@@ -58,11 +58,11 @@ const teamMembers = {
       "Known for his research-driven and solution-oriented approach, Shreyas combines legal depth with industry insight to deliver pragmatic and effective outcomes for clients across forums including tribunals, High Courts, and the Supreme Court."
     ],
     expertise: [
-      "Income Tax & GST",
       "International Trade Remedies",
-      "Cross-border Tax Advisory",
+      "Income Tax & GST",
       "High-stakes Tax Disputes",
-      "Regulatory Representation"
+      "Cross-border Tax Advisory",
+      "Regulatory Representation",
     ],
     education: [
       "Bachelor of Laws (LLB)",
@@ -76,59 +76,84 @@ export { teamMembers };
 const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
   if (variant === "detailed") {
     return (
-      <div className="bg-white p-6">
+      <div className="bg-white p-4 sm:p-6">
         <div className="max-w-4xl mx-auto">
+
           {/* Header */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
-            <div className="w-48 h-48 relative">
-              {member.image ? (
-                <img
-                  src={member.image}
-                  alt={`${member.name} - at Commercial Law Chamber`}
-                  className="w-full h-full object-cover rounded-lg border-2 border-[#B3C7AB]"
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center border-2 border-[#B3C7AB]">
-                  <User className="w-24 h-24 text-gray-400" />
-                </div>
-              )}
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl sm:text-3xl font-bold poppins text-[#163C0F] mb-2">{member.name}</h2>
-              {/* <p className="text-[#163C0F] font-semibold mb-4">{member.title}</p> */}
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-6">
-                <span className="flex items-center">
-                  <Briefcase className="w-4 h-4 mr-2" />
-                  {member.experience}
-                </span>
-                <span className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  {member.location}
-                </span>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
+            {/* Avatar */}
+            <div className="relative shrink-0">
+              <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`${member.name} at Commercial Law Chamber`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                    <User className="w-12 h-12 text-gray-400" />
+                  </div>
+                )}
               </div>
-              <div className="flex flex-wrap gap-2">
-                {member.expertise.slice(0, 3).map((skill, index) => (
-                  <span
-                    key={index}
-                    className="bg-[#B3C7AB] text-[#163C0F] text-sm px-3 py-1 rounded-full font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <span
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                style={{ background: "#2A5A21", fontFamily: "Inter", fontWeight: 600, fontSize: "12px" }}
+              >
+                {member.experience}
+              </span>
+            </div>
+
+            {/* Name + meta */}
+            <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
+              <h2
+                className="mb-1"
+                style={{
+                  fontFamily: "League Spartan",
+                  fontWeight: 600,
+                  fontSize: "clamp(18px, 3vw, 24px)",
+                  lineHeight: "1.3",
+                  color: "#163C0F",
+                }}
+              >
+                {member.name}
+              </h2>
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 mb-4">
+                <span
+                  className="flex items-center gap-1"
+                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+                >
+                  <Briefcase className="w-3 h-3" /> {member.experience}
+                </span>
+                <span
+                  className="flex items-center gap-1"
+                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+                >
+                  <MapPin className="w-3 h-3" /> {member.location}
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Main Content */}
+          {/* Content */}
           <div className="space-y-6">
+
             {/* About */}
             <section>
-              <h2 className="text-xl font-bold poppins text-[#163C0F] mb-4">About</h2>
-              <div className="space-y-4">
+              <h3
+                className="mb-3"
+                style={{ fontFamily: "Arial", fontWeight: 700, fontSize: "16px", color: "#336429", textTransform: "uppercase" }}
+              >
+                About
+              </h3>
+              <div className="space-y-3">
                 {member.fullDescription.map((paragraph, index) => (
-                  <p key={index} className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  <p
+                    key={index}
+                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "14px", lineHeight: "22px", color: "#374151" }}
+                  >
                     {paragraph}
                   </p>
                 ))}
@@ -137,35 +162,49 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Expertise */}
             <section>
-              <h2 className="text-xl font-bold poppins text-[#163C0F] mb-4">Areas of Expertise</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <h3
+                className="mb-3"
+                style={{ fontFamily: "Arial", fontWeight: 700, fontSize: "16px", color: "#336429", textTransform: "uppercase" }}
+              >
+                Areas of Expertise
+              </h3>
+              <div className="flex flex-wrap gap-2">
                 {member.expertise.map((skill, index) => (
-                  <div
+                  <span
                     key={index}
-                    className="flex items-center bg-gray-50 rounded-lg p-3 border border-gray-200"
+                    className="px-3 py-1 rounded-full border border-[#5A6F554D]/90"
+                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", lineHeight: "18px", color: "#5A6F55" }}
                   >
-                    <Award className="w-5 h-5 text-[#163C0F] mr-3 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{skill}</span>
-                  </div>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </section>
 
             {/* Education */}
             <section>
-              <h2 className="text-xl font-bold poppins text-[#163C0F] mb-4">Education & Qualifications</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <h3
+                className="mb-3"
+                style={{ fontFamily: "Arial", fontWeight: 700, fontSize: "16px", color: "#336429", textTransform: "uppercase" }}
+              >
+                Education &amp; Qualifications
+              </h3>
+              <div className="flex flex-col gap-2">
                 {member.education.map((edu, index) => (
                   <div
                     key={index}
-                    className="flex items-center bg-gray-50 rounded-lg p-3 border border-gray-200"
+                    className="flex items-center gap-3 px-4 py-3"
+                    style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
                   >
-                    <GraduationCap className="w-5 h-5 text-[#163C0F] mr-3 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{edu}</span>
+                    <GraduationCap className="w-4 h-4 text-[#163C0F] shrink-0" />
+                    <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13.5px", color: "#000000" }}>
+                      {edu}
+                    </span>
                   </div>
                 ))}
               </div>
             </section>
+
           </div>
         </div>
       </div>
@@ -173,67 +212,114 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-5 hover:border-[#163C0F] transition-all flex flex-col h-full">
-      <div className="text-center mb-4">
-        {member.image ? (
-          <img
-            src={member.image}
-            alt={`${member.name} at Commercial Law Chamber`}
-            className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-[#B3C7AB]"
-            loading="lazy"
-            decoding="async"
-          />
-        ) : (
-          <div className="w-32 h-32 mx-auto bg-gray-200 rounded-full flex items-center justify-center mb-4 border-2 border-[#B3C7AB]">
-            <User className="w-16 h-16 text-gray-400" />
-          </div>
-        )}
-        <h2 className="text-lg font-bold text-[#163C0F] mb-1">{member.name}</h2>
-        {/* <p className="text-[#163C0F] font-medium mb-3">{member.title}</p> */}
-        <div className="flex justify-center gap-4 text-xs sm:text-sm text-gray-600 mb-4">
-          <span className="flex items-center">
-            <Briefcase className="w-4 h-4 mr-1" />
-            {member.experience}
-          </span>
-          <span className="flex items-center">
-            <MapPin className="w-4 h-4 mr-1" />
-            {member.location}
-          </span>
-        </div>
-      </div>
-      
-      <div className="flex-grow flex flex-col">
-        <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-          {member.shortDescription}
-        </p>
+    <div className=" border border-[#22461B] border-dotted p-6 flex flex-col items-center text-center h-full">
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {member.expertise.slice(0, 3).map((skill, index) => (
+      {/* Avatar + experience badge */}
+      <div className="relative mb-4">
+        <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+          {member.image ? (
+            <img
+              src={member.image}
+              alt={`${member.name} at Commercial Law Chamber`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <User className="w-12 h-12 text-gray-400" />
+            </div>
+          )}
+        </div>
+        <span
+          className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+          style={{ background: "#2A5A21", fontFamily: "Inter", fontWeight: 600, fontSize: "12px" }}
+        >
+          {member.experience}
+        </span>
+      </div>
+
+      {/* Name */}
+      <h2
+        className="mt-5 mb-1"
+        style={{
+          fontFamily: "League Spartan",
+          fontWeight: 600,
+          fontSize: "22px",
+          lineHeight: "26px",
+          color: "#163C0F",
+        }}
+      >
+        {member.name}
+      </h2>
+
+      {/* Location */}
+      <p
+        className="mb-5 flex items-center justify-center gap-1"
+        style={{
+          fontFamily: "League Spartan",
+          fontWeight: 400,
+          fontSize: "14px",
+          lineHeight: "18px",
+          color: "#5A6F55",
+        }}
+      >
+        <MapPin className="w-3 h-3" /> {member.location}
+      </p>
+
+      {/* Short description */}
+      <p
+        className="mb-5 text-left"
+        style={{
+          fontFamily: "League Spartan",
+          fontWeight: 400,
+          fontSize: "13.5px",
+          lineHeight: "20px",
+          color: "#374151",
+        }}
+      >
+        {member.shortDescription}
+      </p>
+
+      {/* Expertise pills */}
+      <div className="w-full text-left mb-5">
+        <p
+          className="mb-3"
+          style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "14px", color: "#336429" }}
+        >
+          Expertise :
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {member.expertise.map((skill, index) => (
             <span
               key={index}
-              className="bg-[#B3C7AB] text-[#163C0F] text-xs px-3 py-1 rounded-full font-medium"
+              className="px-3 py-1 rounded-full border border-[#5A6F554D]/90 text-[#5A6F55]"
+              style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", lineHeight: "18px" }}
             >
               {skill}
             </span>
           ))}
         </div>
-
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] text-white mt-auto">
-              View Profile
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Team Member Profile</DialogTitle>
-              <DialogDescription>
-                <TeamMember member={member} variant="detailed" />
-              </DialogDescription>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
       </div>
+
+      {/* View Profile button */}
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
+            style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "14px" }}
+          >
+            View Profile
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="max-w-4xl max-h-[90vh] bg-white overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold poppins text-[#163C0F]">Team Member Profile</DialogTitle>
+            <DialogDescription>
+              <TeamMember member={member} variant="detailed" />
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

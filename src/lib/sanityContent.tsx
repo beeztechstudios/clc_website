@@ -13,7 +13,7 @@ const portableTextComponents: PortableTextComponents = {
           <img
             src={urlFor(value).width(800).height(400).fit("crop").url()}
             alt={value.alt || ""}
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-full h-auto  shadow-md"
             loading="lazy"
             decoding="async"
           />
