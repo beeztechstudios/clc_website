@@ -30,7 +30,7 @@ const LeftSidebar = ({ activeSection, setActiveSection }: LeftSidebarProps) => {
 
   return (
     <div
-      className="left-sidebar flex flex-col sticky top-0 self-start"
+      className="left-sidebar cursor-pointer flex flex-col sticky top-0 self-start"
       style={{ width: "220px", minWidth: "160px" }}
     >
       {/* Top dark green nav */}
