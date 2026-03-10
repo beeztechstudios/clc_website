@@ -2,11 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
-  const locations = ["MUMBAI", "BENGALURU", "NEW DELHI"];
+  const locations = ["NEW DELHI","MUMBAI", "BENGALURU"];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -22,10 +22,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full">
+    <header className="w-full max-w-[834px] ">
       {/* Logo row */}
-      <div className="bg-white/40">
-        <div className="w-full px-4 sm:px-6 md:px-6 py-3 flex justify-between items-center">
+      <div className="bg-[#E5ECE3]/80">
+        <div className="w-full h-[107px]  px-4 sm:px-6 md:px-6 py-3 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -46,9 +46,9 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="hidden sm:block"
+              className="hidden w-[28px] h-[28px] sm:block"
             >
-              <Image src="/new/LinkedIn_icon.svg" width={22} height={22} alt="LinkedIn" />
+              <img src="/new/LinkedIn_icon.svg" className="w-[28px] h-[28px] " alt="LinkedIn" />
             </a>
 
             {/* Hamburger — visible only on mobile/tab (below lg) */}
@@ -64,17 +64,32 @@ const Header = () => {
       </div>
 
       {/* Location tabs — desktop */}
-      <div className="bg-[#163C0F]/70 border-b hidden sm:block">
-        <div className="w-full px-4 sm:px-6">
-          <div className="flex justify-end gap-1">
+      <div className="bg-[#163C0F]/70 w-full h-[55px] border-b hidden sm:flex justify-between items-center px-4 sm:px-6">
+        
+          <div className="flex items-center gap-[5px]">
+            <img src="/new/mailicon.svg" className="w-[9.5px] h-[9.5px] " alt="" />
+            <h3 style={{
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 700,
+            fontStyle: "Semi Bold",
+            fontSize: "10px",
+            color:"white", 
+            lineHeight: "18px",
+            letterSpacing: "0%",
+            verticalAlign: "middle",
+            textTransform: "uppercase",
+
+            }}>legal@clclaw.in</h3>
+          </div>
+        <div className="flex justify-end gap-[25px]">
             {locations.map((location) => (
               <span
                 key={location}
-                className="text-white py-3 px-4 sm:px-6"
+                className="text-white py-3 px-4 sm:px-0 "
                 style={{
-                  fontFamily: "Inter",
+                  fontFamily: "Inter, sans-serif",
                   fontWeight: 700,
-                  fontSize: "11px",
+                  fontSize: "8.8px",
                   lineHeight: "11px",
                   letterSpacing: "1.2px",
                   textTransform: "uppercase",
@@ -84,7 +99,7 @@ const Header = () => {
               </span>
             ))}
           </div>
-        </div>
+        
       </div>
 
       {/* Mobile dropdown menu */}

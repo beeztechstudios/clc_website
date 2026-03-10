@@ -29,8 +29,8 @@ export default function SearchClient() {
 
   return (
     <div className="relative w-full" ref={containerRef}>
-      <div className="flex gap-1 items-center bg-[#E5ECE3] p-1.5 rounded-sm">
-        <div className="relative flex-1">
+      <div className="flex gap-0 items-center bg-[#E5ECE3] p-[2px] rounded-sm">
+        <div className="relative flex-1 ">
           <input
             type="text"
             value={query}
@@ -40,10 +40,20 @@ export default function SearchClient() {
             }}
             onFocus={() => setIsOpen(true)}
             placeholder="Search Articles"
-            className="w-full bg-white border border-gray-200 pl-8 pr-8 py-1.5 text-[13px] outline-none"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="w-full bg-white border border-gray-200 pl-5  py-1.5"
+            style={{ fontFamily: "'Inter', sans-serif",
+             
+          fontWeight: 400,
+          fontStyle: "Regular",
+          fontSize:"10.1px",
+      
+          lineHeight: "100%",
+          letterSpacing: "0%",
+          verticalAlign: "middle",
+
+             }}
           />
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
+          <Search className="absolute left-1.5 top-1/2 -translate-y-1/2 h-2.5 w-2.5 text-gray-400" />
           {query && (
             <button
               onClick={handleClear}
@@ -54,8 +64,18 @@ export default function SearchClient() {
           )}
         </div>
         <button
-          className="bg-white border border-gray-200 px-3 py-1.5 text-[11px] font-bold text-gray-500 uppercase tracking-wider hover:bg-gray-50 transition-colors"
-          style={{ fontFamily: "'League Spartan', sans-serif" }}
+          className="bg-white border border-gray-200 px-2 py-1.5  text-[#595959] cursor-pointer hover:bg-gray-50 transition-colors"
+          style={{
+            fontFamily: "'Inter', sans-serif",
+        fontWeight: 400,
+        fontStyle: "Regular",
+        fontSize: "9.8px",
+        lineHeight: "11px",
+        letterSpacing: "1.1px",
+        textAlign: "center",
+        verticalAlign: "middle",
+        textTransform: "uppercase",
+}}
         >
           SEARCH
         </button>

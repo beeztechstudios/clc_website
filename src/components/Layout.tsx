@@ -87,13 +87,12 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
 
-    <div className="min-h-screen flex flex-col items-center">
-      {/* Container that allows for sidebars + center column */}
-      {/* <div className="flex flex-row items-start justify-center w-full max-w-[1600px] px-4"> */}
-      <div className="flex flex-row items-start w-full max-w-[1600px] mx-auto px-0 sm:px-2 md:px-4">
+    <div className="min-h-screen  flex flex-col p items-center justify-center ">
+      {/* problem div */}
+      <div className="flex flex-row items-start lg:justify-center  w-full max-w-[1600px]  px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
-          <div ref={leftSidebarRef} className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[130px] -mr-32 z-20">
+          <div ref={leftSidebarRef} className="hidden  lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[190px] -mr-24 z-20">
             <LeftSidebar
               activeSection={activeSection}
               setActiveSection={() => setIsMobileSidebarOpen(false)}
@@ -102,9 +101,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         )}
 
         {/* MAIN PAGE BLOCK (Center) */}
-        <div>
+        <div className="max-w-[834px]">
           <Header />
-          <div className="w-full max-w-[1100px] shadow-2xl relative border bg-white border-gray-200">
+          <div className="w-full  shadow-2xl relative border bg-white border-gray-200">
 
 
 
@@ -140,7 +139,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
             
           </div>
-          {/* FOOTER - ABOVE OVERLAPPING SIDEBARS */}
+        
           <div className="relative z-0">
             <Footer />
           </div>
@@ -148,7 +147,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         {/* RIGHT SIDEBAR - Pinned to the right of the main block */}
         {showSidebars && (
-          <div ref={rightSidebarRef} className="hidden lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[130px] -ml-40 z-20">
+          <div ref={rightSidebarRef} className="hidden  lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[190px] -ml-34 z-20">
             <RightSidebar />
           </div>
         )}
