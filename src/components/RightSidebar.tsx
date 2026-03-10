@@ -4,94 +4,176 @@ import Link from "next/link";
 import { format } from "date-fns";
 import SearchClient from "@/components/SearchClient";
 import { useSidebarData } from "@/hooks/useSidebarData";
+import { BlogPostPreview, NewsUpdatePreview } from "@/types/sanity";
 
 export default function RightSidebar() {
-  const { featuredBlogs, isLoading, error } = useSidebarData();
+  const { featuredBlogs, featuredNews, isLoading, error } = useSidebarData();
 
   if (isLoading) {
     return (
-      <aside className="p-4">
-        <p className="text-sm text-gray-500">Loading sidebar&hellip;</p>
+      <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-white min-h-full flex flex-col sticky top-0 self-start p-6">
+        <div className="animate-pulse space-y-4">
+          <div className="h-10 bg-gray-100 rounded"></div>
+          <div className="h-32 bg-gray-100 rounded"></div>
+          <div className="h-32 bg-gray-100 rounded"></div>
+        </div>
       </aside>
     );
   }
 
   if (error) {
     return (
-      <aside className="p-4">
+      <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-white min-h-full flex flex-col sticky top-0 self-start p-6">
         <p className="text-sm text-red-500">Failed to load sidebar data.</p>
       </aside>
     );
   }
 
   return (
-    <aside className="right-sidebar w-full lg:w-64 xl:w-72 bg-[#F1F3F2] min-h-full flex flex-col sticky top-0 self-start">
-      {/* SEARCH */}
-      <div className="p-4 bg-white border-b border-gray-100">
+    <aside className="right-sidebar w-full lg:w-64 xl:w-72 flex flex-col sticky top-0 self-start">
+      {/* ── SEARCH AREA ── */}
+      <div className="p-3 bg-[#E5ECE3]">
         <SearchClient />
       </div>
 
-      {/* MISSION AND VISION */}
-      <div className="p-4 bg-[#B3C7AB]/30 border-b border-[#B3C7AB]">
-        <h3 className="text-[13px] font-bold text-[#163C0F] uppercase tracking-wider mb-2">MISSION AND VISION</h3>
-        <p className="text-[12px] text-gray-700 italic">Distinctly Different</p>
+      {/* ── MISSION AND VISION ── */}
+      <div className="p-5 bg-[#A2BC99] border-l-4 border-[#22461B]">
+        <h3
+          style={{
+            fontFamily: "'League Spartan', sans-serif",
+            fontWeight: 700,
+            fontSize: "16px",
+            color: "#163C0F",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px"
+          }}
+          className="mb-3"
+        >
+          MISSION AND VISION
+        </h3>
+        <div className="w-full h-px bg-white opacity-40 mb-3" />
+        <p
+          style={{
+            fontFamily: "'League Spartan', sans-serif",
+            fontWeight: 400,
+            fontSize: "14px",
+            color: "#163C0F",
+            fontStyle: "italic"
+          }}
+        >
+          Distinctly Different
+        </p>
       </div>
 
-      {/* WHAT'S NEW */}
-      <div className="p-4 bg-white">
-        <h3 className="text-[13px] font-bold text-[#163C0F] uppercase tracking-wider mb-4 border-b-2 border-[#163C0F] pb-1 inline-block">WHAT&apos;S NEW</h3>
-        <div className="space-y-4">
-          {featuredBlogs?.length > 0 ? (
-            featuredBlogs.slice(0, 2).map((blog: any) => (
-              <div key={blog._id} className="group cursor-pointer">
-                <Link href={`/blog/${blog.slug.current}`}>
-                  <h4 className="text-[13px] font-bold text-gray-900 group-hover:text-[#163C0F] leading-tight mb-1">
-                    {blog.title}
-                  </h4>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-tight">
-                    Regulatory Digest &middot; {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
-                  </p>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <p className="text-[11px] text-gray-500">No recent updates</p>
-          )}
+      {/* ── WHAT'S NEW (BLOGS) ── */}
+      <div className="p-5 bg-[#F3F3F3] mt-1 border-l-4 border-[#22461B]">
+        <h3
+          style={{
+            fontFamily: "'League Spartan', sans-serif",
+            fontWeight: 700,
+            fontSize: "15px",
+            color: "#A82222",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px"
+          }}
+          className="mb-5"
+        >
+          WHAT&apos;S NEW
+        </h3>
+
+        <div className="space-y-6">
+          {featuredBlogs?.slice(0, 2).map((blog: BlogPostPreview) => (
+            <div key={blog._id} className="group">
+              <Link href={`/blog/${blog.slug.current}`}>
+                <h4
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    color: "#000000",
+                    lineHeight: "1.3"
+                  }}
+                  className="group-hover:text-[#163C0F] transition-colors duration-200"
+                >
+                  {blog.title}
+                </h4>
+                <p
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "11px",
+                    color: "#9CA3AF"
+                  }}
+                  className="mt-1"
+                >
+                  {blog.category?.name}: {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
+                </p>
+              </Link>
+              <div className="w-full h-px bg-gray-100 mt-5 group-last:hidden" />
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* EVENTS */}
-      <div className="p-4 bg-white border-t border-gray-100">
-        <h3 className="text-[13px] font-bold text-red-600 uppercase tracking-wider mb-4">EVENTS</h3>
-        <div className="space-y-4">
-          <div className="group cursor-pointer border-b border-gray-50 pb-3">
-            <h4 className="text-[11px] font-bold text-gray-500 uppercase mb-1">WEBINAR</h4>
-            <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-red-600 leading-tight mb-1">
-              Decoding India&apos;s 2026 Budget &amp; Global Competitiveness
-            </h4>
-            <p className="text-[10px] text-gray-500">February 04, 2026</p>
-          </div>
-          <div className="group cursor-pointer">
-            <h4 className="text-[11px] font-bold text-gray-500 uppercase mb-1">SEMINAR</h4>
-            <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-red-600 leading-tight mb-1">
-              TALTalks 2026 Mumbai (Health Edition)
-            </h4>
-            <p className="text-[10px] text-gray-500">February 21, 2026</p>
-          </div>
-        </div>
-      </div>
+      {/* ── NEWSLETTER (NEWS) ── */}
+      <div className="p-5  flex-1" style={{ background: "linear-gradient(to top, #F3F3F3, #FFFF)" }}>
+        <h3
+          style={{
+            fontFamily: "'League Spartan', sans-serif",
+            fontWeight: 700,
+            fontSize: "15px",
+            color: "#A82222",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px"
+          }}
+          className="mb-5"
+        >
+          NEWSLETTER
+        </h3>
 
-      {/* NEWSLETTERS */}
-      <div className="p-4 bg-[#F1F3F2] flex-1">
-        <h3 className="text-[13px] font-bold text-red-600 uppercase tracking-wider mb-4">NEWSLETTERS</h3>
-        <div className="space-y-4">
-          <div className="group cursor-pointer">
-            <h4 className="text-[11px] font-bold text-gray-500 uppercase mb-1">REGULATORY DIGEST</h4>
-            <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-red-600 leading-tight mb-1">
-              DPIIT&apos;s New Startup Framework: Deep Tech Startup Recognition and Key Reforms
-            </h4>
-            <p className="text-[10px] text-gray-500">February 09, 2026</p>
-          </div>
+        <div className="space-y-6">
+          {featuredNews?.slice(0, 3).map((news: NewsUpdatePreview) => (
+            <div key={news._id} className="group cursor-pointer">
+              <Link href={`/news/${news.slug.current}`}>
+                <span
+                  style={{
+                    fontFamily: "'League Spartan', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "13px",
+                    color: "#163C0F",
+                    textTransform: "uppercase",
+                    display: "block"
+                  }}
+                  className="mb-1"
+                >
+                  {news.type?.replace("-", " ") || "UPDATE"}
+                </span>
+                <h4
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "15px",
+                    color: "#000000",
+                    lineHeight: "1.3"
+                  }}
+                  className="group-hover:text-red-700 transition-colors duration-200"
+                >
+                  {news.title}
+                </h4>
+                <p
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "12px",
+                    color: "#9CA3AF"
+                  }}
+                  className="mt-1"
+                >
+                  {format(new Date(news.publishedAt), "MMMM dd, yyyy")}
+                </p>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </aside>

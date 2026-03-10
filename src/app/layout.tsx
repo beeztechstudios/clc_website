@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ReactQueryProvider from "@/components/ReactQueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Specialized lawyers for GST, tax, and complex commercial disputes with 20+ years of experience and Supreme Court representation. Book a consultation.",
   keywords: [
-   ' tax disputes', 'commercial disputes', 'gst disputes', 'commercial litigation', 'supreme court lawyer',' indirect tax', 'business disputes'
+    ' tax disputes', 'commercial disputes', 'gst disputes', 'commercial litigation', 'supreme court lawyer', ' indirect tax', 'business disputes'
 
   ],
   metadataBase: new URL("https://www.clclaw.in"),
@@ -237,7 +238,9 @@ export default function RootLayout({
         </noscript>
 
         {/* App root (children) */}
-        {children}
+        <ReactQueryProvider>
+          {children}
+        </ReactQueryProvider>
 
         {/* Small inline performance hint: you may also add prefetch/prefetch links per page */}
       </body>

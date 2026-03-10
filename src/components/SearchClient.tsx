@@ -1,27 +1,105 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { Search, Loader2, X } from "lucide-react";
+import { useSearchArticles } from "@/hooks/useSanityData";
 
 export default function SearchClient() {
-  const [q, setQ] = useState("");
+  const [query, setQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { data: results, isLoading } = useSearchArticles(query);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleClear = () => {
+    setQuery("");
+    setIsOpen(false);
+  };
 
   return (
-    <div className="p-4 border-b border-gray-200">
-      <input
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Search Articles"
-        className="w-full border px-3 py-2 rounded-md text-sm"
-      />
-
-      {q.length > 2 && (
-        <Link
-          href={`/search?q=${encodeURIComponent(q)}`}
-          className="text-xs text-[#163C0F] underline mt-2 block"
+    <div className="relative w-full" ref={containerRef}>
+      <div className="flex gap-1 items-center bg-[#E5ECE3] p-1.5 rounded-sm">
+        <div className="relative flex-1">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setIsOpen(true);
+            }}
+            onFocus={() => setIsOpen(true)}
+            placeholder="Search Articles"
+            className="w-full bg-white border border-gray-200 pl-8 pr-8 py-1.5 text-[13px] outline-none"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          />
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
+          {query && (
+            <button
+              onClick={handleClear}
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 hover:bg-gray-100 rounded-full"
+            >
+              <X className="h-3 w-3 text-gray-400" />
+            </button>
+          )}
+        </div>
+        <button
+          className="bg-white border border-gray-200 px-3 py-1.5 text-[11px] font-bold text-gray-500 uppercase tracking-wider hover:bg-gray-50 transition-colors"
+          style={{ fontFamily: "'League Spartan', sans-serif" }}
         >
-          View Results
-        </Link>
+          SEARCH
+        </button>
+      </div>
+
+      {isOpen && query.length > 2 && (
+        <div className="absolute top-full left-0 right-0 mt-1 bg-white shadow-xl border border-gray-200 z-100 max-h-[300px] overflow-y-auto rounded-sm">
+          {isLoading ? (
+            <div className="p-4 flex items-center justify-center gap-2">
+              <Loader2 className="h-4 w-4 text-[#163C0F] animate-spin" />
+              <span className="text-[11px] text-gray-500">Searching...</span>
+            </div>
+          ) : results && results.length > 0 ? (
+            <div className="py-1">
+              {results.map((item) => {
+                const isNews = item._type === "newsUpdate";
+                const href = isNews ? `/news/${item.slug.current}` : `/blog/${item.slug.current}`;
+
+                return (
+                  <Link
+                    key={item._id}
+                    href={href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-start gap-2 px-3 py-2 hover:bg-gray-50 border-b border-gray-50 last:border-0"
+                  >
+                    <div className={`mt-1 h-2 w-2 rounded-full shrink-0 ${isNews ? 'bg-red-500' : 'bg-green-600'}`} />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[12px] font-bold text-gray-900 leading-tight truncate">
+                        {item.title}
+                      </h4>
+                      <p className="text-[10px] text-gray-400 truncate mt-0.5 uppercase tracking-tighter">
+                        {isNews ? 'News' : 'Blog'}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="p-4 text-center text-[11px] text-gray-500 font-medium">
+              No results found
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

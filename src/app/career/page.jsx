@@ -3,17 +3,14 @@
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import Career from "@/components/Career";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-const queryClient = new QueryClient();
-
 export default function CareerPage() {
   const metaTitle = "Legal Careers in Tax & Commercial Law | Join CLC Team";
   const metaDescription = "Explore legal careers in tax and commercial law at CLC. We offer growth-focused opportunities for lawyers in litigation, dispute resolution, and regulatory advisory.";
   const canonicalUrl = "https://www.clclaw.in/career";
   const ogImage = "https://www.clclaw.in/favicon.png";
 
-  const OgTitle= "Build Your Legal Career in Tax & Commercial Law | CLC";
-  const OgDesc= "Join Commercial Law Chamber for career opportunities in tax, commercial law, litigation, and dispute resolution. Work with leading legal professionals.";
+  const OgTitle = "Build Your Legal Career in Tax & Commercial Law | CLC";
+  const OgDesc = "Join Commercial Law Chamber for career opportunities in tax, commercial law, litigation, and dispute resolution. Work with leading legal professionals.";
 
   return (
     <>
@@ -96,11 +93,9 @@ export default function CareerPage() {
           }}
         />
       </Head>
-      <QueryClientProvider client={queryClient}>
       <Layout>
         <Career />
       </Layout>
-      </QueryClientProvider>
     </>
   );
 }
