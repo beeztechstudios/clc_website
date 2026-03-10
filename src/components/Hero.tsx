@@ -1,7 +1,8 @@
+
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
+import HeroAnimations  from "@/lib/heroAnimation";
 const distinctions = [
   {
     src: "/vivek.webp",
@@ -26,8 +27,11 @@ const distinctions = [
 ];
 
 const Hero = () => {
+  
   return (
+    
     <div className="flex-1">
+      <HeroAnimations />
       {/* Hero Section */}
       <section className="relative py-12 pb-0 sm:py-16 md:py-20 px-4 sm:px-6 text-center justify-end bg-white  overflow-hidden">
         {/* Circle Background */}
@@ -35,7 +39,7 @@ const Hero = () => {
           className="absolute left-1/2  top-[45%] md:top-32 -translate-x-1/2 w-[140vw] md:w-[1200px] h-[140vw] md:h-[1200px] bg-[#6B8066]/10 rounded-full"
         ></div>
 
-        <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+        <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
           <span
             className="text-[#163C0F]"
             style={{
@@ -67,7 +71,7 @@ const Hero = () => {
         </h1>
 
         <p
-          className="text-gray-600 max-w-lg mx-auto mb-8"
+          className="text-gray-600 hero-para max-w-lg mx-auto mb-8"
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
@@ -82,59 +86,60 @@ const Hero = () => {
         </p>
 
         <div
-          className="flex flex-row justify-center  gap-3 sm:gap-4 mb-8 sm:mb-16"
+          className="flex flex-row hero-buttons justify-center hero-title gap-3 sm:gap-4 mb-8 sm:mb-16"
           style={{ fontFamily: "Arial", fontWeight: 700 }}
         >
           <Link
             href="/contact"
-            className="bg-[#163C0F] text-sm z-10 cursor-pointer text-white px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 font-bold"
+            className="bg-[#163C0F] hover:scale-105 text-sm z-10 cursor-pointer text-white px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 font-bold"
           >
             Partner With Us <ArrowRight className="h-3 md:h-4 w-3  md:w-4" />
           </Link>
 
           <Link
             href="/contact"
-            className="bg-white text-sm  text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-4 md:px-6 py-2.5 font-bold hover:bg-gray-50 transition-all">
+            className="bg-white text-sm hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-4 md:px-6 py-2.5 font-bold hover:bg-gray-50 transition-all">
             Review Firm Profile
       
           </Link>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3  gap-4 sm:gap-8 max-w-2xl mx-auto pt-0 md:pt-8">
+        
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto pt-0 md:pt-8">
           {[
-            { value: "500+", label: "CASES WON" },
-            { value: "25+", label: "YEARS EXPERIENCE" },
-            { value: "98%", label: "CLIENT SATISFACTION" },
-          ].map(({ value, label }) => (
-            <div key={label}>
+            { value: 500, suffix: "+", label: "CASES WON" },
+            { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
+            { value: 98, suffix: "%", label: "CLIENT SATISFACTION" },
+          ].map(({ value, suffix, label }) => (
+            <div key={label} className="hero-stat">
+
               <div
-                className="font-bold text-[#336429] mb-1"
+                className="counter font-bold text-[#336429] mb-1"
+                data-value={value}
+                data-suffix={suffix}
                 style={{
                   fontFamily: "Arial",
                   fontWeight: 700,
                   fontSize: "clamp(22px, 3.5vw, 32px)",
                   lineHeight: "48px",
-                  letterSpacing: "0px",
                   textAlign: "center",
                 }}
               >
-                {value}
+                0{suffix}
               </div>
+
               <div
                 style={{
                   fontFamily: "Inter",
-                  fontWeight: 400,
                   fontSize: "clamp(10px, 1.5vw, 14px)",
-                  lineHeight: "21px",
-                  letterSpacing: "0px",
                   textAlign: "center",
                   textTransform: "uppercase",
-                  color: "#000000",
                 }}
               >
                 {label}
               </div>
+
             </div>
           ))}
         </div>
@@ -164,7 +169,7 @@ const Hero = () => {
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(14px, 1.8vw, 16.4px)",
+            fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
             lineHeight: "20px",
             letterSpacing: "0px",
             verticalAlign: "middle",
@@ -186,7 +191,7 @@ const Hero = () => {
       </section>
 
       {/* Our Distinction */}
-      <section className="py-8 sm:py-10 px-4 sm:px-8 md:px-12 lg:px-16 bg-white xl:mx-30 border-b border-dashed border-gray-300">
+      <section className="py-8 sm:py-10 px-4 sm:px-8 md:px-12 lg:px-16 bg-white xl:mx-30 ">
         <h2
           className="uppercase mb-6 sm:mb-8"
           style={{
@@ -223,7 +228,7 @@ const Hero = () => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 400,
-                  fontSize: "14.4px",
+                  fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                   lineHeight: "18px",
                   letterSpacing: "0px",
                   verticalAlign: "middle",
@@ -289,7 +294,7 @@ const Hero = () => {
                   style={{
                     fontFamily: "Inter",
                     fontWeight: 600,
-                    fontSize: "16px",
+                    fontSize: "clamp(18px, 1.8vw, 16.4px)",
                     lineHeight: "20px",
                     letterSpacing: "0.01em",
                     textTransform: "capitalize",
@@ -305,7 +310,7 @@ const Hero = () => {
                   style={{
                     fontFamily: "League Spartan",
                     fontWeight: 400,
-                    fontSize: "14.4px",
+                    fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                     lineHeight: "18px",
                     textTransform: "capitalize",
                     color: "#000000",
@@ -386,7 +391,7 @@ const Hero = () => {
                     background: "#2A5A21",
 
                     fontWeight: 600,
-                    fontSize: "12px",
+                    fontSize: "14px",
                   }}
                 >
                   {experience}
@@ -399,7 +404,7 @@ const Hero = () => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 600,
-                  fontSize: "22px",
+                  fontSize: "clamp(20.5px, 1.8vw, 20.4px)",
                   lineHeight: "26px",
                   color: "#163C0F",
                 }}
@@ -413,7 +418,7 @@ const Hero = () => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 400,
-                  fontSize: "17px",
+                  fontSize: "clamp(16.5px, 1.8vw, 18.4px)",
                   lineHeight: "20px",
                   color: "#5A6F55",
                 }}
@@ -427,7 +432,7 @@ const Hero = () => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 400,
-                  fontSize: "14px",
+                  fontSize: "clamp(17.5px, 1.8vw, 14.4px)",
                   lineHeight: "18px",
                   color: "#5A6F55",
                 }}
@@ -442,7 +447,7 @@ const Hero = () => {
                   style={{
                     fontFamily: "Inter",
                     fontWeight: 600,
-                    fontSize: "14px",
+                    fontSize: "clamp(18.5px, 1.8vw, 14.4px)",
                     color: "#336429",
                   }}
                 >
@@ -456,7 +461,7 @@ const Hero = () => {
                       style={{
                         fontFamily: "League Spartan",
                         fontWeight: 400,
-                        fontSize: "13px",
+                        fontSize: "clamp(15px, 1.8vw, 14.4px)",
                         lineHeight: "18px",
                       }}
                     >

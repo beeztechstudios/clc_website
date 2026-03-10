@@ -1,6 +1,6 @@
 "use client";
-
-import { ReactNode, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ReactNode, useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
@@ -10,6 +10,9 @@ import { X } from "lucide-react";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const leftSidebarRef = useRef<HTMLDivElement>(null);
+  const rightSidebarRef = useRef<HTMLDivElement>(null);
+
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   // Pages that benefit from sidebars
@@ -46,14 +49,42 @@ export default function Layout({ children }: { children: ReactNode }) {
     setIsMobileSidebarOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (showSidebars) {
+
+      if (leftSidebarRef.current) {
+        gsap.from(leftSidebarRef.current, {
+          x: -80,
+          opacity: 0,
+          duration: 0.8,
+          delay: 0.3,
+          ease: "power3.out",
+        });
+
+      }
+
+      if (rightSidebarRef.current) {
+        gsap.from(rightSidebarRef.current, {
+          x: 80,
+          opacity: 0,
+          duration: 0.8,
+          delay: 0.6,
+          ease: "power3.out",
+        });
+      }
+
+    }
+  }, [pathname]);
+
   return (
+
     <div className="min-h-screen flex flex-col items-center">
       {/* Container that allows for sidebars + center column */}
       {/* <div className="flex flex-row items-start justify-center w-full max-w-[1600px] px-4"> */}
-      <div className="flex w-full max-w-[1600px] mx-auto px-0 sm:px-2 md:px-4">
+      <div className="flex flex-row items-start w-full max-w-[1600px] mx-auto px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
-          <div className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[230px] -mr-32 z-20">
+          <div ref={leftSidebarRef}  className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[130px] -mr-32 z-20">
             <LeftSidebar
               activeSection={activeSection}
               setActiveSection={() => setIsMobileSidebarOpen(false)}
@@ -104,7 +135,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         {/* RIGHT SIDEBAR - Pinned to the right of the main block */}
         {showSidebars && (
-          <div className="hidden lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[230px] -ml-40 z-20">
+          <div ref={rightSidebarRef} className="hidden lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[130px] -ml-40 z-20">
             <RightSidebar />
           </div>
         )}
