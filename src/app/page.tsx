@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
+import { Footer } from "react-day-picker";
 
 // ⭐ Homepage SEO Metadata
 export const metadata = {
@@ -58,7 +59,11 @@ export default function HomePage() {
 
       <Layout>
         <Hero />
+       
+
       </Layout>
+      
+      
     </>
   );
 }

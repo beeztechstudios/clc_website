@@ -71,7 +71,7 @@ export default function RightSidebar() {
           style={{
             fontFamily: "'League Spartan', sans-serif",
             fontWeight: 700,
-            fontSize: "15px",
+            fontSize: "14px",
             color: "#A82222",
             textTransform: "uppercase",
             letterSpacing: "0.5px"
@@ -88,8 +88,8 @@ export default function RightSidebar() {
                 <h4
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "14px",
+                    fontWeight: 600,
+                    fontSize: "13px",
                     color: "#000000",
                     lineHeight: "1.3"
                   }}
@@ -100,8 +100,8 @@ export default function RightSidebar() {
                 <p
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontWeight: 400,
-                    fontSize: "11px",
+                    fontWeight: 600,
+                    fontSize: "12px",
                     color: "#9CA3AF"
                   }}
                   className="mt-1"
@@ -121,7 +121,7 @@ export default function RightSidebar() {
           style={{
             fontFamily: "'League Spartan', sans-serif",
             fontWeight: 700,
-            fontSize: "15px",
+            fontSize: "14px",
             color: "#A82222",
             textTransform: "uppercase",
             letterSpacing: "0.5px"
@@ -139,7 +139,7 @@ export default function RightSidebar() {
                   style={{
                     fontFamily: "'League Spartan', sans-serif",
                     fontWeight: 700,
-                    fontSize: "13px",
+                    fontSize: "14px",
                     color: "#163C0F",
                     textTransform: "uppercase",
                     display: "block"
@@ -151,8 +151,8 @@ export default function RightSidebar() {
                 <h4
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "15px",
+                    fontWeight: 600,
+                    fontSize: "13px",
                     color: "#000000",
                     lineHeight: "1.3"
                   }}
@@ -163,7 +163,7 @@ export default function RightSidebar() {
                 <p
                   style={{
                     fontFamily: "'Inter', sans-serif",
-                    fontWeight: 400,
+                    fontWeight: 500,
                     fontSize: "12px",
                     color: "#9CA3AF"
                   }}
