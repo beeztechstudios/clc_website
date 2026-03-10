@@ -50,31 +50,40 @@ export default function Layout({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   useEffect(() => {
-    if (showSidebars) {
+    if (!showSidebars) return;
 
+    const ctx = gsap.context(() => {
       if (leftSidebarRef.current) {
-        gsap.from(leftSidebarRef.current, {
-          x: -80,
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.3,
-          ease: "power3.out",
-        });
-
+        gsap.fromTo(leftSidebarRef.current,
+          { x: -80, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.3,
+            ease: "power3.out",
+            overwrite: "auto"
+          }
+        );
       }
 
       if (rightSidebarRef.current) {
-        gsap.from(rightSidebarRef.current, {
-          x: 80,
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.6,
-          ease: "power3.out",
-        });
+        gsap.fromTo(rightSidebarRef.current,
+          { x: 80, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.6,
+            ease: "power3.out",
+            overwrite: "auto"
+          }
+        );
       }
+    });
 
-    }
-  }, [pathname]);
+    return () => ctx.revert();
+  }, [pathname, showSidebars]);
 
   return (
 
@@ -84,7 +93,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div className="flex flex-row items-start w-full max-w-[1600px] mx-auto px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
-          <div ref={leftSidebarRef}  className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[130px] -mr-32 z-20">
+          <div ref={leftSidebarRef} className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[130px] -mr-32 z-20">
             <LeftSidebar
               activeSection={activeSection}
               setActiveSection={() => setIsMobileSidebarOpen(false)}
@@ -94,43 +103,43 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         {/* MAIN PAGE BLOCK (Center) */}
         <div>
-        <Header />
-        <div className="w-full max-w-[1100px] shadow-2xl relative z-10 overflow-hidden border bg-white border-gray-200">
-          
+          <Header />
+          <div className="w-full max-w-[1100px] shadow-2xl relative z-10 overflow-hidden border bg-white border-gray-200">
 
 
-          {/* MOBILE SIDEBAR OVERLAY */}
-          {isMobileSidebarOpen && showSidebars && (
-            <div
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-              onClick={() => setIsMobileSidebarOpen(false)}
-            />
-          )}
 
-          {/* MOBILE SIDEBAR SLIDE-IN */}
-          {showSidebars && (
-            <div
-              className={`lg:hidden transition-all duration-300 z-50 fixed left-0 top-0 h-full w-64 bg-white shadow-xl ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
-                }`}
-            >
-              <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-[#163C0F] text-white">
-                <span className="font-bold">MENU</span>
-                <X className="h-5 w-5 cursor-pointer" onClick={() => setIsMobileSidebarOpen(false)} />
-              </div>
-              <LeftSidebar
-                activeSection={activeSection}
-                setActiveSection={() => setIsMobileSidebarOpen(false)}
+            {/* MOBILE SIDEBAR OVERLAY */}
+            {isMobileSidebarOpen && showSidebars && (
+              <div
+                className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+                onClick={() => setIsMobileSidebarOpen(false)}
               />
+            )}
+
+            {/* MOBILE SIDEBAR SLIDE-IN */}
+            {showSidebars && (
+              <div
+                className={`lg:hidden transition-all duration-300 z-50 fixed left-0 top-0 h-full w-64 bg-white shadow-xl ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                  }`}
+              >
+                <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-[#163C0F] text-white">
+                  <span className="font-bold">MENU</span>
+                  <X className="h-5 w-5 cursor-pointer" onClick={() => setIsMobileSidebarOpen(false)} />
+                </div>
+                <LeftSidebar
+                  activeSection={activeSection}
+                  setActiveSection={() => setIsMobileSidebarOpen(false)}
+                />
+              </div>
+            )}
+
+            {/* MAIN CONTENT AREA */}
+            <div className="min-w-0">
+              {children}
             </div>
-          )}
 
-          {/* MAIN CONTENT AREA */}
-          <div className="min-w-0">
-            {children}
+            <Footer />
           </div>
-
-          <Footer />
-        </div>
         </div>
 
         {/* RIGHT SIDEBAR - Pinned to the right of the main block */}
