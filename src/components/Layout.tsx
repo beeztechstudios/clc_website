@@ -104,7 +104,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         {/* MAIN PAGE BLOCK (Center) */}
         <div>
           <Header />
-          <div className="w-full max-w-[1100px] shadow-2xl relative z-10 overflow-hidden border bg-white border-gray-200">
+          <div className="w-full max-w-[1100px] shadow-2xl relative border bg-white border-gray-200">
 
 
 
@@ -133,10 +133,15 @@ export default function Layout({ children }: { children: ReactNode }) {
               </div>
             )}
 
-            {/* MAIN CONTENT AREA */}
-            <div className="min-w-0">
+            {/* MAIN CONTENT AREA - UNDER SIDEBARS */}
+            <div className="min-w-0 relative z-0">
               {children}
             </div>
+
+            
+          </div>
+          {/* FOOTER - ABOVE OVERLAPPING SIDEBARS */}
+          <div className="relative z-0">
             <Footer />
           </div>
         </div>
@@ -148,7 +153,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
         )}
       </div>
-      
+
     </div>
   );
 }

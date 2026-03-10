@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer>
       {/* ── Minimal footer ── */}
-      <div className="border-t z-90 border-gray-200 bg-white">
-        <div className="flex flex-col sm:flex-row items-center justify-between px-6 py-2 gap-2">
+      <div className="border-t relative z-50 border-gray-200 bg-white">
+        <div className="flex flex-col sm:flex-row items-center justify-between px-6 lg:px-44 py-2 gap-2">
           <div className="flex items-center gap-4 sm:gap-6">
             {links.map((label) => (
               <span
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
       </div>
 
-     
+
     </footer>
   );
 };
