@@ -10,18 +10,18 @@ import InsightsClientWrapper from "@/components/InsightsClientWrapper";
 // PAGE SEO USING METADATA API
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Legal Insights & Tax Law Updates | Commercial Law Chamber",
+  title: "Insights on Goods and Services Tax Act & GST Input Tax Credit Rules",
   description:
-    "Explore expert legal insights and tax law updates. Our team analyzes the latest GST rulings, insolvency cases, and commercial litigation trends in India.",
+    "Stay updated on the Goods and Services Tax Act. Expert analysis on gst input tax credit rules, tax reforms, and landmark indirect tax litigation updates.",
   keywords:
     "legal insights india, tax law updates, gst law analysis, insolvency law articles, commercial litigation insights, commercial law trends, clc blog",
   alternates: {
     canonical: "https://www.clclaw.in/insights",
   },
   openGraph: {
-    title: "Legal Insights & Analysis – Stay Ahead of Regulatory Changes",
+    title: "Insights on Goods and Services Tax Act & GST Input Tax Credit Rules",
     description:
-      "Read our latest expert analysis on tax law, GST amendments, and commercial dispute resolution. Stay informed with CLC.",
+      "Stay updated on the Goods and Services Tax Act. Expert analysis on gst input tax credit rules, tax reforms, and landmark indirect tax litigation updates.",
     url: "https://www.clclaw.in/insights",
     images: ["https://www.clclaw.in/favicon.png"],
     type: "website",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Legal Insights & Analysis – Stay Ahead of Regulatory Changes",
+    title: "Insights on Goods and Services Tax Act & GST Input Tax Credit Rules",
     description:
-      "Read our latest expert analysis on tax law, GST amendments, and commercial dispute resolution. Stay informed with CLC.",
+      "Stay updated on the Goods and Services Tax Act. Expert analysis on gst input tax credit rules, tax reforms, and landmark indirect tax litigation updates.",
     images: ["https://www.clclaw.in/favicon.png"],
   },
   robots:

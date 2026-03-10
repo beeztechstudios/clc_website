@@ -4,18 +4,18 @@ import Hero from "@/components/Hero";
 
 // ⭐ Homepage SEO Metadata
 export const metadata = {
-  title: "Tax & Commercial Disputes Law Firm | Commercial Law Chamber",
+  title: "Tax Law Firm | Commercial Law Chamber | Boutique Law Practice",
   description:
-    "Specialized lawyers for GST, tax, and complex commercial disputes with 20+ years of experience and Supreme Court representation. Book a consultation.",
+    "Commercial Law Chamber is a leading tax law firm in India. Specializing in Tax and Commercial Disputes, we are recognized among the top taxation law firms in India.",
   keywords:
     "tax disputes, commercial disputes, gst disputes, tax litigation, commercial litigation, supreme court lawyer, indirect tax, business disputes",
   alternates: {
     canonical: "https://www.clclaw.in",
   },
   openGraph: {
-    title: "Leading Tax & Commercial Disputes Law Firm in India",
+    title: "Tax Law Firm | Commercial Law Chamber | Boutique Law Practice",
     description:
-      "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
+      "Commercial Law Chamber is a leading tax law firm in India. Specializing in Tax and Commercial Disputes, we are recognized among the top taxation law firms in India.",
     url: "https://www.clclaw.in",
     images: [
       {
@@ -30,9 +30,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Law Chamber - Leading Tax & Commercial Disputes Law Firm in India",
+    title: "Tax Law Firm | Commercial Law Chamber | Boutique Law Practice",
     description:
-      "Commercial Law Chamber provides trusted tax and commercial dispute resolution, regulatory advocacy, and international tax expertise backed by legal excellence.",
+      "Commercial Law Chamber is a leading tax law firm in India. Specializing in Tax and Commercial Disputes, we are recognized among the top taxation law firms in India.",
     images: ["https://www.clclaw.in/favicon.png"],
   },
 };

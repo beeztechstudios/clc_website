@@ -11,9 +11,9 @@ import Contact from "@/components/Contact";
 // PAGE METADATA (SEO)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Contact Us | Litigation and Dispute Resolution Experts | CLC",
+  title: "Contact Us | Tax Consultant Near Me | Income Tax Lawyer Near Me",
   description:
-    "Contact Commercial Law Chamber for expert litigation and dispute resolution. Schedule a consultation with India’s top legal team for tax and commercial matters",
+    "Looking for a tax consultant near me or income tax lawyer near me? Contact Commercial Law Chamber for expert state tax lawyer and sales tax lawyer services.",
   keywords:
     "litigation and dispute resolution law firms, contact litigation lawyer, commercial dispute resolution, tax litigation, regulatory disputes, contact us ",
   alternates: { canonical: "https://www.clclaw.in/contact" },
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
 
   openGraph: {
-    title: "Connect with Our Litigation & Dispute Resolution Team",
+    title: "Contact Us | Tax Consultant Near Me | Income Tax Lawyer Near Me",
     description:
-      "Reach out to CLC’s experienced legal team for assistance in litigation, disputes, tax matters, and commercial law issues. Get reliable legal guidance today.",
+      "Looking for a tax consultant near me or income tax lawyer near me? Contact Commercial Law Chamber for expert state tax lawyer and sales tax lawyer services.",
     url: "https://www.clclaw.in/contact",
     images: ["https://www.clclaw.in/favicon.png"],
     type: "website",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Connect with Our Litigation & Dispute Resolution Team",
+    title: "Contact Us | Tax Consultant Near Me | Income Tax Lawyer Near Me",
     description:
-      "Reach out to CLC’s experienced legal team for assistance in litigation, disputes, tax matters, and commercial law issues. Get reliable legal guidance today.",
+      "Looking for a tax consultant near me or income tax lawyer near me? Contact Commercial Law Chamber for expert state tax lawyer and sales tax lawyer services.",
     images: ["https://www.clclaw.in/favicon.png"],
   },
 };

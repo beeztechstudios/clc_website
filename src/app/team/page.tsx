@@ -11,18 +11,18 @@ import Script from "next/script";
 // PAGE-SPECIFIC SEO  (Google LOVES THIS)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Best Tax Lawyers in India | Commercial Law Chamber Team",
+  title: "Vivek Sarin | Top Tax Lawyers in India | Best Tax Lawyer in India",
   description:
-    "Meet India's best tax lawyers. Our expert team specializes in complex tax advisory, litigation, commercial disputes, and Supreme Court. Consult us today.",
+    "Meet Vivek Sarin, the best tax lawyer in India, and our team of experts. Leading taxation law firms in Delhi for high-stakes Tax and Commercial Disputes.",
   keywords:
     "best tax lawyers in india, top tax attorney, tax advisory, commercial disputes, best gst lawyer, supreme court lawyers, regulatory disputes",
   alternates: {
     canonical: "https://www.clclaw.in/team",
   },
   openGraph: {
-    title: "Meet India's Top Tax Lawyers | Commercial Law ",
+    title: "Vivek Sarin | Top Tax Lawyers in India | Best Tax Lawyer in India",
     description:
-      "Expertise in Direct & Indirect Tax, GST, and high-stakes Commercial Disputes. Our team combines research-driven analysis with 20+ years of legal excellence.",
+      "Meet Vivek Sarin, the best tax lawyer in India, and our team of experts. Leading taxation law firms in Delhi for high-stakes Tax and Commercial Disputes.",
     url: "https://www.clclaw.in/team",
     images: ["https://www.clclaw.in/favicon.png"],
     locale: "en_IN",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Team - Commercial Law Chamber",
+    title: "Vivek Sarin | Top Tax Lawyers in India | Best Tax Lawyer in India",
     description:
-      "Experienced legal professionals specializing in tax and commercial disputes.",
+      "Meet Vivek Sarin, the best tax lawyer in India, and our team of experts. Leading taxation law firms in Delhi for high-stakes Tax and Commercial Disputes.",
     images: ["https://www.clclaw.in/clc-logo.png"],
   },
   robots: "index, follow",
@@ -45,7 +45,7 @@ function generateTeamSchema() {
   const members = Object.values(teamMembers).map((m) => ({
     "@type": "Person",
     name: m.name,
-    
+
   }));
 
   return {

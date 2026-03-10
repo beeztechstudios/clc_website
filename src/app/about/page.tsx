@@ -11,9 +11,9 @@ import About from "@/components/About";
 // SEO METADATA (NO <Head>, FULL SSR)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "About Commercial Law Chamber | Best Tax Law Firm in India",
+  title: "About Us - Premier Tax Law Firm & Boutique Law Practice",
   description:
-    "Commercial Law Chamber is among the best tax law firms in India, offering strategic litigation, research-driven analysis, and client-focused solutions.",
+    "Learn why CLC is a top taxation law firm in India. As a specialized tax law firm, we provide excellence in tax advisory and indirect tax litigation.",
   keywords:
     "best tax law firm, boutique law firm, corporate tax advisory, tax and corporate law, dispute resolution law firm",
   alternates: {
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "About the Best Tax Law Firms – Commercial Law Chamber",
+      "About Us - Premier Tax Law Firm & Boutique Law Practice",
     description:
-      "Boutique law practice specializing in tax advisory and dispute resolution with representation across India.",
+      "Learn why CLC is a top taxation law firm in India. As a specialized tax law firm, we provide excellence in tax advisory and indirect tax litigation.",
     url: "https://www.clclaw.in/about",
     images: ["https://www.clclaw.in/favicon.png"],
     locale: "en_IN",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About the Best Tax Law Firms – Commercial Law Chamber",
+    title: "About Us - Premier Tax Law Firm & Boutique Law Practice",
     description:
-      "Learn about Commercial Law Chamber, one of India’s best tax law firms, delivering research-driven analysis, strategic litigation & client-centric solutions.",
+      "Learn why CLC is a top taxation law firm in India. As a specialized tax law firm, we provide excellence in tax advisory and indirect tax litigation.",
     images: ["https://www.clclaw.in/favicon.png"],
   },
   robots:

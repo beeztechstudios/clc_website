@@ -10,18 +10,18 @@ import Expertise from "@/components/Expertise";
 // PAGE SEO (Correct for Next.js App Router)
 // ---------------------------------------------
 export const metadata: Metadata = {
-  title: "Tax and Commercial Law Services | Practice Areas | CLC",
+  title: "Direct & Indirect Tax Services | Business Tax Lawyer",
   description:
-    "Explore our tax and corporate law services, covering direct & indirect tax, regulatory disputes, commercial litigation, and high-stakes legal representation across India.",
+    "Expert direct & indirect tax solutions by leading income tax lawyers and gst lawyers. We handle corporate tax and gst and complex Tax and Commercial Disputes.",
   keywords:
     "tax and commercial law, corporate tax advisory, indirect tax law firms in delhi, commercial dispute resolution, regulatory disputes, cross border tax lawyer, business tax advisory",
   alternates: {
     canonical: "https://www.clclaw.in/practice-area",
   },
   openGraph: {
-    title: "Tax and Commercial Law – Practice Areas | Commercial Law Chamber",
+    title: "Direct & Indirect Tax Services | Business Tax Lawyer",
     description:
-      "Discover CLC’s tax and corporate law expertise, including direct & indirect tax, regulatory disputes, commercial litigation, and cross-border advisory services.",
+      "Expert direct & indirect tax solutions by leading income tax lawyers and gst lawyers. We handle corporate tax and gst and complex Tax and Commercial Disputes.",
     url: "https://www.clclaw.in/practice-area",
     images: ["https://www.clclaw.in/favicon.png"],
     type: "website",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tax and Commercial Law – Practice Areas | Commercial Law Chamber",
+    title: "Direct & Indirect Tax Services | Business Tax Lawyer",
     description:
-      "Discover CLC’s tax and corporate law expertise, including direct & indirect tax, regulatory disputes, commercial litigation, and cross-border advisory services.",
+      "Expert direct & indirect tax solutions by leading income tax lawyers and gst lawyers. We handle corporate tax and gst and complex Tax and Commercial Disputes.",
   },
   robots: "index, follow",
 };
