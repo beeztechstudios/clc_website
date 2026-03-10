@@ -1,3 +1,4 @@
+import HeroAnimations from "@/lib/heroAnimation";
 import { Building2, Users, Gavel, Scale, Shield, BookOpen, Globe, Handshake, Eye, Lightbulb } from "lucide-react";
 
 const About = () => {
@@ -56,13 +57,14 @@ const About = () => {
   ];
 
   return (
-    <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1  bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+      <HeroAnimations />
       {/* About Header Section */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-dotted border-[#22461B]">
-        <div className="max-w-6xl mx-auto">
+      <section className="px-4  pb-12 sm:px-6 md:px-8 py-4 mdborder-b border-dotted border-[#22461B]">
+        <div className="max-w-6xl mx-auto ">
           <div className="text-center mb-8">
 
-            <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+            <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
               <span
                 className="text-[#163C0F]"
                 style={{
@@ -93,15 +95,15 @@ const About = () => {
               </span>
             </h1>
 
-            <p className="text-base sm:text-md text-gray-600">
+            <p className="text-base hero-para sm:text-md text-gray-600">
               Strategic Legal Excellence in Tax and Commercial Disputes
             </p>
           </div>
 
           {/* Stats Section */}
-          <div className="flex justify-center  gap-4">
+          <div className="flex hero-buttons justify-center  gap-4">
             {stats.map((stat, index) => (
-              <div key={index} style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }} className=" border border-dashed  border-[#22461B]/40 p-4 text-center hover:border-[#163C0F] transition-all">
+              <div key={index} style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }} className=" border border-dashed  border-[#22461B]/40 py-1 md:py-2 px-4 md:px-4 text-center hover:border-[#163C0F] ">
 
                 <div
                   className="font-bold text-[#336429] mb-1"
@@ -117,6 +119,7 @@ const About = () => {
                   {stat.value}
                 </div>
                 <div
+             
                   style={{
                     fontFamily: "Inter",
                     fontWeight: 400,
@@ -138,10 +141,9 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="p-4 mb-8 ">
-        <div className="  p-6">
-          {/* <h2 className="text-2xl font-bold poppins  text-center text-[#163C0F] mb-6">Our Story</h2>
-           */}
+      <section className="py-4 px-4 hero-buttons sm:px-6 md:px-8 mb-8 ">
+        
+          
           <h2
             className="uppercase text-center mb-6 sm:mb-8"
             style={{
@@ -158,7 +160,7 @@ const About = () => {
           <div className="space-y-4 text-black text-justify leading-relaxed" style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(14px, 1.8vw, 16.4px)",
+          fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
             lineHeight: "20px",
             letterSpacing: "0px",
             verticalAlign: "middle",
@@ -185,7 +187,7 @@ const About = () => {
               end-to-end legal counsel.
             </p>
           </div>
-        </div>
+        
       </section>
 
 
@@ -216,7 +218,7 @@ const About = () => {
                       fontFamily: "League Spartan",
                       fontWeight: 600,
                       color: "#336429",
-                      fontSize: "clamp(14px, 1.8vw, 14.6px)",
+                      fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
                       lineHeight: "20px",
                       letterSpacing: "0px",
                       verticalAlign: "middle",
@@ -225,7 +227,7 @@ const About = () => {
                     <p style={{
                       fontFamily: "League Spartan",
                       fontWeight: 400,
-                      fontSize: "clamp(11px, 1.8vw, 14.4px)",
+                      fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                       lineHeight: "20px",
                       letterSpacing: "0px",
                       verticalAlign: "middle",
@@ -242,7 +244,7 @@ const About = () => {
               fontFamily: "League Spartan",
               fontWeight: 600,
               color: "#336429",
-              fontSize: "clamp(14px, 1.8vw, 18.6px)",
+              fontSize: "clamp(18px, 1.8vw, 16.4px)",
               lineHeight: "20px",
               letterSpacing: "0px",
               verticalAlign: "middle",
@@ -251,7 +253,7 @@ const About = () => {
             <p style={{
               fontFamily: "League Spartan",
               fontWeight: 400,
-              fontSize: "clamp(11px, 1.8vw, 16.4px)",
+              fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
               lineHeight: "20px",
               letterSpacing: "0px",
               verticalAlign: "middle",
@@ -281,13 +283,13 @@ const About = () => {
             <p className="text-base sm:text-md text-gray-600">Core principles of client service and ethical standards</p>
           </div>
 
-          <div className="bg-white  border-[#22461B] mb-8 p-3 sm:p-4">
+          <div className="bg-white  border-[#22461B] mb-8  sm:p-4">
             <div className="">
               <h3 className="text-[#163C0F] mb-3 " style={{
                 fontFamily: "League Spartan",
                 fontWeight: 600,
                 color: "#336429",
-                fontSize: "clamp(14px, 1.8vw, 18.6px)",
+                fontSize: "clamp(18px, 1.8vw, 20.4px)",
                 lineHeight: "20px",
                 letterSpacing: "0px",
                 verticalAlign: "middle",
@@ -296,7 +298,7 @@ const About = () => {
               <p style={{
                 fontFamily: "League Spartan",
                 fontWeight: 400,
-                fontSize: "clamp(11px, 1.8vw, 16.4px)",
+                fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                 lineHeight: "20px",
                 letterSpacing: "0px",
                 verticalAlign: "middle",
@@ -322,8 +324,24 @@ const About = () => {
                     <value.icon className="h-8 w-8 text-[#163C0F]/80" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#163C0F] text-[16px] mb-1">{value.title}</h3>
-                    <p className="text-gray-700 text-[14px] leading-relaxed">{value.description}</p>
+                    <h3 className="font-semibold text-[#163C0F] mb-1" style={{
+                      fontFamily: "Inter",
+                      fontWeight: 600,
+                      fontSize: "clamp(18px, 1.8vw, 16.4px)",
+                      lineHeight: "20px",
+                      letterSpacing: "0.01em",
+                      textTransform: "capitalize",
+                      color: "#163C0F",
+
+                    }}>{value.title}</h3>
+                    <p className="text-gray-700 " style={{
+                      fontFamily: "League Spartan",
+                      fontWeight: 400,
+                      fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
+                      lineHeight: "18px",
+                      textTransform: "capitalize",
+                      color: "#000000",
+                    }}>{value.description}</p>
                   </div>
                 </div>
               </div>

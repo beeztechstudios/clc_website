@@ -137,7 +137,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div className="min-w-0">
               {children}
             </div>
-
             <Footer />
           </div>
         </div>
@@ -149,6 +148,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
         )}
       </div>
+      
     </div>
   );
 }

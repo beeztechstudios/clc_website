@@ -7,6 +7,7 @@ import Image from "next/image";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { useState } from "react";
+import HeroAnimations from "@/lib/heroAnimation";
 
 // Define interface for type safety
 interface NewsItem {
@@ -47,13 +48,14 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
   };
 
   return (
-    <div className="flex-1 bg-white  py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white   py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+       <HeroAnimations />
       {/* Top Header */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-gray-200">
+      <section className="px-3  pb-12 sm:px-6 md:px-8 py-4 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 ">
             <h1
-              className="text-[#163C0F] mb-4 "
+              className="text-[#163C0F] hero-para  mb-4 "
               style={{
                 fontFamily: "League Spartan",
                 fontWeight: 700,
@@ -66,14 +68,14 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
               Latest Tax Law News & Legal Judgments in India
 
             </h1>
-            <p className="text-base sm:text-md text-gray-600">
+            <p className="text-base sm:text-md  hero-para text-gray-600">
               Stay informed with our latest case updates, news, and publications
               from Commercial Law Chambers.
             </p>
           </div>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap hero-buttons  justify-center gap-2">
             {typeList.map((type) => (
               <button
                 key={type}
@@ -91,7 +93,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       </section>
 
       {/* News Cards */}
-      <section className="p-6 sm:p-8 md:p-12 ">
+      <section className="p-4 sm:p-8 md:p-12 hero-para  ">
         <div className="max-w-6xl mx-auto">
 
           {/* News Data */}

@@ -1,3 +1,4 @@
+import HeroAnimations from "@/lib/heroAnimation";
 import { Calculator, Building, FileText } from "lucide-react";
 
 const Expertise = () => {
@@ -47,12 +48,12 @@ const Expertise = () => {
   ];
 
   return (
-    <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
-
+    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+      <HeroAnimations />
       {/* Header */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-dashed  border-[#22461B]/40">
+      <section className="px-4 pb-12  sm:px-6 md:px-8 py-4 border-b border-dashed  border-[#22461B]/40">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+          <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
             <span
               className="text-[#163C0F]"
               style={{
@@ -80,14 +81,14 @@ const Expertise = () => {
             > Comprehensive Litigation Solutions
             </span>
           </h1>
-          <p className="text-base sm:text-md text-gray-600  ">
+          <p className="text-base hero-para sm:text-md text-gray-600  ">
             Research-intensive, solution-driven approach  to align with legal and business objectives.
           </p>
         </div>
       </section>
 
       {/* Practice Areas */}
-      <div className="space-y-6 sm:space-y-8">
+      <div className="space-y-6 hero-para sm:space-y-8">
         {practiceAreas.map((area, index) => (
           <section
             key={index}
@@ -107,7 +108,7 @@ const Expertise = () => {
                       style={{
                         fontFamily: "League Spartan",
                         fontWeight: 700,
-                        fontSize: "clamp(16px, 2.5vw, 22px)",
+                        fontSize: "clamp(22px, 1.8vw, 22.4px)",
                         lineHeight: "1.3",
                         color: "#163C0F",
                       }}
@@ -118,7 +119,7 @@ const Expertise = () => {
                       style={{
                         fontFamily: "League Spartan",
                         fontWeight: 400,
-                        fontSize: "clamp(13px, 1.6vw, 15px)",
+                        fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                         color: "#4B5563",
                       }}
                     >
@@ -137,7 +138,7 @@ const Expertise = () => {
                       style={{
                         fontFamily: "League Spartan",
                         fontWeight: 400,
-                        fontSize: "clamp(13px, 1.6vw, 15px)",
+                        fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                         lineHeight: "22px",
                         color: "#4B5563",
                       }}
@@ -167,7 +168,7 @@ const Expertise = () => {
                             style={{
                               fontFamily: "League Spartan",
                               fontWeight: 400,
-                              fontSize: "13.5px",
+                              fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                               lineHeight: "20px",
                               color: "#374151",
                             }}
@@ -186,7 +187,7 @@ const Expertise = () => {
                       style={{
                         fontFamily: "League Spartan",
                         fontWeight: 600,
-                        fontSize: "14px",
+                        fontSize: "18px",
                         color: "#163C0F",
                       }}
                     >
@@ -210,7 +211,7 @@ const Expertise = () => {
                             style={{
                               fontFamily: "League Spartan",
                               fontWeight: 400,
-                              fontSize: "13.5px",
+                              fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
                               lineHeight: "20px",
                               color: "#000000",
                             }}

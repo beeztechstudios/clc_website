@@ -1,16 +1,18 @@
 
 
+import HeroAnimations from "@/lib/heroAnimation";
 import TeamMember, { teamMembers } from "./TeamMember";
 import Link from "next/link"
 
 const Team = () => {
   return (
-    <div className="flex-1 bg-white  py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white  py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+      <HeroAnimations />
       {/* Team Header Section */}
-      <section className="p-6 sm:p-8 md:p-12  ">
+      <section className="px-4 pb-12 sm:px-6 md:px-8 py-4  ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+            <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
               <span
                 className="text-[#163C0F]"
                 style={{
@@ -41,7 +43,7 @@ const Team = () => {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid hero-para grid-cols-1 md:grid-cols-2 gap-6">
             {Object.values(teamMembers).map((member) => (
               <TeamMember key={member.id} member={member} />
             ))}
@@ -50,12 +52,12 @@ const Team = () => {
       </section>
 
       {/* Additional Info Section */}
-      <section className="p-6 sm:p-8 md:p-12 border-b border-dotted border-[#22461B]">
+      <section className="px-6 hero-buttons pb-4  sm:px-8 md:px-6 border-b border-dotted border-[#22461B]">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className=" text-[#163C0F] mb-4" style={{
             fontFamily: "Arial",
             fontWeight: 700,
-            fontSize: "23px",
+            fontSize: "clamp(18.5px, 1.8vw, 18.4px)",
             lineHeight: "24px",
             letterSpacing: "0px",
             color: "#336429",
@@ -63,7 +65,7 @@ const Team = () => {
           <p className=" mb-4" style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(14px, 1.8vw, 18.4px)",
+            fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
             lineHeight: "20px",
             letterSpacing: "0px",
             verticalAlign: "middle",
@@ -74,7 +76,7 @@ const Team = () => {
           </p>
           <Link 
              href="/career"
-             className="text-[#163C0F] hover:text-[#1a4a1a] hover:scale-110 font-semibold transition-colors"
+             className="text-[#163C0F]  hover:text-[#1a4a1a] hover:scale-110 font-semibold transition-colors"
            >
              View Career Opportunities →
            </Link>

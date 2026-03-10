@@ -7,6 +7,7 @@ import { useBlogPosts, useCategories } from "@/hooks/useSanityData";
 import { urlFor } from "@/lib/sanity";
 import { format } from "date-fns";
 import { useState, useMemo } from "react";
+import HeroAnimations from "@/lib/heroAnimation";
 
 const Insights = () => {
   const { data: blogs = [], isLoading: blogsLoading } = useBlogPosts();
@@ -32,13 +33,14 @@ const Insights = () => {
   }, [blogs, selectedCategory]);
 
   return (
-    <div className="flex-1 bg-white  py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+       <HeroAnimations />
       {/* ----------------------------------------------
           HEADER SECTION
       ---------------------------------------------- */}
-      <section className="p-6 sm:p-8 md:p-12 ">
+      <section className="px-3  pb-12 sm:px-6 md:px-8 py-4 ">
         <div className="max-w-6xl mx-auto text-center mb-8">
-          <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
+          <h1 className="font-bold  hero-title  text-[#163C0F] leading-tight mb-4">
             <span
               className="text-[#163C0F]"
               style={{
@@ -56,14 +58,14 @@ const Insights = () => {
 
 
           </h1>
-          <p className="text-base sm:text-md text-gray-600">
+          <p className="text-base  hero-para sm:text-md text-gray-600">
             Stay informed with our latest insights on trending topics in tax law,
             commercial litigation, and regulatory developments.
           </p>
         </div>
 
         {/* CATEGORY FILTER */}
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex flex-wrap hero-buttons justify-center gap-2">
           {categoryList.map((category) => (
             <button
               key={category}
@@ -82,7 +84,7 @@ const Insights = () => {
       {/* ----------------------------------------------
           BLOG GRID SECTION
       ---------------------------------------------- */}
-      <section className="p-6 sm:p-8 md:p-12  border-t border-dotted border-[#22461B]">
+      <section className="p-4 sm:p-8 md:p-12  hero-buttons border-t border-dotted border-[#22461B]">
         <div className="max-w-6xl mx-auto">
 
           {/* ------------------------------

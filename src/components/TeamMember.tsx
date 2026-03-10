@@ -1,7 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Award, Briefcase, GraduationCap, MapPin, User } from "lucide-react";
+
+import {  Briefcase, GraduationCap, MapPin, User } from "lucide-react";
 
 interface TeamMemberProps {
   member: {
@@ -76,9 +77,9 @@ export { teamMembers };
 const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
   if (variant === "detailed") {
     return (
-      <div className="bg-white p-4 sm:p-6">
-        <div className="max-w-4xl mx-auto">
-
+      <div className=" p-2 sm:p-6">
+        <div className="max-w-4xl">
+          
           {/* Header */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
             {/* Avatar */}
@@ -113,7 +114,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 600,
-                  fontSize: "clamp(18px, 3vw, 24px)",
+                  fontSize: "clamp(20.5px, 1.8vw, 20.4px)",
                   lineHeight: "1.3",
                   color: "#163C0F",
                 }}
@@ -123,13 +124,13 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
               <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 mb-4">
                 <span
                   className="flex items-center gap-1"
-                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", color: "#5A6F55" }}
                 >
                   <Briefcase className="w-3 h-3" /> {member.experience}
                 </span>
                 <span
                   className="flex items-center gap-1"
-                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", color: "#5A6F55" }}
                 >
                   <MapPin className="w-3 h-3" /> {member.location}
                 </span>
@@ -152,7 +153,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                 {member.fullDescription.map((paragraph, index) => (
                   <p
                     key={index}
-                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "14px", lineHeight: "22px", color: "#374151" }}
+                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", lineHeight: "22px", color: "#374151" }}
                   >
                     {paragraph}
                   </p>
@@ -173,7 +174,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                   <span
                     key={index}
                     className="px-3 py-1 rounded-full border border-[#5A6F554D]/90"
-                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", lineHeight: "18px", color: "#5A6F55" }}
+                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", lineHeight: "18px", color: "#5A6F55" }}
                   >
                     {skill}
                   </span>
@@ -197,7 +198,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                     style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
                   >
                     <GraduationCap className="w-4 h-4 text-[#163C0F] shrink-0" />
-                    <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13.5px", color: "#000000" }}>
+                    <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", color: "#000000" }}>
                       {edu}
                     </span>
                   </div>
@@ -212,8 +213,8 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
   }
 
   return (
-    <div className=" border border-[#22461B] border-dotted p-6 flex flex-col items-center text-center h-full">
-
+    <div className=" border border-[#22461B]  border-dotted p-6 flex flex-col items-center text-center h-full">
+      
       {/* Avatar + experience badge */}
       <div className="relative mb-4">
         <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
@@ -241,11 +242,11 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
       {/* Name */}
       <h2
-        className="mt-5 mb-1"
+        className="mt-5 mb-1 "
         style={{
           fontFamily: "League Spartan",
           fontWeight: 600,
-          fontSize: "22px",
+          fontSize: "clamp(20.5px, 1.8vw, 20.4px)",
           lineHeight: "26px",
           color: "#163C0F",
         }}
@@ -259,7 +260,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         style={{
           fontFamily: "League Spartan",
           fontWeight: 400,
-          fontSize: "14px",
+          fontSize: "clamp(16.5px, 1.8vw, 18.4px)",
           lineHeight: "18px",
           color: "#5A6F55",
         }}
@@ -273,7 +274,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         style={{
           fontFamily: "League Spartan",
           fontWeight: 400,
-          fontSize: "13.5px",
+          fontSize: "clamp(17.5px, 1.8vw, 14.4px)",
           lineHeight: "20px",
           color: "#374151",
         }}
@@ -285,7 +286,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       <div className="w-full text-left mb-5">
         <p
           className="mb-3"
-          style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "14px", color: "#336429" }}
+          style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#336429" }}
         >
           Expertise :
         </p>
@@ -294,7 +295,12 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
             <span
               key={index}
               className="px-3 py-1 rounded-full border border-[#5A6F554D]/90 text-[#5A6F55]"
-              style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", lineHeight: "18px" }}
+              style={{
+                fontFamily: "League Spartan",
+                fontWeight: 400,
+                fontSize: "clamp(15px, 1.8vw, 14.4px)",
+                lineHeight: "18px",
+              }}
             >
               {skill}
             </span>

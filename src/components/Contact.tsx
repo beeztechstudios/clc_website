@@ -1,3 +1,4 @@
+import HeroAnimations from "@/lib/heroAnimation";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const contactInfo = [
@@ -38,30 +39,32 @@ const whyChoose = [
 
 const Contact = () => {
   return (
-    <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
-
+    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+ <HeroAnimations />
       {/* ── Header ── */}
-      <section className="p-6 sm:p-8 md:p-12 ">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="px-4  pb-12 sm:px-6 md:px-8 py-4 ">
+        <div className="max-w-6xl mx-auto  hero-para text-center">
           <h1
-            className="mb-3"
+            className="mb-3  hero-title "
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
-              fontSize: "clamp(26px, 5vw, 48px)",
+              fontSize: "clamp(32px, 6vw, 45px)",
               lineHeight: "1.1",
               letterSpacing: "2px",
-              color: "#163C0F",
+              textAlign: "center",
+              display: "block",
             }}
           >
             Get In <span style={{ color: "#2A5A21" }}>Touch With Us</span>
           </h1>
           <p
+            className=" hero-para "
             style={{
               fontFamily: "League Spartan",
               fontWeight: 400,
               fontSize: "clamp(14px, 2vw, 16px)",
-              lineHeight: "21px",
+              lineHeight: "14px",
               color: "#4B5563",
             }}
           >
@@ -71,7 +74,7 @@ const Contact = () => {
       </section>
 
       {/* ── Why Choose Us ── */}
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-4 px-4 hero-buttons sm:px-8 md:px-12 lg:px-16 bg-white">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
 
         <h2
@@ -114,7 +117,7 @@ const Contact = () => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 400,
-                  fontSize: "14.4px",
+                  fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
                   lineHeight: "20px",
                   color: "#000000",
                 }}
@@ -129,7 +132,7 @@ const Contact = () => {
       </section>
 
       {/* ── Contact Info ── */}
-      <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-8 px-4 hero-buttons sm:px-8 md:px-12 lg:px-16 bg-white">
         <h2
           className="uppercase mb-6"
           style={{
@@ -158,7 +161,7 @@ const Contact = () => {
                   style={{
                     fontFamily: "Inter",
                     fontWeight: 600,
-                    fontSize: "14px",
+                    fontSize: "clamp(18.5px, 1.8vw, 16.4px)",
                     color: "#163C0F",
                   }}
                 >
@@ -172,7 +175,7 @@ const Contact = () => {
                     const baseStyle = {
                       fontFamily: "League Spartan",
                       fontWeight: 400,
-                      fontSize: "13.5px",
+                      fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
                       lineHeight: "20px",
                     } as React.CSSProperties;
 
@@ -221,7 +224,7 @@ const Contact = () => {
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
-              fontSize: "16px",
+              fontSize: "clamp(18.5px, 1.8vw, 20.4px)",
               color: "#163C0F",
               marginBottom: "4px",
             }}
@@ -232,7 +235,7 @@ const Contact = () => {
             style={{
               fontFamily: "League Spartan",
               fontWeight: 400,
-              fontSize: "13.5px",
+              fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
               color: "#5A6F55",
             }}
           >
