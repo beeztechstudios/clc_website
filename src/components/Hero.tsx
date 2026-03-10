@@ -7,22 +7,27 @@ const distinctions = [
   {
     src: "/vivek.webp",
     alt: "Boutique Law Practice",
-    text: "Boutique Law Practice Specializing In GST Law Services, Customs, And Commercial Dispute Resolution",
+    text: "Boutique law practice specializing in GST law services, Customs, and commercial dispute resolution",
   },
   {
     src: "/shreya.webp",
     alt: "Supreme Court",
-    text: "Regular Representation Before The Supreme Court Of India",
+    text: "Led by top tax lawyers in India with deep advisory and litigation expertise",
   },
   {
     src: "/images/deepak.jpg",
     alt: "Business Law Chambers",
-    text: "Business Law Chambers With A Pan-India Legal Network And Seamless Multi-Jurisdictional Coverage",
+    text: "Business law chambers with a Pan-India legal network and seamless multi-jurisdictional coverage",
   },
   {
     src: "/images/vivek.jpg",
     alt: "Top Tax Lawyers",
-    text: "Led By Top Tax Lawyers In India With Deep Advisory And Litigation Expertise",
+    text: "Research-intensive, precedent-driven legal strategy",
+  },
+  {
+    src: "/images/vivek.jpg",
+    alt: "Top Tax Lawyers",
+    text: "Regular representation before the Supreme Court of India",
   },
 ];
 
@@ -81,8 +86,8 @@ const Hero = () => {
             textAlign: "center",
           }}
         >
-          Trusted by corporations and individuals across India for strategic
-          legal solutions that drive success and protect your interests.
+          Trusted by corporations and individuals across India for strategic legal solutions.
+
         </p>
 
         <div
@@ -177,14 +182,7 @@ const Hero = () => {
           }}
         >
           <p>
-            Established In 2008, The Commercial Law Chamber (CLC) Is A Boutique
-            Law Firm Widely Recognized For Its Specialized Tax Advisory And
-            High-Stakes Dispute Resolution Practice. As One Of The Top Taxation
-            Law Firms In India, We Maintain A Strong Focus On The Goods And
-            Services Tax Act And Customs Laws. Led By The Team Of Best GST
-            Lawyers In Delhi And Supported By A Team Of 15 Associates, CLC
-            Delivers Strategic, Research-Driven, And Commercially Aligned Legal
-            Solutions Across Complex Tax And Commercial Disputes.
+            Established in 2008, the Commercial Law Chamber (CLC) is a boutique law firm widely recognized for its specialized tax advisory and high-stakes dispute resolution practice. As one of the top taxation law firms in India, we maintain a strong focus on the Goods and Services Tax Act and Customs laws. Led by the team of best GST lawyers in Delhi and supported by a team of 15 associates, CLC delivers strategic, research-driven, and commercially aligned legal solutions across complex Tax and Commercial Disputes.
           </p>
           <div className="w-full border border-dotted mt-[35px] border-[#22461B]/50"></div>
         </div>

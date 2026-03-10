@@ -13,23 +13,23 @@ const About = () => {
   const approaches = [
     {
       icon: BookOpen,
-      title: "Research-Driven Tax & Corporate Analysis",
-      description: "Rigorous legal research and precedent analysis for strategic advantage"
+      title: "Research-Driven Analysis",
+      description: "Rigorous legal research for strategic advantage."
     },
     {
       icon: Scale,
-      title: "Strategic Tax & Commercial Litigation",
-      description: "Outcome-oriented approach in high-stakes disputes and appellate matters"
+      title: "Strategic Litigation",
+      description: "Outcome-oriented approach in high-stakes disputes."
     },
     {
       icon: Users,
-      title: "Client-Centric Legal Solutions",
-      description: "Bespoke legal solutions aligned with commercial imperatives"
+      title: "Client-Centric Solutions",
+      description: "Bespoke legal solutions aligned with commercial imperatives."
     },
     {
       icon: Globe,
-      title: "Pan-India Network",
-      description: "Coordinated representation across all Indian state capitals"
+      title: "Pan India Network",
+      description: " Coordinated representation across all Indian state capitals."
     }
   ];
 
@@ -77,7 +77,7 @@ const About = () => {
                   display: "block",
                 }}
               >
-                About Commercial Law Chamber
+                Premier Tax and
               </span>
               <span
                 className="text-[#2A5A21]"
@@ -91,7 +91,8 @@ const About = () => {
                   display: "block",
                 }}
               >
-                One of India’s Best Tax Law Practice
+                Commercial Law Firm
+
               </span>
             </h1>
 
@@ -167,24 +168,14 @@ const About = () => {
             textTransform: "capitalize",
           }}>
             <p>
-              Founded in 2008, Commercial Law Chamber emerged from a vision to create a boutique law practice
-              distinguished by its deep specialization in tax advisory and dispute resolution. With three seasoned
-              Partners and a team of 15 adept associates, we have built a robust national network of legal
-              professionals and expert counsels, ensuring seamless support across jurisdictions in India.
+            Founded in 2008, Commercial Law Chamber is a boutique law practice established with a focused vision of delivering excellence in tax advisory. As a leading tax law firm, we are led by two experienced Partners, including top GST lawyers in India, and supported by a team of 15 associates. The firm operates through a strong Pan-India network, ensuring seamless representation across jurisdiction. 
             </p>
             <p>
-              Our founding philosophy was rooted in strategic thinking and rigorous legal research—crafting bespoke
-              solutions that not only address legal complexities but also align with our clients' commercial
-              imperatives. Over the years, we have become particularly known for our formidable expertise in tax
-              litigation, representing clients before the Supreme Court of India (including SLPs), various High Courts,
-              and specialized tax tribunals such as ITAT, CESTAT, and VAT Tribunals.
+            Our practice is distinguished by strategic insight, rigorous legal research, and a client-centric approach. Recognized as a premier GST law firm, we regularly represent clients before the Supreme Court of India, various High Courts, and specialized tribunals including ITAT, CESTAT, and VAT authorities.
+
             </p>
             <p>
-              Our comprehensive practice spans the full spectrum of contentious and advisory tax matters, including
-              departmental proceedings, GST investigations, refund litigation, and trade remedies before the
-              Directorate General of Trade Remedies (DGTR) and other international forums. From high-stakes search
-              and seizure defense to meticulous representation in adjudication and appellate proceedings, we deliver
-              end-to-end legal counsel.
+            As a specialized tax law firm, we provide comprehensive services covering indirect tax litigation, departmental proceedings, GST input tax credit rules analysis, and trade remedy matters. From strategic advisory to adjudication, CLC offers end-to-end tax and regulatory counsel.
             </p>
           </div>
         
@@ -206,7 +197,7 @@ const About = () => {
             <p className="text-base sm:text-md text-gray-600">Methodology in handling complex legal matters</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-0">
             {approaches.map((approach, index) => (
               <div key={index} className="bg-white border-1 border-dashed border-[#22461B]   p-3 hover:shadow-lg transition-all hover:scale-[1.02]">
                 <div className="flex items-start gap-4">
@@ -239,7 +230,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="  p-5 sm:p-6 border-1 border-dashed border-[#22461B] " style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }}>
+          {/* <div className="  p-5 sm:p-6 border-1 border-dashed border-[#22461B] " style={{ background: "linear-gradient(to top, #CFE2C8, #FFFFFF)" }}>
             <h3 className="text-[#163C0F] mb-3 " style={{
               fontFamily: "League Spartan",
               fontWeight: 600,
@@ -264,7 +255,7 @@ const About = () => {
               network enables us to provide seamless legal support across diverse jurisdictions while maintaining
               the highest standards of professional service.
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -304,10 +295,7 @@ const About = () => {
                 verticalAlign: "middle",
                 textTransform: "capitalize",
               }}>
-                We are proud of our track record in precedent-setting matters across courts and tribunals—rulings
-                that have shaped jurisprudence on anti-dumping, transfer pricing, indirect taxes, and constitutional
-                tax challenges. At the Commercial Law Chamber, we don't just solve legal problems—we craft strategies
-                that protect, defend, and advance your interests in the most complex and high-value disputes.
+                To be a leading tax litigation and advisory boutique law firm, recognised for shaping tax jurisprudence, delivering strategic and high-stakes advocacy, and safeguarding our clients’ commercial interests in the most complex and impactful matters. 
               </p>
             </div>
           </div>
