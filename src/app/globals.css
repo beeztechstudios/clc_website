@@ -210,7 +210,9 @@
    lg (≥1024px = laptop): exact current values — DO NOT CHANGE
    ============================================================ */
 
-/* H1 — "Commitment to Legal Excellence." */
+/* Page title — "Commitment to Legal Excellence." / "Premier Tax and…" */
+h1.hero-text-title,
+p.hero-text-title,
 .hero-text-title {
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
@@ -219,9 +221,13 @@
   letter-spacing: 0.5px;
 }
 @media (min-width: 768px) {
+  h1.hero-text-title,
+  p.hero-text-title,
   .hero-text-title { font-size: 44px; }
 }
 @media (min-width: 1024px) {
+  h1.hero-text-title,
+  p.hero-text-title,
   .hero-text-title { font-size: clamp(30px, 8vw, 50px); }
 }
 
