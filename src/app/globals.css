@@ -200,6 +200,209 @@
   animation: pattern-shift 30s linear infinite;
 }
 
+/* ============================================================
+   HERO SECTION TYPOGRAPHY — Single Source of Truth
+
+   Naming convention: .hero-text-{role}
+
+   Base (mobile/tablet): scaled up for readability
+   md (≥768px = tablet landscape): slightly smaller
+   lg (≥1024px = laptop): exact current values — DO NOT CHANGE
+   ============================================================ */
+
+/* H1 — "Commitment to Legal Excellence." */
+.hero-text-title {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+@media (min-width: 768px) {
+  .hero-text-title { font-size: 44px; }
+}
+@media (min-width: 1024px) {
+  .hero-text-title { font-size: clamp(30px, 8vw, 50px); }
+}
+
+/* Sub-heading paragraph — "Trusted by corporations…" */
+.hero-text-subpara {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .hero-text-subpara { font-size: 14px; line-height: 18px; }
+}
+
+/* CTA Buttons */
+.hero-text-button {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .hero-text-button { font-size: 14.4px; }
+}
+
+/* Stats counter number */
+.hero-text-counter {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 48px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .hero-text-counter { font-size: 30px; }
+}
+@media (min-width: 1024px) {
+  .hero-text-counter { font-size: clamp(22px, 3.5vw, 32px); }
+}
+
+/* Stats label — "CASES WON" etc. */
+.hero-text-stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .hero-text-stat-label { font-size: 14px; }
+}
+@media (min-width: 1024px) {
+  .hero-text-stat-label { font-size: clamp(10px, 1.5vw, 14px); }
+}
+
+/* Section heading — "WELCOME TO…", "OUR DISTINCTION", etc. */
+.hero-text-section-heading {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .hero-text-section-heading { font-size: clamp(16px, 2.5vw, 18px); line-height: 24px; }
+}
+
+/* Body paragraph — welcome text, distinction cells */
+.hero-text-body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+}
+@media (min-width: 1024px) {
+  .hero-text-body { font-size: clamp(16.4px, 1.8vw, 14.4px); line-height: 20px; }
+}
+
+/* Distinction grid cell text */
+.hero-text-distinction {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  color: #111827;
+}
+@media (min-width: 1024px) {
+  .hero-text-distinction { font-size: clamp(14px, 1.8vw, 16px); line-height: 1.4; }
+}
+
+/* Practice area title */
+.hero-text-practice-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  color: #163C0F;
+}
+@media (min-width: 1024px) {
+  .hero-text-practice-title { font-size: clamp(16px, 1.8vw, 16px); line-height: 20px; }
+}
+
+/* Practice area description */
+.hero-text-practice-desc {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #000000;
+}
+@media (min-width: 1024px) {
+  .hero-text-practice-desc { font-size: clamp(14.4px, 1.8vw, 14.4px); line-height: 18px; }
+}
+
+/* Team member name */
+.hero-text-team-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #163C0F;
+}
+@media (min-width: 1024px) {
+  .hero-text-team-name { font-size: clamp(16px, 1.8vw, 16px); line-height: 26px; }
+}
+
+/* Team member role / degree */
+.hero-text-team-role {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  color: #5A6F55;
+}
+@media (min-width: 1024px) {
+  .hero-text-team-role { font-size: clamp(14px, 1.8vw, 14px); line-height: 21px; }
+}
+
+/* Team expertise label */
+.hero-text-expertise-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #336429;
+}
+@media (min-width: 1024px) {
+  .hero-text-expertise-label { font-size: clamp(14.4px, 1.8vw, 14.4px); }
+}
+
+/* Team expertise tag */
+.hero-text-expertise-tag {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5A6F55;
+}
+@media (min-width: 1024px) {
+  .hero-text-expertise-tag { font-size: clamp(12px, 1.8vw, 10px); line-height: 14px; }
+}
+
+/* Experience badge */
+.hero-text-experience-badge {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #ffffff;
+}
+
 /* -----------------------------
    Law texture background
 -------------------------------- */
