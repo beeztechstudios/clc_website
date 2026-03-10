@@ -36,7 +36,7 @@ const Career = () => {
   const { data: currentOpenings, isLoading, isError } = useCareerOpenings();
 
   return (
-    <div className="flex-1 bg-white py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
 
       {/* ── Header ── */}
       <section className="p-6 sm:p-8 md:p-12 ">
@@ -46,10 +46,11 @@ const Career = () => {
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
-              fontSize: "clamp(26px, 5vw, 48px)",
+              fontSize: "clamp(32px, 6vw, 45px)",
               lineHeight: "1.1",
               letterSpacing: "2px",
-              color: "#163C0F",
+              textAlign: "center",
+              display: "block",
             }}
           >
             Legal Careers in{" "}
@@ -60,7 +61,7 @@ const Career = () => {
               fontFamily: "League Spartan",
               fontWeight: 400,
               fontSize: "clamp(14px, 2vw, 16px)",
-              lineHeight: "21px",
+              lineHeight: "14px",
               color: "#4B5563",
             }}
           >
@@ -91,7 +92,7 @@ const Career = () => {
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(14px, 1.8vw, 16.4px)",
+            fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
             lineHeight: "22px",
             color: "#1F2937",
           }}
@@ -127,7 +128,7 @@ const Career = () => {
 
         <div className="grid grid-cols-1 gap-4">
           {isLoading && (
-            <p style={{ fontFamily: "League Spartan", fontSize: "14px", color: "#4B5563" }}>
+            <p style={{ fontFamily: "League Spartan", fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#4B5563" }}>
               Loading openings...
             </p>
           )}
@@ -136,7 +137,7 @@ const Career = () => {
               className="px-5 py-6"
               style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
             >
-              <p style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "14.4px", color: "#000000" }}>
+              <p style={{ fontFamily: "League Spartan", fontWeight: 400,  fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#000000" }}>
                 No current openings. Please check back later or send your CV to{" "}
                 <span style={{ color: "#163C0F", fontWeight: 600 }}>careers@clc.in</span>
               </p>
@@ -154,7 +155,7 @@ const Career = () => {
                     style={{
                       fontFamily: "League Spartan",
                       fontWeight: 600,
-                      fontSize: "16px",
+                      fontSize: "clamp(22.5px, 1.8vw, 22.4px)",
                       lineHeight: "20px",
                       color: "#163C0F",
                     }}
@@ -170,7 +171,7 @@ const Career = () => {
                       <span
                         key={val}
                         className="flex items-center gap-1"
-                        style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+                        style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(18.5px, 1.8vw, 18.4px)", color: "#5A6F55" }}
                       >
                         <Icon className="h-3 w-3" /> {val}
                       </span>
@@ -189,7 +190,7 @@ const Career = () => {
                 <div>
                   <p
                     className="mb-2"
-                    style={{ fontFamily: "League Spartan", fontWeight: 600, fontSize: "13px", color: "#163C0F" }}
+                    style={{ fontFamily: "League Spartan", fontWeight: 600, fontSize: "clamp(18.5px, 1.8vw, 16.4px)", color: "#163C0F" }}
                   >
                     Requirements:
                   </p>
@@ -197,7 +198,7 @@ const Career = () => {
                     {job.requirements.map((req, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-[#336429] mt-0.5 shrink-0" />
-                        <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "13.5px", color: "#374151" }}>
+                        <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(18.5px, 1.8vw, 16.4px)", color: "#374151" }}>
                           {req}
                         </span>
                       </li>
@@ -246,7 +247,7 @@ const Career = () => {
                   style={{
                     fontFamily: "League Spartan",
                     fontWeight: 600,
-                    fontSize: "14px",
+                    fontSize: "clamp(16.5px, 1.8vw, 12.4px)",
                     lineHeight: "20px",
                     letterSpacing: "0.01em",
                     color: "#163C0F",
@@ -260,7 +261,7 @@ const Career = () => {
                   style={{
                     fontFamily: "League Spartan",
                     fontWeight: 400,
-                    fontSize: "14.4px",
+                    fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
                     lineHeight: "18px",
                     color: "#000000",
                   }}
@@ -295,7 +296,7 @@ const Career = () => {
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(14px, 1.8vw, 16px)",
+            fontSize: "clamp(16.5px, 1.8vw, 12.4px)",
             lineHeight: "22px",
             color: "#1F2937",
           }}
@@ -315,7 +316,7 @@ const Career = () => {
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 400,
-                  fontSize: "14.4px",
+                  fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
                   lineHeight: "18px",
                   color: "#000000",
                 }}
@@ -330,7 +331,7 @@ const Career = () => {
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "14.4px",
+            fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
             lineHeight: "20px",
             color: "#1F2937",
           }}
@@ -346,7 +347,7 @@ const Career = () => {
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "13px",
+            fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
             color: "#6B7280",
           }}
         >
