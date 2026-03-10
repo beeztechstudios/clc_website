@@ -49,8 +49,8 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col items-center">
       {/* Container that allows for sidebars + center column */}
-      <div className="flex flex-row items-start justify-center w-full max-w-[1600px] px-4">
-
+      {/* <div className="flex flex-row items-start justify-center w-full max-w-[1600px] px-4"> */}
+      <div className="flex w-full max-w-[1600px] mx-auto px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
           <div className="hidden lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[230px] -mr-32 z-20">

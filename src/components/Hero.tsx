@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -30,14 +29,11 @@ const Hero = () => {
   return (
     <div className="flex-1">
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 text-center  bg-white border-gray-100 overflow-hidden">
-
+      <section className="relative py-12 pb-0 sm:py-16 md:py-20 px-4 sm:px-6 text-center justify-end bg-white  overflow-hidden">
         {/* Circle Background */}
-        <div className="absolute left-1/2 top-32 -translate-x-1/2
-                  w-[120vw] md:w-[1200px] h-[120vw] sm:h-[100vw]
-                  bg-[#6B8066]/10
-                  rounded-full">
-        </div>
+        <div
+          className="absolute left-1/2  top-[45%] md:top-32 -translate-x-1/2 w-[140vw] md:w-[1200px] h-[140vw] md:h-[1200px] bg-[#6B8066]/10 rounded-full"
+        ></div>
 
         <h1 className="font-bold text-[#163C0F] leading-tight mb-4">
           <span
@@ -45,7 +41,7 @@ const Hero = () => {
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
-              fontSize: "clamp(32px, 6vw, 58px)",
+              fontSize: "clamp(38px, 6vw, 58px)",
               lineHeight: "1.1",
               letterSpacing: "2px",
               textAlign: "center",
@@ -59,7 +55,7 @@ const Hero = () => {
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
-              fontSize: "clamp(32px, 6vw, 58px)",
+              fontSize: "clamp(38px, 6vw, 58px)",
               lineHeight: "1.1",
               letterSpacing: "2px",
               textAlign: "center",
@@ -81,26 +77,31 @@ const Hero = () => {
             textAlign: "center",
           }}
         >
-          Trusted by corporations and individuals across India for strategic legal solutions that drive success and protect your interests.
+          Trusted by corporations and individuals across India for strategic
+          legal solutions that drive success and protect your interests.
         </p>
 
         <div
-          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12 sm:mb-16"
+          className="flex flex-row justify-center  gap-3 sm:gap-4 mb-8 sm:mb-16"
           style={{ fontFamily: "Arial", fontWeight: 700 }}
         >
           <Link
             href="/contact"
-            className="bg-[#163C0F] z-10 cursor-pointer text-white px-6 py-2.5 flex items-center justify-center gap-2 font-bold"
+            className="bg-[#163C0F] text-sm z-10 cursor-pointer text-white px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 font-bold"
           >
-            Partner With Us <ArrowRight className="h-4 w-4" />
+            Partner With Us <ArrowRight className="h-3 md:h-4 w-3  md:w-4" />
           </Link>
-          <button className="bg-white text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-8 py-2.5 font-bold hover:bg-gray-50 transition-all">
+
+          <Link
+            href="/contact"
+            className="bg-white text-sm  text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-4 md:px-6 py-2.5 font-bold hover:bg-gray-50 transition-all">
             Review Firm Profile
-          </button>
+      
+          </Link>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto pt-8 border-t border-gray-100">
+        <div className="grid grid-cols-3  gap-4 sm:gap-8 max-w-2xl mx-auto pt-0 md:pt-8">
           {[
             { value: "500+", label: "CASES WON" },
             { value: "25+", label: "YEARS EXPERIENCE" },
@@ -171,7 +172,14 @@ const Hero = () => {
           }}
         >
           <p>
-            Established In 2008, The Commercial Law Chamber (CLC) Is A Boutique Law Firm Widely Recognized For Its Specialized Tax Advisory And High-Stakes Dispute Resolution Practice. As One Of The Top Taxation Law Firms In India, We Maintain A Strong Focus On The Goods And Services Tax Act And Customs Laws. Led By The Team Of Best GST Lawyers In Delhi And Supported By A Team Of 15 Associates, CLC Delivers Strategic, Research-Driven, And Commercially Aligned Legal Solutions Across Complex Tax And Commercial Disputes.
+            Established In 2008, The Commercial Law Chamber (CLC) Is A Boutique
+            Law Firm Widely Recognized For Its Specialized Tax Advisory And
+            High-Stakes Dispute Resolution Practice. As One Of The Top Taxation
+            Law Firms In India, We Maintain A Strong Focus On The Goods And
+            Services Tax Act And Customs Laws. Led By The Team Of Best GST
+            Lawyers In Delhi And Supported By A Team Of 15 Associates, CLC
+            Delivers Strategic, Research-Driven, And Commercially Aligned Legal
+            Solutions Across Complex Tax And Commercial Disputes.
           </p>
           <div className="w-full border border-dotted mt-[35px] border-[#22461B]/50"></div>
         </div>
@@ -270,7 +278,9 @@ const Hero = () => {
               className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] overflow-hidden"
               style={
                 index % 2 === 0
-                  ? { background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }
+                  ? {
+                    background: "linear-gradient(to right, #CFE2C8, #FFFFFF)",
+                  }
                   : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
               }
             >
@@ -307,7 +317,6 @@ const Hero = () => {
             </div>
           ))}
         </div>
-       
       </section>
 
       {/* Our Team */}
@@ -375,7 +384,7 @@ const Hero = () => {
                   className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-xs font-semibold"
                   style={{
                     background: "#2A5A21",
-                   
+
                     fontWeight: 600,
                     fontSize: "12px",
                   }}
