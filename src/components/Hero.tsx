@@ -100,7 +100,7 @@ const Hero = () => {
       {/* Welcome Section */}
       <section className="py-4 px-4 sm:px-8 hero-buttons md:px-12  lg:px-16 xl:mx-10  ">
 
-        <h2 className="hero-text-section-heading text-[#336429] mt-[24px] mb-[12px]">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
           WELCOME TO COMMERCIAL LAW CHAMBER
         </h2>
 
@@ -114,7 +114,7 @@ const Hero = () => {
 
       {/* Our Distinction */}
       <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-10">
-        <h2 className="hero-text-section-heading text-[#336429] mt-[14px] mb-[16px]">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[14px] mb-[16px]">
           OUR DISTINCTION
         </h2>
 
@@ -144,7 +144,7 @@ const Hero = () => {
       {/* Core Practice Areas */}
       <section className="py-8 sm:py-[24px] px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]"></div>
-        <h2 className="hero-text-section-heading mb-[16px] text-[#336429]">
+        <h2 className="hero-text-section-heading hero-title mb-[16px] text-[#336429]">
           CORE PRACTICE AREAS
         </h2>
         <div className="space-y-0">
@@ -196,7 +196,7 @@ const Hero = () => {
       {/* Our Team */}
       <section className="py-8 sm:py-[24px]  px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]"></div>
-        <h2 className="hero-text-section-heading mb-[16px] text-[#336429]">
+        <h2 className="hero-text-section-heading hero-title mb-[16px] text-[#336429]">
           OUR TEAM
         </h2>
 

@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { Briefcase, Users, GraduationCap, Clock, MapPin, Building2, CheckCircle } from "lucide-react";
 import { useCareerOpenings } from "@/hooks/useSanityData";
+import HeroAnimations from "@/lib/heroAnimation";
 
 const whyJoinUs = [
   {
@@ -27,7 +27,7 @@ const whyJoinUs = [
 
 const applicationItems = [
   "Detailed CV",
-  "Cover letter explaining your League Spartanest in CLC",
+  "Cover letter explaining your interest in CLC",
   "Academic transcripts",
   "Writing sample (for legal positions)",
 ];
@@ -36,67 +36,27 @@ const Career = () => {
   const { data: currentOpenings, isLoading, isError } = useCareerOpenings();
 
   return (
-    <div className="flex-1 bg-white  xl:mx-10">
+    <div className="flex-1 bg-white xl:mx-10">
+      <HeroAnimations />
 
-      {/* ── Header ── */}
-      <section className="py-4 px-4 sm:px-8 mt-0 md:mt-12 md:px-12  lg:px-16 ">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1
-            className="mb-3 text-[#163C0F] "
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 700,
-              fontSize: "clamp(32px, 6vw, 45px)",
-              lineHeight: "1.1",
-              letterSpacing: "2px",
-              textAlign: "center",
-              display: "block",
-            }}
-          >
-            Legal Careers in{" "}
-            <span style={{ color: "#163C0F" }}>Tax & Commercial Law</span>
-          </h1>
-          <p
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 400,
-              fontSize: "clamp(14px, 2vw, 16px)",
-              lineHeight: "14px",
-              color: "#4B5563",
-            }}
-          >
+      {/* Header */}
+      <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+        <div className="mx-auto max-w-2xl px-2">
+          <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
+            Legal Careers in Tax &amp; Commercial Law
+          </p>
+          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
             Join Our Team of Legal Excellence
           </p>
         </div>
       </section>
 
-      {/* ── Introduction ── */}
-      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
-        <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
-
-        <h2
-          className="uppercase mb-6"
-          style={{
-            fontFamily: "Arial",
-            fontWeight: 700,
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#336429",
-          }}
-        >
+      {/* About the Opportunity */}
+      <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
           ABOUT THE OPPORTUNITY
         </h2>
-
-        <div
-          className="space-y-4"
-          style={{
-            fontFamily: "League Spartan",
-            fontWeight: 400,
-            fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-            lineHeight: "22px",
-            color: "#1F2937",
-          }}
-        >
+        <div className="hero-text-body text-gray-800 space-y-4">
           <p>
             At Commercial Law Chamber, we are always looking for talented professionals who share our
             commitment to excellence and client service. We offer a dynamic work environment where you
@@ -106,101 +66,59 @@ const Career = () => {
             Our firm provides opportunities for both experienced lawyers and fresh graduates who demonstrate
             exceptional potential and a passion for tax and commercial law.
           </p>
+          <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
         </div>
-
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8" />
       </section>
 
-      {/* ── Current Openings ── */}
-      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
-        <h2
-          className="uppercase mb-6"
-          style={{
-            fontFamily: "Arial",
-            fontWeight: 700,
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#336429",
-          }}
-        >
+      {/* Current Openings */}
+      <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
           CURRENT JOB OPENINGS
         </h2>
 
         <div className="grid grid-cols-1 gap-4">
           {isLoading && (
-            <p style={{ fontFamily: "League Spartan", fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#4B5563" }}>
-              Loading openings...
-            </p>
+            <p className="hero-text-body text-[#4B5563]">Loading openings...</p>
           )}
           {!isLoading && (isError || !currentOpenings || currentOpenings.length === 0) && (
             <div
-              className="px-5 py-6"
+              className="px-[8px] py-[17px]"
               style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
             >
-              <p style={{ fontFamily: "League Spartan", fontWeight: 400,  fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#000000" }}>
+              <p className="hero-text-practice-desc">
                 No current openings. Please check back later or send your CV to{" "}
-                <span style={{ color: "#163C0F", fontWeight: 600 }}>careers@clc.in</span>
+                <span className="text-[#163C0F] font-semibold">careers@clc.in</span>
               </p>
             </div>
           )}
           {!isLoading && currentOpenings && currentOpenings.map((job, index) => (
             <div
               key={job._id ?? index}
-              className="border border-gray-200 p-5 sm:p-6 hover:border-[#163C0F] transition-all"
+              className="border border-[#22461B]/30 rounded-[16px] p-[11px] hover:border-[#163C0F] transition-all"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-                <div>
-                  <h3
-                    className="mb-2"
-                    style={{
-                      fontFamily: "League Spartan",
-                      fontWeight: 600,
-                      fontSize: "clamp(22.5px, 1.8vw, 22.4px)",
-                      lineHeight: "20px",
-                      color: "#163C0F",
-                    }}
-                  >
-                    {job.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      { icon: MapPin, val: job.location },
-                      { icon: Briefcase, val: job.type },
-                      { icon: Clock, val: job.experience },
-                    ].map(({ icon: Icon, val }) => val && (
-                      <span
-                        key={val}
-                        className="flex items-center gap-1"
-                        style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(18.5px, 1.8vw, 18.4px)", color: "#5A6F55" }}
-                      >
-                        <Icon className="h-3 w-3" /> {val}
-                      </span>
-                    ))}
-                  </div>
+              <div className="mb-4">
+                <h3 className="hero-text-practice-title mb-2">{job.title}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { icon: MapPin, val: job.location },
+                    { icon: Briefcase, val: job.type },
+                    { icon: Clock, val: job.experience },
+                  ].map(({ icon: Icon, val }) => val && (
+                    <span key={val} className="hero-text-team-role flex items-center gap-1">
+                      <Icon className="h-3 w-3" /> {val}
+                    </span>
+                  ))}
                 </div>
-                <Button
-                  className="shrink-0 bg-[#163C0F] cursor-pointer hover:bg-[#1a4a1a] text-white"
-                  style={{ fontFamily: "League Spartan", fontWeight: 600, fontSize: "13px" }}
-                >
-                  Apply Now
-                </Button>
               </div>
 
               {job.requirements && job.requirements.length > 0 && (
                 <div>
-                  <p
-                    className="mb-2"
-                    style={{ fontFamily: "League Spartan", fontWeight: 600, fontSize: "clamp(18.5px, 1.8vw, 16.4px)", color: "#163C0F" }}
-                  >
-                    Requirements:
-                  </p>
+                  <p className="hero-text-expertise-label mb-2">Requirements:</p>
                   <ul className="space-y-1">
                     {job.requirements.map((req, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-[#336429] mt-0.5 shrink-0" />
-                        <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(18.5px, 1.8vw, 16.4px)", color: "#374151" }}>
-                          {req}
-                        </span>
+                        <span className="hero-text-practice-desc text-[#374151]">{req}</span>
                       </li>
                     ))}
                   </ul>
@@ -210,25 +128,16 @@ const Career = () => {
           ))}
         </div>
 
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8" />
+        <div className="w-full border border-dotted border-[#22461B]/50 mt-[24px]" />
       </section>
 
-      {/* ── Why Join Us ── */}
-      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
-        <h2
-          className="uppercase mb-6"
-          style={{
-            fontFamily: "Arial",
-            fontWeight: 700,
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#336429",
-          }}
-        >
+      {/* Why Join Us */}
+      <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
           WHY BUILD YOUR CAREER AT CLC
         </h2>
 
-        <div className="space-y-4">
+        <div className="space-y-0">
           {whyJoinUs.map(({ icon: Icon, title, description }, index) => (
             <div
               key={title}
@@ -239,124 +148,56 @@ const Career = () => {
                   : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
               }
             >
-              <div className="flex items-center gap-3 px-5 py-5 sm:py-6">
-                <div className="shrink-0 w-8 h-8 flex items-center justify-center bg-[#336429]/10 rounded">
-                  <Icon className="h-4 w-4 text-[#163C0F]" />
+              <div className="flex items-center gap-3 px-[8px] py-[17px]">
+                <div className="bg-[#B3C7AB]/40 p-2 shrink-0">
+                  <Icon className="h-5 w-5 text-[#163C0F]/80" />
                 </div>
-                <span
-                  style={{
-                    fontFamily: "League Spartan",
-                    fontWeight: 600,
-                    fontSize: "clamp(16.5px, 1.8vw, 12.4px)",
-                    lineHeight: "20px",
-                    letterSpacing: "0.01em",
-                    color: "#163C0F",
-                  }}
-                >
-                  {title}
-                </span>
+                <span className="hero-text-practice-title">{title}</span>
               </div>
-              <div className="flex items-center px-5 py-5 sm:py-6">
-                <p
-                  style={{
-                    fontFamily: "League Spartan",
-                    fontWeight: 400,
-                    fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-                    lineHeight: "18px",
-                    color: "#000000",
-                  }}
-                >
-                  {description}
-                </p>
+              <div className="flex items-center px-[8px] py-[17px]">
+                <p className="hero-text-practice-desc">{description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8" />
+        <div className="w-full border border-dotted border-[#22461B]/50 mt-[24px]" />
       </section>
 
-      {/* ── Application Process ── */}
-      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
-        <h2
-          className="uppercase mb-6"
-          style={{
-            fontFamily: "Arial",
-            fontWeight: 700,
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#336429",
-          }}
-        >
+      {/* How to Apply */}
+      <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
           HOW TO APPLY
         </h2>
 
-        <p
-          className="mb-4"
-          style={{
-            fontFamily: "League Spartan",
-            fontWeight: 400,
-            fontSize: "clamp(16.5px, 1.8vw, 12.4px)",
-            lineHeight: "22px",
-            color: "#1F2937",
-          }}
-        >
+        <p className="hero-text-body text-gray-800 mb-4">
           To apply for any of the positions listed above, please send your:
         </p>
 
-        <div className="space-y-3 mb-6">
+        <div className="space-y-0 mb-6">
           {applicationItems.map((item, index) => (
             <div
               key={item}
-              className="flex items-center gap-3 px-5 py-4"
-              style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
+              className="flex items-center gap-3 px-[8px] py-[17px]"
+              style={{ background: index % 2 === 0 ? "linear-gradient(to right, #CFE2C8, #FFFFFF)" : "linear-gradient(to left, #CFE2C8, #FFFFFF)" }}
             >
               <CheckCircle className="h-4 w-4 text-[#336429] shrink-0" />
-              <span
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 400,
-                  fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-                  lineHeight: "18px",
-                  color: "#000000",
-                }}
-              >
-                {item}
-              </span>
+              <span className="hero-text-practice-desc">{item}</span>
             </div>
           ))}
         </div>
 
-        <p
-          style={{
-            fontFamily: "League Spartan",
-            fontWeight: 400,
-            fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-            lineHeight: "20px",
-            color: "#1F2937",
-          }}
-        >
+        <p className="hero-text-body text-gray-800">
           Send your application to:{" "}
-          <span style={{ fontFamily: "League Spartan", fontWeight: 600, color: "#163C0F" }}>
-            careers@clc.in
-          </span>
+          <span className="text-[#163C0F] font-semibold">careers@clc.in</span>
         </p>
 
-        <p
-          className="mt-3"
-          style={{
-            fontFamily: "League Spartan",
-            fontWeight: 400,
-            fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-            color: "#6B7280",
-          }}
-        >
-          * We review all applications carefully and will contact shortlisted candidates for League Spartanviews.
+        <p className="hero-text-body text-gray-500 mt-3">
+          * We review all applications carefully and will contact shortlisted candidates for interviews.
         </p>
 
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8" />
+        <div className="w-full border border-dotted border-[#22461B]/50 mt-[24px]" />
       </section>
-
     </div>
   );
 };

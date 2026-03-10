@@ -41,108 +41,48 @@ const Contact = () => {
   return (
     <div className="flex-1 bg-white xl:mx-10">
       <HeroAnimations />
-      {/* ── Header ── */}
-      <section className="py-4 px-4 sm:px-8 mt-0 md:mt-12 md:px-12  lg:px-16  ">
-        <div className="max-w-6xl mx-auto  hero-para text-center">
-          <h1
-            className="mb-3  hero-title text-[#163C0F] "
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 700,
-              fontSize: "clamp(32px, 6vw, 45px)",
-              lineHeight: "1.1",
-              letterSpacing: "2px",
-              textAlign: "center",
-              display: "block",
-            }}
-          >
-            Get In <span style={{ color: "#163C0F" }}>Touch With Us</span>
-          </h1>
-          <p
-            className=" hero-para "
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 400,
-              fontSize: "clamp(14px, 2vw, 16px)",
-              lineHeight: "18px",
-              color: "#4B5563",
-            }}
-          >
-            Reach out to our experienced team for strategic legal counsel in tax and commercial disputes. We’re here to protect your interests.
+
+      {/* Header */}
+      <section className="relative py-4 px-4 sm:px-8 md:px-12 lg:px-16 text-center overflow-hidden">
+        <div className="mx-auto max-w-2xl px-2">
+          <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">
+            Get In Touch With Us
+          </p>
+          <p className="hero-text-subpara text-[#163C0F] hero-para max-w-lg mx-auto mb-8">
+            Reach out to our experienced team for strategic legal counsel in tax and commercial disputes. We're here to protect your interests.
           </p>
         </div>
       </section>
 
-      {/* ── Why Choose Us ── */}
-      <section className="hero-buttons py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
-        <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
-
-        <h2
-          className="uppercase mb-6"
-          style={{
-            fontFamily: "Arial",
-            fontWeight: 700,
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#336429",
-          }}
-        >
+      {/* Why Choose Us */}
+      <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
           WHY CHOOSE OUR TAX LAW FIRM
         </h2>
 
-        <div className="space-y-3">
+        <div className="space-y-0">
           {whyChoose.map((point, index) => (
             <div
               key={index}
-              className="flex items-start gap-3 px-5 py-4"
+              className="grid grid-cols-[auto_1fr] items-start gap-3 px-[8px] py-[17px]"
               style={
                 index % 2 === 0
                   ? { background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }
                   : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
               }
             >
-              <span
-                style={{
-                  fontFamily: "Arial",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                  color: "#336429",
-                  lineHeight: "1",
-                  marginTop: "2px",
-                }}
-              >
-                •
-              </span>
-              <p
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 400,
-                  fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-                  lineHeight: "20px",
-                  color: "#000000",
-                }}
-              >
-                {point}
-              </p>
+              <span className="hero-text-practice-title mt-[2px]">•</span>
+              <p className="hero-text-practice-desc">{point}</p>
             </div>
           ))}
         </div>
 
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8" />
+        <div className="w-full border border-dotted border-[#22461B]/50 mt-[24px]" />
       </section>
 
-      {/* ── Contact Info ── */}
-      <section className="hero-buttons py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
-        <h2
-          className="uppercase mb-6"
-          style={{
-            fontFamily: "Arial",
-            fontWeight: 700,
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#336429",
-          }}
-        >
+      {/* Contact Info */}
+      <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
           OUR OFFICES
         </h2>
 
@@ -150,41 +90,23 @@ const Contact = () => {
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-5 border border-gray-200 hover:border-[#163C0F] transition-all"
+              className="flex items-start gap-4 p-[11px] border border-[#22461B]/30 rounded-[16px] hover:border-[#163C0F] transition-all"
             >
-              <div className="bg-[#B3C7AB] p-2.5 shrink-0">
+              <div className="bg-[#B3C7AB]/40 p-2 shrink-0">
                 <info.icon className="h-5 w-5 text-[#163C0F]" />
               </div>
               <div className="min-w-0 flex-1">
-                <h3
-                  className="mb-2"
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "clamp(18.5px, 1.8vw, 16.4px)",
-                    color: "#163C0F",
-                  }}
-                >
-                  {info.title}
-                </h3>
+                <h3 className="hero-text-practice-title mb-2">{info.title}</h3>
                 <div className="space-y-1">
                   {info.details.map((detail, i) => {
                     const isPhone = /^\+?91[\s-]?\d{5}[\s-]?\d{5}$/.test(detail.replace(/\s/g, ""));
                     const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(detail);
 
-                    const baseStyle = {
-                      fontFamily: "League Spartan",
-                      fontWeight: 400,
-                      fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-                      lineHeight: "20px",
-                    } as React.CSSProperties;
-
                     if (isPhone) {
                       return (
-                        <p key={i} style={baseStyle}>
+                        <p key={i} className="hero-text-practice-desc">
                           <a href={`tel:${detail.replace(/\s|-/g, "")}`}
-                            style={{ color: "#163C0F", fontWeight: 600 }}
-                            className="hover:underline"
+                            className="text-[#163C0F] font-semibold hover:underline"
                           >
                             {detail}
                           </a>
@@ -192,10 +114,9 @@ const Contact = () => {
                       );
                     } else if (isEmail) {
                       return (
-                        <p key={i} style={baseStyle}>
+                        <p key={i} className="hero-text-practice-desc">
                           <a href={`mailto:${detail}`}
-                            style={{ color: "#163C0F", fontWeight: 600 }}
-                            className="hover:underline"
+                            className="text-[#163C0F] font-semibold hover:underline"
                           >
                             {detail}
                           </a>
@@ -203,9 +124,7 @@ const Contact = () => {
                       );
                     } else {
                       return (
-                        <p key={i} style={{ ...baseStyle, color: "#374151" }}>
-                          {detail}
-                        </p>
+                        <p key={i} className="hero-text-practice-desc text-[#374151]">{detail}</p>
                       );
                     }
                   })}
@@ -217,35 +136,17 @@ const Contact = () => {
 
         {/* Tagline */}
         <div
-          className="mt-6 px-5 py-5"
+          className="mt-6 px-[8px] py-[17px]"
           style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
         >
-          <p
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 700,
-              fontSize: "clamp(18.5px, 1.8vw, 20.4px)",
-              color: "#163C0F",
-              marginBottom: "4px",
-            }}
-          >
-            Commercial Law Chamber
-          </p>
-          <p
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 400,
-              fontSize: "clamp(16.5px, 1.8vw, 16.4px)",
-              color: "#5A6F55",
-            }}
-          >
+          <p className="hero-text-practice-title mb-[4px]">Commercial Law Chamber</p>
+          <p className="hero-text-practice-desc text-[#5A6F55]">
             Your Trusted Business Law Chambers for Tax Excellence.
           </p>
         </div>
 
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8" />
+        <div className="w-full border border-dotted border-[#22461B]/50 mt-[24px]" />
       </section>
-
     </div>
   );
 };

@@ -1,3 +1,4 @@
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -15,6 +16,7 @@ interface TeamMemberProps {
     expertise: string[];
     location: string;
     education: string[];
+    achievements?: string[];
   };
   variant?: "card" | "detailed";
 }
@@ -43,6 +45,28 @@ const teamMembers = {
     education: [
       "Bachelor of Laws (LLB)",
       "Member, Bar Council of India"
+    ],
+    achievements: [
+      "Successfully secured stay and protection orders on issues relating to ITC mismatch, limitation expiry, non-consideration of replies, incorrect place of supply determination, and jurisdictional irregularities for over 75 clients for FY 2017-18 and 2018-19 before the High Courts of Orissa, Punjab & Haryana, Bihar, Delhi and Andhra Pradesh in complex GST disputes.",
+      "Successfully represented a garment trader in a challenge to coercive DGGI search proceedings, obtaining a landmark order from the Delhi High Court directing refund of tax deposited during the raid. Judgment reported.",
+      "Successfully represented an agro-chemical manufacturer before the Delhi High Court in quashing of bank account attachment orders, securing immediate restoration of banking operations. Judgment reported.",
+      "Successfully secured stay of adjudication proceedings in a Customs–DRI matter involving expiry of the statutory period for adjudication, and presently leading final arguments before the adjudicating authority.",
+      "Presently leading arguments before the Bombay High Court on the constitutional validity of taxation of Government services under the Finance Act, 1994 and multiple pre-GST and post-GST notifications, a matter with pan-India implications.",
+      "Successfully represented a telecom-media conglomerate in TDS disputes concerning the interplay of Section 194C and Section 194J, including issues of technical vs non-technical services, verification requirements, and industry-wide interpretational challenges.",
+      "Successfully represented a global technology major before the Supreme Court in a significant transfer pricing dispute concerning comparability analysis and appropriateness of TP methods (TNMM, CUP, Cost-Plus), setting persuasive value for similar matters.",
+      "Successfully represented the assessee before the Allahabad High Court in a landmark dispute involving apportionment of service and sale components in composite transactions, contributing to clarity in dual-tax scenarios.",
+      "Successfully represented a leading media house before the Karnataka High Court on the issue of abatement of local taxes while computing service tax liability, with favourable recognition of cascading-avoidance principles.",
+      "Successfully represented an assessee before the Madras High Court in challenging discriminatory local tax levies imposed by the State of Tamil Nadu, securing full relief.",
+      "Advised and represented over 120 corporates, MSMEs, and startups in GST audit objections, special audit proceedings, departmental investigations, and appellate disputes across India, including issues of classification, valuation, export-refund mismatches, and input tax credit restrictions.",
+      "Handled more than 50 writ petitions before various High Courts challenging system-generated GST notices, procedural violations, retrospective cancellation of GST registrations, denial of revocation applications, and erroneous suspension orders, securing consistent interim and final relief.",
+      "Successfully represented multiple multinational manufacturers and technology companies in anti-profiteering investigations and DGAP proceedings, achieving closure without adverse orders.",
+      "Successfully led complex customs valuation and exemption matters for over 30 importers, including disputes on special valuation branch (SVB) orders, related-party pricing, exemption notifications, and project import regulations.",
+      "Advised and represented leading e-commerce and logistics companies in nationwide investigations involving place-of-supply, intermediary classification, and cross-border service taxation issues.",
+      "Represented several Fortune 500 companies in litigation involving service tax/GST transitional credit (TRAN-1/TRAN-2), securing restoration or re-credit based on judicial precedents and equitable grounds.",
+      "Successfully assisted more than 40 clients in securing the release of seized goods and vehicles under GST, including cases involving alleged e-way bill mismatches, valuation discrepancies, and classification-based detentions.",
+      "Represented clients in complex income-tax matters involving reassessment under Sections 147/148, faceless assessment errors, and digital-hearing violations, obtaining quashing and remand orders for over 60 assesses across jurisdictions.",
+      "Advised large conglomerates and family-owned businesses on GST implications of corporate restructuring, slump sales, cross-border EPC contracts, captive service arrangements, and inter-unit transfer pricing.",
+      "Handled multi-state indirect tax due-diligence and pre-litigation reviews for M&A transactions.",
     ]
   },
   shreyas: {
@@ -126,8 +150,8 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                 )}
               </div>
               <span
-                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
-                style={{ background: "#2A5A21", fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "12px" }}
+                className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+                style={{ background: "#2A5A21" }}
               >
                 {member.experience}
               </span>
@@ -135,29 +159,14 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Name + meta */}
             <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
-              <h2
-                className="mb-1"
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 600,
-                  fontSize: "clamp(20.5px, 1.8vw, 20.4px)",
-                  lineHeight: "1.3",
-                  color: "#163C0F",
-                }}
-              >
+              <h2 className="hero-text-team-name mb-1">
                 {member.name}
               </h2>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 mb-4">
-                <span
-                  className="flex items-center gap-1"
-                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", color: "#5A6F55" }}
-                >
+                <span className="hero-text-team-role flex items-center gap-1">
                   <Briefcase className="w-3 h-3" /> {member.experience}
                 </span>
-                <span
-                  className="flex items-center gap-1"
-                  style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", color: "#5A6F55" }}
-                >
+                <span className="hero-text-team-role flex items-center gap-1">
                   <MapPin className="w-3 h-3" /> {member.location}
                 </span>
               </div>
@@ -169,17 +178,14 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* About */}
             <section>
-              <h3
-                className="mb-3"
-                style={{ fontFamily: "Arial", fontWeight: 700, fontSize: "16px", color: "#336429", textTransform: "uppercase" }}
-              >
+              <h3 className="hero-text-section-heading hero-title text-[#336429] mb-3">
                 About
               </h3>
               <div className="space-y-3">
                 {member.fullDescription.map((paragraph, index) => (
                   <p
                     key={index}
-                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", lineHeight: "22px", color: "#374151" }}
+                    className="hero-text-body text-[#374151]"
                   >
                     {paragraph}
                   </p>
@@ -189,18 +195,14 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Expertise */}
             <section>
-              <h3
-                className="mb-3"
-                style={{ fontFamily: "Arial", fontWeight: 700, fontSize: "16px", color: "#336429", textTransform: "uppercase" }}
-              >
+              <h3 className="hero-text-section-heading hero-title text-[#336429] mb-3">
                 Areas of Expertise
               </h3>
               <div className="flex flex-wrap gap-2">
                 {member.expertise.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 rounded-full border border-[#5A6F554D]/90"
-                    style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", lineHeight: "18px", color: "#5A6F55" }}
+                    className="hero-text-expertise-tag px-3 py-1 rounded-full border border-[#5A6F554D]/90"
                   >
                     {skill}
                   </span>
@@ -210,10 +212,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Education */}
             <section>
-              <h3
-                className="mb-3"
-                style={{ fontFamily: "Arial", fontWeight: 700, fontSize: "16px", color: "#336429", textTransform: "uppercase" }}
-              >
+              <h3 className="hero-text-section-heading hero-title text-[#336429] mb-3">
                 Education &amp; Qualifications
               </h3>
               <div className="flex flex-col gap-2">
@@ -224,13 +223,39 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
                     style={{ background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }}
                   >
                     <GraduationCap className="w-4 h-4 text-[#163C0F] shrink-0" />
-                    <span style={{ fontFamily: "League Spartan", fontWeight: 400, fontSize: "clamp(16.5px, 1.8vw, 18.4px)", color: "#000000" }}>
-                      {edu}
-                    </span>
+                    <span className="hero-text-practice-desc">{edu}</span>
                   </div>
                 ))}
               </div>
             </section>
+
+            {/* Notable Achievements */}
+            {member.achievements && member.achievements.length > 0 && (
+              <section>
+                <h3 className="hero-text-section-heading hero-title text-[#336429] mb-1">
+                  Notable Achievements
+                </h3>
+                <p className="hero-text-team-role mb-3">
+                  Notable Representation and Courtroom Achievements · Representative Litigation &amp; Advisory Experience
+                </p>
+                <div className="space-y-0">
+                  {member.achievements.map((item, index) => (
+                    <div
+                      key={index}
+                      className="grid grid-cols-[auto_1fr] gap-3 px-[8px] py-[14px]"
+                      style={
+                        index % 2 === 0
+                          ? { background: "linear-gradient(to right, #CFE2C8, #FFFFFF)" }
+                          : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
+                      }
+                    >
+                      <span className="hero-text-practice-title mt-[2px] shrink-0">•</span>
+                      <p className="hero-text-practice-desc">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
           </div>
         </div>
@@ -239,7 +264,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
   }
 
   return (
-    <div className=" border border-[#22461B]  border-dotted p-6 flex flex-col items-center text-center h-full">
+    <div className="border border-[#22461B]/30 rounded-[16px] p-4 flex flex-col items-center text-center h-full">
 
       {/* Avatar + experience badge */}
       <div className="relative mb-4">
@@ -259,74 +284,38 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
           )}
         </div>
         <span
-          className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
-          style={{ background: "#2A5A21", fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "12px" }}
+          className="hero-text-experience-badge absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
+          style={{ background: "#2A5A21" }}
         >
           {member.experience}
         </span>
       </div>
 
       {/* Name */}
-      <h2
-        className="mt-5 mb-1 "
-        style={{
-          fontFamily: "League Spartan",
-          fontWeight: 600,
-          fontSize: "clamp(20.5px, 1.8vw, 20.4px)",
-          lineHeight: "26px",
-          color: "#163C0F",
-        }}
-      >
+      <h2 className="hero-text-team-name mt-5 mb-1">
         {member.name}
       </h2>
 
       {/* Location */}
-      <p
-        className="mb-5 flex items-center justify-center gap-1"
-        style={{
-          fontFamily: "League Spartan",
-          fontWeight: 400,
-          fontSize: "clamp(16.5px, 1.8vw, 18.4px)",
-          lineHeight: "18px",
-          color: "#5A6F55",
-        }}
-      >
+      <p className="hero-text-team-role mb-5 flex items-center justify-center gap-1">
         <MapPin className="w-3 h-3" /> {member.location}
       </p>
 
       {/* Short description */}
-      <p
-        className="mb-5 text-left"
-        style={{
-          fontFamily: "League Spartan",
-          fontWeight: 400,
-          fontSize: "clamp(17.5px, 1.8vw, 14.4px)",
-          lineHeight: "20px",
-          color: "#374151",
-        }}
-      >
+      <p className="hero-text-body text-[#374151] mb-5 text-left">
         {member.shortDescription}
       </p>
 
       {/* Expertise pills */}
       <div className="w-full text-left mb-5">
-        <p
-          className="mb-3"
-          style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#336429" }}
-        >
+        <p className="hero-text-expertise-label mb-3">
           Expertise :
         </p>
         <div className="flex flex-wrap gap-2">
           {member.expertise.map((skill, index) => (
             <span
               key={index}
-              className="px-3 py-1 rounded-full border border-[#5A6F554D]/90 text-[#5A6F55]"
-              style={{
-                fontFamily: "League Spartan",
-                fontWeight: 400,
-                fontSize: "clamp(15px, 1.8vw, 14.4px)",
-                lineHeight: "18px",
-              }}
+              className="hero-text-expertise-tag px-[4px] py-[2px] rounded-full border border-[#5A6F554D]/90"
             >
               {skill}
             </span>

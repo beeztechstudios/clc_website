@@ -8,7 +8,7 @@ const Expertise = () => {
       icon: Calculator,
       subtitle: "End-to-End Advisory, Compliance, and Dispute Resolution Across Corporate, Individual, and Cross-Border Tax Matters",
       reverseGradient: true,
-      para1: "Our Direct Tax practice delivers comprehensive, strategic, and forward-looking tax support to businesses, high-net-worth individuals, multinational groups, funds, and promoter families. CLC’s team brings deep industry experience, technical expertise, and a solution-oriented approach to help clients navigate the evolving landscape of Indian taxation, global tax reforms, and multi-jurisdictional tax challenges.",
+      para1: "Our Direct Tax practice delivers comprehensive, strategic, and forward-looking tax support to businesses, high-net-worth individuals, multinational groups, funds, and promoter families. CLC's team brings deep industry experience, technical expertise, and a solution-oriented approach to help clients navigate the evolving landscape of Indian taxation, global tax reforms, and multi-jurisdictional tax challenges.",
       para2: "We provide holistic advisory spanning corporate tax structuring, capital-market transactions, business reorganisations, cross-border tax planning, transfer pricing, and taxation of high-net-worth individuals, aligned with both commercial objectives and regulatory requirements. With an emphasis on long-term sustainability, risk mitigation, and tax efficiency, we guide clients through the complete lifecycle of tax planning, reporting, assessment, and litigation.",
       para3: "On the dispute side, our lawyers regularly appear before Assessing Officers, Commissioner (Appeals), the Income Tax Appellate Tribunal (ITAT), High Courts, and the Supreme Court in complex matters involving TP adjustments, treaty benefit claims, fund taxation, PE exposure, GAAR, corporate reorganisations, MAT disputes, and interpretation of tax statutes. Our strategic, data-driven representation ensures rigorous defence, persuasive advocacy, and successful outcomes in high-stakes matters.",
       keyServices: {
@@ -108,7 +108,7 @@ const Expertise = () => {
       icon: Building,
       subtitle: "Resolving Complex Commercial Conflicts and Regulatory Challenges With Precision, Intelligence & Sector-Driven Strategy",
       reverseGradient: true,
-      para1: "CLC’s Commercial & Regulatory Disputes practice specialises in managing diverse, nuanced, and high-stakes conflicts that arise across industries and regulatory frameworks. Our strength lies in combining litigation excellence with a deep understanding of operational realities, governance structures, and sector-specific regulations.",
+      para1: "CLC's Commercial & Regulatory Disputes practice specialises in managing diverse, nuanced, and high-stakes conflicts that arise across industries and regulatory frameworks. Our strength lies in combining litigation excellence with a deep understanding of operational realities, governance structures, and sector-specific regulations.",
       para2: "We assist clients in resolving contractual disputes, JV/shareholder conflicts, governance breakdowns, corporate fraud issues, indemnity and recovery actions, and supply chain disputes. Alongside commercial conflicts, we also advise on regulatory investigations and litigation involving SEBI, FEMA, Competition Commission, Registrar of Companies, MCA, and other sectoral regulators.",
       para3: "With experience across civil courts, commercial courts, NCLT, High Courts, arbitral tribunals, and quasi-judicial bodies, our team delivers practical, persuasive, and outcome-oriented dispute management.",
       keyServices: {
@@ -144,11 +144,11 @@ const Expertise = () => {
     {
       title: "Customs Law Practice",
       icon: Scale,
-      subtitle: "Advisory, Compliance, Enforcement Defence & Litigation Across India’s Cross-Border Trade Ecosystem",
+      subtitle: "Advisory, Compliance, Enforcement Defence & Litigation Across India's Cross-Border Trade Ecosystem",
       reverseGradient: false,
-      para1: "CLC’s Customs Law practice offers comprehensive legal support across the full spectrum of import - export regulations, global trade compliance, port procedures, investigations, and high-stakes customs litigation. Our team brings together deep legal expertise, sectoral knowledge, and an understanding of global supply chains to help clients manage risk, ensure smooth operations, and resolve disputes efficiently.",
+      para1: "CLC's Customs Law practice offers comprehensive legal support across the full spectrum of import - export regulations, global trade compliance, port procedures, investigations, and high-stakes customs litigation. Our team brings together deep legal expertise, sectoral knowledge, and an understanding of global supply chains to help clients manage risk, ensure smooth operations, and resolve disputes efficiently.",
       para2: "We advise on classification, valuation, FTA-origin benefits, special schemes under DGFT, port clearance issues, audit objections, warehousing, EPCG/Advance Authorisation, duty exemptions, bonded manufacturing, and cross-border structuring. Our lawyers regularly support businesses during searches, seizures, summons, investigations, adjudications, and appellate proceedings before CESTAT, High Courts and the Supreme Court.",
-      para3: "From import-driven industries like electronics, automotive, chemicals, consumer goods, and e-commerce, to export-led sectors such as textiles, pharma, and engineering goods, we provide end-to-end customs risk management and trade facilitation support tailored to each industry’s operational realities.",
+      para3: "From import-driven industries like electronics, automotive, chemicals, consumer goods, and e-commerce, to export-led sectors such as textiles, pharma, and engineering goods, we provide end-to-end customs risk management and trade facilitation support tailored to each industry's operational realities.",
       keyServices: {
         "Customs Classification, Valuation & Duty Assessment": [
           "Classification advisory for complex, composite, engineering, pharma, digital & tech products",
@@ -203,37 +203,10 @@ const Expertise = () => {
     <div className="flex-1 bg-white xl:mx-10">
       <HeroAnimations />
       {/* Header */}
-      <section className="py-4 px-4 sm:px-8  md:px-12 mt-0 md:mt-12 lg:px-16  border-b border-dashed  border-[#22461B]/40">
+      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 border-b border-dashed border-[#22461B]/40">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
-            <span
-              className="text-[#163C0F]"
-              style={{
-                fontFamily: "League Spartan",
-                fontWeight: 700,
-                fontSize: "clamp(32px, 6vw, 45px)",
-                lineHeight: "1.1",
-                letterSpacing: "2px",
-                // textAlign: "center",
-                display: "block",
-              }}
-            >
-              Practice Areas</span>
-            <span
-              className="text-[#163C0F]"
-              style={{
-                fontFamily: "League Spartan",
-                fontWeight: 700,
-                fontSize: "clamp(32px, 6vw, 45px)",
-                lineHeight: "1.1",
-                letterSpacing: "2px",
-                textAlign: "center",
-                display: "block",
-              }}
-            > Comprehensive Tax Services
-            </span>
-          </h1>
-          <p className="text-base hero-para sm:text-md text-gray-600  ">
+          <p className="hero-text-title hero-title md:mt-[104px] text-[#163C0F] mb-[6px]">Practice Areas & Comprehensive Tax Services</p>
+          <p className="hero-text-subpara hero-para">
             Research-intensive, solution-driven approach  to align with legal and business objectives.
           </p>
         </div>
@@ -244,11 +217,11 @@ const Expertise = () => {
         {practiceAreas.map((area, index) => (
           <section
             key={index}
-            className={`p-6 sm:p-8 md:p-12 ${index < practiceAreas.length - 1 ? "border-b border-gray-200" : ""}`}
+            className={`p-6 sm:p-8 md:p-12 ${index < practiceAreas.length - 1 ? "border-b border-dotted border-[#22461B]/50" : ""}`}
           >
             <div className="max-w-6xl mx-auto">
               <div className="max-w-6xl mx-auto">
-                <div className="bg-white border border-gray-200 p-6 sm:p-8 transition-all">
+                <div className="border border-[#22461B]/30 rounded-[16px] p-6 sm:p-8 transition-all">
 
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-6">
@@ -257,26 +230,11 @@ const Expertise = () => {
                     </div>
 
                     <div className="flex-1">
-                      <h2
-                        style={{
-                          fontFamily: "League Spartan",
-                          fontWeight: 700,
-                          fontSize: "clamp(22px,1.8vw,22.4px)",
-                          lineHeight: "1.3",
-                          color: "#163C0F",
-                        }}
-                      >
+                      <h2 className="hero-text-section-heading hero-title text-[#163C0F]">
                         {area.title}
                       </h2>
 
-                      <p
-                        style={{
-                          fontFamily: "League Spartan",
-                          fontWeight: 400,
-                          fontSize: "clamp(15.5px,1.8vw,16.4px)",
-                          color: "#4B5563",
-                        }}
-                      >
+                      <p className="hero-text-subpara" style={{ textAlign: "left" }}>
                         {area.subtitle}
                       </p>
                     </div>
@@ -285,50 +243,27 @@ const Expertise = () => {
                   {/* Content */}
                   <div className="grid  gap-6 sm:gap-8">
 
-                   
+
                     <div>
 
                       {/* Paragraphs */}
                       {[area.para1, area.para2, area.para3].map((para, i) => (
                         <p
                           key={i}
-                          className="mb-4"
-                          style={{
-                            fontFamily: "League Spartan",
-                            fontWeight: 400,
-                            fontSize: "clamp(15.5px,1.8vw,16.4px)",
-                            lineHeight: "22px",
-                            color: "#4B5563",
-                          }}
+                          className="hero-text-body text-gray-600 mb-4"
                         >
                           {para}
                         </p>
                       ))}
 
                       {/* Key Services */}
-                      <h3
-                        className="mt-6 mb-4"
-                        style={{
-                          fontFamily: "League Spartan",
-                          fontWeight: 700,
-                          fontSize: "clamp(16px, 6vw, 24px)",
-                          color: "#163C0F",
-                        }}
-                      >
+                      <h3 className="hero-text-section-heading hero-title text-[#163C0F] mt-6 mb-4">
                         Key Service Areas:
                       </h3>
 
                       {Object.entries(area.keyServices).map(([category, services]) => (
                         <div key={category} className="mb-5">
-                          <h4
-                            className="mb-2"
-                            style={{
-                              fontFamily: "League Spartan",
-                              fontWeight: 700,
-                              fontSize: "clamp(12px, 6vw, 16px)",
-                              color: "#163C0F",
-                            }}
-                          >
+                          <h4 className="hero-text-practice-title mb-2">
                             {category}
                           </h4>
 
@@ -338,15 +273,7 @@ const Expertise = () => {
                                 <div className="bg-[#B3C7AB] rounded-full p-1 mt-1 flex-shrink-0">
                                   <div className="w-1.5 h-1.5 bg-[#163C0F] rounded-full" />
                                 </div>
-                                <span
-                                  style={{
-                                    fontFamily: "League Spartan",
-                                    fontWeight: 400,
-                                    fontSize: "clamp(15.5px,1.8vw,16.4px)",
-                                    lineHeight: "20px",
-                                    color: "#374151",
-                                  }}
-                                >
+                                <span className="hero-text-practice-desc text-[#374151]">
                                   {service}
                                 </span>
                               </li>
@@ -357,18 +284,10 @@ const Expertise = () => {
 
                     </div>
 
-                  
+
                     <div>
 
-                      <h3
-                        className="mb-4"
-                        style={{
-                          fontFamily: "League Spartan",
-                          fontWeight: 700,
-                          fontSize: "clamp(16px, 6vw, 24px)",
-                          color: "#163C0F",
-                        }}
-                      >
+                      <h3 className="hero-text-section-heading hero-title text-[#163C0F] mb-4">
                         Select Experience:
                       </h3>
 
@@ -387,15 +306,7 @@ const Expertise = () => {
 
                             <FileText className="h-5 w-5 text-[#163C0F] mt-0.5 flex-shrink-0" />
 
-                            <p
-                              style={{
-                                fontFamily: "League Spartan",
-                                fontWeight: 400,
-                                fontSize: "clamp(16px,1.8vw,16.4px)",
-                                lineHeight: "20px",
-                                color: "#000000",
-                              }}
-                            >
+                            <p className="hero-text-practice-desc">
                               {exp}
                             </p>
 
