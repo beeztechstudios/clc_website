@@ -40,16 +40,16 @@ const Hero = () => {
       {/* Hero Section */}
       <section className="relative py-4 px-4 sm:px-8  md:px-12 lg:px-16 xl:mx-0 text-center justify-end  space-y-[48px] overflow-hidden">
 
-        <img src="/new/heroGlass.svg" className="absolute left-[360px] max-w-[800px]  top-0 -translate-x-1/2" alt="" />
-        <img src="/new/heroGradient.svg" className="absolute left-[440px]  w-[80vw] max-w-[950px] -translate-x-1/2" alt="" />
-        <div className=" mx-10 ">
+        <img src="/new/heroGlass.svg" className="absolute left-[360px] md:left-[360px] max-w-[800px] top-0 -translate-x-1/2 hidden md:block" alt="" />
+        <img src="/new/heroGradient.svg" className="absolute left-1/2 -translate-x-1/2 w-full md:w-[80vw] max-w-[950px] top-0 -z-10 opacity-60 md:opacity-100" alt="" />
+        <div className="mx-auto max-w-2xl px-2">
 
           <h1 className=" hero-title md:mt-[104px] mr-8   text-[#163C0F] leading-tight mb-[6px]" style={{
             fontFamily: "League Spartan",
             fontWeight: 700,
-            fontSize: "clamp(38px, 6vw, 50px)",
-            lineHeight: "50px",
-            letterSpacing: "2px",
+            fontSize: "clamp(30px, 8vw, 50px)",
+            lineHeight: "1.2",
+            letterSpacing: "0.5px",
 
 
           }}>
@@ -72,7 +72,7 @@ const Hero = () => {
           </p>
 
           <div
-            className="flex flex-row hero-buttons justify-center hero-title  sm:gap-[12px] "
+            className="flex flex-col sm:flex-row hero-buttons justify-center items-center gap-3 sm:gap-[12px]"
             style={{ fontFamily: "Arial", fontWeight: 700 }}
           >
             <Link
@@ -87,9 +87,9 @@ const Hero = () => {
                 textAlign: "center",
 
               }}
-              className="bg-[#163C0F] hover:scale-105  z-10 cursor-pointer text-white px-4 md:px-[14px] py-[8px] flex items-center justify-center gap-[10px] "
+              className="bg-[#163C0F] hover:scale-105 z-10 cursor-pointer text-white px-6 py-2.5 flex items-center justify-center gap-[10px] w-full sm:w-auto"
             >
-              Partner With Us <ArrowRight className="h-3 md:h-[20px] w-3  md:w-[20px]" />
+              Partner With Us <ArrowRight className="h-5 w-5" />
             </Link>
 
             <Link
@@ -104,7 +104,7 @@ const Hero = () => {
                 textAlign: "center",
 
               }}
-              className="bg-white text-sm hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-4 md:px-6 py-2.5  hover:bg-gray-50 transition-all">
+              className="bg-white text-sm hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-6 py-2.5 hover:bg-gray-50 transition-all w-full sm:w-auto">
               Review Firm Profile
 
             </Link>
@@ -154,7 +154,7 @@ const Hero = () => {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16 xl:mx-10  ">
+      <section className="py-4 px-4 sm:px-8 hero-buttons md:px-12  lg:px-16 xl:mx-10  ">
 
         <h2
           className="font-bold text-[#336429]   mt-[24px] mb-[12px]"
@@ -176,7 +176,7 @@ const Hero = () => {
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(14.4px, 1.8vw, 14.4px)",
+            fontSize: "clamp(16.4px, 1.8vw, 14.4px)",
             lineHeight: "20px",
             letterSpacing: "0px",
             verticalAlign: "middle",
@@ -186,61 +186,58 @@ const Hero = () => {
           <p>
             Established in 2008, the Commercial Law Chamber (CLC) is a boutique law firm widely recognized for its specialized tax advisory and high-stakes dispute resolution practice. As one of the top taxation law firms in India, we maintain a strong focus on the Goods and Services Tax Act and Customs laws. Led by the team of best GST lawyers in Delhi and supported by a team of 15 associates, CLC delivers strategic, research-driven, and commercially aligned legal solutions across complex Tax and Commercial Disputes.
           </p>
-          <div className="w-full border border-dotted mt-[35px] border-[#22461B]/50"></div>
+          <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
         </div>
       </section>
 
       {/* Our Distinction */}
-      <section className="py-8 sm:py-10 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-10 ">
+      <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-10">
         <h2
-          className="uppercase   mb-6 sm:mb-8"
+          className="font-bold text-[#336429] mt-[14px] mb-[16px]"
           style={{
             fontFamily: "Arial",
             fontWeight: 700,
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2.5vw, 18px)",
             lineHeight: "24px",
             letterSpacing: "0px",
             verticalAlign: "middle",
             textTransform: "uppercase",
-            color: "#336429",
           }}
         >
           OUR DISTINCTION
         </h2>
 
-        {/* 2-col grid on md+, 1-col on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-          {distinctions.map(({ src, alt, text }) => (
-            <div key={text} className="flex items-center gap-3">
+        {/* Checkerboard Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 border border-gray-100">
+          {distinctions.map(({ text }, index) => {
+            // Checkerboard logic for 2-column grid
+            const isGreen = (Math.floor(index / 2) + (index % 2)) % 2 === 0;
+            return (
               <div
-                className="relative shrink-0 rounded overflow-hidden bg-gray-100"
-                style={{ width: "55px", height: "54px", borderRadius: "4px" }}
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  fill
-                  className="object-cover"
-                  sizes="55px"
-                />
-              </div>
-              <p
+                key={text}
+                className="p-[11px] flex items-center min-h-[110px]"
                 style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 400,
-                  fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
-                  lineHeight: "18px",
-                  letterSpacing: "0px",
-                  verticalAlign: "middle",
-                  textTransform: "capitalize",
-                  color: "#111827",
+                  background: isGreen ? "#EBF3E8" : "#FFFFFF",
                 }}
               >
-                {text}
-              </p>
-            </div>
-          ))}
+                <p
+                  style={{
+                    fontFamily: "League Spartan",
+                    fontWeight: 400,
+                    fontSize: "clamp(14.px, 1.8vw, 16px)",
+                    lineHeight: "1.4",
+                    letterSpacing: "0px",
+                    textTransform: "capitalize",
+                    color: "#111827",
+                  }}
+                >
+                  {text}
+                </p>
+              </div>
+            );
+          })}
         </div>
+        <div className="w-full border border-dotted mt-[24px] border-[#22461B]/50"></div>
       </section>
 
       {/* Core Practice Areas */}
