@@ -200,10 +200,10 @@ const Expertise = () => {
   ];
 
   return (
-    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white xl:mx-10">
       <HeroAnimations />
       {/* Header */}
-      <section className="px-4 pb-12  sm:px-6 md:px-8 py-4 border-b border-dashed  border-[#22461B]/40">
+      <section className="py-4 px-4 sm:px-8  md:px-12 mt-0 md:mt-12 lg:px-16  border-b border-dashed  border-[#22461B]/40">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
             <span
@@ -220,11 +220,11 @@ const Expertise = () => {
             >
               Practice Areas</span>
             <span
-              className="text-[#2A5A21]"
+              className="text-[#163C0F]"
               style={{
                 fontFamily: "League Spartan",
                 fontWeight: 700,
-                fontSize: "clamp(32px, 6vw, 44px)",
+                fontSize: "clamp(32px, 6vw, 45px)",
                 lineHeight: "1.1",
                 letterSpacing: "2px",
                 textAlign: "center",

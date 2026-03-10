@@ -48,10 +48,10 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
   };
 
   return (
-    <div className="flex-1 bg-white   py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white  xl:mx-10">
        <HeroAnimations />
       {/* Top Header */}
-      <section className="px-3  pb-12 sm:px-6 md:px-8 py-4 border-b border-gray-200">
+      <section className="py-4 px-4 sm:px-8 mt-0 md:mt-12 md:px-12  lg:px-16 border-b border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 ">
             <h1
@@ -93,7 +93,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       </section>
 
       {/* News Cards */}
-      <section className="p-4 sm:p-8 md:p-12 hero-para  ">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  hero-para  ">
         <div className="max-w-6xl mx-auto">
 
           {/* News Data */}

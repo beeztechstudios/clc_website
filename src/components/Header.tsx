@@ -6,7 +6,7 @@ import { Mail, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
-  const locations = ["NEW DELHI","MUMBAI", "BENGALURU"];
+  const locations = ["NEW DELHI", "MUMBAI", "BENGALURU"];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -65,41 +65,41 @@ const Header = () => {
 
       {/* Location tabs — desktop */}
       <div className="bg-[#163C0F]/70 w-full h-[55px] border-b hidden sm:flex justify-between items-center px-4 sm:px-6">
-        
-          <div className="flex items-center gap-[5px]">
-            <img src="/new/mailicon.svg" className="w-[9.5px] h-[9.5px] " alt="" />
-            <h3 style={{
+
+        <div className="flex items-center gap-[5px]">
+          <img src="/new/mailicon.svg" className="w-[9.5px] h-[9.5px] " alt="" />
+          <h3 style={{
             fontFamily: "Inter, sans-serif",
             fontWeight: 700,
             fontStyle: "Semi Bold",
             fontSize: "10px",
-            color:"white", 
+            color: "white",
             lineHeight: "18px",
             letterSpacing: "0%",
             verticalAlign: "middle",
             textTransform: "uppercase",
 
-            }}>legal@clclaw.in</h3>
-          </div>
+          }}>legal@clclaw.in</h3>
+        </div>
         <div className="flex justify-end gap-[25px]">
-            {locations.map((location) => (
-              <span
-                key={location}
-                className="text-white py-3 px-4 sm:px-0 "
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "8.8px",
-                  lineHeight: "11px",
-                  letterSpacing: "1.2px",
-                  textTransform: "uppercase",
-                }}
-              >
-                {location}
-              </span>
-            ))}
-          </div>
-        
+          {locations.map((location) => (
+            <span
+              key={location}
+              className="text-white py-3 px-4 sm:px-0 "
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 700,
+                fontSize: "8.8px",
+                lineHeight: "11px",
+                letterSpacing: "1.2px",
+                textTransform: "uppercase",
+              }}
+            >
+              {location}
+            </span>
+          ))}
+        </div>
+
       </div>
 
       {/* Mobile dropdown menu */}
@@ -112,7 +112,7 @@ const Header = () => {
                 key={loc}
                 className="text-white/80"
                 style={{
-                  fontFamily: "Inter",
+                  fontFamily: "Inter, sans-serif",
                   fontWeight: 700,
                   fontSize: "10px",
                   letterSpacing: "1px",

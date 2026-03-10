@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
-import {  Briefcase, GraduationCap, MapPin, User } from "lucide-react";
+import { Briefcase, GraduationCap, MapPin, User } from "lucide-react";
 
 interface TeamMemberProps {
   member: {
@@ -23,7 +23,7 @@ const teamMembers = {
   vivek: {
     id: "vivek",
     name: "Vivek Sarin: Founder & Leading Tax Litigation Expert",
-    
+
     image: "/vivek.webp",
     experience: "20+ Years",
     location: "New Delhi",
@@ -48,7 +48,7 @@ const teamMembers = {
   shreyas: {
     id: "shreyas",
     name: "Shreyas Srivastava: Partner & Commercial Dispute Specialist",
-    
+
     image: "/shreya.webp",
     experience: "12+ Years",
     location: "New Delhi",
@@ -69,6 +69,32 @@ const teamMembers = {
       "Bachelor of Laws (LLB)",
       "Member, Bar Council of India"
     ]
+  },
+  divyanshi: {
+    id: "Divyanshi Singh ",
+    name: "Divyanshi Singh : Associate Partner",
+
+    image: "/shreya.webp",
+    experience: "9+ Years",
+    location: "New Delhi",
+    shortDescription: "Partner with 12+ years of experience in direct and indirect taxation, international trade remedies, and cross-border tax advisory matters.",
+    fullDescription: [
+      "Divyanshi is an Associate Partner with over 9 years of experience in healthcare regulation, direct and indirect taxation, and GST-focused advisory and dispute resolution matters. Her practice involves handling complex litigation and advisory assignments, with a particular emphasis on GST, regulatory compliance, and sector-specific tax issues.",
+      "She has advised and represented clients across a wide range of sectors, including Healthcare, Pharmaceuticals, Consumer Goods, Retail, and Technology-enabled services. Her work encompasses GST litigation, regulatory representations, and advisory on intricate tax and compliance frameworks, often involving multi-layered statutory interpretation and procedural strategy.",
+      "Known for her structured legal analysis, strong research orientation, and meticulous preparation, Divyanshi regularly appears before Tribunals, High Courts, and the Supreme Court of India. She brings a disciplined, detail-driven approach to every matter, ensuring legal positions are both technically sound and practically effective."
+    ],
+    expertise: [
+      "GST Litigation and Advisory",
+      "Healthcare and Pharmaceutical Regulation",
+      "Direct and Indirect Tax Advisory",
+      "Regulatory Representation",
+      "Complex Tax and Compliance Disputes",
+
+    ],
+    education: [
+      "Bachelor of Laws (LLB)",
+      "Member, Bar Council of India"
+    ]
   }
 };
 
@@ -79,7 +105,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
     return (
       <div className=" p-2 sm:p-6">
         <div className="max-w-4xl">
-          
+
           {/* Header */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
             {/* Avatar */}
@@ -101,7 +127,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
               </div>
               <span
                 className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
-                style={{ background: "#2A5A21", fontFamily: "Inter", fontWeight: 600, fontSize: "12px" }}
+                style={{ background: "#2A5A21", fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "12px" }}
               >
                 {member.experience}
               </span>
@@ -214,7 +240,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
   return (
     <div className=" border border-[#22461B]  border-dotted p-6 flex flex-col items-center text-center h-full">
-      
+
       {/* Avatar + experience badge */}
       <div className="relative mb-4">
         <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
@@ -234,7 +260,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
         </div>
         <span
           className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white"
-          style={{ background: "#2A5A21", fontFamily: "Inter", fontWeight: 600, fontSize: "12px" }}
+          style={{ background: "#2A5A21", fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "12px" }}
         >
           {member.experience}
         </span>
@@ -286,7 +312,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       <div className="w-full text-left mb-5">
         <p
           className="mb-3"
-          style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#336429" }}
+          style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "clamp(16.5px, 1.8vw, 16.4px)", color: "#336429" }}
         >
           Expertise :
         </p>
@@ -312,7 +338,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
       <Dialog>
         <DialogTrigger asChild>
           <Button className="w-full bg-[#163C0F] hover:bg-[#1a4a1a] cursor-pointer text-white mt-auto"
-            style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "14px" }}
+            style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "14px" }}
           >
             View Profile
           </Button>

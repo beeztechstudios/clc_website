@@ -39,13 +39,13 @@ const whyChoose = [
 
 const Contact = () => {
   return (
-    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
- <HeroAnimations />
+    <div className="flex-1 bg-white xl:mx-10">
+      <HeroAnimations />
       {/* ── Header ── */}
-      <section className="px-4  pb-12 sm:px-6 md:px-8 py-4 ">
+      <section className="py-4 px-4 sm:px-8 mt-0 md:mt-12 md:px-12  lg:px-16  ">
         <div className="max-w-6xl mx-auto  hero-para text-center">
           <h1
-            className="mb-3  hero-title "
+            className="mb-3  hero-title text-[#163C0F] "
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
@@ -56,7 +56,7 @@ const Contact = () => {
               display: "block",
             }}
           >
-            Get In <span style={{ color: "#2A5A21" }}>Touch With Us</span>
+            Get In <span style={{ color: "#163C0F" }}>Touch With Us</span>
           </h1>
           <p
             className=" hero-para "
@@ -64,17 +64,17 @@ const Contact = () => {
               fontFamily: "League Spartan",
               fontWeight: 400,
               fontSize: "clamp(14px, 2vw, 16px)",
-              lineHeight: "14px",
+              lineHeight: "18px",
               color: "#4B5563",
             }}
           >
-            Reach out to our experienced team for strategic legal counsel in tax and commercial disputes.
+            Reach out to our experienced team for strategic legal counsel in tax and commercial disputes. We’re here to protect your interests.
           </p>
         </div>
       </section>
 
       {/* ── Why Choose Us ── */}
-      <section className="py-4 px-4 hero-buttons sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="hero-buttons py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
 
         <h2
@@ -132,7 +132,7 @@ const Contact = () => {
       </section>
 
       {/* ── Contact Info ── */}
-      <section className="py-8 px-4 hero-buttons sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="hero-buttons py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
         <h2
           className="uppercase mb-6"
           style={{
@@ -159,7 +159,7 @@ const Contact = () => {
                 <h3
                   className="mb-2"
                   style={{
-                    fontFamily: "Inter",
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 600,
                     fontSize: "clamp(18.5px, 1.8vw, 16.4px)",
                     color: "#163C0F",

@@ -2,7 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import HeroAnimations  from "@/lib/heroAnimation";
+import HeroAnimations from "@/lib/heroAnimation";
 const distinctions = [
   {
     src: "/vivek.webp",
@@ -32,86 +32,88 @@ const distinctions = [
 ];
 
 const Hero = () => {
-  
+
   return (
-    
-    <div className="flex-1">
+
+    <div className="flex-1 ">
       <HeroAnimations />
       {/* Hero Section */}
-      <section className="relative py-12 pb-0 sm:py-16 md:py-20 px-4 sm:px-6 text-center justify-end bg-white  overflow-hidden">
-        {/* Circle Background */}
-        <div
-          className="absolute left-1/2  top-[45%] md:top-32 -translate-x-1/2 w-[140vw] md:w-[1200px] h-[140vw] md:h-[1200px] bg-[#6B8066]/10 rounded-full"
-        ></div>
+      <section className="relative py-4 px-4 sm:px-8  md:px-12 lg:px-16 xl:mx-0 text-center justify-end  space-y-[48px] overflow-hidden">
 
-        <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
-          <span
-            className="text-[#163C0F]"
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 700,
-              fontSize: "clamp(38px, 6vw, 58px)",
-              lineHeight: "1.1",
-              letterSpacing: "2px",
-              textAlign: "center",
-              display: "block",
-            }}
-          >
-            Commitment to
-          </span>
-          <span
-            className="text-[#2A5A21]"
-            style={{
-              fontFamily: "League Spartan",
-              fontWeight: 700,
-              fontSize: "clamp(38px, 6vw, 58px)",
-              lineHeight: "1.1",
-              letterSpacing: "2px",
-              textAlign: "center",
-              display: "block",
-            }}
-          >
-            Legal Excellence.
-          </span>
-        </h1>
+        <img src="/new/heroGlass.svg" className="absolute left-[360px] max-w-[800px]  top-0 -translate-x-1/2" alt="" />
+        <img src="/new/heroGradient.svg" className="absolute left-[440px]  w-[80vw] max-w-[950px] -translate-x-1/2" alt="" />
+        <div className=" mx-10 ">
 
-        <p
-          className="text-gray-600 hero-para max-w-lg mx-auto mb-8"
-          style={{
+          <h1 className=" hero-title md:mt-[104px] mr-8   text-[#163C0F] leading-tight mb-[6px]" style={{
             fontFamily: "League Spartan",
-            fontWeight: 400,
-            fontSize: "clamp(14px, 2vw, 16px)",
-            lineHeight: "21px",
-            letterSpacing: "0px",
-            textAlign: "center",
-          }}
-        >
-          Trusted by corporations and individuals across India for strategic legal solutions.
+            fontWeight: 700,
+            fontSize: "clamp(38px, 6vw, 50px)",
+            lineHeight: "50px",
+            letterSpacing: "2px",
 
-        </p>
 
-        <div
-          className="flex flex-row hero-buttons justify-center hero-title gap-3 sm:gap-4 mb-8 sm:mb-16"
-          style={{ fontFamily: "Arial", fontWeight: 700 }}
-        >
-          <Link
-            href="/contact"
-            className="bg-[#163C0F] hover:scale-105 text-sm z-10 cursor-pointer text-white px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 font-bold"
+          }}>
+            Commitment to Legal Excellence.
+          </h1>
+
+          <p
+            className="text-[#163C0F] hero-para max-w-lg  mx-auto mb-8"
+            style={{
+              fontFamily: "League Spartan",
+              fontWeight: 400,
+              fontSize: "clamp(14px, 2vw, 14px)",
+              lineHeight: "18px",
+              letterSpacing: "0px",
+              textAlign: "center",
+            }}
           >
-            Partner With Us <ArrowRight className="h-3 md:h-4 w-3  md:w-4" />
-          </Link>
+            Trusted by corporations and individuals across India for strategic legal solutions.
 
-          <Link
-            href="/contact"
-            className="bg-white text-sm hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-4 md:px-6 py-2.5 font-bold hover:bg-gray-50 transition-all">
-            Review Firm Profile
-      
-          </Link>
+          </p>
+
+          <div
+            className="flex flex-row hero-buttons justify-center hero-title  sm:gap-[12px] "
+            style={{ fontFamily: "Arial", fontWeight: 700 }}
+          >
+            <Link
+              href="/contact"
+              style={{
+                fontFamily: "Arial",
+                fontWeight: 700,
+                fontStyle: "Bold",
+                fontSize: "14.4px",
+                lineHeight: "24px",
+                letterSpacing: "0px",
+                textAlign: "center",
+
+              }}
+              className="bg-[#163C0F] hover:scale-105  z-10 cursor-pointer text-white px-4 md:px-[14px] py-[8px] flex items-center justify-center gap-[10px] "
+            >
+              Partner With Us <ArrowRight className="h-3 md:h-[20px] w-3  md:w-[20px]" />
+            </Link>
+
+            <Link
+              href="/contact"
+              style={{
+                fontFamily: "Arial",
+                fontWeight: 700,
+                fontStyle: "Bold",
+                fontSize: "14.4px",
+                lineHeight: "24px",
+                letterSpacing: "0px",
+                textAlign: "center",
+
+              }}
+              className="bg-white text-sm hover:scale-105 text-gray-800 z-10 cursor-pointer border border-[#163C0F]/20 px-4 md:px-6 py-2.5  hover:bg-gray-50 transition-all">
+              Review Firm Profile
+
+            </Link>
+          </div>
         </div>
 
+
         {/* Stats */}
-        
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto pt-0 md:pt-8">
+        <div className="flex items-center justify-center  gap-4 sm:gap-[24px] max-w-[600px] mx-auto  ">
           {[
             { value: 500, suffix: "+", label: "CASES WON" },
             { value: 25, suffix: "+", label: "YEARS EXPERIENCE" },
@@ -136,8 +138,9 @@ const Hero = () => {
 
               <div
                 style={{
-                  fontFamily: "Inter",
+                  fontFamily: "Inter, sans-serif",
                   fontSize: "clamp(10px, 1.5vw, 14px)",
+                  lineHeight: "21px",
                   textAlign: "center",
                   textTransform: "uppercase",
                 }}
@@ -151,15 +154,14 @@ const Hero = () => {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-30 bg-white">
-        <div className="w-full border border-dotted border-[#22461B]/50"></div>
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16 xl:mx-10  ">
 
         <h2
-          className="font-bold text-[#336429] mt-[35px] mb-6"
+          className="font-bold text-[#336429]   mt-[24px] mb-[12px]"
           style={{
             fontFamily: "Arial",
             fontWeight: 700,
-            fontSize: "clamp(16px, 2.5vw, 24px)",
+            fontSize: "clamp(16px, 2.5vw, 18px)",
             lineHeight: "24px",
             letterSpacing: "0px",
             verticalAlign: "middle",
@@ -170,11 +172,11 @@ const Hero = () => {
         </h2>
 
         <div
-          className="text-gray-800 space-y-4"
+          className="text-gray-800 space-y-4 "
           style={{
             fontFamily: "League Spartan",
             fontWeight: 400,
-            fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
+            fontSize: "clamp(14.4px, 1.8vw, 14.4px)",
             lineHeight: "20px",
             letterSpacing: "0px",
             verticalAlign: "middle",
@@ -189,9 +191,9 @@ const Hero = () => {
       </section>
 
       {/* Our Distinction */}
-      <section className="py-8 sm:py-10 px-4 sm:px-8 md:px-12 lg:px-16 bg-white xl:mx-30 ">
+      <section className="py-8 sm:py-10 px-4 sm:px-8 md:px-12 lg:px-16 xl:mx-10 ">
         <h2
-          className="uppercase mb-6 sm:mb-8"
+          className="uppercase   mb-6 sm:mb-8"
           style={{
             fontFamily: "Arial",
             fontWeight: 700,
@@ -242,22 +244,23 @@ const Hero = () => {
       </section>
 
       {/* Core Practice Areas */}
-      <section className="py-8 sm:py-10 px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-30">
-        <div className="w-full border border-dotted border-[#22461B]/50 mb-8"></div>
+      <section className="py-8 sm:py-[24px] px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
+        <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]"></div>
         <h2
-          className="uppercase mb-6 sm:mb-8"
+          className="uppercase mb-[16px] text-[#336429]"
           style={{
             fontFamily: "Arial",
             fontWeight: 700,
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2.5vw, 18px)",
             lineHeight: "24px",
             letterSpacing: "0px",
-            color: "#336429",
+            verticalAlign: "middle",
+            textTransform: "uppercase",
           }}
         >
           CORE PRACTICE AREAS
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-0">
           {[
             {
               title: "Direct Tax",
@@ -282,19 +285,19 @@ const Hero = () => {
               style={
                 index % 2 === 0
                   ? {
-                    background: "linear-gradient(to right, #CFE2C8, #FFFFFF)",
+                    background: "linear-gradient(to right, ##CFE2C8, #FFFFFF)",
                   }
-                  : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
+                  : { background: "linear-gradient(to left, ##CFE2C8, #FFFFFF)" }
               }
             >
-              <div className="flex items-center px-5 py-5 sm:py-6">
+              <div className="flex items-center px-[8px] py-[17px]">
                 <span
                   style={{
-                    fontFamily: "Inter",
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 600,
-                    fontSize: "clamp(18px, 1.8vw, 16.4px)",
+                    fontSize: "clamp(16px, 1.8vw, 16px)",
                     lineHeight: "20px",
-                    letterSpacing: "0.01em",
+                    letterSpacing: "1%",
                     textTransform: "capitalize",
                     color: "#163C0F",
                   }}
@@ -303,12 +306,12 @@ const Hero = () => {
                 </span>
               </div>
 
-              <div className="flex items-center px-5 py-5 sm:py-6">
+              <div className="flex items-center px-[8px] py-[17px]">
                 <p
                   style={{
                     fontFamily: "League Spartan",
                     fontWeight: 400,
-                    fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
+                    fontSize: "clamp(14.4px, 1.8vw, 14.4px)",
                     lineHeight: "18px",
                     textTransform: "capitalize",
                     color: "#000000",
@@ -323,14 +326,14 @@ const Hero = () => {
       </section>
 
       {/* Our Team */}
-      <section className="py-8 sm:py-10 px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-30">
-        <div className="w-full border border-dotted border-[#22461B]/50 mb-8"></div>
+      <section className="py-8 sm:py-[24px]  px-4 bg-white sm:px-8 md:px-12 lg:px-16 xl:mx-10">
+        <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]"></div>
         <h2
-          className="uppercase mb-8"
+          className="uppercase mb-[16px]"
           style={{
             fontFamily: "Arial",
             fontWeight: 700,
-            fontSize: "18px",
+            fontSize: "clamp(16px, 2.5vw, 18px)",
             lineHeight: "24px",
             letterSpacing: "0px",
             color: "#336429",
@@ -369,14 +372,28 @@ const Hero = () => {
                 "Regulatory Representation",
               ],
             },
+            {
+              name: "Divyanshi Singh",
+              role: "Associate Partner",
+              degree: "Bachelor of Laws (LLB)",
+              experience: "9+ years",
+              image: "/images/shreya.jpg",
+              expertise: [
+                "GST Litigation and Advisory",
+                "Healthcare and Pharmaceutical Regulation",
+                "Direct and Indirect Tax Advisory",
+                "Regulatory Representation",
+                "Complex Tax and Compliance Disputes",
+              ],
+            },
           ].map(({ name, role, degree, experience, image, expertise }) => (
             <div
               key={name}
-              className=" border border-[#22461B] border-dotted p-6 flex flex-col items-center text-center"
+              className=" border border-[#22461B]/30  rounded-[16px] p-2 flex flex-col items-center text-center"
             >
               {/* Avatar + experience badge */}
-              <div className="relative mb-4">
-                <div className="w-[120px] h-[120px] rounded-full overflow-hidden border-2 border-gray-100">
+              <div className="relative mb-[10px]">
+                <div className="w-[88px] h-[88px] rounded-full overflow-hidden border-2 border-gray-100">
                   <img
                     src={image}
                     alt={name}
@@ -384,68 +401,72 @@ const Hero = () => {
                   />
                 </div>
                 <span
-                  className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full text-white text-xs font-semibold"
+                  className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-[7px] py-1 rounded-full text-white "
                   style={{
                     background: "#2A5A21",
-
-                    fontWeight: 600,
-                    fontSize: "14px",
+                    fontStyle: "medium",
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
                   }}
                 >
                   {experience}
                 </span>
               </div>
 
-              {/* Name */}
-              <h3
-                className="mt-5 mb-1"
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 600,
-                  fontSize: "clamp(20.5px, 1.8vw, 20.4px)",
-                  lineHeight: "26px",
-                  color: "#163C0F",
-                }}
-              >
-                {name}
-              </h3>
+              <div className="mt-[10px]">
+                {/* Name */}
+                <h3
+                  className=" mb-[2px]"
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 500,
+                    fontStyle: "medium",
+                    fontSize: "clamp(16px, 1.8vw, 16px)",
+                    lineHeight: "26px",
+                    color: "#163C0F",
+                  }}
+                >
+                  {name}
+                </h3>
 
-              {/* Role */}
-              <p
-                className="mb-1"
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 400,
-                  fontSize: "clamp(16.5px, 1.8vw, 18.4px)",
-                  lineHeight: "20px",
-                  color: "#5A6F55",
-                }}
-              >
-                {role}
-              </p>
+                {/* Role */}
+                <p
+                  className="mb-[2px]"
+                  style={{
+                    fontFamily: "League Spartan",
+                    fontWeight: 400,
+                    fontSize: "clamp(14px, 1.8vw, 14px)",
+                    lineHeight: "21px",
+                    color: "#5A6F55",
+                  }}
+                >
+                  {role}
+                </p>
 
-              {/* Degree */}
-              <p
-                className="mb-5"
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 400,
-                  fontSize: "clamp(17.5px, 1.8vw, 14.4px)",
-                  lineHeight: "18px",
-                  color: "#5A6F55",
-                }}
-              >
-                {degree}
-              </p>
+                {/* Degree */}
+                <p
+                  className="mb-[20px]"
+                  style={{
+                    fontFamily: "League Spartan",
+                    fontWeight: 400,
+                    fontSize: "clamp(14px, 1.8vw, 14px)",
+                    lineHeight: "18px",
+                    color: "#5A6F55",
+                  }}
+                >
+                  {degree}
+                </p>
+              </div>
 
               {/* Expertise */}
               <div className="w-full text-left">
                 <p
                   className="mb-3"
                   style={{
-                    fontFamily: "Inter",
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 600,
-                    fontSize: "clamp(18.5px, 1.8vw, 14.4px)",
+                    fontSize: "clamp(14.4px, 1.8vw, 14.4px)",
                     color: "#336429",
                   }}
                 >
@@ -455,12 +476,12 @@ const Hero = () => {
                   {expertise.map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1 rounded-full border border-[#5A6F554D]/90 text-[#5A6F55]"
+                      className="px-[4px] py-[2px] rounded-full border border-[#5A6F554D]/90 text-[#5A6F55]"
                       style={{
-                        fontFamily: "League Spartan",
+                        fontFamily: "Inter, sans-serif",
                         fontWeight: 400,
-                        fontSize: "clamp(15px, 1.8vw, 14.4px)",
-                        lineHeight: "18px",
+                        fontSize: "clamp(12px, 1.8vw, 10px)",
+                        lineHeight: "14px",
                       }}
                     >
                       {item}
@@ -471,7 +492,6 @@ const Hero = () => {
             </div>
           ))}
         </div>
-        <div className="w-full border border-dotted border-[#22461B]/50 mt-8"></div>
       </section>
     </div>
   );

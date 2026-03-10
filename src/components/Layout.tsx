@@ -92,7 +92,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div className="flex flex-row items-start lg:justify-center  w-full max-w-[1600px]  px-0 sm:px-2 md:px-4">
         {/* LEFT SIDEBAR - Pinned to the left of the main block */}
         {showSidebars && (
-          <div ref={leftSidebarRef} className="hidden  lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[190px] -mr-24 z-20">
+          <div ref={leftSidebarRef} className="hidden  lg:block w-48 xl:w-52 shrink-0 sticky top-[0px] mt-[180px] -mr-25 z-20">
             <LeftSidebar
               activeSection={activeSection}
               setActiveSection={() => setIsMobileSidebarOpen(false)}
@@ -147,7 +147,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
         {/* RIGHT SIDEBAR - Pinned to the right of the main block */}
         {showSidebars && (
-          <div ref={rightSidebarRef} className="hidden  lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[190px] -ml-34 z-20">
+          <div ref={rightSidebarRef} className="hidden  lg:block w-64 xl:w-72 shrink-0 sticky top-[0px] mt-[180px] -ml-20 z-20">
             <RightSidebar />
           </div>
         )}

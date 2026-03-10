@@ -69,7 +69,7 @@ export default async function NewsDetailPage({ params }: { params: Params }) {
           <Link
             href="/news"
             className="inline-flex items-center gap-2 mb-6"
-            style={{ fontFamily: "Inter", fontWeight: 500, fontSize: "13px", color: "#5A6F55" }}
+            style={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "13px", color: "#5A6F55" }}
           >
             <ArrowLeft className="h-4 w-4" /> Back to News
           </Link>
@@ -105,7 +105,7 @@ export default async function NewsDetailPage({ params }: { params: Params }) {
             <Calendar className="h-3 w-3 text-[#5A6F55]" />
             <time
               dateTime={publishedDate.toISOString()}
-              style={{ fontFamily: "Inter", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
+              style={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "13px", color: "#5A6F55" }}
             >
               {format(publishedDate, "MMMM d, yyyy")}
             </time>
@@ -146,7 +146,7 @@ export default async function NewsDetailPage({ params }: { params: Params }) {
                 href={news.downloadUrl}
                 target="_blank"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-[#163C0F] hover:bg-[#163C0F] hover:text-white transition-all"
-                style={{ fontFamily: "Inter", fontWeight: 600, fontSize: "13px", color: "#163C0F" }}
+                style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "13px", color: "#163C0F" }}
               >
                 <Eye className="h-4 w-4" /> Read The Full Document Here
               </Link>

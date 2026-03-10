@@ -14,7 +14,7 @@ const Footer = () => {
                 key={label}
                 className="cursor-pointer hover:text-[#163C0F] transition-colors"
                 style={{
-                  fontFamily: "Inter",
+                  fontFamily: "Inter, sans-serif",
                   fontWeight: 400,
                   fontSize: "10px",
                   letterSpacing: "0.5px",
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
           <span
             style={{
-              fontFamily: "Inter",
+              fontFamily: "Inter, sans-serif",
               fontWeight: 400,
               fontSize: "10px",
               letterSpacing: "0.5px",

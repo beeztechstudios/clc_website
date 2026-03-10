@@ -36,13 +36,13 @@ const Career = () => {
   const { data: currentOpenings, isLoading, isError } = useCareerOpenings();
 
   return (
-    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white  xl:mx-10">
 
       {/* ── Header ── */}
-      <section className="p-6 sm:p-8 md:p-12 ">
+      <section className="py-4 px-4 sm:px-8 mt-0 md:mt-12 md:px-12  lg:px-16 ">
         <div className="max-w-6xl mx-auto text-center">
           <h1
-            className="mb-3"
+            className="mb-3 text-[#163C0F] "
             style={{
               fontFamily: "League Spartan",
               fontWeight: 700,
@@ -54,7 +54,7 @@ const Career = () => {
             }}
           >
             Legal Careers in{" "}
-            <span style={{ color: "#2A5A21" }}>Tax & Commercial Law</span>
+            <span style={{ color: "#163C0F" }}>Tax & Commercial Law</span>
           </h1>
           <p
             style={{
@@ -71,7 +71,7 @@ const Career = () => {
       </section>
 
       {/* ── Introduction ── */}
-      <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-8" />
 
         <h2
@@ -112,7 +112,7 @@ const Career = () => {
       </section>
 
       {/* ── Current Openings ── */}
-      <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
         <h2
           className="uppercase mb-6"
           style={{
@@ -214,7 +214,7 @@ const Career = () => {
       </section>
 
       {/* ── Why Join Us ── */}
-      <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
         <h2
           className="uppercase mb-6"
           style={{
@@ -277,7 +277,7 @@ const Career = () => {
       </section>
 
       {/* ── Application Process ── */}
-      <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  bg-white">
         <h2
           className="uppercase mb-6"
           style={{

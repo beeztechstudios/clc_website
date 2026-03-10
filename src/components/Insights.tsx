@@ -33,12 +33,10 @@ const Insights = () => {
   }, [blogs, selectedCategory]);
 
   return (
-    <div className="flex-1 bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white xl:mx-10">
        <HeroAnimations />
-      {/* ----------------------------------------------
-          HEADER SECTION
-      ---------------------------------------------- */}
-      <section className="px-3  pb-12 sm:px-6 md:px-8 py-4 ">
+     
+      <section className="py-4 px-4 sm:px-8  md:px-12 mt-0 md:mt-12 lg:px-16  ">
         <div className="max-w-6xl mx-auto text-center mb-8">
           <h1 className="font-bold  hero-title  text-[#163C0F] leading-tight mb-4">
             <span
@@ -53,14 +51,13 @@ const Insights = () => {
                 display: "block",
               }}
             >
-              Legal Insights & Tax Law Updates
+              Insights on GST act and Rules
             </span>
 
 
           </h1>
           <p className="text-base  hero-para sm:text-md text-gray-600">
-            Stay informed with our latest insights on trending topics in tax law,
-            commercial litigation, and regulatory developments.
+            Educational content regarding the Goods and Services Tax Act, gst input tax credit rules, and recent judicial precedents in Tax and Commercial Disputes.
           </p>
         </div>
 
@@ -81,10 +78,8 @@ const Insights = () => {
         </div>
       </section>
 
-      {/* ----------------------------------------------
-          BLOG GRID SECTION
-      ---------------------------------------------- */}
-      <section className="p-4 sm:p-8 md:p-12  hero-buttons border-t border-dotted border-[#22461B]">
+  
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  hero-buttons border-t border-dotted border-[#22461B]">
         <div className="max-w-6xl mx-auto">
 
           {/* ------------------------------

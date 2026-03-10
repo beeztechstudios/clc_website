@@ -57,10 +57,10 @@ const About = () => {
   ];
 
   return (
-    <div className="flex-1  bg-white py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1  bg-white  xl:mx-10">
       <HeroAnimations />
       {/* About Header Section */}
-      <section className="px-4  pb-12 sm:px-6 md:px-8 py-4 mdborder-b border-dotted border-[#22461B]">
+      <section className="py-4 px-4 sm:px-8 mt-0 mt-12  md:px-12  lg:px-16 mdborder-b border-dotted border-[#22461B]">
         <div className="max-w-6xl mx-auto ">
           <div className="text-center mb-8">
 
@@ -80,7 +80,7 @@ const About = () => {
                 Premier Tax and
               </span>
               <span
-                className="text-[#2A5A21]"
+                className="text-[#163C0F]"
                 style={{
                   fontFamily: "League Spartan",
                   fontWeight: 700,
@@ -120,9 +120,9 @@ const About = () => {
                   {stat.value}
                 </div>
                 <div
-             
+
                   style={{
-                    fontFamily: "Inter",
+                    fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
                     fontSize: "clamp(10px, 1.5vw, 14px)",
                     lineHeight: "21px",
@@ -142,49 +142,49 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-4 px-4 hero-buttons sm:px-6 md:px-8 mb-8 ">
-        
-          
-          <h2
-            className="uppercase text-center mb-6 sm:mb-8"
-            style={{
-              fontFamily: "Arial",
-              fontWeight: 700,
-              fontSize: "20px",
-              lineHeight: "24px",
-              letterSpacing: "0px",
-              color: "#336429",
-            }}
-          >
-            Our Story
-          </h2>
-          <div className="space-y-4 text-black text-justify leading-relaxed" style={{
-            fontFamily: "League Spartan",
-            fontWeight: 400,
-          fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
-            lineHeight: "20px",
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16 hero-buttons  mb-8  ">
+
+
+        <h2
+          className="uppercase text-center mb-6 sm:mb-8 "
+          style={{
+            fontFamily: "Arial",
+            fontWeight: 700,
+            fontSize: "20px",
+            lineHeight: "24px",
             letterSpacing: "0px",
-            verticalAlign: "middle",
-            textTransform: "capitalize",
-          }}>
-            <p>
-            Founded in 2008, Commercial Law Chamber is a boutique law practice established with a focused vision of delivering excellence in tax advisory. As a leading tax law firm, we are led by two experienced Partners, including top GST lawyers in India, and supported by a team of 15 associates. The firm operates through a strong Pan-India network, ensuring seamless representation across jurisdiction. 
-            </p>
-            <p>
+            color: "#336429",
+          }}
+        >
+          Our Story
+        </h2>
+        <div className="space-y-4 text-black text-justify leading-relaxed " style={{
+          fontFamily: "League Spartan",
+          fontWeight: 400,
+          fontSize: "clamp(15.5px, 1.8vw, 16.4px)",
+          lineHeight: "20px",
+          letterSpacing: "0px",
+          verticalAlign: "middle",
+          textTransform: "capitalize",
+        }}>
+          <p>
+            Founded in 2008, Commercial Law Chamber is a boutique law practice established with a focused vision of delivering excellence in tax advisory. As a leading tax law firm, we are led by two experienced Partners, including top GST lawyers in India, and supported by a team of 15 associates. The firm operates through a strong Pan-India network, ensuring seamless representation across jurisdiction.
+          </p>
+          <p>
             Our practice is distinguished by strategic insight, rigorous legal research, and a client-centric approach. Recognized as a premier GST law firm, we regularly represent clients before the Supreme Court of India, various High Courts, and specialized tribunals including ITAT, CESTAT, and VAT authorities.
 
-            </p>
-            <p>
+          </p>
+          <p>
             As a specialized tax law firm, we provide comprehensive services covering indirect tax litigation, departmental proceedings, GST input tax credit rules analysis, and trade remedy matters. From strategic advisory to adjudication, CLC offers end-to-end tax and regulatory counsel.
-            </p>
-          </div>
-        
+          </p>
+        </div>
+
       </section>
 
 
       {/* Our Approach Section */}
-      <section className="p-4 sm:p-6 md:p-8 border-t border-dotted border-[#22461B] bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-4 px-4 sm:px-8  md:px-12   lg:px-16  border-t border-dotted border-[#22461B] ">
+        <div className="max-w-6xl mx-auto ">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="= uppercase mb-3" style={{
               fontFamily: "Arial",
@@ -260,7 +260,7 @@ const About = () => {
       </section>
 
       {/* Values & Vision Section */}
-      <section className="p-4 sm:p-6 md:p-8 border-t border-dotted border-[#22461B] mt-12 bg-white">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16 bg-white border-t border-dotted border-[#22461B] mt-12 ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="= uppercase mb-3" style={{
@@ -295,7 +295,7 @@ const About = () => {
                 verticalAlign: "middle",
                 textTransform: "capitalize",
               }}>
-                To be a leading tax litigation and advisory boutique law firm, recognised for shaping tax jurisprudence, delivering strategic and high-stakes advocacy, and safeguarding our clients’ commercial interests in the most complex and impactful matters. 
+                To be a leading tax litigation and advisory boutique law firm, recognised for shaping tax jurisprudence, delivering strategic and high-stakes advocacy, and safeguarding our clients’ commercial interests in the most complex and impactful matters.
               </p>
             </div>
           </div>
@@ -313,7 +313,7 @@ const About = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#163C0F] mb-1" style={{
-                      fontFamily: "Inter",
+                      fontFamily: "Inter, sans-serif",
                       fontWeight: 600,
                       fontSize: "clamp(18px, 1.8vw, 16.4px)",
                       lineHeight: "20px",

@@ -6,10 +6,10 @@ import Link from "next/link"
 
 const Team = () => {
   return (
-    <div className="flex-1 bg-white  py-4 sm:px-8 md:px-12 lg:px-16 xl:mx-20">
+    <div className="flex-1 bg-white  xl:mx-10">
       <HeroAnimations />
       {/* Team Header Section */}
-      <section className="px-4 pb-12 sm:px-6 md:px-8 py-4  ">
+      <section className="py-4 px-4 sm:px-8 mt-0 md:mt-12  md:px-12  lg:px-16  ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="font-bold hero-title text-[#163C0F] leading-tight mb-4">
@@ -24,20 +24,9 @@ const Team = () => {
                   textAlign: "center",
                   display: "block",
                 }}
-              >Our Team Best Tax
+              >Our Team - Leading Tax Experts
               </span>
-              <span
-                className="text-[#2A5A21]"
-                style={{
-                  fontFamily: "League Spartan",
-                  fontWeight: 700,
-                  fontSize: "clamp(32px, 6vw, 44px)",
-                  lineHeight: "1.1",
-                  letterSpacing: "2px",
-                  textAlign: "center",
-                  display: "block",
-                }}
-              > Lawyers in India & Legal Experts</span>
+             
             </h1>
           
           </div>
@@ -52,7 +41,7 @@ const Team = () => {
       </section>
 
       {/* Additional Info Section */}
-      <section className="px-6 hero-buttons pb-4  sm:px-8 md:px-6 border-b border-dotted border-[#22461B]">
+      <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  border-b border-dotted border-[#22461B]">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className=" text-[#163C0F] mb-4" style={{
             fontFamily: "Arial",
