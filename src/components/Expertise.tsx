@@ -230,7 +230,7 @@ const Expertise = () => {
                     </div>
 
                     <div className="flex-1">
-                      <h2 className="hero-text-section-heading hero-title text-[#163C0F]">
+                      <h2 className="hero-text-section-heading text-[#163C0F]">
                         {area.title}
                       </h2>
 
@@ -257,7 +257,7 @@ const Expertise = () => {
                       ))}
 
                       {/* Key Services */}
-                      <h3 className="hero-text-section-heading hero-title text-[#163C0F] mt-6 mb-4">
+                      <h3 className="hero-text-section-heading text-[#163C0F] mt-6 mb-4">
                         Key Service Areas:
                       </h3>
 
@@ -287,7 +287,7 @@ const Expertise = () => {
 
                     <div>
 
-                      <h3 className="hero-text-section-heading hero-title text-[#163C0F] mb-4">
+                      <h3 className="hero-text-section-heading text-[#163C0F] mb-4">
                         Select Experience:
                       </h3>
 

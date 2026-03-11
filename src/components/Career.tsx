@@ -53,7 +53,7 @@ const Career = () => {
 
       {/* About the Opportunity */}
       <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mt-[24px] mb-[12px]">
           ABOUT THE OPPORTUNITY
         </h2>
         <div className="hero-text-body text-gray-800 space-y-4">
@@ -72,7 +72,7 @@ const Career = () => {
 
       {/* Current Openings */}
       <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mb-[12px]">
           CURRENT JOB OPENINGS
         </h2>
 
@@ -133,7 +133,7 @@ const Career = () => {
 
       {/* Why Join Us */}
       <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mb-[12px]">
           WHY BUILD YOUR CAREER AT CLC
         </h2>
 
@@ -166,7 +166,7 @@ const Career = () => {
 
       {/* How to Apply */}
       <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mb-[12px]">
           HOW TO APPLY
         </h2>
 

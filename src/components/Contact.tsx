@@ -56,7 +56,7 @@ const Contact = () => {
 
       {/* Why Choose Us */}
       <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mt-[24px] mb-[12px]">
           WHY CHOOSE OUR TAX LAW FIRM
         </h2>
 
@@ -82,7 +82,7 @@ const Contact = () => {
 
       {/* Contact Info */}
       <section className="hero-buttons py-4 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mt-[24px] mb-[12px]">
           OUR OFFICES
         </h2>
 

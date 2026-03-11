@@ -171,7 +171,7 @@ const NewsUpdates = ({ initialNews }: NewsUpdatesProps) => {
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-[24px]" />
         <div className="border border-[#22461B]/30 rounded-[16px] p-6 sm:p-8 text-center">
-          <h3 className="hero-text-section-heading hero-title text-[#336429] mb-[12px]">
+          <h3 className="hero-text-section-heading text-[#336429] mb-[12px]">
             Stay Updated with Legal Developments
           </h3>
           <p className="hero-text-body text-gray-800 max-w-md mx-auto mb-6">

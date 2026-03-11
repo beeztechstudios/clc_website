@@ -50,7 +50,7 @@ const Team = () => {
       {/* Notable Achievements */}
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="w-full border border-dotted border-[#22461B]/50 mb-6" />
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-1">
+        <h2 className="hero-text-section-heading text-[#336429] mb-1">
           Notable Representation &amp; Achievements
         </h2>
         <p className="hero-text-team-role mb-6">
@@ -70,7 +70,7 @@ const Team = () => {
       {/* Additional Info Section */}
       <section className="py-4 px-4 sm:px-8  md:px-12  lg:px-16  border-b border-dotted border-[#22461B]">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="hero-text-section-heading hero-title text-[#336429] mb-4">Careers: Join Our Expert Tax & Commercial Dispute Team</h3>
+          <h3 className="hero-text-section-heading text-[#336429] mb-4">Careers: Join Our Expert Tax & Commercial Dispute Team</h3>
           <p className="hero-text-body mb-4">
             We're always looking for talented professionals to join our team. If you're passionate about
             tax law and commercial litigation, we'd love to hear from you.

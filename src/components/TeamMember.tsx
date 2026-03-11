@@ -156,7 +156,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* About */}
             <section>
-              <h3 className="hero-text-section-heading hero-title text-[#336429] mb-3">
+              <h3 className="hero-text-section-heading text-[#336429] mb-3">
                 About
               </h3>
               <div className="space-y-3">
@@ -173,7 +173,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Expertise */}
             <section>
-              <h3 className="hero-text-section-heading hero-title text-[#336429] mb-3">
+              <h3 className="hero-text-section-heading text-[#336429] mb-3">
                 Areas of Expertise
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -190,7 +190,7 @@ const TeamMember = ({ member, variant = "card" }: TeamMemberProps) => {
 
             {/* Education */}
             <section>
-              <h3 className="hero-text-section-heading hero-title text-[#336429] mb-3">
+              <h3 className="hero-text-section-heading text-[#336429] mb-3">
                 Education &amp; Qualifications
               </h3>
               <div className="flex flex-col gap-2">

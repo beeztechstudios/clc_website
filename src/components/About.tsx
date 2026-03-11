@@ -3,7 +3,7 @@ import { Building2, Users, BookOpen, Scale, Globe, Handshake, Shield, Eye, Light
 
 const stats = [
   { label: "Founded", value: "2008", numericValue: 2008, suffix: "" },
-  { label: "Partners", value: "2", numericValue: 2, suffix: "" },
+  { label: "Partners", value: "3", numericValue: 2, suffix: "" },
   { label: "Associates", value: "15+", numericValue: 15, suffix: "+" },
 ];
 
@@ -88,7 +88,7 @@ const About = () => {
 
       {/* Our Story */}
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mt-[24px] mb-[12px]">
+        <h2 className="hero-text-section-heading text-[#336429] mt-[24px] mb-[12px]">
           Our Story
         </h2>
         <div className="hero-text-body text-gray-800 space-y-4">
@@ -107,7 +107,7 @@ const About = () => {
 
       {/* Our Approach */}
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[16px]">
+        <h2 className="hero-text-section-heading text-[#336429] mb-[16px]">
           Our Approach
         </h2>
         <p className="hero-text-subpara text-[#163C0F] mb-[16px]" style={{ textAlign: "left" }}>
@@ -140,7 +140,7 @@ const About = () => {
 
       {/* Values & Vision */}
       <section className="py-4 px-4 sm:px-8 md:px-12 lg:px-16 hero-buttons">
-        <h2 className="hero-text-section-heading hero-title text-[#336429] mb-[16px]">
+        <h2 className="hero-text-section-heading text-[#336429] mb-[16px]">
           Values &amp; Vision
         </h2>
 
