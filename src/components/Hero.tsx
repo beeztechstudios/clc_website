@@ -172,9 +172,9 @@ const Hero = () => {
               style={
                 index % 2 === 0
                   ? {
-                    background: "linear-gradient(to right, ##CFE2C8, #FFFFFF)",
+                    background: "linear-gradient(to right, #CFE2C8, #FFFFFF)",
                   }
-                  : { background: "linear-gradient(to left, ##CFE2C8, #FFFFFF)" }
+                  : { background: "linear-gradient(to left, #CFE2C8, #FFFFFF)" }
               }
             >
               <div className="flex items-center px-[8px] py-[17px]">
