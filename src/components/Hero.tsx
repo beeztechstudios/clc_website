@@ -241,7 +241,7 @@ const Hero = () => {
               role: "Associate Partner",
               degree: "Bachelor of Laws (LLB)",
               experience: "9+ years",
-              image: "/images/shreya.jpg",
+              image: "/images/divyanshi.jpeg",
               expertise: [
                 "GST Litigation and Advisory",
                 "Healthcare and Pharmaceutical Regulation",
